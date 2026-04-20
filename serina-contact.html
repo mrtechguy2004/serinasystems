@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact Us | Software Development and Digital Marketing Company in Nakuru Kenya | Serina Systems</title>
+<link rel="icon" type="image/jpeg" href="https://scontent.fnbo15-1.fna.fbcdn.net/v/t39.30808-6/658830941_879559735081624_5616131752165756627_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=13d280&_nc_ohc=47WqhLkxDRgQ7kNvwF8nV_Q&_nc_oc=AdoAC3V_RFO2l74yJEMdvOX5-1yQdBY__H62B_l1W9dq8pb-YfoI_IoH7FA-XaMQnQQ&_nc_zt=23&_nc_ht=scontent.fnbo15-1.fna&_nc_gid=ldSEj0imsPzJhCd0zR6zGg&_nc_ss=7a3a8&oh=00_Af0RbMwojS_hPoxldQStCiYqvmei0Hq-TQbWjnTAP8Q5EA&oe=69EC46A5">
+<link rel="shortcut icon" type="image/jpeg" href="https://scontent.fnbo15-1.fna.fbcdn.net/v/t39.30808-6/658830941_879559735081624_5616131752165756627_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=13d280&_nc_ohc=47WqhLkxDRgQ7kNvwF8nV_Q&_nc_oc=AdoAC3V_RFO2l74yJEMdvOX5-1yQdBY__H62B_l1W9dq8pb-YfoI_IoH7FA-XaMQnQQ&_nc_zt=23&_nc_ht=scontent.fnbo15-1.fna&_nc_gid=ldSEj0imsPzJhCd0zR6zGg&_nc_ss=7a3a8&oh=00_Af0RbMwojS_hPoxldQStCiYqvmei0Hq-TQbWjnTAP8Q5EA&oe=69EC46A5">
+<link rel="apple-touch-icon" href="https://scontent.fnbo15-1.fna.fbcdn.net/v/t39.30808-6/658830941_879559735081624_5616131752165756627_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=13d280&_nc_ohc=47WqhLkxDRgQ7kNvwF8nV_Q&_nc_oc=AdoAC3V_RFO2l74yJEMdvOX5-1yQdBY__H62B_l1W9dq8pb-YfoI_IoH7FA-XaMQnQQ&_nc_zt=23&_nc_ht=scontent.fnbo15-1.fna&_nc_gid=ldSEj0imsPzJhCd0zR6zGg&_nc_ss=7a3a8&oh=00_Af0RbMwojS_hPoxldQStCiYqvmei0Hq-TQbWjnTAP8Q5EA&oe=69EC46A5">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --primary: #0a2540;
+    --accent: #0477be;
+    --accent2: #635bff;
+    --text: #1a1a2e;
+    --muted: #64748b;
+    --bg: #ffffff;
+    --bg2: #f8fafc;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --glow: 0 0 30px rgba(6, 69, 215, 0.89);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; }
+
+  /* ═══════════════════════════════════════════
+     SCROLL PROGRESS BAR
+  ═══════════════════════════════════════════ */
+  #scroll-progress {
+    position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    width: 0%; transition: width 0.1s linear;
+    box-shadow: 0 0 10px rgba(4,119,190,0.6);
+  }
+
+  /* ═══════════════════════════════════════════
+     PAGE LOAD OVERLAY
+  ═══════════════════════════════════════════ */
+  #page-loader {
+    position: fixed; inset: 0; z-index: 9998;
+    background: var(--primary);
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+  }
+  #page-loader.loaded { opacity: 0; visibility: hidden; }
+  .loader-logo {
+    font-family: 'Sora', sans-serif;
+    font-size: 2rem; font-weight: 800; color: #fff;
+    letter-spacing: -0.03em;
+    animation: loaderPulse 1s ease infinite alternate;
+  }
+  .loader-logo span { color: var(--accent); }
+  @keyframes loaderPulse {
+    from { opacity: 0.5; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1.02); }
+  }
+
+  /* ═══════════════════════════════════════════
+     SCROLL REVEAL ANIMATIONS
+  ═══════════════════════════════════════════ */
+  .reveal {
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+  .reveal-scale { opacity: 0; transform: scale(0.88); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.2s; }
+  .delay-3 { transition-delay: 0.3s; }
+  .delay-4 { transition-delay: 0.4s; }
+  .delay-5 { transition-delay: 0.5s; }
+  .delay-6 { transition-delay: 0.6s; }
+
+  /* ═══════════════════════════════════════════
+     TEXT REVEAL (PREMIUM)
+  ═══════════════════════════════════════════ */
+  .text-reveal-wrap { overflow: hidden; }
+  .text-reveal {
+    display: inline-block;
+    transform: translateY(100%); opacity: 0;
+    transition: transform 0.9s cubic-bezier(0.16,1,0.3,1), opacity 0.6s ease;
+  }
+  .text-reveal.visible { transform: translateY(0); opacity: 1; }
+
+  /* ═══════════════════════════════════════════
+     FLOATING UI
+  ═══════════════════════════════════════════ */
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+  @keyframes floatRotate {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(3deg); }
+  }
+  .float-1 { animation: floatY 5s ease-in-out infinite; }
+  .float-2 { animation: floatY 6.5s ease-in-out infinite 1s; }
+  .float-3 { animation: floatRotate 7s ease-in-out infinite 0.5s; }
+  .float-orb {
+    position: absolute; border-radius: 50%;
+    background: radial-gradient(circle, rgba(4,119,190,0.25), transparent);
+    animation: floatY 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* ═══════════════════════════════════════════
+     HOVER GLOW
+  ═══════════════════════════════════════════ */
+  .hover-glow { transition: box-shadow 0.3s ease, transform 0.3s ease; }
+  .hover-glow:hover { box-shadow: var(--glow); transform: translateY(-4px); }
+
+  /* ═══════════════════════════════════════════
+     ANIMATIONS
+  ═══════════════════════════════════════════ */
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ═══════════════════════════════════════════
+     TOP BAR
+  ═══════════════════════════════════════════ */
+  .topbar {
+    background: var(--primary); color: #fff;
+    font-size: 0.78rem; padding: 8px 0;
+    text-align: center; letter-spacing: 0.01em;
+  }
+  .topbar a { color: var(--accent); margin: 0 8px; }
+
+  /* ═══════════════════════════════════════════
+     NAV
+  ═══════════════════════════════════════════ */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%; display: flex; align-items: center; justify-content: space-between;
+    height: 68px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
+  .logo { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.45rem; color: var(--primary); letter-spacing: -0.03em; }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--primary); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: #fff !important;
+    padding: 10px 22px; border-radius: 8px;
+    font-weight: 600 !important; font-size: 0.875rem !important;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.3s !important;
+  }
+  .nav-cta:hover { background: #035fa0 !important; transform: translateY(-1px) !important; box-shadow: 0 0 20px rgba(4,119,190,0.4) !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--primary); border-radius: 2px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-nav {
+    display: none; position: fixed; top: 68px; left: 0; right: 0;
+    background: #fff; border-bottom: 1px solid var(--border);
+    padding: 20px 5%; flex-direction: column; gap: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1); z-index: 99;
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { font-size: 1rem; font-weight: 500; color: var(--primary); padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .mobile-nav a:last-child { border-bottom: none; }
+
+  /* ═══════════════════════════════════════════
+     PAGE HERO
+  ═══════════════════════════════════════════ */
+  .page-hero {
+    background:
+      linear-gradient(135deg, rgba(10,37,64,0.85) 0%, rgba(4,119,190,0.65) 50%, rgba(10,37,64,0.9) 100%),
+      url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80') center/cover no-repeat;
+    padding: 80px 5% 72px;
+    position: relative; overflow: hidden;
+    text-align: center;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(4,119,190,0.18) 0%, transparent 70%);
+  }
+  .page-hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 2; }
+  .page-hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(4,119,190,0.15); border: 1px solid rgba(4,119,190,0.35);
+    color: var(--accent); padding: 6px 14px; border-radius: 20px;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: 22px;
+    animation: fadeInDown 0.8s ease 0.3s both;
+  }
+  .page-hero h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800; line-height: 1.12;
+    color: #fff; letter-spacing: -0.03em;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.9s ease 0.5s both;
+  }
+  .page-hero h1 span { color: var(--accent); }
+  .page-hero p {
+    color: rgba(255,255,255,0.72); font-size: 1.05rem; line-height: 1.7; margin-bottom: 36px;
+    animation: fadeInUp 0.9s ease 0.7s both;
+  }
+  .hero-btns {
+    display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+    animation: fadeInUp 0.9s ease 0.9s both;
+  }
+  .btn-primary {
+    background: var(--accent); color: #fff;
+    padding: 14px 28px; border-radius: 8px;
+    font-weight: 700; font-size: 0.95rem;
+    transition: all 0.25s; display: inline-block;
+    box-shadow: 0 4px 20px rgba(4,119,190,0.4);
+  }
+  .btn-primary:hover { background: #035fa0; transform: translateY(-2px); box-shadow: 0 0 30px rgba(4,119,190,0.55); }
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,0.35); color: #fff;
+    padding: 14px 28px; border-radius: 8px;
+    font-weight: 600; font-size: 0.95rem;
+    transition: all 0.25s; display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 20px rgba(4,119,190,0.2); }
+
+  /* ═══════════════════════════════════════════
+     SECTION GENERIC
+  ═══════════════════════════════════════════ */
+  section { padding: 88px 5%; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    color: var(--accent); font-size: 0.78rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 800; line-height: 1.2;
+    color: var(--primary); letter-spacing: -0.03em; margin-bottom: 16px;
+  }
+  .section-sub { color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 600px; }
+
+  /* ═══════════════════════════════════════════
+     CONTACT INFO CARDS
+  ═══════════════════════════════════════════ */
+  .contact-cards-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; margin-top: 52px;
+  }
+  .contact-card {
+    background: var(--bg2); border-radius: var(--radius);
+    padding: 36px 28px; border: 1px solid var(--border);
+    text-align: center; transition: all 0.3s; position: relative; overflow: hidden;
+  }
+  .contact-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    transform: scaleX(0); transform-origin: left; transition: transform 0.35s;
+  }
+  .contact-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.1), 0 0 0 1px rgba(4,119,190,0.1); border-color: transparent; }
+  .contact-card:hover::before { transform: scaleX(1); }
+  .contact-card-icon {
+    width: 64px; height: 64px; border-radius: 16px;
+    background: linear-gradient(135deg, rgba(4,119,190,0.15), rgba(99,91,255,0.15));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; margin: 0 auto 20px; transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .contact-card:hover .contact-card-icon { transform: scale(1.1); box-shadow: 0 0 20px rgba(4,119,190,0.3); }
+  .contact-card-title { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+  .contact-card-detail { color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
+  .contact-card-link { color: var(--accent); font-weight: 600; font-size: 0.9rem; margin-top: 12px; display: block; transition: gap 0.2s; }
+  .contact-card-link:hover { text-decoration: underline; }
+
+  /* ═══════════════════════════════════════════
+     CONTACT FORM + SIDEBAR
+  ═══════════════════════════════════════════ */
+  .contact-main {
+    display: grid; grid-template-columns: 1fr 420px;
+    gap: 52px; align-items: start;
+  }
+
+  /* FORM */
+  .contact-form-wrap {
+    background: #fff; border-radius: 20px;
+    border: 1px solid var(--border);
+    padding: 48px 44px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s;
+  }
+  .contact-form-wrap:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.09); }
+  .form-title { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+  .form-subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 32px; line-height: 1.6; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .form-group { margin-bottom: 20px; }
+  .form-group label {
+    display: block; font-size: 0.82rem; font-weight: 600; color: var(--primary);
+    margin-bottom: 8px; letter-spacing: 0.02em;
+  }
+  .form-group label span { color: var(--accent); }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; padding: 12px 16px;
+    border: 1.5px solid var(--border); border-radius: 8px;
+    font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--text);
+    background: var(--bg2); outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+    -webkit-appearance: none; appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(4,119,190,0.12);
+    background: #fff;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: #a8b5c8; }
+  .form-group textarea { resize: vertical; min-height: 130px; }
+  .form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px; cursor: pointer; }
+
+  /* budget slider */
+  .budget-slider-wrap { position: relative; }
+  .budget-slider-wrap input[type=range] {
+    width: 100%; -webkit-appearance: none; appearance: none;
+    height: 5px; background: var(--border); border-radius: 3px; outline: none;
+    border: none; padding: 0; cursor: pointer;
+    box-shadow: none;
+  }
+  .budget-slider-wrap input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%;
+    background: var(--accent); cursor: pointer; border: 3px solid #fff;
+    box-shadow: 0 0 0 2px var(--accent), 0 4px 12px rgba(4,119,190,0.4);
+    transition: transform 0.2s;
+  }
+  .budget-slider-wrap input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+  .budget-slider-wrap input[type=range]::-moz-range-thumb {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--accent); cursor: pointer; border: 3px solid #fff;
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+  .budget-display {
+    display: flex; justify-content: space-between; align-items: center; margin-top: 10px;
+  }
+  .budget-value { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--accent); font-size: 1rem; }
+  .budget-labels { display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--muted); margin-top: 5px; }
+
+  /* checkbox group */
+  .checkbox-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
+  .checkbox-item { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+  .checkbox-item input[type=checkbox] { display: none; }
+  .checkbox-box {
+    width: 18px; height: 18px; flex-shrink: 0;
+    border: 1.5px solid var(--border); border-radius: 4px;
+    background: var(--bg2); transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .checkbox-item input:checked + .checkbox-box { background: var(--accent); border-color: var(--accent); }
+  .checkbox-item input:checked + .checkbox-box::after { content: '✓'; color: #fff; font-size: 0.7rem; font-weight: 900; }
+  .checkbox-label { font-size: 0.85rem; color: var(--text); transition: color 0.2s; }
+  .checkbox-item:hover .checkbox-box { border-color: var(--accent); }
+  .checkbox-item:hover .checkbox-label { color: var(--accent); }
+
+  /* submit btn */
+  .btn-submit {
+    width: 100%; background: var(--accent); color: #fff;
+    padding: 16px 28px; border-radius: 8px; border: none; cursor: pointer;
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1rem;
+    letter-spacing: 0.02em;
+    transition: all 0.25s; display: flex; align-items: center; justify-content: center; gap: 10px;
+    box-shadow: 0 4px 20px rgba(4,119,190,0.4);
+    position: relative; overflow: hidden;
+  }
+  .btn-submit::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transform: translateX(-100%); transition: transform 0.5s;
+  }
+  .btn-submit:hover::before { transform: translateX(100%); }
+  .btn-submit:hover { background: #035fa0; transform: translateY(-2px); box-shadow: 0 0 30px rgba(4,119,190,0.55); }
+  .btn-submit:active { transform: translateY(0); }
+  .btn-submit .arrow { transition: transform 0.25s; }
+  .btn-submit:hover .arrow { transform: translateX(4px); }
+  .btn-submit:disabled { opacity: 0.75; cursor: not-allowed; transform: none !important; }
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+  /* success state */
+  .form-success {
+    display: none; text-align: center; padding: 40px 20px;
+  }
+  .form-success.show { display: block; }
+  .success-icon { font-size: 3.5rem; margin-bottom: 16px; animation: bounceIn 0.6s ease; }
+  @keyframes bounceIn {
+    0% { transform: scale(0); }
+    60% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+  }
+  .success-title { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
+  .success-msg { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
+
+  /* ═══════════════════════════════════════════
+     SIDEBAR
+  ═══════════════════════════════════════════ */
+  .contact-sidebar { display: flex; flex-direction: column; gap: 24px; }
+
+  .sidebar-card {
+    background: var(--bg2); border-radius: var(--radius);
+    padding: 28px; border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+  .sidebar-card:hover { border-color: rgba(4,119,190,0.3); box-shadow: 0 8px 30px rgba(0,0,0,0.07); }
+  .sidebar-card-title {
+    font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; color: var(--primary);
+    margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
+  }
+  .sidebar-card-title .icon-wrap {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: linear-gradient(135deg, rgba(4,119,190,0.15), rgba(99,91,255,0.15));
+    display: flex; align-items: center; justify-content: center; font-size: 1rem;
+  }
+
+  /* availability badge */
+  .avail-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
+    color: #16a34a; padding: 5px 12px; border-radius: 20px;
+    font-size: 0.78rem; font-weight: 600; margin-bottom: 14px;
+  }
+  .avail-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; animation: pulse-green 1.5s ease infinite; }
+  @keyframes pulse-green { 0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.4)} 50%{box-shadow:0 0 0 6px rgba(34,197,94,0)} }
+
+  /* response time */
+  .response-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .response-row:last-child { border-bottom: none; }
+  .response-label { font-size: 0.82rem; color: var(--muted); flex: 1; }
+  .response-val { font-size: 0.82rem; font-weight: 600; color: var(--primary); }
+
+  /* dark info card */
+  .sidebar-dark {
+    background:
+      linear-gradient(135deg, rgba(10,37,64,0.88) 0%, rgba(4,119,190,0.70) 100%),
+      url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80') center/cover no-repeat;
+    border-radius: var(--radius);
+    padding: 28px; position: relative; overflow: hidden;
+  }
+  .sidebar-dark::after {
+    content: ''; position: absolute; bottom: -30px; right: -30px;
+    width: 140px; height: 140px; border-radius: 50%;
+    background: rgba(4,119,190,0.2);
+  }
+  .sidebar-dark-title { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 16px; position: relative; z-index: 2; }
+  .sidebar-dark-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+    position: relative; z-index: 2;
+  }
+  .sidebar-dark-item:last-child { border-bottom: none; }
+  .sidebar-dark-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+  .sidebar-dark-text { color: rgba(255,255,255,0.75); font-size: 0.85rem; line-height: 1.55; }
+  .sidebar-dark-text strong { color: #fff; }
+  .sidebar-dark-text a { color: var(--accent); transition: color 0.2s; }
+  .sidebar-dark-text a:hover { color: #6eb9f0; }
+
+  /* social links */
+  .social-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+  .social-btn {
+    display: flex; align-items: center; gap: 8px;
+    padding: 9px 16px; border-radius: 8px;
+    border: 1.5px solid var(--border); background: #fff;
+    font-size: 0.82rem; font-weight: 600; color: var(--primary);
+    transition: all 0.2s; cursor: pointer;
+  }
+  .social-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(4,119,190,0.15); }
+
+  /* ═══════════════════════════════════════════
+     FAQ
+  ═══════════════════════════════════════════ */
+  .faq-section { background: var(--bg2); }
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 52px; }
+  .faq-item {
+    background: #fff; border-radius: var(--radius);
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+  .faq-item:hover { border-color: rgba(4,119,190,0.3); box-shadow: 0 8px 28px rgba(0,0,0,0.07); }
+  .faq-question {
+    padding: 20px 24px; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    user-select: none;
+  }
+  .faq-q-text { font-family: 'Sora', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--primary); line-height: 1.4; }
+  .faq-toggle {
+    width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+    background: rgba(4,119,190,0.1); display: flex; align-items: center; justify-content: center;
+    color: var(--accent); font-size: 1.2rem; font-weight: 700; line-height: 1;
+    transition: all 0.3s;
+  }
+  .faq-item.open .faq-toggle { background: var(--accent); color: #fff; transform: rotate(45deg); }
+  .faq-answer {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1), padding 0.4s;
+    color: var(--muted); font-size: 0.88rem; line-height: 1.7; padding: 0 24px;
+  }
+  .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 20px; }
+
+  /* ═══════════════════════════════════════════
+     MAP SECTION
+  ═══════════════════════════════════════════ */
+  .map-section { padding: 0 5% 88px; }
+  .map-wrap {
+    border-radius: 20px; overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    position: relative;
+  }
+  .map-wrap iframe { display: block; width: 100%; height: 420px; border: none; }
+  .map-overlay-badge {
+    position: absolute; top: 20px; left: 20px;
+    background: #fff; border-radius: 10px; padding: 12px 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    display: flex; align-items: center; gap: 10px; z-index: 10;
+  }
+  .map-badge-icon { font-size: 1.3rem; }
+  .map-badge-text { font-size: 0.82rem; }
+  .map-badge-text strong { display: block; font-family: 'Sora', sans-serif; color: var(--primary); font-size: 0.88rem; }
+  .map-badge-text span { color: var(--muted); font-size: 0.78rem; }
+
+  /* ═══════════════════════════════════════════
+     CTA BANNER
+  ═══════════════════════════════════════════ */
+  .cta-banner {
+    background:
+      linear-gradient(135deg, rgba(10,37,64,0.87) 0%, rgba(4,119,190,0.68) 60%, rgba(10,37,64,0.90) 100%),
+      url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80') center/cover no-repeat;
+    padding: 80px 5%;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(4,119,190,0.18) 0%, transparent 70%);
+  }
+  .cta-banner-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 2; }
+  .cta-banner h2 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 16px;
+    letter-spacing: -0.03em;
+  }
+  .cta-banner h2 span { color: var(--accent); }
+  .cta-banner p { color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.7; margin-bottom: 36px; }
+
+  /* ═══════════════════════════════════════════
+     FOOTER
+  ═══════════════════════════════════════════ */
+  footer { background: var(--primary); color: rgba(255,255,255,0.7); padding: 80px 5% 0; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; max-width: 1200px; margin: 0 auto; padding-bottom: 60px; }
+  .footer-brand .logo { color: #fff; font-size: 1.4rem; margin-bottom: 16px; display: block; }
+  .footer-brand p { font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.55); }
+  .footer-contact { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+  .footer-contact a { color: rgba(255,255,255,0.6); font-size: 0.85rem; transition: color 0.2s; }
+  .footer-contact a:hover { color: var(--accent); }
+  .footer-col h4 { font-family: 'Sora', sans-serif; color: #fff; font-weight: 700; font-size: 0.9rem; margin-bottom: 16px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul a { color: rgba(255,255,255,0.55); font-size: 0.85rem; transition: color 0.2s, transform 0.2s; display: inline-block; }
+  .footer-col ul a:hover { color: var(--accent); transform: translateX(4px); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 28px 0; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.35); max-width: 1200px; margin: 0 auto; }
+
+  /* ═══════════════════════════════════════════
+     RESPONSIVE
+  ═══════════════════════════════════════════ */
+  @media (max-width: 1024px) {
+    .contact-main { grid-template-columns: 1fr; }
+    .contact-sidebar { grid-row: 1; }
+    .contact-form-wrap { padding: 36px 30px; }
+    .contact-cards-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .contact-cards-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .faq-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-cta {
+      padding: 8px 14px;
+      font-size: 0.8rem !important;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .hamburger { display: flex; }
+    section { padding: 60px 5%; }
+    .page-hero { padding: 60px 5% 52px; }
+    .contact-form-wrap { padding: 28px 22px; }
+    .form-row { grid-template-columns: 1fr; }
+    .checkbox-group { grid-template-columns: 1fr; }
+    .cta-banner { padding: 60px 5%; }
+    .map-section { padding: 0 5% 60px; }
+    .map-wrap iframe { height: 320px; }
+  }
+  @media (max-width: 600px) {
+    .contact-cards-grid { grid-template-columns: 1fr; }
+    .faq-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .hero-btns a { text-align: center; }
+    .topbar { font-size: 0.7rem; padding: 6px 4%; }
+    .map-wrap iframe { height: 260px; }
+    .map-overlay-badge { display: none; }
+  }
+  .logo img {
+  height: 60px;       /* Adjust height to fit your navbar */
+  width: auto;        /* Keeps aspect ratio */
+  vertical-align: middle;
+  border-radius:20px;
+  padding: 1px;
+   /* Aligns with text if combined */
+}
+.footer-brandreveal .logo img {
+  height: 60px;          /* Adjust size to fit footer */
+  width: auto;           /* Maintain aspect ratio */
+  display: block;        /* Keeps it clean above text */
+  margin-bottom: 10px;   /* Space between logo and description */
+  border-radius: 20px;   /* Rounded corners */
+  padding: 1px;          /* Space between logo and border */
+}
+.whatsapp-btn { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 30px rgba(37,211,102,0.5); transition: all 0.3s; text-decoration: none; animation: pulse-wa 2.5s infinite; }
+  .whatsapp-btn:hover { transform: scale(1.1); animation: none; }
+  .whatsapp-btn svg { width: 30px; height: 30px; fill: #fff; }
+  @keyframes pulse-wa { 0%, 100% { box-shadow: 0 6px 30px rgba(37,211,102,0.5); } 50% { box-shadow: 0 6px 30px rgba(37,211,102,0.5), 0 0 0 12px rgba(37,211,102,0.12); } }
+
+
+
+/* If you want spacing around the logo */
+.logo {
+  display: flex;      /* Helps align logo and text side by side */
+  align-items: center;
+  gap: 8px;           /* Space between logo and text */
+}
+</style>
+</head>
+<body>
+  <a href="https://wa.me/254745883650" target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- SCROLL PROGRESS BAR -->
+<div id="scroll-progress"></div>
+
+<!-- PAGE LOADER -->
+
+
+<!-- TOP BAR -->
+
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="logo"><img src="https://media.licdn.com/dms/image/v2/D4D22AQEJmas2iNVJNQ/feedshare-shrink_2048_1536/B4DZ00uq4QJ4Ag-/0/1774706142963?e=1778112000&v=beta&t=QOOtTuvV_0hNDqG2aj1UQZ21RrE5_xMBGAQL3li7nHA"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="serina-about.html">About Us</a></li>
+    <li><a href="serina-systems-services.html">Services</a></li>
+    <li><a href="serina-portfolio (1).html">Portfolio</a></li>
+    <li><a href="serina-process.html">Our Process</a></li>
+    <li><a href="serina-blog.html">Blogs</a></li>
+    <li><a href="serina-contact.html">Contact Us</a></li>
+  </ul>
+  <a href="#contact-form" class="nav-cta">Get a Quote</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="serina-about.html">About Us</a>
+  <a href="serina-systems-services.html">Services</a>
+  <a href="serina-portfolio(1).html">Portfolio</a>
+  <a href="serina-process.html">Our Process</a>
+  <a href="serina-blog.html">Blogs</a>
+  <a href="serina-contact.html">Contact Us</a>
+  <a href="#contact-form" style="background:var(--accent);color:#fff;padding:12px;text-align:center;border-radius:8px;font-weight:700;">Get a Quote</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="float-orb float-1" style="width:300px;height:300px;top:-80px;left:-80px;opacity:0.4"></div>
+  <div class="float-orb float-2" style="width:200px;height:200px;bottom:40px;right:10%;opacity:0.3"></div>
+  <div class="page-hero-inner">
+    <div class="page-hero-badge">💬 We'd Love to Hear from You</div>
+    <h1>Let's Build Something Remarkable Together</h1>
+    <p>Whether you have a project idea, a question, or just want to explore how we can help — our team is ready. We typically respond within 24 hours.</p>
+    <div class="hero-btns">
+      <a href="#contact-form" class="btn-primary">Send Us a Message</a>
+      <a href="tel:+254745883650" class="btn-outline"><img src="https://cdn-icons-png.flaticon.com/512/455/455705.png" alt="Phone" style="width:16px;height:16px;object-fit:contain;vertical-align:middle;margin-right:7px;filter:brightness(0) invert(1);"> Call Us Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT CARDS -->
+<section>
+  <div class="container">
+    <p class="section-label reveal">How to Reach Us</p>
+    <h2 class="section-title reveal delay-1">Multiple Ways to Connect</h2>
+    <p class="section-sub reveal delay-2">Pick the channel that works best for you — we're available across all of them.</p>
+    <div class="contact-cards-grid">
+      <div class="contact-card reveal delay-1">
+        <div class="contact-card-icon"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location" style="width:36px;height:36px;object-fit:contain;"></div>
+        <div class="contact-card-title">Visit Our Office</div>
+        <div class="contact-card-detail">Nyahururu<br>Along Nyahururu–Nakuru Road<br>Kenya</div>
+        <a href="https://maps.google.com" target="_blank" class="contact-card-link">Get Directions →</a>
+      </div>
+      <div class="contact-card reveal delay-2">
+        <div class="contact-card-icon"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" style="width:36px;height:36px;object-fit:contain;"></div>
+        <div class="contact-card-title">Send an Email</div>
+        <div class="contact-card-detail">We respond to all emails within 24 hours on business days. For urgent matters, please call us directly.</div>
+        <a href="mailto:oumafidel09@gmail.com" class="contact-card-link">info@serinasystems.gmail.com →</a>
+      </div>
+      <div class="contact-card reveal delay-3">
+        <div class="contact-card-icon"><img src="https://cdn-icons-png.flaticon.com/512/455/455705.png" alt="Phone" style="width:36px;height:36px;object-fit:contain;"></div>
+        <div class="contact-card-title">Call or WhatsApp</div>
+        <div class="contact-card-detail">Available Mon–Fri, 9:00am – 5:00pm EAT. WhatsApp available for quick queries anytime.</div>
+        <a href="tel:+254745883650" class="contact-card-link">+254 745 883 650 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM + SIDEBAR -->
+<section id="contact-form" style="background:var(--bg2); padding-top: 0;">
+  <div class="container">
+    <div class="contact-main">
+
+      <!-- FORM -->
+      <div class="contact-form-wrap reveal-left">
+        <div id="form-content">
+          <div class="form-title">Send Us a Message</div>
+          <div class="form-subtitle">Fill in the details below and we'll get back to you within 24 hours with a tailored response.</div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name <span>*</span></label>
+              <input type="text" id="fname" placeholder="e.g. John" required />
+            </div>
+            <div class="form-group">
+              <label>Last Name <span>*</span></label>
+              <input type="text" id="lname" placeholder="e.g. Doe" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email Address <span>*</span></label>
+              <input type="email" id="email" placeholder="john@company.com" required />
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" id="phone" placeholder="+254 7XX XXX XXX" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Company / Organisation</label>
+            <input type="text" id="company" placeholder="Your company name (optional)" />
+          </div>
+
+          <div class="form-group">
+            <label>Service You're Interested In <span>*</span></label>
+            <select id="service" required>
+              <option value="" disabled selected>Select a service...</option>
+              <option>Mobile App Development</option>
+              <option>Web Development</option>
+              <option>AI &amp; ML Development</option>
+              <option>Low Code / No Code</option>
+              <option>Search Engine Optimization</option>
+              <option>MVP Development</option>
+              <option>Management Information System (MIS)</option>
+              <option>Other / Not Sure Yet</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Project Budget (KES)</label>
+            <div class="budget-slider-wrap">
+              <input type="range" id="budget-slider" min="50000" max="5000000" step="50000" value="500000" oninput="updateBudget(this.value)" />
+              <div class="budget-display">
+                <div class="budget-value" id="budget-val">KES 500,000</div>
+                <div style="font-size:0.75rem;color:var(--muted)">Drag to set</div>
+              </div>
+              <div class="budget-labels"><span>KES 50K</span><span>KES 5M+</span></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>What best describes your project? (Select all that apply)</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item">
+                <input type="checkbox" value="new-project" />
+                <div class="checkbox-box"></div>
+                <span class="checkbox-label">Brand new project</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" value="redesign" />
+                <div class="checkbox-box"></div>
+                <span class="checkbox-label">Redesign / upgrade</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" value="maintenance" />
+                <div class="checkbox-box"></div>
+                <span class="checkbox-label">Ongoing maintenance</span>
+              </label>
+              <label class="checkbox-item">
+                <input type="checkbox" value="consulting" />
+                <div class="checkbox-box"></div>
+                <span class="checkbox-label">Consulting / advice</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Tell Us About Your Project <span>*</span></label>
+            <textarea id="message" placeholder="Describe your project, goals, timeline, and any specific requirements..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>How did you hear about us?</label>
+            <select id="referral">
+              <option value="" disabled selected>Select an option...</option>
+              <option>Google Search</option>
+              <option>Social Media</option>
+              <option>Referral from a friend</option>
+              <option>LinkedIn</option>
+              <option>Previous client</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <button class="btn-submit" type="button" onclick="submitForm()" id="submit-btn">
+            Send Message <span class="arrow">→</span>
+          </button>
+        </div>
+
+        <!-- SUCCESS STATE -->
+        <div class="form-success" id="form-success">
+          <div class="success-icon"><img src="https://cdn-icons-png.flaticon.com/512/5610/5610944.png" alt="Success" style="width:72px;height:72px;object-fit:contain;" /></div>
+          <div class="success-title">Message Sent Successfully!</div>
+          <p class="success-msg">Thank you for reaching out. A member of our team will review your project details and get back to you within 24 hours.<br><br>In the meantime, feel free to browse our portfolio or explore our services.</p>
+          <div style="margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+            <a href="serina-portfolio.html" class="btn-primary">View Our Work →</a>
+            <a href="serina-systems-services.html" class="btn-outline" style="border-color:var(--border);color:var(--primary)">Explore Services</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="contact-sidebar reveal-right">
+
+        <!-- Availability -->
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">
+            <div class="icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/2972/2972531.png" alt="Clock" style="width:22px;height:22px;object-fit:contain;"></div>
+            Response Times
+          </div>
+          <div class="avail-badge"><div class="avail-dot"></div> Currently Accepting Projects</div>
+          <div class="response-row">
+            <span class="response-label">Email response</span>
+            <span class="response-val">Within 24 hours</span>
+          </div>
+          <div class="response-row">
+            <span class="response-label">Quote delivery</span>
+            <span class="response-val">2–3 business days</span>
+          </div>
+          <div class="response-row">
+            <span class="response-label">Project kickoff</span>
+            <span class="response-val">As soon as 1 week</span>
+          </div>
+          <div class="response-row">
+            <span class="response-label">Office hours</span>
+            <span class="response-val">Mon–Fri, 9am–5pm</span>
+          </div>
+        </div>
+
+        <!-- Contact Details Dark Card -->
+        <div class="sidebar-dark">
+          <div class="sidebar-dark-title">Direct Contact</div>
+          <div class="sidebar-dark-item">
+            <div class="sidebar-dark-icon"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location" style="width:20px;height:20px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.85;"></div>
+            <div class="sidebar-dark-text">
+              <strong>Nyahururu Office</strong>
+              Along Nyahururu–Nakuru Road, Nyahururu, Kenya
+            </div>
+          </div>
+          <div class="sidebar-dark-item">
+            <div class="sidebar-dark-icon"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" style="width:20px;height:20px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.85;"></div>
+            <div class="sidebar-dark-text">
+              <strong>Email</strong>
+              <a href="mailto:oumafidel09@gmail.com">info@serinasystems.gmail.com</a>
+            </div>
+          </div>
+          <div class="sidebar-dark-item">
+            <div class="sidebar-dark-icon"><img src="https://cdn-icons-png.flaticon.com/512/455/455705.png" alt="Phone" style="width:20px;height:20px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.85;"></div>
+            <div class="sidebar-dark-text">
+              <strong>Phone / WhatsApp</strong>
+              <a href="tel:+254745883650">+254 745 883 650</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">
+            <div class="icon-wrap"><img src="https://cdn-icons-png.flaticon.com/512/2301/2301129.png" alt="Globe" style="width:18px;height:18px;object-fit:contain;"></div>
+            Find Us Online
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.93-1.956 1.886v2.287h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+              Facebook
+            </a>
+            <a href="#" class="social-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              Instagram
+            </a>
+            <a href="https://wa.me/254745883650" target="_blank" class="social-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Why Us -->
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">
+            <div class="icon-wrap">✨</div>
+            Why Work With Us
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:flex-start;gap:12px;font-size:0.88rem;color:var(--text)">
+              <span style="color:var(--accent);font-weight:800;margin-top:1px">✓</span>
+              Trusted across 40+ counties with 50+ projects delivered
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:12px;font-size:0.88rem;color:var(--text)">
+              <span style="color:var(--accent);font-weight:800;margin-top:1px">✓</span>
+              Free initial consultation & detailed project scoping
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:12px;font-size:0.88rem;color:var(--text)">
+              <span style="color:var(--accent);font-weight:800;margin-top:1px">✓</span>
+              Agile process with bi-weekly client demos
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:12px;font-size:0.88rem;color:var(--text)">
+              <span style="color:var(--accent);font-weight:800;margin-top:1px">✓</span>
+              Ongoing post-launch support & maintenance
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:12px;font-size:0.88rem;color:var(--text)">
+              <span style="color:var(--accent);font-weight:800;margin-top:1px">✓</span>
+              4.9/5 client satisfaction rating
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <p class="section-label reveal">Got Questions?</p>
+    <h2 class="section-title reveal delay-1">Frequently Asked Questions</h2>
+    <p class="section-sub reveal delay-2">Quick answers to the questions we get most often. Don't see yours? Just ask.</p>
+    <div class="faq-grid">
+      <div class="faq-item reveal delay-1">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-q-text">How long does it take to build a mobile app?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Timelines vary by complexity. A basic MVP typically takes 6–10 weeks, while a full-featured application can take 3–6 months. During our discovery call, we'll scope your project and give you a realistic timeline with milestones.</div>
+      </div>
+      <div class="faq-item reveal delay-2">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-q-text">Do you work with international clients?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Absolutely. We work with clients across 16 countries including the USA, UK, UAE, Sweden, Canada, Australia, and across Africa. We accommodate different time zones and use collaboration tools like Slack, Notion, and Jira to keep everyone aligned.</div>
+      </div>
+      <div class="faq-item reveal delay-3">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-q-text">What does the development process look like?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">We follow an agile approach: Discovery & Define → Design & Prototype → Build & Test → Launch & Support. You'll receive bi-weekly demos and progress reports so you're always in the loop. No black-box development here.</div>
+      </div>
+      <div class="faq-item reveal delay-4">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-q-text">How much does a software project cost?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Costs depend on scope, complexity, and technology. A simple website starts around KES 50,000, while complex enterprise systems can run several million. We provide a detailed quote after a free initial consultation — no surprises.</div>
+      </div>
+      <div class="faq-item reveal delay-1">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-q-text">Do you offer post-launch support and maintenance?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Yes. All projects include a 30-day free post-launch support period. We also offer ongoing maintenance retainers covering bug fixes, performance monitoring, feature updates, and security patches.</div>
+      </div>
+      <div class="faq-item reveal delay-2">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-q-text">Can you work on my existing project or codebase?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Yes. We regularly take over existing projects for redesigns, feature additions, performance improvements, or bug fixes. We'll audit your current codebase and provide an honest assessment before starting any work.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<div class="map-section">
+  <div class="container">
+    <p class="section-label reveal" style="margin-bottom:20px">Find Us</p>
+    <div class="map-wrap reveal">
+        <div class="map-overlay-badge">
+        <div class="map-badge-icon"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location" style="width:22px;height:22px;object-fit:contain;"></div>
+        <div class="map-badge-text">
+          <strong>Serina Systems HQ</strong>
+          <span>Nyahururu, Along Nyahururu–Nakuru Road</span>
+        </div>
+      </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.0!2d36.3641!3d0.0236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182860c001b1b1b1%3A0x0!2sNyahururu!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Serina Systems Office Location - Nyahururu, Nakuru Road">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="float-orb float-1" style="width:250px;height:250px;top:-60px;left:-60px;opacity:0.3"></div>
+  <div class="float-orb float-2" style="width:180px;height:180px;bottom:20px;right:8%;opacity:0.25"></div>
+  <div class="cta-banner-inner">
+    <h2 class="reveal">Not Sure Where to <span>Start?</span></h2>
+    <p class="reveal delay-1">Book a free 30-minute discovery call with our team. No commitment, no pressure — just a candid conversation about your goals.</p>
+    <div class="hero-btns reveal delay-2">
+      <a href="#contact-form" class="btn-primary">Schedule Free Consultation</a>
+      <a href="mailto:info@serinasystems.gmail.com" class="btn-outline">info@serinasystems.gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand reveal">
+      <a href="index.html" class="logo">
+      <img src="https://media.licdn.com/dms/image/v2/D4D22AQEJmas2iNVJNQ/feedshare-shrink_2048_1536/B4DZ00uq4QJ4Ag-/0/1774706142963?e=1778112000&v=beta&t=QOOtTuvV_0hNDqG2aj1UQZ21RrE5_xMBGAQL3li7nHA" alt="Serina Systems Logo"></a>
+      <p>Serina Systems is the frontier of digital transformation. We engineer intelligent systems, craft compelling digital identities, and amplify brands through cutting-edge marketing strategies. Rooted in Nairobi yet built for global scalability, we merge technology, creativity, and strategy into one seamless experience.</p>
+      <div class="footer-contact">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location" style="width:13px;height:13px;object-fit:contain;vertical-align:middle;margin-right:5px;opacity:0.8;filter:brightness(0) invert(1);"> Nyahururu, Along Nyahururu–Nakuru Road</a>
+        <a href="mailto:info@serinasystems.gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" style="width:13px;height:13px;object-fit:contain;vertical-align:middle;margin-right:5px;opacity:0.8;filter:brightness(0) invert(1);"> info@serinasystems.gmail.com</a>
+        <a href="tel:+254745883650"><img src="https://cdn-icons-png.flaticon.com/512/455/455705.png" alt="Phone" style="width:13px;height:13px;object-fit:contain;vertical-align:middle;margin-right:5px;opacity:0.8;filter:brightness(0) invert(1);"> +254 745 883 650</a>
+      </div>
+    </div>
+    <div class="footer-col reveal delay-1">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="serina-systems-services.html#mobile">Mobile Apps</a></li>
+        <li><a href="serina-systems-services.html#ai-ml">AI &amp; ML</a></li>
+        <li><a href="serina-systems-services.html#lowcode">Low Code / No Code</a></li>
+        <li><a href="serina-systems-services.html#seo">SEO</a></li>
+        <li><a href="serina-systems-services.html#mvp">MVP Development</a></li>
+        <li><a href="serina-systems-services.html#mis">MIS</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal delay-2">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="serina-about.html">About Us</a></li>
+        <li><a href="serina-portfolio (1).html">Portfolio</a></li>
+        <li><a href="serina-process.html">Our Process</a></li>
+        <li><a href="serina-blog.html">Blogs</a></li>
+        <li><a href="serina-systems-services.html">Services</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal delay-3">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="serina-contact.html">Get a Quote</a></li>
+        <li><a href="serina-contact.html">Schedule Meeting</a></li>
+        <li><a href="serina-contact.html">Support</a></li>
+        <li><a href="https://www.facebook.com/share/14iSjGfaSJF/">Facebook</a></li>
+        <li><a href="https://www.instagram.com/serinasystems/">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© Copyright Serina Systems 2026. All Rights Reserved</div>
+</footer>
+
+<script>
+// ══════════════════════════════
+// PAGE LOADER
+// ══════════════════════════════
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('page-loader').classList.add('loaded');
+  }, 700);
+});
+
+// ══════════════════════════════
+// SCROLL PROGRESS BAR
+// ══════════════════════════════
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const pct = (scrollTop / docHeight) * 100;
+  document.getElementById('scroll-progress').style.width = pct + '%';
+  const nav = document.getElementById('main-nav');
+  nav.classList.toggle('scrolled', scrollTop > 50);
+});
+
+// ══════════════════════════════
+// SCROLL REVEAL
+// ══════════════════════════════
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+revealEls.forEach(el => revealObs.observe(el));
+
+// ══════════════════════════════
+// MOBILE NAV
+// ══════════════════════════════
+function toggleMobile() {
+  const nav = document.getElementById('mobile-nav');
+  const ham = document.getElementById('hamburger');
+  nav.classList.toggle('open');
+  ham.classList.toggle('open');
+}
+
+// ══════════════════════════════
+// BUDGET SLIDER
+// ══════════════════════════════
+function updateBudget(val) {
+  const n = parseInt(val);
+  let label;
+  if (n >= 5000000) label = 'KES 5,000,000+';
+  else label = 'KES ' + n.toLocaleString('en-KE');
+  document.getElementById('budget-val').textContent = label;
+
+  // color the track fill
+  const slider = document.getElementById('budget-slider');
+  const min = parseInt(slider.min);
+  const max = parseInt(slider.max);
+  const pct = ((n - min) / (max - min)) * 100;
+  slider.style.background = `linear-gradient(90deg, var(--accent) ${pct}%, var(--border) ${pct}%)`;
+}
+// init track fill
+window.addEventListener('DOMContentLoaded', () => {
+  updateBudget(document.getElementById('budget-slider').value);
+});
+
+// ══════════════════════════════
+// FAQ ACCORDION
+// ══════════════════════════════
+function toggleFaq(questionEl) {
+  const item = questionEl.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  // close all
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// ══════════════════════════════
+// FORM SUBMIT — Web3Forms
+// ══════════════════════════════
+async function submitForm() {
+  const fname   = document.getElementById('fname').value.trim();
+  const lname   = document.getElementById('lname').value.trim();
+  const email   = document.getElementById('email').value.trim();
+  const service = document.getElementById('service').value;
+  const message = document.getElementById('message').value.trim();
+
+  const fields = [
+    { el: document.getElementById('fname'),    val: fname },
+    { el: document.getElementById('lname'),    val: lname },
+    { el: document.getElementById('email'),    val: email },
+    { el: document.getElementById('service'),  val: service },
+    { el: document.getElementById('message'),  val: message },
+  ];
+
+  let valid = true;
+  fields.forEach(f => {
+    if (!f.val) {
+      f.el.style.borderColor = '#ef4444';
+      f.el.style.boxShadow = '0 0 0 4px rgba(239,68,68,0.12)';
+      valid = false;
+      f.el.addEventListener('input', () => {
+        f.el.style.borderColor = '';
+        f.el.style.boxShadow = '';
+      }, { once: true });
+    }
+  });
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    const el = document.getElementById('email');
+    el.style.borderColor = '#ef4444';
+    el.style.boxShadow = '0 0 0 4px rgba(239,68,68,0.12)';
+    valid = false;
+  }
+  if (!valid) return;
+
+  // Gather extra fields
+  const phone   = document.getElementById('phone').value.trim();
+  const company = document.getElementById('company').value.trim();
+  const budget  = document.getElementById('budget-val').textContent;
+  const referral = document.getElementById('referral').value;
+  const checked = [...document.querySelectorAll('.checkbox-item input:checked')].map(c => c.value).join(', ');
+
+  // Build payload
+  const payload = {
+    access_key: 'ba62cc90-af47-4862-8f00-264032261ff8',   // ← Replace with your Web3Forms public key
+    subject: 'New Contact Form Submission – Serina Systems',
+    from_name: 'Serina Systems Website',
+    name: fname + ' ' + lname,
+    email: email,
+    phone: phone || 'Not provided',
+    company: company || 'Not provided',
+    service: service,
+    budget: budget,
+    project_type: checked || 'Not specified',
+    referral: referral || 'Not specified',
+    message: message,
+    botcheck: false,
+  };
+
+  // Show loading state
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="animation:spin 0.8s linear infinite"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> &nbsp;Sending...';
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+
+    if (data.success) {
+      document.getElementById('form-content').style.display = 'none';
+      const success = document.getElementById('form-success');
+      success.classList.add('show');
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      alert('Oops! Something went wrong. Please try again or email us directly at info@serinasystems.co.ke');
+      btn.disabled = false;
+      btn.innerHTML = 'Send Message <span class="arrow">→</span>';
+    }
+  } catch (err) {
+    alert('Network error. Please check your connection and try again.');
+    btn.disabled = false;
+    btn.innerHTML = 'Send Message <span class="arrow">→</span>';
+  }
+}
+
+</script>
+</body>
+</html>

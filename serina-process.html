@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Our Process | Software Development and Digital Marketing Company in Nakuru Kenya | Serina Systems</title>
+<link rel="icon" type="image/jpeg" href="https://scontent.fnbo15-1.fna.fbcdn.net/v/t39.30808-6/658830941_879559735081624_5616131752165756627_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=13d280&_nc_ohc=47WqhLkxDRgQ7kNvwF8nV_Q&_nc_oc=AdoAC3V_RFO2l74yJEMdvOX5-1yQdBY__H62B_l1W9dq8pb-YfoI_IoH7FA-XaMQnQQ&_nc_zt=23&_nc_ht=scontent.fnbo15-1.fna&_nc_gid=ldSEj0imsPzJhCd0zR6zGg&_nc_ss=7a3a8&oh=00_Af0RbMwojS_hPoxldQStCiYqvmei0Hq-TQbWjnTAP8Q5EA&oe=69EC46A5">
+<link rel="shortcut icon" type="image/jpeg" href="https://scontent.fnbo15-1.fna.fbcdn.net/v/t39.30808-6/658830941_879559735081624_5616131752165756627_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=13d280&_nc_ohc=47WqhLkxDRgQ7kNvwF8nV_Q&_nc_oc=AdoAC3V_RFO2l74yJEMdvOX5-1yQdBY__H62B_l1W9dq8pb-YfoI_IoH7FA-XaMQnQQ&_nc_zt=23&_nc_ht=scontent.fnbo15-1.fna&_nc_gid=ldSEj0imsPzJhCd0zR6zGg&_nc_ss=7a3a8&oh=00_Af0RbMwojS_hPoxldQStCiYqvmei0Hq-TQbWjnTAP8Q5EA&oe=69EC46A5">
+<link rel="apple-touch-icon" href="https://scontent.fnbo15-1.fna.fbcdn.net/v/t39.30808-6/658830941_879559735081624_5616131752165756627_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=13d280&_nc_ohc=47WqhLkxDRgQ7kNvwF8nV_Q&_nc_oc=AdoAC3V_RFO2l74yJEMdvOX5-1yQdBY__H62B_l1W9dq8pb-YfoI_IoH7FA-XaMQnQQ&_nc_zt=23&_nc_ht=scontent.fnbo15-1.fna&_nc_gid=ldSEj0imsPzJhCd0zR6zGg&_nc_ss=7a3a8&oh=00_Af0RbMwojS_hPoxldQStCiYqvmei0Hq-TQbWjnTAP8Q5EA&oe=69EC46A5">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --primary: #0a2540;
+    --accent: #0477be;
+    --accent2: #635bff;
+    --text: #1a1a2e;
+    --muted: #64748b;
+    --bg: #ffffff;
+    --bg2: #f8fafc;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --glow: 0 0 30px rgba(4,119,190,0.35);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+
+  /* ═══════════════════════════════════════════
+     SCROLL PROGRESS BAR
+  ═══════════════════════════════════════════ */
+  #scroll-progress {
+    position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    width: 0%; transition: width 0.1s linear;
+    box-shadow: 0 0 10px rgba(0,194,168,0.6);
+  }
+
+  /* ═══════════════════════════════════════════
+     PAGE LOAD FADE OVERLAY
+  ═══════════════════════════════════════════ */
+  #page-loader {
+    position: fixed; inset: 0; z-index: 9998;
+    background: var(--primary);
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+  }
+  #page-loader.loaded { opacity: 0; visibility: hidden; }
+  .loader-logo {
+    font-family: 'Sora', sans-serif;
+    font-size: 2rem; font-weight: 800; color: #fff;
+    animation: loaderPulse 1s ease infinite alternate;
+  }
+  .loader-logo span { color: var(--accent); }
+  @keyframes loaderPulse {
+    from { opacity: 0.5; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1.02); }
+  }
+
+  /* ═══════════════════════════════════════════
+     SCROLL REVEAL
+  ═══════════════════════════════════════════ */
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+  .reveal-scale { opacity: 0; transform: scale(0.88); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-scale.visible { opacity: 1; transform: scale(1); }
+  .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
+  .delay-4 { transition-delay: 0.4s; } .delay-5 { transition-delay: 0.5s; } .delay-6 { transition-delay: 0.6s; }
+
+  /* ═══════════════════════════════════════════
+     TEXT REVEAL (PREMIUM)
+  ═══════════════════════════════════════════ */
+  .text-reveal-wrap { overflow: hidden; display: block; }
+  .text-reveal { display: block; transform: translateY(110%); opacity: 0; transition: transform 1s cubic-bezier(0.16,1,0.3,1), opacity 0.6s ease; }
+  .text-reveal.visible { transform: translateY(0); opacity: 1; }
+
+  /* ═══════════════════════════════════════════
+     FLOATING
+  ═══════════════════════════════════════════ */
+  @keyframes floatY { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);} }
+  @keyframes floatSlow { 0%,100%{transform:translateY(0) rotate(-2deg);} 50%{transform:translateY(-8px) rotate(2deg);} }
+  .float-1 { animation: floatY 5s ease-in-out infinite; }
+  .float-2 { animation: floatY 7s ease-in-out infinite 1.5s; }
+  .float-slow { animation: floatSlow 9s ease-in-out infinite; }
+  .float-orb { position: absolute; border-radius: 50%; pointer-events: none; }
+
+  /* ═══════════════════════════════════════════
+     HOVER GLOW
+  ═══════════════════════════════════════════ */
+  .hover-glow { transition: box-shadow 0.3s, transform 0.3s; }
+  .hover-glow:hover { box-shadow: var(--glow); transform: translateY(-4px); }
+
+  /* TOP BAR */
+  .topbar { background: var(--primary); color: #fff; font-size: 0.78rem; padding: 8px 0; text-align: center; letter-spacing: 0.01em; }
+  .topbar a { color: var(--accent); margin: 0 8px; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%; display: flex; align-items: center; justify-content: space-between;
+    height: 68px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
+  .logo { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.45rem; color: var(--primary); letter-spacing: -0.03em; }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--primary); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .nav-cta { background: var(--accent); color: #fff !important; padding: 10px 22px; border-radius: 8px; font-weight: 600 !important; font-size: 0.875rem !important; transition: background 0.2s, transform 0.15s, box-shadow 0.3s !important; }
+  .nav-cta:hover { background: #035fa0 !important; transform: translateY(-1px) !important; box-shadow: 0 0 20px rgba(4,119,190,0.4) !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; border: none; background: none; outline: none; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--primary); border-radius: 2px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-nav { display: none; position: fixed; top: 68px; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--border); padding: 20px 5%; flex-direction: column; gap: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); z-index: 99; }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { font-size: 1rem; font-weight: 500; color: var(--primary); padding: 8px 0; border-bottom: 1px solid var(--border); }
+
+  /* ═══════════════════════════════════════════
+     PROCESS HERO
+  ═══════════════════════════════════════════ */
+  .process-hero {
+    background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+    padding: 100px 5% 80px;
+    position: relative; overflow: hidden; text-align: center;
+  }
+  .process-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(10, 37, 64, 0.88);
+  }
+  .hero-orb-1 {
+    position: absolute; width: 350px; height: 350px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(99,91,255,0.18), transparent 70%);
+    top: -100px; left: -80px;
+    animation: floatY 8s ease-in-out infinite;
+  }
+  .hero-orb-2 {
+    position: absolute; width: 250px; height: 250px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,194,168,0.2), transparent 70%);
+    bottom: -60px; right: 5%;
+    animation: floatY 6s ease-in-out infinite 2s;
+  }
+  .process-hero-inner { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+  .hero-breadcrumb {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: rgba(255,255,255,0.5); font-size: 0.82rem; margin-bottom: 20px;
+    animation: fadeInDown 0.7s ease 0.2s both;
+  }
+  @keyframes fadeInDown { from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);} }
+  .hero-breadcrumb a { color: var(--accent); }
+  .hero-breadcrumb span { color: rgba(255,255,255,0.3); }
+  .process-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,194,168,0.15); border: 1px solid rgba(0,194,168,0.35);
+    color: var(--accent); padding: 7px 18px; border-radius: 20px;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+    margin-bottom: 24px; animation: fadeInDown 0.7s ease 0.4s both;
+  }
+  .process-hero h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 800; line-height: 1.1; color: #fff; letter-spacing: -0.03em;
+    margin-bottom: 24px; animation: fadeInUp 0.9s ease 0.5s both;
+  }
+  @keyframes fadeInUp { from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);} }
+  .process-hero h1 span { color: var(--accent); }
+  .process-hero p {
+    color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.75; max-width: 620px; margin: 0 auto 40px;
+    animation: fadeInUp 0.9s ease 0.7s both;
+  }
+  .hero-stats {
+    display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;
+    animation: fadeInUp 0.9s ease 0.9s both;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat-num { font-family: 'Sora', sans-serif; font-size: 2.2rem; font-weight: 800; color: #fff; line-height: 1; }
+  .hero-stat-num span { color: var(--accent); }
+  .hero-stat-label { color: rgba(255,255,255,0.5); font-size: 0.82rem; margin-top: 4px; }
+
+  /* ═══════════════════════════════════════════
+     PROCESS OVERVIEW STRIP (Glitex style)
+  ═══════════════════════════════════════════ */
+  .process-overview {
+    background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 48px 5%;
+  }
+  .overview-inner { max-width: 1200px; margin: 0 auto; }
+  .overview-steps {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 0;
+    position: relative;
+  }
+  .overview-steps::before {
+    content: ''; position: absolute;
+    top: 24px; left: calc(100%/12); right: calc(100%/12);
+    height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2));
+    z-index: 0;
+  }
+  .ov-step {
+    display: flex; flex-direction: column; align-items: center;
+    position: relative; z-index: 1; cursor: default;
+  }
+  .ov-num {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: #fff; border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Sora', sans-serif; font-weight: 800; font-size: 0.9rem; color: var(--muted);
+    transition: all 0.35s; margin-bottom: 14px; position: relative; z-index: 2;
+  }
+  .ov-step:hover .ov-num {
+    background: var(--accent); border-color: var(--accent);
+    color: #fff; box-shadow: 0 0 25px rgba(0,194,168,0.5);
+    transform: scale(1.15);
+  }
+  .ov-label { font-size: 0.78rem; font-weight: 600; color: var(--muted); text-align: center; transition: color 0.3s; }
+  .ov-step:hover .ov-label { color: var(--accent); }
+
+  /* ═══════════════════════════════════════════
+     MAIN CONTAINER
+  ═══════════════════════════════════════════ */
+  section { padding: 88px 5%; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-label { color: var(--accent); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; }
+  .section-title { font-family: 'Sora', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; line-height: 1.2; color: var(--primary); letter-spacing: -0.03em; margin-bottom: 16px; }
+  .section-sub { color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 600px; }
+
+  /* ═══════════════════════════════════════════
+     PROCESS PHASES (Glitex-inspired alternating layout)
+  ═══════════════════════════════════════════ */
+  .phases { padding: 80px 5%; }
+  .phase {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+    max-width: 1200px; margin: 0 auto 100px;
+    position: relative;
+  }
+  .phase:last-child { margin-bottom: 0; }
+  .phase.reverse { direction: rtl; }
+  .phase.reverse > * { direction: ltr; }
+  .phase-number {
+    position: absolute; top: -40px; left: -20px;
+    font-family: 'Sora', sans-serif; font-size: 8rem; font-weight: 800;
+    color: rgba(0,194,168,0.06); line-height: 1; z-index: 0;
+    pointer-events: none; user-select: none;
+  }
+  .phase.reverse .phase-number { left: auto; right: -20px; }
+  .phase-content { position: relative; z-index: 1; }
+  .phase-tag {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(0,194,168,0.08); border: 1px solid rgba(0,194,168,0.2);
+    color: var(--accent); padding: 6px 16px; border-radius: 20px;
+    font-size: 0.76rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .phase-tag .phase-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: pulse 1.5s ease infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.5;transform:scale(1.4);} }
+  .phase-title {
+    font-family: 'Sora', sans-serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    font-weight: 800; color: var(--primary); line-height: 1.2; margin-bottom: 16px;
+    letter-spacing: -0.025em;
+  }
+  .phase-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 28px; }
+  .phase-items { display: flex; flex-direction: column; gap: 12px; }
+  .phase-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 18px; border-radius: 10px;
+    background: var(--bg2); border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+  .phase-item:hover {
+    border-color: rgba(0,194,168,0.3); background: rgba(0,194,168,0.04);
+    transform: translateX(6px); box-shadow: -3px 0 0 var(--accent);
+  }
+  .phase-item-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: linear-gradient(135deg, rgba(0,194,168,0.15), rgba(99,91,255,0.1));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0; transition: transform 0.3s;
+  }
+  .phase-item:hover .phase-item-icon { transform: scale(1.1); }
+  .phase-item-text strong { display: block; font-size: 0.88rem; font-weight: 700; color: var(--primary); margin-bottom: 2px; }
+  .phase-item-text span { font-size: 0.82rem; color: var(--muted); }
+
+  /* Phase Visual Blocks */
+  .phase-visual {
+    position: relative; z-index: 1; border-radius: 24px; overflow: hidden;
+    background-size: cover; background-position: center;
+    padding: 40px; min-height: 380px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    box-shadow: 0 30px 70px rgba(10,37,64,0.25);
+    transition: box-shadow 0.4s;
+  }
+  .phase-visual::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(10, 30, 58, 0.82);
+    z-index: 0;
+  }
+  .phase-visual > * { position: relative; z-index: 1; }
+  .phase-visual:hover { box-shadow: 0 30px 70px rgba(10,37,64,0.25), 0 0 40px rgba(0,194,168,0.2); }
+  .pv-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+  .pv-dots { display: flex; gap: 6px; }
+  .pv-dot { width: 9px; height: 9px; border-radius: 50%; }
+  .pv-dot.r{background:#ff5f57;} .pv-dot.y{background:#febc2e;} .pv-dot.g{background:#28c840;}
+  .pv-badge {
+    background: rgba(0,194,168,0.2); border: 1px solid rgba(0,194,168,0.3);
+    color: var(--accent); padding: 4px 10px; border-radius: 6px; font-size: 0.68rem; font-weight: 700;
+  }
+  .pv-title { font-family: 'Sora', sans-serif; color: #fff; font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; }
+  .pv-sub { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-bottom: 24px; }
+  .pv-card {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 16px; margin-bottom: 12px;
+    transition: background 0.3s;
+  }
+  .pv-card:hover { background: rgba(0,194,168,0.1); }
+  .pv-card-label { color: var(--accent); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+  .pv-card-text { color: rgba(255,255,255,0.85); font-size: 0.85rem; font-weight: 500; }
+  .pv-progress { margin-top: 6px; }
+  .pv-progress-bar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+  .pv-progress-fill { height: 100%; border-radius: 2px; }
+  .pv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .pv-stat { background: rgba(255,255,255,0.07); border-radius: 8px; padding: 12px; text-align: center; transition: background 0.25s; }
+  .pv-stat:hover { background: rgba(0,194,168,0.15); }
+  .pv-stat-n { font-family: 'Sora', sans-serif; color: #fff; font-size: 1.4rem; font-weight: 800; }
+  .pv-stat-l { color: rgba(255,255,255,0.45); font-size: 0.65rem; margin-top: 2px; }
+  .pv-checklist { display: flex; flex-direction: column; gap: 8px; }
+  .pv-check { display: flex; align-items: center; gap: 10px; }
+  .pv-check-dot {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--accent); display: flex; align-items: center; justify-content: center;
+    font-size: 0.6rem; color: #fff; flex-shrink: 0;
+  }
+  .pv-check-text { color: rgba(255,255,255,0.8); font-size: 0.83rem; }
+  .pv-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .pv-tag {
+    background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.12); padding: 5px 12px; border-radius: 14px;
+    font-size: 0.72rem; font-weight: 500; transition: all 0.2s;
+  }
+  .pv-tag:hover { background: rgba(0,194,168,0.2); border-color: var(--accent); color: var(--accent); }
+
+  /* Phase divider */
+  .phase-divider {
+    max-width: 1200px; margin: 0 auto 80px;
+    border: none; border-top: 1px dashed var(--border);
+    position: relative;
+  }
+  .phase-divider::after {
+    content: ''; position: absolute;
+    top: -5px; left: 50%; transform: translateX(-50%);
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 12px rgba(0,194,168,0.6);
+  }
+
+  /* ═══════════════════════════════════════════
+     WHY SECTION (Glitex-style cards)
+  ═══════════════════════════════════════════ */
+  .why-bg { background: var(--bg2); }
+  .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 52px; }
+  .why-card {
+    background: #fff; border-radius: 16px; padding: 32px;
+    border: 1px solid var(--border); position: relative; overflow: hidden;
+    transition: all 0.3s;
+  }
+  .why-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+  }
+  .why-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-color: transparent; }
+  .why-card:hover::after { transform: scaleX(1); }
+  .why-num {
+    font-family: 'Sora', sans-serif; font-size: 3rem; font-weight: 800;
+    color: rgba(0,194,168,0.12); line-height: 1; margin-bottom: 16px;
+    transition: color 0.3s;
+  }
+  .why-card:hover .why-num { color: rgba(0,194,168,0.25); }
+  .why-icon { width: 52px; height: 52px; margin-bottom: 16px; transition: transform 0.3s; display: block; }
+  .why-icon img { width: 100%; height: 100%; object-fit: contain; }
+  .why-card:hover .why-icon { transform: scale(1.15) rotate(5deg); }
+  .why-title { font-family: 'Sora', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+  .why-desc { color: var(--muted); font-size: 0.875rem; line-height: 1.7; }
+
+  /* ═══════════════════════════════════════════
+     TIMELINE (Glitex style)
+  ═══════════════════════════════════════════ */
+  .timeline-section {
+    background: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=2068&auto=format&fit=crop') center/cover no-repeat;
+    padding: 88px 5%; overflow: hidden; position: relative;
+  }
+  .timeline-section::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(10, 37, 64, 0.90);
+  }
+  .timeline-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+  .timeline-section .section-title { color: #fff; }
+  .timeline-section .section-sub { color: rgba(255,255,255,0.6); }
+  .timeline { display: flex; gap: 0; margin-top: 60px; position: relative; }
+  .timeline::before {
+    content: ''; position: absolute; top: 28px; left: 0; right: 0; height: 2px;
+    background: rgba(255,255,255,0.1);
+  }
+  .timeline-item { flex: 1; text-align: center; position: relative; padding-top: 70px; }
+  .timeline-dot {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1rem; color: rgba(255,255,255,0.6);
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    transition: all 0.35s; cursor: default;
+  }
+  .timeline-item:hover .timeline-dot {
+    background: var(--accent); border-color: var(--accent); color: #fff;
+    box-shadow: 0 0 30px rgba(0,194,168,0.6); transform: translateX(-50%) scale(1.15);
+  }
+  .timeline-week {
+    color: var(--accent); font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;
+  }
+  .timeline-label { font-family: 'Sora', sans-serif; color: #fff; font-size: 0.92rem; font-weight: 700; margin-bottom: 8px; }
+  .timeline-text { color: rgba(255,255,255,0.5); font-size: 0.78rem; line-height: 1.5; padding: 0 10px; }
+
+  /* ═══════════════════════════════════════════
+     TOOLS & TECH
+  ═══════════════════════════════════════════ */
+  .tools-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 52px; }
+  .tool-category { background: var(--bg2); border-radius: 16px; padding: 28px; border: 1px solid var(--border); transition: all 0.3s; }
+  .tool-category:hover { transform: translateY(-6px); box-shadow: var(--glow); border-color: rgba(0,194,168,0.2); }
+  .tool-cat-title {
+    font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 700;
+    color: var(--primary); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+  }
+  .tool-cat-icon { width: 22px; height: 22px; display: inline-flex; align-items: center; }
+  .tool-cat-icon img { width: 100%; height: 100%; object-fit: contain; }
+  .tool-list { display: flex; flex-direction: column; gap: 8px; }
+  .tool-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 12px; border-radius: 8px; background: #fff; border: 1px solid var(--border);
+    font-size: 0.82rem; font-weight: 500; color: var(--text);
+    transition: all 0.2s; cursor: default;
+  }
+  .tool-item:hover { border-color: rgba(0,194,168,0.3); color: var(--accent); transform: translateX(4px); }
+  .tool-emoji { width: 20px; height: 20px; display: inline-flex; align-items: center; flex-shrink: 0; }
+  .tool-emoji img { width: 100%; height: 100%; object-fit: contain; }
+
+  /* ═══════════════════════════════════════════
+     FAQ (Glitex style)
+  ═══════════════════════════════════════════ */
+  .faq-list { margin-top: 52px; display: flex; flex-direction: column; gap: 16px; max-width: 800px; }
+  .faq-item {
+    border: 1px solid var(--border); border-radius: var(--radius);
+    overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .faq-item.open { border-color: rgba(0,194,168,0.4); box-shadow: 0 0 20px rgba(0,194,168,0.12); }
+  .faq-q {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 24px; cursor: pointer; background: #fff;
+    font-family: 'Sora', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--primary);
+    user-select: none; gap: 16px;
+    transition: background 0.2s;
+  }
+  .faq-q:hover { background: var(--bg2); }
+  .faq-arrow {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--bg2); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem; flex-shrink: 0; transition: all 0.3s;
+  }
+  .faq-item.open .faq-arrow { background: var(--accent); border-color: var(--accent); color: #fff; transform: rotate(180deg); }
+  .faq-a {
+    display: none; padding: 0 24px 20px; color: var(--muted); font-size: 0.9rem; line-height: 1.75;
+    border-top: 1px solid var(--border); background: #fff;
+  }
+  .faq-item.open .faq-a { display: block; }
+
+  /* ═══════════════════════════════════════════
+     CTA SECTION
+  ═══════════════════════════════════════════ */
+  .cta-section {
+    background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop') center/cover no-repeat;
+    padding: 100px 5%; text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(10, 37, 64, 0.88);
+  }
+  .cta-orb {
+    position: absolute; width: 300px; height: 300px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(99,91,255,0.15), transparent);
+    top: -80px; right: -60px; animation: floatY 7s ease-in-out infinite;
+  }
+  .cta-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+  .cta-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,194,168,0.15); border: 1px solid rgba(0,194,168,0.3);
+    color: var(--accent); padding: 7px 16px; border-radius: 20px;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .cta-title { font-family: 'Sora', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.03em; }
+  .cta-title span { color: var(--accent); }
+  .cta-sub { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.7; margin-bottom: 40px; }
+  .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--accent); color: #fff; padding: 15px 32px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; transition: all 0.25s; display: inline-block; box-shadow: 0 4px 20px rgba(0,194,168,0.4); }
+  .btn-primary:hover { background: #035fa0; transform: translateY(-2px); box-shadow: 0 0 30px rgba(4,119,190,0.55); }
+  .btn-outline { border: 1.5px solid rgba(255,255,255,0.35); color: #fff; padding: 15px 32px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; transition: all 0.25s; display: inline-block; }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ═══════════════════════════════════════════
+     FOOTER
+  ═══════════════════════════════════════════ */
+  footer { background: var(--primary); color: rgba(255,255,255,0.7); padding: 80px 5% 0; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; max-width: 1200px; margin: 0 auto; padding-bottom: 60px; }
+  .footer-brand p { font-size: 0.88rem; line-height: 1.7; margin-top: 16px; }
+  .footer-contact { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+  .footer-contact a { font-size: 0.85rem; transition: color 0.2s; }
+  .footer-contact a:hover { color: var(--accent); }
+  .footer-col h4 { font-family: 'Sora', sans-serif; font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 20px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-col a { font-size: 0.875rem; transition: color 0.2s, transform 0.2s; display: inline-block; }
+  .footer-col a:hover { color: var(--accent); transform: translateX(4px); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 24px 0; text-align: center; font-size: 0.8rem; max-width: 1200px; margin: 0 auto; }
+
+  /* ═══════════════════════════════════════════
+     RESPONSIVE
+  ═══════════════════════════════════════════ */
+  @media (max-width: 1024px) {
+    .why-grid { grid-template-columns: repeat(2,1fr); }
+    .tools-grid { grid-template-columns: repeat(2,1fr); }
+    .overview-steps { grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .overview-steps::before { display: none; }
+    .timeline { flex-wrap: wrap; gap: 32px; }
+    .timeline::before { display: none; }
+    .timeline-item { flex: 0 0 calc(33% - 16px); padding-top: 70px; }
+  }
+  @media (max-width: 768px) {
+    .phase { grid-template-columns: 1fr; gap: 40px; }
+    .phase.reverse { direction: ltr; }
+    .phase-visual { min-height: auto; }
+    .phase-number { display: none; }
+    .why-grid { grid-template-columns: 1fr; }
+    .tools-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    section, .phases { padding: 60px 5%; }
+    .hero-stats { gap: 24px; }
+    .overview-steps { grid-template-columns: repeat(2,1fr); }
+    .timeline-item { flex: 0 0 calc(50% - 16px); }
+    .faq-list { max-width: 100%; }
+  }
+  @media (max-width: 480px) {
+    .process-hero h1 { font-size: 2rem; }
+    .tools-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero-stats { flex-direction: column; gap: 16px; }
+    .cta-btns { flex-direction: column; align-items: center; }
+    .timeline-item { flex: 0 0 100%; }
+    .overview-steps { grid-template-columns: repeat(2,1fr); }
+  }
+  .logo img {
+  height: 60px;       /* Adjust height to fit your navbar */
+  width: auto;        /* Keeps aspect ratio */
+  vertical-align: middle;
+  border-radius:20px;
+  padding: 1px;
+   /* Aligns with text if combined */
+}
+.footer-brandreveal .logo img {
+  height: 60px;          /* Adjust size to fit footer */
+  width: auto;           /* Maintain aspect ratio */
+  display: block;        /* Keeps it clean above text */
+  margin-bottom: 10px;   /* Space between logo and description */
+  border-radius: 20px;   /* Rounded corners */
+  padding: 1px;          /* Space between logo and border */
+}
+.whatsapp-btn { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 30px rgba(37,211,102,0.5); transition: all 0.3s; text-decoration: none; animation: pulse-wa 2.5s infinite; }
+  .whatsapp-btn:hover { transform: scale(1.1); animation: none; }
+  .whatsapp-btn svg { width: 30px; height: 30px; fill: #fff; }
+  @keyframes pulse-wa { 0%, 100% { box-shadow: 0 6px 30px rgba(37,211,102,0.5); } 50% { box-shadow: 0 6px 30px rgba(37,211,102,0.5), 0 0 0 12px rgba(37,211,102,0.12); } }
+
+
+
+/* If you want spacing around the logo */
+.logo {
+  display: flex;      /* Helps align logo and text side by side */
+  align-items: center;
+  gap: 8px;           /* Space between logo and text */
+}
+</style>
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+<body>
+  <a href="https://wa.me/254745883650" target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- SCROLL PROGRESS BAR -->
+<div id="scroll-progress"></div>
+
+<!-- PAGE LOADER -->
+
+
+<!-- TOP BAR -->
+
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="logo"><img src="https://media.licdn.com/dms/image/v2/D4D22AQEJmas2iNVJNQ/feedshare-shrink_2048_1536/B4DZ00uq4QJ4Ag-/0/1774706142963?e=1778112000&v=beta&t=QOOtTuvV_0hNDqG2aj1UQZ21RrE5_xMBGAQL3li7nHA"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="serina-about.html">About Us</a></li>
+    <li><a href="serina-systems-services.html">Services</a></li>
+    <li><a href="serina-portfolio (1).html">Portfolio</a></li>
+    <li><a href="serina-process.html">Our Process</a></li>
+    <li><a href="serina-blog.html">Blogs</a></li>
+    <li><a href="serina-contact.html">Contact Us</a></li>
+  </ul>
+  <a href="serina-contact.html" class="nav-cta" style="display:block">Schedule Meeting</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="serina-about.html">About Us</a>
+  <a href="serina-systems-services.html">Services</a>
+  <a href="serina-portfolio (1).html">Portfolio</a>
+  <a href="serina-process.html">Our Process</a>
+  <a href="serina-blog.html">Blogs</a>
+  <a href="serina-contact.html">Contact Us</a>
+  <a href="serina-contact.html" class="nav-cta" style="background:var(--accent);color:#fff;padding:12px;text-align:center;border-radius:8px;font-weight:700;">Schedule Meeting</a>
+</div>
+
+<!-- HERO -->
+<div class="process-hero">
+  <div class="hero-orb-1"></div>
+  <div class="hero-orb-2"></div>
+  <div class="process-hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="serina-systems.html">Home</a>
+      <span>›</span>
+      <span style="color:rgba(255,255,255,0.7)">Our Process</span>
+    </div>
+    <div class="process-badge">✦ How We Work</div>
+    <h1>Our <span>Proven Process</span> to Build Products That Last</h1>
+    <p>A transparent, structured approach from the first conversation to post-launch — so you always know where we are, what's next, and why it matters.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span class="counter" data-target="100">0</span><span style="color:var(--accent)">+</span></div>
+        <div class="hero-stat-label">Projects Delivered</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span class="counter" data-target="200">0</span><span style="color:var(--accent)">+</span></div>
+        <div class="hero-stat-label">Happy Clients</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span class="counter" data-target="16">0</span><span style="color:var(--accent)">+</span></div>
+        <div class="hero-stat-label">Countries</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">4.9<span style="color:var(--accent)">/5</span></div>
+        <div class="hero-stat-label">Client Rating</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS OVERVIEW STRIP -->
+<div class="process-overview">
+  <div class="overview-inner">
+    <div class="overview-steps">
+      <div class="ov-step reveal delay-1">
+        <div class="ov-num">01</div>
+        <div class="ov-label">Discovery &amp; Scoping</div>
+      </div>
+      <div class="ov-step reveal delay-2">
+        <div class="ov-num">02</div>
+        <div class="ov-label">Design &amp; Prototype</div>
+      </div>
+      <div class="ov-step reveal delay-3">
+        <div class="ov-num">03</div>
+        <div class="ov-label">Development</div>
+      </div>
+      <div class="ov-step reveal delay-4">
+        <div class="ov-num">04</div>
+        <div class="ov-label">QA &amp; Testing</div>
+      </div>
+      <div class="ov-step reveal delay-5">
+        <div class="ov-num">05</div>
+        <div class="ov-label">Launch &amp; Deploy</div>
+      </div>
+      <div class="ov-step reveal delay-6">
+        <div class="ov-num">06</div>
+        <div class="ov-label">Support &amp; Growth</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 1: DISCOVERY -->
+<div class="phases">
+
+  <div class="phase">
+    <div class="phase-number">01</div>
+    <div class="phase-content reveal-left">
+      <div class="phase-tag"><span class="phase-dot"></span> Phase 01</div>
+      <h2 class="phase-title">Discovery &amp;<br>Scoping</h2>
+      <p class="phase-desc">Every great product starts with deep understanding. We invest time upfront to fully grasp your vision, business goals, target users, and technical landscape — so we build exactly what you need, not just what you asked for.</p>
+      <div class="phase-items">
+        <div class="phase-item">
+          <div class="phase-item-icon">🎯</div>
+          <div class="phase-item-text">
+            <strong>Goals &amp; Vision Workshop</strong>
+            <span>Structured sessions to align on outcomes, KPIs, and success metrics</span>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item-icon">👥</div>
+          <div class="phase-item-text">
+            <strong>User Research &amp; Personas</strong>
+            <span>Identifying your target users, pain points, and desired journeys</span>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item-icon">📋</div>
+          <div class="phase-item-text">
+            <strong>Technical Scoping &amp; SOW</strong>
+            <span>Detailed feature map, tech stack recommendation, and timeline estimate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="phase-visual float-slow reveal-right" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop');">
+      <div class="pv-header">
+        <div class="pv-dots"><div class="pv-dot r"></div><div class="pv-dot y"></div><div class="pv-dot g"></div></div>
+        <div class="pv-badge">Discovery Phase</div>
+      </div>
+      <div>
+        <div class="pv-title">Project Requirements</div>
+        <div class="pv-sub">Week 1–2 · Stakeholder alignment</div>
+        <div class="pv-card">
+          <div class="pv-card-label">Business Goals</div>
+          <div class="pv-checklist">
+            <div class="pv-check"><div class="pv-check-dot">✓</div><div class="pv-check-text">Core value proposition defined</div></div>
+            <div class="pv-check"><div class="pv-check-dot">✓</div><div class="pv-check-text">User personas documented</div></div>
+            <div class="pv-check"><div class="pv-check-dot">✓</div><div class="pv-check-text">Success metrics agreed</div></div>
+          </div>
+        </div>
+        <div class="pv-card">
+          <div class="pv-card-label">Scope Progress</div>
+          <div class="pv-card-text">Feature Map &amp; SOW</div>
+          <div class="pv-progress">
+            <div class="pv-progress-bar"><div class="pv-progress-fill" style="width:85%;background:linear-gradient(90deg,var(--accent),#00e5c9)"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="phase-divider">
+
+  <!-- PHASE 2: DESIGN -->
+  <div class="phase reverse">
+    <div class="phase-number">02</div>
+    <div class="phase-content reveal-right">
+      <div class="phase-tag"><span class="phase-dot"></span> Phase 02</div>
+      <h2 class="phase-title">Design &amp;<br>Prototyping</h2>
+      <p class="phase-desc">Before a single line of code is written, we craft pixel-perfect designs and interactive prototypes. You'll be able to click through your product and refine every detail — ensuring the experience is intuitive, beautiful, and on-brand.</p>
+      <div class="phase-items">
+        <div class="phase-item">
+          <div class="phase-item-icon">🎨</div>
+          <div class="phase-item-text">
+            <strong>UI / UX Design System</strong>
+            <span>Brand-aligned visual language: colors, typography, components, and patterns</span>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item-icon">🖱️</div>
+          <div class="phase-item-text">
+            <strong>Interactive Prototype</strong>
+            <span>Clickable Figma prototype so you can experience the product before it's built</span>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item-icon">✍️</div>
+          <div class="phase-item-text">
+            <strong>Feedback &amp; Iteration</strong>
+            <span>Collaborative revision rounds until design is approved and signed off</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="phase-visual float-1 reveal-left" style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2070&auto=format&fit=crop');">
+      <div class="pv-header">
+        <div class="pv-dots"><div class="pv-dot r"></div><div class="pv-dot y"></div><div class="pv-dot g"></div></div>
+        <div class="pv-badge">Design Phase</div>
+      </div>
+      <div>
+        <div class="pv-title">UI/UX Design Board</div>
+        <div class="pv-sub">Figma · Interactive Prototype</div>
+        <div class="pv-grid" style="margin-bottom:12px">
+          <div class="pv-stat"><div class="pv-stat-n">24</div><div class="pv-stat-l">Screens</div></div>
+          <div class="pv-stat"><div class="pv-stat-n">3</div><div class="pv-stat-l">Revisions</div></div>
+          <div class="pv-stat"><div class="pv-stat-n">100%</div><div class="pv-stat-l">Responsive</div></div>
+          <div class="pv-stat"><div class="pv-stat-n">A+</div><div class="pv-stat-l">Accessibility</div></div>
+        </div>
+        <div class="pv-tags">
+          <span class="pv-tag">Figma</span><span class="pv-tag">UI Kit</span>
+          <span class="pv-tag">Prototyping</span><span class="pv-tag">Animations</span>
+          <span class="pv-tag">Design System</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="phase-divider">
+
+  <!-- PHASE 3: DEVELOPMENT -->
+  <div class="phase">
+    <div class="phase-number">03</div>
+    <div class="phase-content reveal-left">
+      <div class="phase-tag"><span class="phase-dot"></span> Phase 03</div>
+      <h2 class="phase-title">Agile<br>Development</h2>
+      <p class="phase-desc">We build in focused 2-week sprints using agile methodology. This means you get regular working software to review, change requests are handled gracefully, and your product evolves based on real feedback rather than fixed assumptions.</p>
+      <div class="phase-items">
+        <div class="phase-item">
+          <div class="phase-item-icon">⚙️</div>
+          <div class="phase-item-text">
+            <strong>Sprint-Based Delivery</strong>
+            <span>2-week sprints with demo sessions so you see progress continuously</span>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item-icon">🔗</div>
+          <div class="phase-item-text">
+            <strong>API &amp; Integration Layer</strong>
+            <span>Third-party services, payment gateways, and data pipelines seamlessly connected</span>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item-icon">🔐</div>
+          <div class="phase-item-text">
+            <strong>Security-First Engineering</strong>
+            <span>OWASP standards, encrypted data, secure auth, and vulnerability scanning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="phase-visual float-2 reveal-right" style="background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2070&auto=format&fit=crop');">
+      <div class="pv-header">
+        <div class="pv-dots"><div class="pv-dot r"></div><div class="pv-dot y"></div><div class="pv-dot g"></div></div>
+        <div class="pv-badge">Sprint 4 of 6</div>
+      </div>
+      <div>
+        <div class="pv-title">Active Development Board</div>
+        <div class="pv-sub">Agile · Jira · GitHub</div>
+        <div class="pv-card">
+          <div class="pv-card-label">Sprint Velocity</div>
+          <div class="pv-card-text">Core Features Complete</div>
+          <div class="pv-progress">
+            <div class="pv-progress-bar"><div class="pv-progress-fill" style="width:70%;background:linear-gradient(90deg,var(--accent),#00e5c9)"></div></div>
+          </div>
+        </div>
+        <div class="pv-card">
+          <div class="pv-card-label">AI Module Progress</div>
+          <div class="pv-card-text">ML Model Integration</div>
+          <div class="pv-progress">
+            <div class="pv-progress-bar"><div class="pv-progress-fill" style="width:45%;background:linear-gradient(90deg,#635bff,#00c2a8)"></div></div>
+          </div>
+        </div>
+        <div class="pv-tags">
+          <span class="pv-tag">React</span><span class="pv-tag">Node.js</span>
+          <span class="pv-tag">Flutter</span><span class="pv-tag">Python</span>
+          <span class="pv-tag">AWS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="phase-divider">
+
+  <!-- PHASE 4: QA -->
+  <div class="phase reverse">
+    <div class="phase-number">04</div>
+    <div class="phase-content reveal-right">
+      <div class="phase-tag"><span class="phase-dot"></span> Phase 04</div>
+      <h2 class="phase-title">QA &amp;<br>Testing</h2>
+      <p class="phase-desc">We apply a multi-layer quality assurance strategy to catch defects before your users do. Every feature is stress-tested, every edge case explored, and every screen verified across devices and operating systems.</p>
+      <div class="phase-items">
+        <div class="phase-item">
+          <div class="phase-item-icon">🧪</div>
+          <div class="phase-item-text">
+            <strong>Automated Test Suites</strong>
+            <span>Unit, integration, and end-to-end tests run on every code commit</span>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item-icon">📱</div>
+          <div class="phase-item-text">
+            <strong>Cross-Device Testing</strong>
+            <span>iOS, Android, Chrome, Safari, Firefox across multiple screen sizes</span>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item-icon">⚡</div>
+          <div class="phase-item-text">
+            <strong>Performance &amp; Load Testing</strong>
+            <span>Ensure stability under peak traffic — scalable from day one</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="phase-visual float-slow reveal-left" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop');">
+      <div class="pv-header">
+        <div class="pv-dots"><div class="pv-dot r"></div><div class="pv-dot y"></div><div class="pv-dot g"></div></div>
+        <div class="pv-badge">QA Report</div>
+      </div>
+      <div>
+        <div class="pv-title">Test Coverage Dashboard</div>
+        <div class="pv-sub">Automated · Manual · Performance</div>
+        <div class="pv-grid" style="margin-bottom:12px">
+          <div class="pv-stat"><div class="pv-stat-n">98%</div><div class="pv-stat-l">Test Coverage</div></div>
+          <div class="pv-stat"><div class="pv-stat-n">0</div><div class="pv-stat-l">Critical Bugs</div></div>
+          <div class="pv-stat"><div class="pv-stat-n">&lt;1s</div><div class="pv-stat-l">Load Time</div></div>
+          <div class="pv-stat"><div class="pv-stat-n">A+</div><div class="pv-stat-l">Security Score</div></div>
+        </div>
+        <div class="pv-card">
+          <div class="pv-card-label">Regression Pass Rate</div>
+          <div class="pv-card-text">All Tests Passing</div>
+          <div class="pv-progress">
+            <div class="pv-progress-bar"><div class="pv-progress-fill" style="width:98%;background:linear-gradient(90deg,#28c840,#00c2a8)"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="phase-divider">
+
+  <!-- PHASE 5: LAUNCH -->
+  <div class="phase">
+    <div class="phase-number">05</div>
+    <div class="phase-content reveal-left">
+      <div class="phase-tag"><span class="phase-dot"></span> Phase 05</div>
+      <h2 class="phase-title">Launch &amp;<br>Deployment</h2>
+      <p class="phase-desc">Going live is a milestone, not a gamble. We manage the entire deployment pipeline — from staging environments to production rollout — with zero-downtime deploys and real-time monitoring from the first second.</p>
+      <div class="phase-items">
+        <div class="phase-item">
+          <div class="phase-item-icon">🚀</div>
+          <div class="phase-item-text">
+            <strong>CI/CD Pipeline Setup</strong>
+            <span>Automated deployments via GitHub Actions, zero-downtime rolling releases</span>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item-icon">☁️</div>
+          <div class="phase-item-text">
+            <strong>Cloud Infrastructure</strong>
+            <span>AWS, GCP, or Azure — auto-scaled, CDN-backed, and globally distributed</span>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item-icon">📊</div>
+          <div class="phase-item-text">
+            <strong>Monitoring &amp; Alerting</strong>
+            <span>Real-time dashboards, uptime tracking, and instant incident alerts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="phase-visual float-1 reveal-right" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2068&auto=format&fit=crop');">
+      <div class="pv-header">
+        <div class="pv-dots"><div class="pv-dot r"></div><div class="pv-dot y"></div><div class="pv-dot g"></div></div>
+        <div class="pv-badge" style="background:rgba(40,200,64,0.2);color:#28c840;border-color:rgba(40,200,64,0.3)">🟢 Live</div>
+      </div>
+      <div>
+        <div class="pv-title">Production Dashboard</div>
+        <div class="pv-sub">Uptime: 99.97% · Last deploy: 2h ago</div>
+        <div class="pv-grid" style="margin-bottom:12px">
+          <div class="pv-stat"><div class="pv-stat-n" style="color:#28c840">99.9%</div><div class="pv-stat-l">Uptime</div></div>
+          <div class="pv-stat"><div class="pv-stat-n">240ms</div><div class="pv-stat-l">Avg Response</div></div>
+          <div class="pv-stat"><div class="pv-stat-n">14k</div><div class="pv-stat-l">Daily Users</div></div>
+          <div class="pv-stat"><div class="pv-stat-n">0</div><div class="pv-stat-l">Incidents</div></div>
+        </div>
+        <div class="pv-card">
+          <div class="pv-card-label">System Health</div>
+          <div class="pv-card-text">All systems operational</div>
+          <div class="pv-progress">
+            <div class="pv-progress-bar"><div class="pv-progress-fill" style="width:100%;background:linear-gradient(90deg,#28c840,#00c2a8)"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="phase-divider">
+
+  <!-- PHASE 6: SUPPORT -->
+  <div class="phase reverse">
+    <div class="phase-number">06</div>
+    <div class="phase-content reveal-right">
+      <div class="phase-tag"><span class="phase-dot"></span> Phase 06</div>
+      <h2 class="phase-title">Support &amp;<br>Growth</h2>
+      <p class="phase-desc">Launch is just the beginning. We provide ongoing support, performance monitoring, and feature roadmap development — so your product stays ahead of the curve, delights users, and scales with your business growth.</p>
+      <div class="phase-items">
+        <div class="phase-item">
+          <div class="phase-item-icon">🛡️</div>
+          <div class="phase-item-text">
+            <strong>Dedicated Support SLA</strong>
+            <span>Priority bug fixes, security patches, and feature requests with agreed response times</span>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item-icon">📈</div>
+          <div class="phase-item-text">
+            <strong>Analytics &amp; Insights</strong>
+            <span>User behavior analytics to inform data-driven product decisions and roadmap</span>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-item-icon">🔄</div>
+          <div class="phase-item-text">
+            <strong>Iterative Feature Releases</strong>
+            <span>Regular release cycles based on user feedback and market evolution</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="phase-visual float-2 reveal-left" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop');">
+      <div class="pv-header">
+        <div class="pv-dots"><div class="pv-dot r"></div><div class="pv-dot y"></div><div class="pv-dot g"></div></div>
+        <div class="pv-badge">Growth Report</div>
+      </div>
+      <div>
+        <div class="pv-title">Product Growth Metrics</div>
+        <div class="pv-sub">30-day rolling · Post-launch</div>
+        <div class="pv-grid" style="margin-bottom:12px">
+          <div class="pv-stat"><div class="pv-stat-n" style="color:var(--accent)">+48%</div><div class="pv-stat-l">User Growth</div></div>
+          <div class="pv-stat"><div class="pv-stat-n" style="color:var(--accent)">+31%</div><div class="pv-stat-l">Retention</div></div>
+          <div class="pv-stat"><div class="pv-stat-n">4.8★</div><div class="pv-stat-l">App Store</div></div>
+          <div class="pv-stat"><div class="pv-stat-n">2h</div><div class="pv-stat-l">Support SLA</div></div>
+        </div>
+        <div class="pv-checklist">
+          <div class="pv-check"><div class="pv-check-dot">✓</div><div class="pv-check-text">Monthly performance reviews</div></div>
+          <div class="pv-check"><div class="pv-check-dot">✓</div><div class="pv-check-text">Feature roadmap planning</div></div>
+          <div class="pv-check"><div class="pv-check-dot">✓</div><div class="pv-check-text">Security audit included</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end phases -->
+
+<!-- WHY OUR PROCESS WORKS -->
+<section class="why-bg">
+  <div class="container">
+    <p class="section-label reveal">What Sets Us Apart</p>
+    <h2 class="section-title reveal delay-1">Why Our Process Works</h2>
+    <p class="section-sub reveal delay-2">We've refined our process across 100+ projects in 16 countries. Here's what makes clients trust us with their most critical digital products.</p>
+    <div class="why-grid">
+      <div class="why-card reveal delay-1">
+        <div class="why-num">01</div>
+        <span class="why-icon" style="display:flex;align-items:center;justify-content:center;"><iconify-icon icon="mdi:eye-outline" style="font-size:2.4rem;color:#0477be;"></iconify-icon></span>
+        <div class="why-title">Full Transparency</div>
+        <div class="why-desc">You get access to our project management tools, weekly status reports, and direct lines to your development team. No black boxes. No surprises.</div>
+      </div>
+      <div class="why-card reveal delay-2">
+        <div class="why-num">02</div>
+        <span class="why-icon" style="display:flex;align-items:center;justify-content:center;"><iconify-icon icon="mdi:earth" style="font-size:2.4rem;color:#0477be;"></iconify-icon></span>
+        <div class="why-title">Global Experience</div>
+        <div class="why-desc">Having delivered products in 16 countries, we understand diverse markets, regulations, payment systems, and user behaviors that local-only firms miss.</div>
+      </div>
+      <div class="why-card reveal delay-3">
+        <div class="why-num">03</div>
+        <span class="why-icon" style="display:flex;align-items:center;justify-content:center;"><iconify-icon icon="mdi:rocket-launch-outline" style="font-size:2.4rem;color:#0477be;"></iconify-icon></span>
+        <div class="why-title">Speed Without Compromise</div>
+        <div class="why-desc">Our agile sprints and experienced teams deliver faster than industry average — without cutting corners on quality, security, or scalability.</div>
+      </div>
+      <div class="why-card reveal delay-1">
+        <div class="why-num">04</div>
+        <span class="why-icon" style="display:flex;align-items:center;justify-content:center;"><iconify-icon icon="mdi:handshake-outline" style="font-size:2.4rem;color:#0477be;"></iconify-icon></span>
+        <div class="why-title">True Partnership</div>
+        <div class="why-desc">We don't just execute briefs. We challenge assumptions, propose better solutions, and think strategically about your business — like a co-founder, not a vendor.</div>
+      </div>
+      <div class="why-card reveal delay-2">
+        <div class="why-num">05</div>
+        <span class="why-icon" style="display:flex;align-items:center;justify-content:center;"><iconify-icon icon="mdi:chart-line" style="font-size:2.4rem;color:#0477be;"></iconify-icon></span>
+        <div class="why-title">Built to Scale</div>
+        <div class="why-desc">Every architecture decision accounts for your 10x future. We build on cloud-native, microservice-ready foundations that grow without expensive rewrites.</div>
+      </div>
+      <div class="why-card reveal delay-3">
+        <div class="why-num">06</div>
+        <span class="why-icon" style="display:flex;align-items:center;justify-content:center;"><iconify-icon icon="mdi:devices" style="font-size:2.4rem;color:#0477be;"></iconify-icon></span>
+        <div class="why-title">Cross-Platform Mastery</div>
+        <div class="why-desc">From Flutter for mobile to Next.js for web to Python for AI — our polyglot team picks the right tool for your problem, not the one we know best.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <div class="timeline-inner">
+    <p class="section-label reveal" style="color:var(--accent)">Delivery Timeline</p>
+    <h2 class="section-title reveal delay-1">Typical Project Timeline</h2>
+    <p class="section-sub reveal delay-2">Most MVP projects are delivered in 8–12 weeks. Here's what a typical engagement looks like.</p>
+    <div class="timeline">
+      <div class="timeline-item reveal delay-1">
+        <div class="timeline-dot">1</div>
+        <div class="timeline-week">Week 1–2</div>
+        <div class="timeline-label">Discovery</div>
+        <div class="timeline-text">Goals, scoping, user research, project plan</div>
+      </div>
+      <div class="timeline-item reveal delay-2">
+        <div class="timeline-dot">2</div>
+        <div class="timeline-week">Week 3–4</div>
+        <div class="timeline-label">Design</div>
+        <div class="timeline-text">Wireframes, UI design, interactive prototype</div>
+      </div>
+      <div class="timeline-item reveal delay-3">
+        <div class="timeline-dot">3</div>
+        <div class="timeline-week">Week 5–8</div>
+        <div class="timeline-label">Build</div>
+        <div class="timeline-text">Sprints 1–2, core features, API integrations</div>
+      </div>
+      <div class="timeline-item reveal delay-4">
+        <div class="timeline-dot">4</div>
+        <div class="timeline-week">Week 9–10</div>
+        <div class="timeline-label">QA</div>
+        <div class="timeline-text">Testing, bug fixes, performance tuning</div>
+      </div>
+      <div class="timeline-item reveal delay-5">
+        <div class="timeline-dot">5</div>
+        <div class="timeline-week">Week 11–12</div>
+        <div class="timeline-label">Launch</div>
+        <div class="timeline-text">Deploy, go-live, monitoring setup</div>
+      </div>
+      <div class="timeline-item reveal delay-6">
+        <div class="timeline-dot">6</div>
+        <div class="timeline-week">Ongoing</div>
+        <div class="timeline-label">Growth</div>
+        <div class="timeline-text">Support, analytics, feature iterations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS & TECH -->
+<section>
+  <div class="container">
+    <p class="section-label reveal">Tools &amp; Technologies</p>
+    <h2 class="section-title reveal delay-1">Powered by Best-in-Class Tools</h2>
+    <p class="section-sub reveal delay-2">We use industry-leading technologies at every stage of the process to ensure quality, speed, and reliability.</p>
+    <div class="tools-grid">
+      <div class="tool-category reveal delay-1">
+        <div class="tool-cat-title"><span class="tool-cat-icon"><img src="https://cdn-icons-png.flaticon.com/512/1055/1055672.png" alt="Design"></span> Design</div>
+        <div class="tool-list">
+          <div class="tool-item"><span class="tool-emoji"><img src="https://cdn.sanity.io/images/599r6htc/localized/46a76c802176eb17b04e12108de7e7e0f3736dc6-1024x1024.png?w=32&h=32&fit=crop" alt="Figma"></span>Figma</div>
+          <div class="tool-item"><span class="tool-emoji"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Adobe_XD_CC_icon.svg/32px-Adobe_XD_CC_icon.svg.png" alt="Adobe XD"></span>Adobe XD</div>
+          <div class="tool-item"><span class="tool-emoji"><img src="https://cdn.worldvectorlogo.com/logos/miro-2.svg" alt="Miro"></span>Miro</div>
+          <div class="tool-item"><span class="tool-emoji"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Zeroheight"></span>Zeroheight</div>
+        </div>
+      </div>
+      <div class="tool-category reveal delay-2">
+        <div class="tool-cat-title"><span class="tool-cat-icon"><img src="https://cdn-icons-png.flaticon.com/512/1336/1336494.png" alt="Development"></span> Development</div>
+        <div class="tool-list">
+          <div class="tool-item"><span class="tool-emoji"><img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React"></span>React / Next.js</div>
+          <div class="tool-item"><span class="tool-emoji"><img src="https://cdn.worldvectorlogo.com/logos/flutter.svg" alt="Flutter"></span>Flutter / Kotlin</div>
+          <div class="tool-item"><span class="tool-emoji"><img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" alt="Node.js"></span>Node.js / Python</div>
+          <div class="tool-item"><span class="tool-emoji"><img src="https://cdn.worldvectorlogo.com/logos/spring-3.svg" alt="Spring Boot"></span>Spring Boot</div>
+        </div>
+      </div>
+      <div class="tool-category reveal delay-3">
+        <div class="tool-cat-title"><span class="tool-cat-icon"><img src="https://cdn-icons-png.flaticon.com/512/4215/4215831.png" alt="Infrastructure"></span> Infrastructure</div>
+        <div class="tool-list">
+          <div class="tool-item"><span class="tool-emoji"><img src="https://cdn.worldvectorlogo.com/logos/aws-2.svg" alt="AWS"></span>AWS</div>
+          <div class="tool-item"><span class="tool-emoji"><img src="https://cdn.worldvectorlogo.com/logos/google-cloud-1.svg" alt="Google Cloud"></span>Google Cloud</div>
+          <div class="tool-item"><span class="tool-emoji"><img src="https://cdn.worldvectorlogo.com/logos/docker.svg" alt="Docker"></span>Docker / K8s</div>
+          <div class="tool-item"><span class="tool-emoji"><img src="https://cdn.worldvectorlogo.com/logos/github-icon-1.svg" alt="GitHub Actions"></span>GitHub Actions</div>
+        </div>
+      </div>
+      <div class="tool-category reveal delay-4">
+        <div class="tool-cat-title"><span class="tool-cat-icon"><img src="https://cdn-icons-png.flaticon.com/512/1356/1356479.png" alt="Project Management"></span> Project Mgmt</div>
+        <div class="tool-list">
+          <div class="tool-item"><span class="tool-emoji"><img src="https://cdn.worldvectorlogo.com/logos/jira-1.svg" alt="Jira"></span>Jira / Linear</div>
+          <div class="tool-item"><span class="tool-emoji"><img src="https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg" alt="Slack"></span>Slack / Teams</div>
+          <div class="tool-item"><span class="tool-emoji"><img src="https://cdn.worldvectorlogo.com/logos/notion-2.svg" alt="Notion"></span>Notion</div>
+          <div class="tool-item"><span class="tool-emoji"><img src="https://cdn-icons-png.flaticon.com/512/4492/4492311.png" alt="Loom"></span>Loom</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--bg2)">
+  <div class="container">
+    <p class="section-label reveal">FAQ</p>
+    <h2 class="section-title reveal delay-1">Frequently Asked Questions</h2>
+    <p class="section-sub reveal delay-2">Everything you need to know about working with Serina Systems.</p>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How long does a typical project take?
+          <div class="faq-arrow">▾</div>
+        </div>
+        <div class="faq-a">Most MVP projects are delivered in 8–12 weeks. The exact timeline depends on scope and complexity. After the discovery phase, we provide a detailed project plan with milestones, and we stick to it. Larger enterprise projects may take 3–6 months, broken into clear phases with deliverables at each stage.</div>
+      </div>
+      <div class="faq-item reveal delay-1">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How do you ensure website visibility within a short period of time?
+          <div class="faq-arrow">▾</div>
+        </div>
+        <div class="faq-a">"Great question. Website visibility doesn't happen overnight, but with the right strategy, you can see meaningful traction within 30–90 days. Here's how we approach it:
+First, we prioritize quick-win SEO. We audit your site immediately — fixing technical issues like page speed, mobile responsiveness, broken links, and meta tags. These are low-hanging fruit that search engines reward fast.
+Second, we set up and optimize Google Business Profile and local listings if you're targeting a local audience. This alone can get you appearing in map results within days.
+Third, we run targeted paid ads (Google/Meta) in parallel. While organic SEO builds momentum, paid search puts you in front of the right audience immediately — day one visibility while organic catches up.
+Fourth, we build content with search intent in mind. We research exactly what your audience is searching for and create optimized landing pages and blog content that answers those queries directly.
+Fifth, we focus on backlink building. We secure mentions and links from credible, relevant websites — one of the strongest signals search engines use to rank sites.
+Finally, we track everything. Google Search Console, Analytics, and rank tracking tools give us weekly data so we can double down on what's working and pivot quickly on what isn't.
+The honest truth is: SEO is a 3–6 month game for sustainable results, but paid ads and technical fixes deliver visibility within the first few weeks. We combine both so you're never waiting and never wasting budget."</div>
+      </div>
+      <div class="faq-item reveal delay-2">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What happens if the requirements change during development?
+          <div class="faq-arrow">▾</div>
+        </div>
+        <div class="faq-a">Change is expected in software development — that's why we use agile methodology. Minor scope adjustments are handled within sprints. For significant changes, we do a quick impact assessment (timeline, cost, complexity) and present options. We never proceed with major changes without your explicit approval and a signed change order.</div>
+      </div>
+      <div class="faq-item reveal delay-1">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do you provide post-launch support?
+          <div class="faq-arrow">▾</div>
+        </div>
+        <div class="faq-a">Absolutely. We offer flexible post-launch support packages — from a basic bug-fix retainer to a full dedicated team for ongoing feature development. We also provide a 30-day free warranty period after launch where we fix any defects at no charge. Long-term partnerships are our preferred model.</div>
+      </div>
+      <div class="faq-item reveal delay-2">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Who owns the source code and intellectual property?
+          <div class="faq-arrow">▾</div>
+        </div>
+        <div class="faq-a">You do — 100%. Upon final payment, all source code, assets, and intellectual property are fully transferred to you. We provide complete handover documentation, repository access, and a knowledge transfer session so your team can independently manage and evolve the product.</div>
+      </div>
+      <div class="faq-item reveal delay-1">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How do I get started?
+          <div class="faq-arrow">▾</div>
+        </div>
+        <div class="faq-a">It starts with a free 30-minute discovery call. We'll listen to your idea, ask the right questions, and give you an honest assessment of feasibility, timeline, and rough cost — no strings attached. From there, if it's a fit, we'll send you a detailed proposal within 48 hours. Click "Get a Quote" to book your call today.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="cta-orb"></div>
+  <div class="cta-inner">
+    <div class="cta-badge reveal">✦ Ready to Build?</div>
+    <h2 class="cta-title reveal delay-1">Let's Turn Your <span>Vision</span> Into Reality</h2>
+    <p class="cta-sub reveal delay-2">Join 200+ clients who've trusted Serina Systems to build products that matter. Book a free discovery call today and let's map out your roadmap.</p>
+    <div class="cta-btns reveal delay-3">
+      <a href="serina-contact.html" class="btn-primary">Book a Free Discovery Call →</a>
+      <a href="serina-portfolio (1).html" class="btn-outline">View Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand reveal">
+       <a href="index.html" class="logo">
+      <img src="https://media.licdn.com/dms/image/v2/D4D22AQEJmas2iNVJNQ/feedshare-shrink_2048_1536/B4DZ00uq4QJ4Ag-/0/1774706142963?e=1778112000&v=beta&t=QOOtTuvV_0hNDqG2aj1UQZ21RrE5_xMBGAQL3li7nHA" alt="Serina Systems Logo"></a>
+      <p>Serina Systems is the frontier of digital transformation. We engineer intelligent systems, craft compelling digital identities, and amplify brands through cutting-edge marketing strategies. Rooted in Nakuru yet built for global scalability, we merge technology, creativity, and strategy into one seamless experience.</p>
+      <div class="footer-contact">
+        <a href="#"><iconify-icon icon="mdi:map-marker" style="vertical-align:middle;font-size:1rem;margin-right:5px;"></iconify-icon> Nyahururu Along Nyahurur-Nakuru Road, Nakuru</a>
+        <a href="mailto:oumafidel09@gmail.com"><iconify-icon icon="mdi:email" style="vertical-align:middle;font-size:1rem;margin-right:5px;"></iconify-icon> info@serinasystems.gmail.com</a>
+        <a href="tel:+254745883650"><iconify-icon icon="mdi:phone" style="vertical-align:middle;font-size:1rem;margin-right:5px;"></iconify-icon> +254 745 883 650</a>
+      </div>
+    </div>
+    <div class="footer-col reveal delay-1">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="serina-systems-services.html#mobile">Mobile Apps</a></li>
+        <li><a href="serina-systems-services.html#ai-ml">AI &amp; ML</a></li>
+        <li><a href="serina-systems-services.html#lowcode">Low Code / No Code</a></li>
+        <li><a href="serina-systems-services.html#seo">SEO</a></li>
+        <li><a href="serina-systems-services.html#mvp">MVP Development</a></li>
+        <li><a href="serina-systems-services.html#mis">MIS</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal delay-2">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="serina-about.html">About Us</a></li>
+        <li><a href="serina-portfolio (1).html">Portfolio</a></li>
+        <li><a href="serina-process.html">Our Process</a></li>
+        <li><a href="serina-blog.html">Blogs</a></li>
+        <li><a href="serina-systems-services.html">Services</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal delay-3">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="serina-contact.html">Get a Quote</a></li>
+        <li><a href="serina-contact.html">Schedule Meeting</a></li>
+        <li><a href="serina-contact.html">Support</a></li>
+        <li><a href="https://www.facebook.com/share/14iSjGfaSJF/">Facebook</a></li>
+        <li><a href="https://www.instagram.com/serinasystems/">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© Copyright Serina Systems 2026.All Rights Reserved</div>
+</footer>
+
+<script>
+// PAGE LOADER
+window.addEventListener('load', () => {
+  setTimeout(() => { document.getElementById('page-loader').classList.add('loaded'); }, 700);
+});
+
+// SCROLL PROGRESS
+window.addEventListener('scroll', () => {
+  const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  document.getElementById('scroll-progress').style.width = pct + '%';
+  document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// SCROLL REVEAL
+const revEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .text-reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+revEls.forEach(el => obs.observe(el));
+
+// COUNTER
+const cEls = document.querySelectorAll('.counter');
+const cObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const target = +e.target.dataset.target;
+      let cur = 0;
+      const step = target / (1600 / 16);
+      const t = setInterval(() => {
+        cur += step;
+        if (cur >= target) { cur = target; clearInterval(t); }
+        e.target.textContent = Math.floor(cur);
+      }, 16);
+      cObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.6 });
+cEls.forEach(el => cObs.observe(el));
+
+// FAQ
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// MOBILE NAV
+function toggleMobile() {
+  document.getElementById('mobile-nav').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('open');
+}
+</script>
+</body>
+</html>
