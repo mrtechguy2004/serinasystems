@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://serinasystems.vercel.app/index.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://serinasystems.vercel.app/serina-about.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://serinasystems.vercel.app/serina-contact.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://serinasystems.vercel.app/serina-systems-services.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://serinasystems.vercel.app/serina-blog.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://serinasystems.vercel.app/serina-process.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://serinasystems.vercel.app/serina-portfolio (1).html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
