@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://serinasystems.vercel.app/sitemap.xml

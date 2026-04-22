@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portfolio | Software Development and Digital Marketing Company in Nakuru Kenya | Serina Systems</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --primary: #0a2540;
+    --accent: #0477be;
+    --accent2: #635bff;
+    --text: #1a1a2e;
+    --muted: #64748b;
+    --bg: #ffffff;
+    --bg2: #f8fafc;
+    --border: #e2e8f0;
+    --radius: 12px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+
+  /* SCROLL PROGRESS */
+  #scroll-progress { position: fixed; top: 0; left: 0; z-index: 9999; height: 3px; width: 0%; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width 0.1s linear; }
+
+  /* TOP BAR */
+  .topbar { background: var(--primary); color: #fff; font-size: 0.78rem; padding: 8px 0; text-align: center; }
+  .topbar a { color: var(--accent); margin: 0 8px; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%; display: flex; align-items: center; justify-content: space-between;
+    height: 68px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
+  .logo { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.45rem; color: var(--primary); letter-spacing: -0.03em; }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--primary); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .nav-cta { background: var(--accent); color: #fff !important; padding: 10px 22px; border-radius: 8px; font-weight: 600 !important; font-size: 0.875rem !important; transition: background 0.2s, transform 0.15s; }
+  .nav-cta:hover { background: #035fa0 !important; transform: translateY(-1px); }
+
+  /* HAMBURGER */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--primary); border-radius: 2px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+  .mobile-menu { display: none; flex-direction: column; background: #fff; border-bottom: 1px solid var(--border); padding: 20px 5%; gap: 4px; position: sticky; top: 68px; z-index: 99; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { padding: 12px 0; font-size: 0.95rem; font-weight: 500; color: var(--primary); border-bottom: 1px solid var(--border); }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu .mob-cta { color: var(--accent); font-weight: 700; }
+
+  /* PORTFOLIO HERO */
+  .port-hero {
+    background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') center/cover no-repeat;
+    padding: 80px 5% 70px;
+    position: relative; overflow: hidden;
+  }
+  .port-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(10, 37, 64, 0.85);
+  }
+  .port-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+  .port-hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,194,168,0.15); border: 1px solid rgba(0,194,168,0.35);
+    color: var(--accent); padding: 6px 14px; border-radius: 20px;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: 20px; animation: fadeSlideUp 0.7s 0.1s both;
+  }
+  .port-hero h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 800; color: #fff; letter-spacing: -0.03em;
+    margin-bottom: 16px; line-height: 1.15;
+    animation: fadeSlideUp 0.7s 0.2s both;
+  }
+  .port-hero h1 span { color: var(--accent); }
+  .port-hero p { color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.7; max-width: 600px; animation: fadeSlideUp 0.7s 0.3s both; }
+  .port-stats { display: flex; gap: 48px; margin-top: 44px; animation: fadeSlideUp 0.7s 0.4s both; flex-wrap: wrap; }
+  .port-stat-num { font-family: 'Sora', sans-serif; font-size: 2.2rem; font-weight: 800; color: #fff; line-height: 1; }
+  .port-stat-num span { color: var(--accent); }
+  .port-stat-label { color: rgba(255,255,255,0.55); font-size: 0.82rem; margin-top: 4px; }
+
+  @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* SECTION */
+  .container { max-width: 1200px; margin: 0 auto; }
+  section { padding: 80px 5%; }
+  .section-label { color: var(--accent); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; }
+  .section-title { font-family: 'Sora', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; color: var(--primary); letter-spacing: -0.03em; margin-bottom: 16px; line-height: 1.2; }
+  .section-sub { color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 600px; }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transition: opacity 0.7s ease, transform 0.7s ease; transform: translateY(30px); }
+  .reveal.up { transform: translateY(40px); }
+  .reveal.left { transform: translateX(-40px); }
+  .reveal.right { transform: translateX(40px); }
+  .reveal.scale { transform: scale(0.92); }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: 0.1s; } .reveal.d2 { transition-delay: 0.2s; } .reveal.d3 { transition-delay: 0.3s; } .reveal.d4 { transition-delay: 0.4s; } .reveal.d5 { transition-delay: 0.5s; } .reveal.d6 { transition-delay: 0.6s; }
+
+  /* FILTER BAR */
+  .filter-section { padding: 48px 5% 0; background: var(--bg2); border-bottom: 1px solid var(--border); }
+  .filter-inner { max-width: 1200px; margin: 0 auto; }
+  .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; padding-bottom: 0; }
+  .filter-btn {
+    padding: 9px 20px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;
+    border: 1.5px solid var(--border); background: #fff; color: var(--muted);
+    cursor: pointer; transition: all 0.22s; white-space: nowrap;
+  }
+  .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 4px 16px rgba(0,194,168,0.3); }
+  .filter-tabs { display: flex; gap: 0; margin-top: 28px; border-bottom: 2px solid var(--border); }
+  .filter-tab {
+    padding: 12px 0; margin-right: 32px; font-size: 0.88rem; font-weight: 600;
+    color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent;
+    margin-bottom: -2px; transition: all 0.2s; white-space: nowrap;
+  }
+  .filter-tab:hover { color: var(--primary); }
+  .filter-tab.active { color: var(--accent); border-color: var(--accent); }
+
+  /* FEATURED PROJECT */
+  .featured-section { background: var(--bg2); padding: 72px 5%; }
+  .featured-card {
+    background: #fff; border-radius: 20px; border: 1px solid var(--border);
+    overflow: hidden; display: grid; grid-template-columns: 1.1fr 1fr;
+    transition: box-shadow 0.3s; max-width: 1200px; margin: 0 auto;
+  }
+  .featured-card:hover { box-shadow: 0 24px 70px rgba(0,0,0,0.1); }
+  .featured-img {
+    background: #f5f5f5;
+    min-height: 420px; position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .featured-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+  }
+  .featured-img::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%);
+  }
+  .feat-mockup-wrap { position: relative; z-index: 2; display: flex; gap: 16px; align-items: flex-end; }
+  .feat-mock-tall {
+    width: 110px; height: 220px;
+    background: rgba(255,255,255,0.08); border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.15);
+    overflow: hidden; position: relative;
+  }
+  .feat-mock-tall::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 30px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; }
+  .feat-mock-tall .inner-screen { position: absolute; inset: 16px 8px 8px; border-radius: 10px; background: linear-gradient(145deg, rgba(0,194,168,0.3), rgba(99,91,255,0.2)); }
+  .feat-mock-short {
+    width: 90px; height: 170px;
+    background: rgba(255,255,255,0.08); border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.15);
+    overflow: hidden; position: relative;
+    transform: translateY(20px);
+  }
+  .feat-mock-short::before { content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 24px; height: 3px; background: rgba(255,255,255,0.2); border-radius: 2px; }
+  .feat-mock-short .inner-screen { position: absolute; inset: 14px 7px 7px; border-radius: 9px; background: linear-gradient(145deg, rgba(99,91,255,0.3), rgba(0,194,168,0.2)); }
+  .feat-badge-float {
+    position: absolute; top: 24px; left: 24px; z-index: 3;
+    background: var(--accent); color: #fff;
+    padding: 6px 14px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  }
+  .featured-body { padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .feat-category { color: var(--accent); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; }
+  .feat-title { font-family: 'Sora', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--primary); margin-bottom: 14px; line-height: 1.25; }
+  .feat-desc { color: var(--muted); font-size: 0.92rem; line-height: 1.7; margin-bottom: 24px; }
+  .feat-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
+  .feat-meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .feat-meta-label { font-size: 0.7rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+  .feat-meta-val { font-size: 0.88rem; font-weight: 600; color: var(--primary); }
+  .feat-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+  .chip { background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; font-size: 0.72rem; color: var(--muted); font-weight: 500; }
+  .feat-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--primary); color: #fff; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 0.88rem; transition: all 0.2s; }
+  .feat-btn:hover { background: var(--accent); transform: translateY(-2px); }
+
+  /* PROJECT GRID */
+  .projects-section { background: var(--bg); padding: 80px 5%; }
+  .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; max-width: 1200px; margin: 0 auto; }
+  .proj-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 16px;
+    overflow: hidden; transition: all 0.3s; cursor: pointer;
+  }
+  .proj-card.hidden { display: none; }
+  .proj-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.08); transform: translateY(-4px); }
+  .proj-img {
+    height: 220px; background: var(--bg2);
+    position: relative; overflow: hidden;
+  }
+  .proj-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.4s;
+  }
+  .proj-card:hover .proj-img img { transform: scale(1.06); }
+  .proj-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(10,37,64,0.8) 0%, transparent 60%);
+  }
+  .proj-cat-badge {
+    position: absolute; top: 14px; left: 14px;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+    color: var(--accent); padding: 5px 11px; border-radius: 6px;
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .proj-body { padding: 24px; }
+  .proj-title { font-family: 'Sora', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; line-height: 1.3; }
+  .proj-desc { color: var(--muted); font-size: 0.85rem; line-height: 1.6; margin-bottom: 18px; }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+  .proj-tag { background: var(--bg2); color: var(--muted); padding: 4px 10px; border-radius: 5px; font-size: 0.72rem; font-weight: 600; }
+  .proj-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid var(--border); }
+  .proj-meta { font-size: 0.75rem; color: var(--muted); }
+  .proj-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--accent); font-size: 0.82rem; font-weight: 700;
+    transition: gap 0.2s; background: none; border: none; cursor: pointer;
+  }
+  .proj-card:hover .proj-link { gap: 10px; }
+
+  /* STATS STRIP */
+  .stats-strip { background: var(--primary); padding: 60px 5%; }
+  .stats-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .strip-stat { text-align: center; padding: 0 20px; border-right: 1px solid rgba(255,255,255,0.1); }
+  .strip-stat:last-child { border-right: none; }
+  .strip-num { font-family: 'Sora', sans-serif; font-size: 2.8rem; font-weight: 800; color: #fff; line-height: 1; }
+  .strip-num span { color: var(--accent); }
+  .strip-label { color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-top: 8px; }
+
+  /* CASE STUDIES */
+  .case-section { padding: 80px 5%; background: var(--bg2); }
+  .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 48px; }
+  .case-card {
+    background: #fff; border-radius: 16px; border: 1px solid var(--border);
+    overflow: hidden; transition: all 0.3s; display: flex; flex-direction: column;
+  }
+  .case-card:hover { transform: translateY(-6px); box-shadow: 0 20px 55px rgba(0,0,0,0.1); }
+  .case-top {
+    height: 170px; position: relative; overflow: hidden;
+    display: flex; align-items: center; padding: 28px;
+    background-size: cover; background-position: center;
+  }
+  .case-top::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10, 37, 64, 0.85), rgba(13, 50, 96, 0.75));
+    z-index: 1;
+  }
+  .case-icon-big { width: 56px; height: 56px; position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.15); border-radius: 14px; padding: 12px; flex-shrink: 0; }
+  .case-icon-big img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0) invert(1); }
+  .case-top-text { margin-left: 20px; position: relative; z-index: 2; }
+  .case-top-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
+  .case-top-title { font-family: 'Sora', sans-serif; font-size: 1.15rem; font-weight: 800; color: #fff; line-height: 1.25; }
+  .case-body { padding: 24px; flex: 1; }
+  .case-challenge { margin-bottom: 16px; }
+  .case-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 6px; }
+  .case-text { font-size: 0.85rem; line-height: 1.65; color: var(--text); }
+  .case-results { display: flex; gap: 16px; padding: 16px; background: var(--bg2); border-radius: 10px; margin-top: 16px; }
+  .case-result-item { text-align: center; flex: 1; }
+  .case-result-num { font-family: 'Sora', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--primary); }
+  .case-result-label { font-size: 0.68rem; color: var(--muted); margin-top: 2px; }
+  .case-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+
+  /* TESTIMONIALS */
+  .testi-section { padding: 80px 5%; }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .testi-card {
+    background: var(--bg2); border-radius: 16px; padding: 28px;
+    border: 1px solid var(--border); transition: all 0.3s; position: relative;
+  }
+  .testi-card:hover { border-color: var(--accent); box-shadow: 0 12px 40px rgba(0,194,168,0.12); transform: translateY(-4px); }
+  .testi-quote { font-size: 2.5rem; color: var(--accent); line-height: 1; margin-bottom: 14px; font-family: Georgia, serif; }
+  .testi-text { font-size: 0.88rem; line-height: 1.7; color: var(--text); margin-bottom: 20px; font-style: italic; }
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 800; font-size: 0.85rem; font-family: 'Sora', sans-serif;
+    flex-shrink: 0;
+  }
+  .testi-name { font-weight: 700; font-size: 0.88rem; color: var(--primary); }
+  .testi-role { font-size: 0.75rem; color: var(--muted); }
+  .testi-flag { font-size: 0.85rem; margin-left: 4px; }
+  .stars { color: #fbbf24; font-size: 0.75rem; letter-spacing: 1px; margin-bottom: 14px; }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+    padding: 88px 5%; text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(10, 37, 64, 0.82);
+  }
+  .cta-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+  .cta-section h2 { font-family: 'Sora', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; color: #fff; margin-bottom: 16px; letter-spacing: -0.03em; }
+  .cta-section h2 span { color: var(--accent); }
+  .cta-section p { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.7; margin-bottom: 36px; }
+  .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--accent); color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; transition: all 0.2s; display: inline-block; box-shadow: 0 4px 20px rgba(0,194,168,0.4); }
+  .btn-primary:hover { background: #035fa0; transform: translateY(-2px); }
+  .btn-outline-white { border: 1.5px solid rgba(255,255,255,0.35); color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; display: inline-block; }
+  .btn-outline-white:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* WHATSAPP */
+  .whatsapp-btn { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 30px rgba(37,211,102,0.5); transition: all 0.3s; text-decoration: none; animation: pulse-wa 2.5s infinite; }
+  .whatsapp-btn:hover { transform: scale(1.1); animation: none; }
+  .whatsapp-btn svg { width: 30px; height: 30px; fill: #fff; }
+  @keyframes pulse-wa { 0%, 100% { box-shadow: 0 6px 30px rgba(37,211,102,0.5); } 50% { box-shadow: 0 6px 30px rgba(37,211,102,0.5), 0 0 0 12px rgba(37,211,102,0.12); } }
+
+  /* FOOTER */
+  footer { background: var(--primary); color: rgba(255,255,255,0.7); padding: 64px 5% 32px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; max-width: 1200px; margin: 0 auto 48px; }
+  .footer-brand .logo { color: #fff; font-size: 1.4rem; margin-bottom: 16px; display: block; }
+  .footer-brand p { font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.55); }
+  .footer-contact { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+  .footer-contact a { color: rgba(255,255,255,0.6); font-size: 0.85rem; transition: color 0.2s; }
+  .footer-contact a:hover { color: var(--accent); }
+  .footer-col h4 { font-family: 'Sora', sans-serif; color: #fff; font-weight: 700; font-size: 0.9rem; margin-bottom: 16px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul a { color: rgba(255,255,255,0.55); font-size: 0.85rem; transition: color 0.2s; }
+  .footer-col ul a:hover { color: var(--accent); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 28px; text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.35); max-width: 1200px; margin: 0 auto; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .featured-card { grid-template-columns: 1fr; }
+    .featured-img { min-height: 260px; }
+    .proj-grid { grid-template-columns: repeat(2, 1fr); }
+    .case-grid { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr 1fr; }
+    .stats-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .strip-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 16px 0; }
+    .strip-stat:nth-child(2), .strip-stat:nth-child(4) { border-bottom: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+  }
+  @media (max-width: 640px) {
+    .proj-grid { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .stats-inner { grid-template-columns: 1fr 1fr; }
+    .port-stats { gap: 28px; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .whatsapp-btn { bottom: 20px; right: 20px; }
+    section { padding: 56px 5%; }
+  }
+
+  /* Project card gradient variants */
+  .g1 { background: linear-gradient(135deg, #0a2540, #0f3d6e); }
+  .g2 { background: linear-gradient(135deg, #0d3260, #1a1a5e); }
+  .g3 { background: linear-gradient(135deg, #0f4c3a, #0a2540); }
+  .g4 { background: linear-gradient(135deg, #2d1a5e, #0a2540); }
+  .g5 { background: linear-gradient(135deg, #3a0a24, #1a1a5e); }
+  .g6 { background: linear-gradient(135deg, #0a3a2d, #0a2540); }
+
+  /* Case study gradients */
+  .cs1 { background: linear-gradient(135deg, #0a2540, #0d3260); }
+  .cs2 { background: linear-gradient(135deg, #0f3d6e, #1a1a5e); }
+  .cs3 { background: linear-gradient(135deg, #0f4c3a, #0d3260); }
+  .cs4 { background: linear-gradient(135deg, #2d1a5e, #0f3d6e); }
+
+  /* HIDDEN for filter */
+  .proj-card.hidden { display: none; }
+
+  /* ═══════════════════════════════════════════
+     CASE STUDY OVERLAY
+  ═══════════════════════════════════════════ */
+  .cs-overlay {
+    display: none; position: fixed; inset: 0; z-index: 8000;
+    background: rgba(10,37,64,0.72); backdrop-filter: blur(6px);
+    overflow-y: auto; padding: 40px 5%;
+    animation: csFadeIn 0.3s ease;
+  }
+  .cs-overlay.open { display: block; }
+  @keyframes csFadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .cs-modal {
+    max-width: 960px; margin: 0 auto;
+    background: #fff; border-radius: 20px; overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.35);
+    animation: csSlideUp 0.38s cubic-bezier(0.16,1,0.3,1);
+  }
+  @keyframes csSlideUp { from { opacity:0; transform: translateY(48px); } to { opacity:1; transform: translateY(0); } }
+  .cs-hero {
+    position: relative; min-height: 320px;
+    display: flex; align-items: flex-end;
+    background-size: cover; background-position: center;
+  }
+  .cs-hero::before {
+    content:''; position:absolute; inset:0;
+    background: linear-gradient(to bottom, rgba(10,37,64,0.45) 0%, rgba(10,37,64,0.92) 100%);
+  }
+  .cs-hero-content { position:relative; z-index:2; padding: 40px 44px; width:100%; }
+  .cs-hero-tag {
+    display: inline-flex; align-items:center; gap:8px;
+    background: rgba(4,119,190,0.25); border:1px solid rgba(4,119,190,0.5);
+    color: var(--accent); padding:5px 14px; border-radius:20px;
+    font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .cs-hero h2 {
+    font-family:'Sora',sans-serif; font-size:clamp(1.5rem,3vw,2.2rem); font-weight:800;
+    color:#fff; line-height:1.2; letter-spacing:-0.02em; margin-bottom:16px;
+  }
+  .cs-hero-chips { display:flex; flex-wrap:wrap; gap:8px; }
+  .cs-chip { background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.22); color:#fff; padding:4px 12px; border-radius:6px; font-size:0.72rem; font-weight:600; }
+  .cs-close {
+    position:absolute; top:20px; right:20px; z-index:10;
+    width:40px; height:40px; border-radius:50%;
+    background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.25);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; color:#fff; font-size:1.3rem; transition:all 0.2s; backdrop-filter:blur(4px);
+  }
+  .cs-close:hover { background:rgba(255,255,255,0.3); transform:scale(1.1); }
+  .cs-body { padding: 44px; }
+  .cs-kpis {
+    display:grid; grid-template-columns:repeat(4,1fr);
+    background:var(--bg2); border-radius:14px; border:1px solid var(--border); overflow:hidden; margin-bottom:40px;
+  }
+  .cs-kpi { padding:22px 18px; text-align:center; border-right:1px solid var(--border); }
+  .cs-kpi:last-child { border-right:none; }
+  .cs-kpi-num { font-family:'Sora',sans-serif; font-size:1.8rem; font-weight:800; color:var(--accent); line-height:1; margin-bottom:4px; }
+  .cs-kpi-label { font-size:0.72rem; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:0.07em; }
+  .cs-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-bottom:32px; }
+  .cs-block { background:var(--bg2); border-radius:12px; padding:24px; border:1px solid var(--border); }
+  .cs-block-title { font-family:'Sora',sans-serif; font-size:0.78rem; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .cs-block p { font-size:0.88rem; line-height:1.7; color:var(--text); }
+  .cs-block-full { background:var(--bg2); border-radius:12px; padding:24px; border:1px solid var(--border); margin-bottom:24px; }
+  .cs-steps { display:flex; flex-direction:column; gap:12px; }
+  .cs-step { display:flex; align-items:flex-start; gap:14px; padding:14px 16px; background:#fff; border-radius:10px; border:1px solid var(--border); }
+  .cs-step-num { width:28px; height:28px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; font-family:'Sora',sans-serif; font-weight:800; font-size:0.72rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .cs-step-text strong { display:block; font-size:0.85rem; font-weight:700; color:var(--primary); margin-bottom:2px; }
+  .cs-step-text span { font-size:0.8rem; color:var(--muted); }
+  .cs-outcomes { display:flex; flex-direction:column; gap:10px; }
+  .cs-outcome { display:flex; align-items:center; gap:12px; padding:10px 14px; background:#fff; border-radius:8px; border:1px solid var(--border); font-size:0.85rem; color:var(--text); }
+  .cs-outcome-dot { width:8px; height:8px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+  .cs-tech { display:flex; flex-wrap:wrap; gap:8px; }
+  .cs-tech-tag { background:linear-gradient(135deg,rgba(4,119,190,0.1),rgba(99,91,255,0.08)); border:1px solid rgba(4,119,190,0.2); color:var(--primary); padding:6px 14px; border-radius:8px; font-size:0.78rem; font-weight:600; }
+  .cs-cta-strip { background:linear-gradient(135deg,var(--primary),#0d3260); border-radius:14px; padding:28px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px; margin-top:32px; }
+  .cs-cta-strip h4 { font-family:'Sora',sans-serif; color:#fff; font-size:1.05rem; font-weight:700; margin-bottom:4px; }
+  .cs-cta-strip p { color:rgba(255,255,255,0.6); font-size:0.85rem; }
+  .cs-cta-btn { background:var(--accent); color:#fff; padding:12px 26px; border-radius:8px; font-weight:700; font-size:0.88rem; white-space:nowrap; transition:all 0.2s; display:inline-block; }
+  .cs-cta-btn:hover { background:#035fa0; transform:translateY(-2px); }
+  @media(max-width:700px) {
+    .cs-kpis { grid-template-columns:1fr 1fr; }
+    .cs-kpi:nth-child(2) { border-right:none; }
+    .cs-grid { grid-template-columns:1fr; }
+    .cs-body { padding:24px 20px; }
+    .cs-hero-content { padding:28px 24px; }
+  }
+   .logo img {
+  height: 60px;       /* Adjust height to fit your navbar */
+  width: auto;        /* Keeps aspect ratio */
+  vertical-align: middle;
+  border-radius:20px;
+  padding: 1px;
+   /* Aligns with text if combined */
+}
+.footer-brandreveal .logo img {
+  height: 60px;          /* Adjust size to fit footer */
+  width: auto;           /* Maintain aspect ratio */
+  display: block;        /* Keeps it clean above text */
+  margin-bottom: 10px;   /* Space between logo and description */
+  border-radius: 20px;   /* Rounded corners */
+  padding: 1px;          /* Space between logo and border */
+}
+
+
+
+/* If you want spacing around the logo */
+.logo {
+  display: flex;      /* Helps align logo and text side by side */
+  align-items: center;
+  gap: 8px;           /* Space between logo and text */
+}
+</style>
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/254745883650" target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+
+
+<nav id="main-nav">
+  <a href="index.html" class="logo"><img src="logo.png"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="serina-about.html">About Us</a></li>
+    <li><a href="serina-systems-services.html">Services</a></li>
+    <li><a href="serina-portfolio.html">Portfolio</a></li>
+    <li><a href="serina-process.html">Our Process</a></li>
+    <li><a href="serina-blog.html">Blogs</a></li>
+    <li><a href="serina-contact.html">Contact Us</a></li>
+  </ul>
+  <a href="serina-contact.html" class="nav-cta" style="display:block">Schedule Meeting</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html.html">Home</a>
+  <a href="serina-about.html">About Us</a>
+  <a href="serina-systems-services.html">Services</a>
+  <a href="serina-portfolio.html">Portfolio</a>
+  <a href="serina-process.html">Our Process</a>
+  <a href="serina-blog.html">Blogs</a>
+  <a href="serina-contact.html">Contact Us</a>
+  <a href="serina-contact.html" class="mob-cta">Schedule Meeting →</a>
+</div>
+
+<!-- PORTFOLIO HERO -->
+<section class="port-hero">
+  <div class="port-hero-inner">
+    <div class="port-hero-badge">🏆 Our Work</div>
+    <h1>Building <span>digital products</span> that make a real difference.</h1>
+    <p>50+ projects delivered across 40 counties. From MVPs to enterprise platforms, we build software that scales, performs, and delights.</p>
+    <div class="port-stats">
+      <div>
+        <div class="port-stat-num"><span class="counter" data-target="50">0</span><span>+</span></div>
+        <div class="port-stat-label">Projects Completed</div>
+      </div>
+      <div>
+        <div class="port-stat-num"><span class="counter" data-target="100">0</span><span>+</span></div>
+        <div class="port-stat-label">Happy Clients</div>
+      </div>
+      <div>
+        <div class="port-stat-num"><span class="counter" data-target="40">0</span><span>+</span></div>
+        <div class="port-stat-label">Counties Served</div>
+      </div>
+      <div>
+        <div class="port-stat-num">4.9<span>/5</span></div>
+        <div class="port-stat-label">Client Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-section">
+  <div class="filter-inner">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+      <button class="filter-btn" data-filter="web">Web Platforms</button>
+      <button class="filter-btn" data-filter="ai">AI &amp; ML</button>
+      <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+      <button class="filter-btn" data-filter="mis">MIS &amp; ERP</button>
+      <button class="filter-btn" data-filter="mvp">MVP</button>
+    </div>
+    <div class="filter-tabs">
+      <div class="filter-tab active" data-tab="all">All</div>
+      <div class="filter-tab" data-tab="africa">Africa</div>
+      <div class="filter-tab" data-tab="global">Global</div>
+      <div class="filter-tab" data-tab="featured">Featured</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED PROJECT -->
+<section class="featured-section">
+  <div class="container">
+    <p class="section-label reveal up">Featured Work</p>
+    <h2 class="section-title reveal up d1">Spotlight Project</h2>
+    <div class="featured-card reveal up d2">
+      <div class="featured-img g1">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2068&auto=format&fit=crop" alt="Amoh Tours Expeditions">
+        <div class="feat-badge-float">Featured</div>
+      </div>
+      <div class="featured-body">
+        <div class="feat-category">Web Development · Digital Marketing</div>
+        <div class="feat-title">Amoh Tours Expeditions — Full Digital Transformation</div>
+        <p class="feat-desc">A premium tours &amp; expeditions brand built from the ground up — complete website with online booking engine, SEO, and targeted digital marketing campaigns that drove a 5× surge in direct bookings and put Amoh Tours on the map for regional and international travellers.</p>
+        <div class="feat-meta">
+          <div class="feat-meta-item"><div class="feat-meta-label">Country</div><div class="feat-meta-val">🇰🇪 Kenya</div></div>
+          <div class="feat-meta-item"><div class="feat-meta-label">Duration</div><div class="feat-meta-val">8 Weeks</div></div>
+          <div class="feat-meta-item"><div class="feat-meta-label">Category</div><div class="feat-meta-val">Tourism & Travel</div></div>
+          <div class="feat-meta-item"><div class="feat-meta-label">Results</div><div class="feat-meta-val">5× Bookings</div></div>
+        </div>
+        <div class="feat-chips">
+          <span class="chip">Next.js</span><span class="chip">Sanity CMS</span><span class="chip">M-Pesa</span><span class="chip">SEO</span><span class="chip">Meta Ads</span><span class="chip">Google Ads</span>
+        </div>
+        <button onclick="openCaseStudy()" class="feat-btn">View Case Study →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS GRID -->
+<section class="projects-section">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:56px;" class="reveal up">
+      <div class="section-label">Our Service Offerings</div>
+      <h2 class="section-title">How We Deliver Excellence</h2>
+      <p class="section-sub" style="margin:0 auto;">Discover our comprehensive approach to web development, mobile solutions, digital marketing, and graphic design services.</p>
+    </div>
+
+    <div class="proj-grid">
+      <!-- Project 1: Enterprise Web Development -->
+      <div class="proj-card reveal scale d1" data-category="web">
+        <div class="proj-img">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="Web Development">
+          <div class="proj-overlay"></div>
+          <div class="proj-cat-badge">Web Development</div>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Enterprise Web Solutions</h3>
+          <p class="proj-desc">Custom web applications built with modern frameworks, optimized for performance and scalability.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">React</span>
+            <span class="proj-tag">Node.js</span>
+            <span class="proj-tag">Cloud Hosting</span>
+          </div>
+          <div class="proj-footer">
+            <span class="proj-meta">Full-stack Development</span>
+            <button class="proj-link" onclick="openProjectStudy('web-enterprise')">
+              View Details →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: E-Commerce Web Development -->
+      <div class="proj-card reveal scale d2" data-category="web">
+        <div class="proj-img">
+          <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2070&auto=format&fit=crop" alt="E-Commerce">
+          <div class="proj-overlay"></div>
+          <div class="proj-cat-badge">Web Development</div>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">E-Commerce Platforms</h3>
+          <p class="proj-desc">Feature-rich online stores with seamless checkout, inventory management, and payment integration.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">WooCommerce</span>
+            <span class="proj-tag">Payment Gateway</span>
+            <span class="proj-tag">SEO</span>
+          </div>
+          <div class="proj-footer">
+            <span class="proj-meta">Online Shopping Solutions</span>
+            <button class="proj-link" onclick="openProjectStudy('web-ecommerce')">
+              View Details →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: iOS & Android Mobile Apps -->
+      <div class="proj-card reveal scale d3" data-category="mobile">
+        <div class="proj-img">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=2074&auto=format&fit=crop" alt="Mobile Apps">
+          <div class="proj-overlay"></div>
+          <div class="proj-cat-badge">Mobile Development</div>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Cross-Platform Mobile Apps</h3>
+          <p class="proj-desc">Native-quality mobile applications for iOS and Android with a single codebase.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">React Native</span>
+            <span class="proj-tag">Flutter</span>
+            <span class="proj-tag">API Integration</span>
+          </div>
+          <div class="proj-footer">
+            <span class="proj-meta">iOS & Android</span>
+            <button class="proj-link" onclick="openProjectStudy('mobile-cross')">
+              View Details →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Digital Marketing Campaigns -->
+      <div class="proj-card reveal scale d4" data-category="digital">
+        <div class="proj-img">
+          <img src="https://img.freepik.com/free-photo/digital-marketing-with-icons-business-people_53876-94833.jpg?semt=ais_hybrid&w=740&q=80" alt="Digital Marketing">
+          <div class="proj-overlay"></div>
+          <div class="proj-cat-badge">Digital Marketing</div>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">360° Digital Marketing</h3>
+          <p class="proj-desc">Comprehensive marketing strategies combining SEO, social media, and paid advertising for maximum ROI.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">SEO</span>
+            <span class="proj-tag">Social Media</span>
+            <span class="proj-tag">PPC</span>
+          </div>
+          <div class="proj-footer">
+            <span class="proj-meta">Growth Marketing</span>
+            <button class="proj-link" onclick="openProjectStudy('digital-360')">
+              View Details →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: Brand Identity & Graphic Design -->
+      <div class="proj-card reveal scale d5" data-category="design">
+        <div class="proj-img">
+          <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop" alt="Graphic Design">
+          <div class="proj-overlay"></div>
+          <div class="proj-cat-badge">Graphic Design</div>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Brand Identity Design</h3>
+          <p class="proj-desc">Complete brand identity packages including logos, style guides, and marketing collateral.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Logo Design</span>
+            <span class="proj-tag">Brand Guidelines</span>
+            <span class="proj-tag">Print Design</span>
+          </div>
+          <div class="proj-footer">
+            <span class="proj-meta">Visual Identity</span>
+            <button class="proj-link" onclick="openProjectStudy('design-brand')">
+              View Details →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6: Content Marketing Strategy -->
+      <div class="proj-card reveal scale d6" data-category="digital">
+        <div class="proj-img">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2076&auto=format&fit=crop" alt="Content Marketing">
+          <div class="proj-overlay"></div>
+          <div class="proj-cat-badge">Digital Marketing</div>
+        </div>
+        <div class="proj-body">
+          <h3 class="proj-title">Content Marketing Strategy</h3>
+          <p class="proj-desc">Strategic content creation and distribution to build authority and drive organic traffic.</p>
+          <div class="proj-tags">
+            <span class="proj-tag">Content Strategy</span>
+            <span class="proj-tag">Copywriting</span>
+            <span class="proj-tag">Analytics</span>
+          </div>
+          <div class="proj-footer">
+            <span class="proj-meta">Content Development</span>
+            <button class="proj-link" onclick="openProjectStudy('digital-content')">
+              View Details →
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="strip-stat reveal up d1">
+      <div class="strip-num"><span class="counter" data-target="50">0</span><span>+</span></div>
+      <div class="strip-label">Projects Delivered</div>
+    </div>
+    <div class="strip-stat reveal up d2">
+      <div class="strip-num"><span class="counter" data-target="40">0</span><span>+</span></div>
+      <div class="strip-label">Counties Served</div>
+    </div>
+    <div class="strip-stat reveal up d3">
+      <div class="strip-num"><span class="counter" data-target="100">0</span><span>+</span></div>
+      <div class="strip-label">Happy Clients</div>
+    </div>
+    <div class="strip-stat reveal up d4">
+      <div class="strip-num"><span class="counter" data-target="98">0</span><span>%</span></div>
+      <div class="strip-label">On-Time Delivery</div>
+    </div>
+  </div>
+</div>
+
+<!-- CASE STUDIES -->
+<section class="case-section">
+  <div class="container">
+    <p class="section-label reveal up">In-Depth</p>
+    <h2 class="section-title reveal up d1">Case Studies</h2>
+    <p class="section-sub reveal up d2">Deeper looks at how we solved real-world problems with technology.</p>
+    <div class="case-grid">
+
+      <div class="case-card reveal left d2">
+        <div class="case-top cs1" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop');">
+          <span class="case-icon-big"><img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" alt="Healthcare icon"></span>
+          <div class="case-top-text">
+            <div class="case-top-tag">Healthtech · Kenya</div>
+            <div class="case-top-title">From Clinic to Cloud — Telemedicine for 50K Patients</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-challenge">
+            <div class="case-label">The Challenge</div>
+            <p class="case-text">A Nairobi-based healthcare startup needed a telemedicine platform that could handle rural connectivity issues, integrate with NHIF, and support both English and Swahili — all within a 4-month timeline.</p>
+          </div>
+          <div class="case-challenge">
+            <div class="case-label">Our Solution</div>
+            <p class="case-text">We built an offline-first Flutter mobile app with video consultation, prescription management, and lab integration. A Progressive Web App version ensured low-bandwidth compatibility across rural Kenya.</p>
+          </div>
+          <div class="case-results">
+            <div class="case-result-item"><div class="case-result-num">50K+</div><div class="case-result-label">Active Users</div></div>
+            <div class="case-result-item"><div class="case-result-num">4mo</div><div class="case-result-label">Delivery Time</div></div>
+            <div class="case-result-item"><div class="case-result-num">4.8★</div><div class="case-result-label">App Rating</div></div>
+          </div>
+          <div class="case-chips"><span class="chip">Flutter</span><span class="chip">Node.js</span><span class="chip">WebRTC</span><span class="chip">Firebase</span><span class="chip">NHIF API</span></div>
+        </div>
+      </div>
+
+      <div class="case-card reveal right d2">
+        <div class="case-top cs2" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2070&auto=format&fit=crop');">
+          <span class="case-icon-big"><img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="Accountant website icon"></span>
+          <div class="case-top-text">
+            <div class="case-top-tag">Professional Services · Kenya</div>
+            <div class="case-top-title">Professional Website Transforms Upcoming Kenyan Accountant's Practice</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-challenge">
+            <div class="case-label">The Challenge</div>
+            <p class="case-text">A rising CPA in Kenya had strong technical skills but struggled to attract new clients beyond word-of-mouth referrals. With no digital presence, he was invisible to businesses actively searching for accounting, tax, and audit services online — capping his growth potential.</p>
+          </div>
+          <div class="case-challenge">
+            <div class="case-label">Our Solution</div>
+            <p class="case-text">Serina Systems built a polished, credibility-first professional website with a services showcase, client inquiry forms, blog for tax insights, and SEO targeting Kenyan SMEs — positioning him as a trusted authority and generating a steady stream of qualified inbound leads.</p>
+          </div>
+          <div class="case-results">
+            <div class="case-result-item"><div class="case-result-num">3×</div><div class="case-result-label">Client Inquiries</div></div>
+            <div class="case-result-item"><div class="case-result-num">4wk</div><div class="case-result-label">Build Time</div></div>
+            <div class="case-result-item"><div class="case-result-num">Top 5</div><div class="case-result-label">Google Rankings</div></div>
+          </div>
+          <div class="case-chips"><span class="chip">WordPress</span><span class="chip">SEO</span><span class="chip">Lead Generation</span><span class="chip">Blog CMS</span></div>
+        </div>
+      </div>
+
+      <div class="case-card reveal left d3">
+        <div class="case-top cs3" style="background-image: url('https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=2070&auto=format&fit=crop');">
+          <span class="case-icon-big"><img src="https://cdn-icons-png.flaticon.com/512/1355/1355871.png" alt="Digital Marketing icon"></span>
+          <div class="case-top-text">
+            <div class="case-top-tag">Digital Marketing · Kenya</div>
+            <div class="case-top-title">360° Digital Growth Campaign for Kenyan NGO — 8× Reach</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-challenge">
+            <div class="case-label">The Challenge</div>
+            <p class="case-text">A Nairobi-based NGO needed to dramatically boost donor engagement, volunteer recruitment, and community awareness across Kenya — with a limited budget and zero in-house digital marketing expertise.</p>
+          </div>
+          <div class="case-challenge">
+            <div class="case-label">Our Solution</div>
+            <p class="case-text">A full-spectrum digital campaign: Meta Ads, Google Ads, SEO, content creation in English & Swahili, WhatsApp broadcast automation, and influencer partnerships — growing reach 8× in 10 weeks.</p>
+          </div>
+          <div class="case-results">
+            <div class="case-result-item"><div class="case-result-num">8×</div><div class="case-result-label">Reach Growth</div></div>
+            <div class="case-result-item"><div class="case-result-num">10wk</div><div class="case-result-label">Campaign Duration</div></div>
+            <div class="case-result-item"><div class="case-result-num">340%</div><div class="case-result-label">Donor Increase</div></div>
+          </div>
+          <div class="case-chips"><span class="chip">Meta Ads</span><span class="chip">Google Ads</span><span class="chip">WhatsApp API</span><span class="chip">Hootsuite</span></div>
+        </div>
+      </div>
+
+      <div class="case-card reveal right d3">
+        <div class="case-top cs4" style="background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=2070&auto=format&fit=crop');">
+          <span class="case-icon-big"><img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="Tours website icon"></span>
+          <div class="case-top-text">
+            <div class="case-top-tag">Web Development · Kenya</div>
+            <div class="case-top-title">Tours & Safari Website Drives 5× Online Bookings</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-challenge">
+            <div class="case-label">The Challenge</div>
+            <p class="case-text">A Nairobi-based safari and tours company was losing bookings to competitors with polished websites. They had no online booking system, relied entirely on phone calls, and had zero SEO visibility for high-value tourist search terms.</p>
+          </div>
+          <div class="case-challenge">
+            <div class="case-label">Our Solution</div>
+            <p class="case-text">We built a stunning, SEO-optimised tours website with an online booking engine, M-Pesa & card payments, itinerary management, and a CMS — launching in 6 weeks and driving 5× more online bookings.</p>
+          </div>
+          <div class="case-results">
+            <div class="case-result-item"><div class="case-result-num">5×</div><div class="case-result-label">Online Bookings</div></div>
+            <div class="case-result-item"><div class="case-result-num">6wk</div><div class="case-result-label">Build Time</div></div>
+            <div class="case-result-item"><div class="case-result-num">280%</div><div class="case-result-label">Organic Traffic</div></div>
+          </div>
+          <div class="case-chips"><span class="chip">Next.js</span><span class="chip">Sanity CMS</span><span class="chip">M-Pesa</span><span class="chip">SEO</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-section">
+  <div class="container">
+    <p class="section-label reveal up">What Clients Say</p>
+    <h2 class="section-title reveal up d1">5-Star Reviews Across the Region</h2>
+    <div class="testi-grid">
+
+      <div class="testi-card reveal up d1">
+        <div class="stars">★★★★★</div>
+        <div class="testi-quote">"</div>
+        <p class="testi-text">“Working with Serina Systems was a game-changer for Amoh Tours and Travels. They took our scattered ideas and transformed them into a cohesive, premium brand identity that truly reflects our values. From the logo to the marketing collateral, every detail was polished and professional. Our clients now recognize us instantly, and the new design has elevated our presence in the travel industry across Kenya. We couldn’t be more satisfied with the results.”</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AH</div>
+          <div>
+            <div class="testi-name">Amos Hongo <span class="testi-flag">🇰🇪</span></div>
+            <div class="testi-role">Founder, Amoh Safaris Expeditions</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal up d2">
+        <div class="stars">★★★★★</div>
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Serina Systems built our Kenyan marketplace from scratch in 12 weeks. The M-Pesa integration works flawlessly, our vendors love the dashboard, and we hit KES 28M in GMV in our first year. I recommend them to every Kenyan entrepreneur I meet.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">KO</div>
+          <div>
+            <div class="testi-name">Kevin Otieno <span class="testi-flag">🇰🇪</span></div>
+            <div class="testi-role">Business Enterpreneur</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal up d3">
+        <div class="stars">★★★★★</div>
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Serina Systems transformed our visibility online. Their digital marketing campaigns made Amoh Tours and Travels stand out to international audiences, driving a surge in direct bookings. Within months, our social media presence became a magnet for tourists, and our online inquiries grew 5×. Thanks to their SEO and targeted ads, we’re now attracting travelers from across Kenyan Region and beyond. Truly exceptional work that has redefined how we connect with the world.I recomend them to anyone in need of such outstanding services</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AH</div>
+          <div>
+            <div class="testi-name">Amos Hongo <span class="testi-flag">🇰🇪</span></div>
+            <div class="testi-role">Founder, Amoh Safaris Expeditions</div>
+          </div>
+        </div>
+      </div>
+
+     
+
+      
+
+     
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner reveal up">
+    <p class="section-label" style="color:var(--accent)">Start Your Project</p>
+    <h2>Ready to build something <span>extraordinary?</span></h2>
+    <p>From MVP to enterprise platform, we bring your vision to life. Let's talk about what you're building.</p>
+    <div class="cta-btns">
+      <a href="serina-contact.html" class="btn-primary">Request a Quote</a>
+      <a href="https://wa.me/254745883650" class="btn-outline-white">Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand">
+       <a href="index.html" class="logo">
+      <img src="logo.png" alt="Serina Systems Logo"></a>
+      <p>Serina Systems is the frontier of digital transformation. We engineer intelligent systems, craft compelling digital identities, and amplify brands through cutting-edge marketing strategies. Rooted in Nakuru yet built for global scalability, we merge technology, creativity, and strategy into one seamless experience.</p>
+      <div class="footer-contact">
+        <a href="#"><iconify-icon icon="mdi:map-marker" style="vertical-align:middle;font-size:1rem;margin-right:5px;"></iconify-icon> Nyahururu Along Nyahururu-Nakuru Road, Nakuru</a>
+        <a href="mailto:oumafidel09@gmail.com"><iconify-icon icon="mdi:email" style="vertical-align:middle;font-size:1rem;margin-right:5px;"></iconify-icon> info@serinasystems.gmail.com</a>
+        <a href="tel:+254745883650"><iconify-icon icon="mdi:phone" style="vertical-align:middle;font-size:1rem;margin-right:5px;"></iconify-icon> +254 745 883 650</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="serina-systems-services.html#mobile">Mobile Apps</a></li>
+        <li><a href="serina-systems-services.html#ai-ml">AI &amp; ML</a></li>
+        <li><a href="serina-systems-services.html3lowcode">Low Code / No Code</a></li>
+        <li><a href="serina-systems-services.html#seo">SEO</a></li>
+        <li><a href="serina-systems-services.html#mvp">MVP Development</a></li>
+        <li><a href="serina-systems-services.html#mis">MIS</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="serina-about.html">About Us</a></li>
+        <li><a href="serina-portfolio.html">Portfolio</a></li>
+        <li><a href="serina-process.html">Our Process</a></li>
+        <li><a href="serina-blog.html">Blogs</a></li>
+        <li><a href="serina-systems-services.html">Careers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="serina-contact.html">Get a Quote</a></li>
+        <li><a href="serina-contact.html">Schedule Meeting</a></li>
+        <li><a href="serina-contact.html">Support</a></li>
+        <li><a href="https://www.facebook.com/share/14iSjGfaSJF/">Facebook</a></li>
+        <li><a href="https://www.instagram.com/serinasystems/">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© Copyright Serina Systems 2026.All Rights Reserved</div>
+</footer>
+
+<!-- CASE STUDY OVERLAY (dynamic – content injected by JS) -->
+<div class="cs-overlay" id="cs-overlay" onclick="handleOverlayClick(event)">
+  <div class="cs-modal" id="cs-modal">
+
+  </div><!-- end cs-modal -->
+</div><!-- end cs-overlay -->
+
+<script>
+// ─── PROJECT CASE STUDY DATA ────────────────────────────────────────────────
+const projectData = {
+
+  
+
+  'amoh-tours': {
+    heroImg: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2068&auto=format&fit=crop',
+    tag: 'Featured Case Study · Web Development · Digital Marketing · Kenya',
+    title: 'Amoh Tours Expeditions — Full Digital Transformation',
+    chips: ['Next.js','Sanity CMS','M-Pesa API','Tailwind CSS','Node.js','Meta Ads','Google Ads','SEO','🇰🇪 Kenya'],
+    kpis: [['5×','Direct Bookings Growth'],['8 wk','Build & Launch Time'],['280%','Organic Traffic Rise'],['#1','Google Ranking for Key Tours']],
+    challenge: `Amoh Tours Expeditions had a compelling offering — curated safari packages, mountain treks, and cultural expeditions across Kenya — but an outdated web presence that failed to reflect the premium nature of their experiences. The website was slow, non-mobile-friendly, had no online booking capability, and attracted almost no organic traffic.
+
+The business was entirely reliant on word-of-mouth and WhatsApp referrals. Competitors with polished digital footprints were capturing the same target audience — both local Kenyan adventure seekers and international tourists searching for authentic East African experiences. Amoh Tours needed a full digital transformation: a world-class website, seamless booking infrastructure, and data-driven marketing campaigns to put them in front of the right travellers at the right moment.`,
+    solution: `Serina Systems delivered a complete end-to-end digital solution in 8 weeks. We built a visually stunning, high-performance website using Next.js — fast-loading on 3G connections common across Kenya — paired with Sanity CMS so the Amoh Tours team can manage tour listings, pricing, itineraries, and blog content without any developer support.
+
+At the core is a custom online booking engine with real-time tour availability, group-size selection, and M-Pesa + card payment integration for both local and international clients. A multi-currency display (KES / USD / EUR) ensures international visitors feel catered for.
+
+On the marketing side, we developed a 360° digital strategy: technical and content SEO targeting high-intent keywords like "Kenya safari packages", "Mount Kenya trekking", and "Maasai Mara expeditions"; targeted Meta Ads (Facebook & Instagram) campaigns with custom audience segments for adventure travellers in Kenya, UK, Germany, and the US; and a Google Search Ads campaign capturing travellers actively comparing tour operators. Every campaign was conversion-tracked to the booking form — no vanity metrics.`,
+    steps: [
+      ['Discovery & Brand Audit (Week 1)', 'Conducted a full audit of the existing website, competitor landscape, and target audience. Interviewed Amos Hongo and the Amoh Tours team to understand their signature tours, ideal client profiles, and business goals. Established content strategy, keyword targets, and campaign messaging.'],
+      ['UI/UX Design & Brand Elevation (Week 2)', 'Designed a premium travel website in Figma — earthy warm tones, dramatic full-bleed safari imagery, and bold typography that evokes adventure. Created mobile-first wireframes for every key page: Home, Tours Listing, Individual Tour Detail, Booking Flow, About, Blog, and Contact.'],
+      ['Development — Website & CMS (Weeks 3–5)', 'Built the full Next.js website with Sanity CMS integration. Implemented tour listing pages with filtering by category (safari, trekking, cultural, coastal), individual tour detail pages with gallery, itinerary accordion, and inclusions/exclusions. Integrated the M-Pesa Daraja API and Stripe for payment processing with automated booking confirmation emails.'],
+      ['SEO Technical Setup & On-Page Optimisation (Week 5)', 'Configured structured data (TourOperator, TouristAttraction schema), XML sitemap, canonical tags, and Core Web Vitals optimisation — achieving a Lighthouse Performance score of 94. Wrote SEO-optimised content for all 12 tour pages and 6 location landing pages targeting long-tail search queries.'],
+      ['Digital Marketing Campaigns Launch (Weeks 6–7)', 'Launched Meta Ads campaigns with three audience segments: Kenya adventure seekers (interest targeting), international travellers lookalike audiences (based on past booking data), and retargeting audiences for website visitors who did not convert. Simultaneously launched Google Search Ads for 48 high-intent keywords. Set up Google Analytics 4 with full e-commerce conversion tracking.'],
+      ['Go-Live, Handover & Growth Retainer (Week 8)', 'Zero-downtime launch with performance monitoring in place. Conducted a full training session with the Amoh Tours team on Sanity CMS, campaign dashboards, and booking management. Transitioned to a monthly retainer for campaign optimisation, content production, and SEO link-building.']
+    ],
+    outcomes: [
+      '5× increase in direct online bookings within the first 90 days of launch',
+      '280% growth in organic website traffic from SEO within 3 months',
+      'Page 1, Position 1–3 Google rankings for 9 priority tour keywords',
+      '4.2% conversion rate on the booking page — above the 2.8% industry average',
+      'International bookings (UK, Germany, USA) grew from 0 to 22% of total revenue',
+      'Cost-per-booking on Meta Ads reduced by 38% after campaign optimisation in week 6',
+      'CMS fully managed by the Amoh Tours team — zero developer dependency for content',
+      'Lighthouse Performance score of 94 — faster than 97% of travel websites'
+    ],
+    tech: ['Next.js 14','Sanity CMS','Tailwind CSS','Node.js','M-Pesa Daraja API','Stripe','Vercel','Google Analytics 4','Meta Ads Manager','Google Ads','Google Search Console','Framer Motion'],
+    ctaHeading: 'Ready to transform your tours business online?',
+    ctaText: 'We specialise in building booking-optimised websites and conversion-focused digital marketing campaigns for the tourism and travel industry.',
+    successStory: `Within three months of launch, Amoh Tours Expeditions had been fundamentally transformed. The business that once depended entirely on referrals and WhatsApp was now receiving 5× more direct bookings through the website — with international travellers from the UK, Germany, and the United States accounting for 22% of total revenue, a segment that had previously been zero.
+
+The SEO work delivered results faster than projected. By targeting an intelligent mix of high-volume head terms ("Kenya safari packages") and lower-competition long-tail queries ("3-day Maasai Mara expedition from Nairobi"), Amoh Tours achieved Page 1 rankings for 9 priority keywords within 90 days. The blog strategy — with destination guides and trip-planning articles — became a steady source of organic traffic, bringing in qualified visitors who were actively researching East African travel.
+
+The Meta Ads campaigns evolved quickly. In the first two weeks, broad interest-targeting audiences provided data on which tour categories resonated most. By week six, the campaigns had been refined to target high-intent lookalike audiences based on past bookers, reducing the cost-per-booking by 38% while simultaneously increasing booking volume. The retargeting sequences — serving immersive video content of Amoh Tours' safaris and treks to visitors who had not converted — contributed 28% of all ad-driven bookings.
+
+Founder Amos Hongo described the transformation as redefining how Amoh Tours connects with the world. The Sanity CMS empowered the team to add new tours, update pricing, and publish blog content independently — building on the digital foundation Serina Systems had established. The partnership continues under a monthly growth retainer focused on expanding into new market segments and scaling the brand's presence across East Africa and beyond.`
+  },
+
+  fintech: {
+    heroImg: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop',
+    tag: 'Featured Case Study · Mobile Application · Fintech · Kenya',
+    title: 'Mobile Fintech Platform for East Africa',
+    chips: ['Flutter','Node.js','M-Pesa API','Airtel Money API','T-Kash API','PostgreSQL','AWS','🇰🇪 Kenya'],
+    kpis: [['50K+','Active Users'],['6 mo','Build Time'],['4.8★','App Store Rating'],['KES 2.1B','Year 1 Transactions']],
+    challenge: `East African consumers lacked a single unified app for P2P transfers, bill payments, chama (savings group) management, and micro-loans. Existing solutions were fragmented across multiple apps with inconsistent UX, and none natively integrated all three dominant mobile money wallets — M-Pesa, Airtel Money, and T-Kash — simultaneously within one seamless experience.
+
+A Nairobi-based fintech startup came to Serina Systems with seed funding, a bold vision, and a 6-month deadline to deliver a production-ready platform capable of handling millions of transactions with CBK (Central Bank of Kenya) regulatory compliance, PCI-DSS alignment, and 99.9% uptime.`,
+    solution: `Serina Systems architected and built a cross-platform Flutter app backed by a Node.js microservices API on AWS. A custom payment abstraction layer unifies all three mobile money operators behind a single API, handling callbacks, reconciliation, and failure recovery automatically. A real-time chama management module supports group savings goals, contribution tracking, and automated reminders. An ML-powered micro-loan risk scoring engine — built in Python with TensorFlow — assesses creditworthiness in under 3 seconds using 40+ behavioural signals.
+
+The infrastructure runs on AWS ECS with auto-scaling, Redis caching, and PostgreSQL with full financial audit trails. Firebase Cloud Messaging powers real-time push notifications for transactions, loan approvals, and chama updates.`,
+    steps: [
+      ['Discovery & User Research (Weeks 1–2)', 'Interviewed 40+ target users across Nairobi, Kisumu, and Mombasa. Mapped chama workflows, pain points with existing apps, and mobile money payment behaviour patterns to define the exact feature scope and prioritisation.'],
+      ['Architecture & API Design (Weeks 3–4)', 'Designed microservices architecture on AWS ECS, built the payment abstraction layer for M-Pesa Daraja, Airtel Money, and T-Kash APIs, and defined the PostgreSQL schema for financial transactions with full double-entry audit trail support.'],
+      ['UI/UX Design & Prototype (Weeks 5–6)', 'Created a full Figma design system with Swahili/English dual-language UI, optimised for low-bandwidth users on 3G networks. Ran two in-person prototype testing sessions with real users in Mathare and Westlands before development began.'],
+      ['Agile Development — 5 Sprints (Weeks 7–20)', 'Delivered in 2-week sprints: Sprint 1: Core wallet & P2P transfers. Sprint 2: Bill payments & merchant pay. Sprint 3: Chama group savings module. Sprint 4: ML micro-loan engine & credit scoring. Sprint 5: Analytics dashboard, notifications & performance optimisation.'],
+      ['Security Audit & CBK Compliance (Weeks 21–22)', 'Third-party CREST-certified penetration test, CBK regulatory compliance review, and PCI-DSS alignment checks. All critical and high findings resolved before submission to Google Play and Apple App Store.'],
+      ['Launch & Growth Retainer (Week 24 onward)', 'Zero-downtime launch via AWS blue-green deployment with automated rollback capability. Serina Systems remained on a 6-month post-launch retainer covering feature iterations, performance tuning, and 24/7 incident response.']
+    ],
+    outcomes: [
+      '50,000+ active users achieved within 6 months of launch',
+      'KES 2.1 billion in transactions processed in year one',
+      '4.8★ rating on both Google Play and Apple App Store',
+      '3× chama group sign-ups versus the nearest competitor',
+      'ML micro-loan default rate held under 4.2% from day one',
+      'Series A funding round secured 8 months post-launch'
+    ],
+    tech: ['Flutter 3','Node.js (Microservices)','PostgreSQL','Redis','M-Pesa Daraja API','Airtel Money API','T-Kash API','AWS ECS','AWS RDS','Python / TensorFlow','Firebase FCM','Terraform'],
+    ctaHeading: 'Ready to build your fintech product?',
+    ctaText: 'We have deep expertise in East African mobile money integrations, CBK compliance, and fintech architecture that scales.',
+    successStory: `Six months after a zero-downtime launch, the platform had registered 50,000 active users and processed KES 2.1 billion in transactions — metrics that placed it among the fastest-growing fintech apps in Kenya's history. The chama module became the platform's defining feature; savings groups that had previously managed contributions in WhatsApp messages and physical registers now had automated tracking, goal progress visualisation, and instant M-Pesa disbursements.
+
+The ML credit scoring engine — trained on 40+ behavioural signals including transaction frequency, chama participation, and bill payment consistency — held the micro-loan default rate under 4.2%, outperforming established Kenyan micro-lenders whose rates typically sit between 8% and 15%. This was achieved with zero human underwriting for loans under KES 10,000.
+
+The client secured Series A funding 8 months post-launch. In their investor materials, they cited the platform's multi-wallet abstraction layer and ML scoring engine as the two core technical moats that justified the valuation. Serina Systems was named a strategic technology partner in the funding announcement, continuing the engagement to build business banking features, merchant payment terminals, and an agent banking network targeting rural Kenya.`
+  }
+
+};
+
+// ─── SERVICE OFFERING DATA (from updated portfolio) ─────────────────────────
+Object.assign(projectData, {
+  'web-enterprise': {
+    badge: 'Web Development',
+    title: 'Enterprise Web Solutions',
+    subtitle: 'Scalable, secure, and high-performance web applications tailored to your business needs.',
+    client: 'Enterprise Businesses',
+    industry: 'Technology',
+    duration: '8-16 Weeks',
+    kpis: [
+      { value: '99.9%', label: 'Uptime Guarantee' },
+      { value: '<2s', label: 'Page Load Time' },
+      { value: '100%', label: 'Mobile Responsive' }
+    ],
+    challenge: `Modern businesses need web applications that can handle growth, ensure data security, and provide exceptional user experiences. Many existing solutions are either too rigid, difficult to scale, or lack the performance needed for today's demanding users.\n\nOur clients often struggle with outdated technology stacks, poor mobile experiences, and websites that can't handle traffic spikes during peak business periods.`,
+    solution: `At Serina Systems, we build enterprise web solutions using cutting-edge technology stacks that combine performance, security, and scalability. Our approach includes:\n\nWe start with a thorough analysis of your business processes and user needs. Then we architect solutions using modern frameworks like React, Vue, or Angular for the frontend, paired with robust backend systems using Node.js, Python, or PHP.\n\nEvery application is built with cloud deployment in mind, utilizing AWS, Azure, or Google Cloud for maximum reliability and scalability. We implement industry-standard security measures including SSL encryption, secure authentication, and regular security audits.`,
+    steps: [
+      { title: 'Discovery & Planning', desc: 'Deep dive into your business requirements, user personas, and technical needs' },
+      { title: 'UI/UX Design', desc: 'Create wireframes and high-fidelity designs focused on user experience' },
+      { title: 'Development', desc: 'Agile development with regular sprints and client feedback loops' },
+      { title: 'Testing & QA', desc: 'Comprehensive testing across devices, browsers, and performance benchmarks' },
+      { title: 'Deployment', desc: 'Smooth launch with monitoring, documentation, and training' },
+      { title: 'Support', desc: 'Ongoing maintenance, updates, and optimization' }
+    ],
+    outcomes: [
+      'Fully responsive web applications that work flawlessly on all devices',
+      'Lightning-fast performance with optimized code and CDN integration',
+      'Scalable architecture that grows with your business',
+      'SEO-optimized for maximum organic visibility',
+      'Comprehensive admin panels for easy content management',
+      'Regular security updates and monitoring'
+    ],
+    tech: ['React', 'Node.js', 'PostgreSQL', 'AWS', 'Docker', 'Redis', 'TypeScript', 'GraphQL'],
+    story: `We understand that your web application is the face of your business in the digital world. That's why we don't just build websites – we create digital experiences that convert visitors into customers.\n\nOur development process is transparent and collaborative. You'll have access to development progress through our project management tools, and we conduct regular sprint reviews to ensure we're aligned with your vision.\n\nWhat sets us apart is our commitment to performance and user experience. Every line of code is written with optimization in mind. We conduct rigorous testing across multiple devices and browsers to ensure consistent performance.\n\nAfter launch, we don't disappear. Our team provides comprehensive training for your staff, detailed documentation, and ongoing support to ensure your web application continues to perform at its best.`,
+    ctaHeading: 'Ready to Build Your Enterprise Web Solution?',
+    ctaText: 'Let\'s discuss how we can transform your digital presence with a custom web application.'
+  },
+
+  'web-ecommerce': {
+    badge: 'E-Commerce',
+    title: 'E-Commerce Platforms',
+    subtitle: 'Complete online shopping solutions that drive sales and delight customers.',
+    client: 'Retail Businesses',
+    industry: 'E-Commerce',
+    duration: '6-12 Weeks',
+    kpis: [
+      { value: '3.5%', label: 'Avg. Conversion Rate' },
+      { value: '24/7', label: 'Automated Sales' },
+      { value: '98%', label: 'Payment Success Rate' }
+    ],
+    challenge: `Launching an online store is more than just listing products. Businesses need secure payment processing, inventory management, smooth checkout experiences, and the ability to handle multiple products and categories efficiently.\n\nMany business owners struggle with cart abandonment, complex payment integrations, and managing inventory across multiple channels. Poor mobile experiences often lead to lost sales.`,
+    solution: `Serina Systems specializes in building robust e-commerce platforms that turn browsers into buyers. We leverage proven platforms like WooCommerce, Shopify, or custom solutions built with modern frameworks.\n\nOur e-commerce solutions include secure payment gateway integration supporting M-Pesa, card payments, and international payment methods. We implement smart inventory management systems that sync across all sales channels.\n\nThe checkout process is streamlined to minimize cart abandonment, with guest checkout options, multiple payment methods, and clear shipping information. Every store is optimized for mobile shopping, ensuring customers can purchase seamlessly from any device.`,
+    steps: [
+      { title: 'Business Analysis', desc: 'Understanding your products, target market, and sales goals' },
+      { title: 'Platform Selection', desc: 'Choosing the right e-commerce platform for your needs' },
+      { title: 'Design & Branding', desc: 'Creating a stunning storefront that reflects your brand' },
+      { title: 'Development', desc: 'Building features, payment integration, and inventory systems' },
+      { title: 'Product Setup', desc: 'Organizing categories, uploading products, and setting up shipping' },
+      { title: 'Launch & Marketing', desc: 'Going live with integrated marketing and analytics tools' }
+    ],
+    outcomes: [
+      'Professional online store with unlimited product capacity',
+      'Secure payment processing with multiple payment options',
+      'Automated inventory management and order tracking',
+      'Mobile-optimized shopping experience',
+      'Built-in SEO for organic traffic and sales',
+      'Customer account management and order history',
+      'Email marketing integration for customer retention',
+      'Detailed analytics dashboard for sales insights'
+    ],
+    tech: ['WooCommerce', 'WordPress', 'Stripe', 'M-Pesa API', 'PHP', 'MySQL', 'JavaScript', 'REST API'],
+    story: `We've helped numerous businesses transition from physical stores to thriving online marketplaces. Our e-commerce solutions are designed with one goal in mind: maximizing your sales while minimizing operational complexity.\n\nEvery store we build includes features that enhance the shopping experience – from product recommendations to wishlist functionality, from customer reviews to social sharing. We integrate email marketing tools so you can nurture customer relationships and drive repeat purchases.\n\nSecurity is paramount in e-commerce. We implement SSL certificates, PCI-compliant payment processing, and regular security monitoring to protect both your business and your customers.\n\nAfter launch, we provide training on managing your store, processing orders, and using the analytics dashboard. Our support team is always available to help you grow your online business.`,
+    ctaHeading: 'Start Selling Online Today',
+    ctaText: 'Let\'s build an e-commerce platform that turns visitors into loyal customers.'
+  },
+
+  'mobile-cross': {
+    badge: 'Mobile Development',
+    title: 'Cross-Platform Mobile Apps',
+    subtitle: 'Native-quality mobile applications for iOS and Android from a single codebase.',
+    client: 'Businesses & Startups',
+    industry: 'Mobile Technology',
+    duration: '10-20 Weeks',
+    kpis: [
+      { value: '2x', label: 'Faster Development' },
+      { value: '60%', label: 'Cost Savings' },
+      { value: '4.5+', label: 'App Store Rating' }
+    ],
+    challenge: `Businesses want to reach users on both iOS and Android, but developing separate native apps doubles the cost and time. Maintaining two codebases means fixing bugs twice and implementing features twice.\n\nMany businesses struggle with choosing between native development or compromise on quality with basic mobile web apps. Users expect fast, smooth experiences that feel native to their device.`,
+    solution: `Serina Systems uses modern cross-platform frameworks like React Native and Flutter to build apps that look and feel native on both iOS and Android while sharing a single codebase.\n\nOur mobile apps include smooth animations, offline functionality, push notifications, and deep integration with device features like camera, GPS, and biometric authentication. We optimize for performance to ensure your app feels fast and responsive.\n\nEvery app is designed with your users in mind – intuitive navigation, beautiful interfaces, and seamless user experiences. We follow iOS and Android design guidelines to ensure your app feels at home on each platform.`,
+    steps: [
+      { title: 'Concept & Strategy', desc: 'Defining app features, user flows, and business objectives' },
+      { title: 'UI/UX Design', desc: 'Creating pixel-perfect designs for both iOS and Android' },
+      { title: 'Development', desc: 'Building with React Native or Flutter for maximum efficiency' },
+      { title: 'API Integration', desc: 'Connecting to backend services and third-party APIs' },
+      { title: 'Testing', desc: 'Rigorous testing on real devices across iOS and Android' },
+      { title: 'App Store Launch', desc: 'Publishing to Apple App Store and Google Play Store' },
+      { title: 'Monitoring', desc: 'Analytics, crash reporting, and continuous optimization' }
+    ],
+    outcomes: [
+      'Single codebase supporting both iOS and Android',
+      'Native-quality performance and user experience',
+      'Offline functionality for uninterrupted use',
+      'Push notifications for user engagement',
+      'Secure authentication and data encryption',
+      'In-app analytics for user behavior insights',
+      'Regular updates and feature additions',
+      'App Store Optimization (ASO) for visibility'
+    ],
+    tech: ['React Native', 'Flutter', 'Firebase', 'Redux', 'Node.js API', 'MongoDB', 'Push Notifications', 'Analytics'],
+    story: `Mobile apps are where your customers spend most of their digital time. We build apps that they'll want to open every day – fast, beautiful, and useful.\n\nOur development approach is agile and collaborative. You'll see progress weekly through TestFlight (iOS) and Google Play beta releases. We gather feedback early and often to ensure the final product exceeds expectations.\n\nWe pay special attention to performance – optimizing images, minimizing app size, and ensuring smooth 60fps animations. Battery efficiency and data usage are also priorities to keep your users happy.\n\nPost-launch, we monitor crash reports, user reviews, and analytics to continuously improve the app. We help you with app store optimization to improve visibility and downloads.`,
+    ctaHeading: 'Bring Your App Idea to Life',
+    ctaText: 'Let\'s create a mobile app that your customers will love and use daily.'
+  },
+
+  'digital-360': {
+    badge: 'Digital Marketing',
+    title: '360° Digital Marketing',
+    subtitle: 'Comprehensive marketing strategies that drive traffic, leads, and sales.',
+    client: 'Growing Businesses',
+    industry: 'Marketing',
+    duration: 'Ongoing Monthly',
+    kpis: [
+      { value: '250%', label: 'Avg. Traffic Increase' },
+      { value: '3.2x', label: 'Lead Generation' },
+      { value: '185%', label: 'ROI Average' }
+    ],
+    challenge: `Digital marketing is complex and constantly evolving. Businesses struggle to maintain consistent presence across multiple channels – SEO, social media, paid advertising, email marketing, and content creation.\n\nMany businesses waste budget on scattered marketing efforts without a cohesive strategy. They lack the tools to measure what's working and struggle to generate consistent leads and sales online.`,
+    solution: `Serina Systems provides comprehensive digital marketing services that combine SEO, social media marketing, paid advertising, content marketing, and email campaigns into one cohesive growth strategy.\n\nWe start with a thorough audit of your current online presence and competitive landscape. Then we develop a customized marketing plan that aligns with your business goals and budget.\n\nOur SEO services include keyword research, on-page optimization, technical SEO, and high-quality link building to improve your organic rankings. We create and manage social media campaigns across platforms like Facebook, Instagram, LinkedIn, and Twitter to build your brand and engage your audience.\n\nPaid advertising campaigns on Google Ads, Facebook Ads, and Instagram are optimized for maximum ROI with A/B testing, audience targeting, and conversion tracking. We create compelling ad copy and visuals that drive clicks and conversions.`,
+    steps: [
+      { title: 'Audit & Analysis', desc: 'Comprehensive review of your current digital presence and competitors' },
+      { title: 'Strategy Development', desc: 'Creating a customized marketing plan aligned with your goals' },
+      { title: 'Campaign Setup', desc: 'Implementing SEO, social media, and advertising campaigns' },
+      { title: 'Content Creation', desc: 'Developing engaging content for all marketing channels' },
+      { title: 'Optimization', desc: 'Continuous testing and refinement for better results' },
+      { title: 'Reporting', desc: 'Monthly detailed reports with insights and recommendations' }
+    ],
+    outcomes: [
+      'Increased organic search rankings for target keywords',
+      'Growing social media following and engagement',
+      'Qualified leads from multiple channels',
+      'Higher conversion rates from optimized landing pages',
+      'Better brand visibility and recognition',
+      'Measurable ROI on all marketing spend',
+      'Consistent content calendar across all platforms',
+      'Data-driven insights for business decisions'
+    ],
+    tech: ['Google Analytics', 'Google Ads', 'Facebook Business', 'SEMrush', 'Mailchimp', 'Buffer', 'WordPress', 'Tag Manager'],
+    story: `Digital marketing success requires consistency, creativity, and data-driven decision making. We become an extension of your team, managing all aspects of your online marketing so you can focus on running your business.\n\nEvery campaign we run is tracked and measured. You'll receive monthly reports showing exactly what's working – website traffic, lead sources, conversion rates, and ROI. Transparency is key to our approach.\n\nOur content team creates blog posts, social media content, email newsletters, and ad copy that resonates with your target audience. We research trending topics in your industry and create content that educates, entertains, and converts.\n\nSEO is a long-term investment, and we're committed to sustainable growth strategies that build lasting results. Our white-hat techniques ensure your rankings are built on solid foundations that won't be affected by algorithm updates.`,
+    ctaHeading: 'Accelerate Your Digital Growth',
+    ctaText: 'Let\'s create a marketing strategy that delivers measurable results for your business.'
+  },
+
+  'design-brand': {
+    badge: 'Graphic Design',
+    title: 'Brand Identity Design',
+    subtitle: 'Complete visual identity systems that make your business memorable.',
+    client: 'New & Rebranding Businesses',
+    industry: 'Branding',
+    duration: '4-8 Weeks',
+    kpis: [
+      { value: '100%', label: 'Unique Designs' },
+      { value: '5+', label: 'Concept Options' },
+      { value: 'Unlimited', label: 'Revisions' }
+    ],
+    challenge: `First impressions matter. Businesses need a professional visual identity that communicates their values, differentiates them from competitors, and resonates with their target audience.\n\nMany businesses struggle with inconsistent branding across different platforms, amateur-looking designs, or generic templates that fail to capture their unique value proposition.`,
+    solution: `Serina Systems creates comprehensive brand identity packages that include logo design, color palettes, typography systems, and brand guidelines. We ensure your brand is consistent, professional, and memorable.\n\nOur design process starts with understanding your business – your mission, values, target audience, and competitive landscape. We research your industry to create designs that are both unique and appropriate for your market.\n\nYou'll receive multiple logo concepts to choose from, each with variations for different use cases (color, black & white, icon-only). We provide complete brand guidelines documenting how to use your logo, colors, fonts, and other brand elements across all touchpoints.\n\nBeyond logos, we design business cards, letterheads, email signatures, social media graphics, presentation templates, and marketing collateral to ensure consistency across all customer touchpoints.`,
+    steps: [
+      { title: 'Brand Discovery', desc: 'Deep dive into your business, values, and target audience' },
+      { title: 'Research', desc: 'Competitor analysis and industry trend research' },
+      { title: 'Concept Development', desc: 'Creating multiple unique logo and brand concepts' },
+      { title: 'Refinement', desc: 'Iterating on chosen concept based on your feedback' },
+      { title: 'Finalization', desc: 'Delivering final logo in all formats and variations' },
+      { title: 'Brand Guidelines', desc: 'Comprehensive guide for consistent brand usage' },
+      { title: 'Collateral Design', desc: 'Designing business cards, templates, and marketing materials' }
+    ],
+    outcomes: [
+      'Unique, professional logo that captures your brand essence',
+      'Complete color palette with hex codes and usage guidelines',
+      'Selected typography system for all brand communications',
+      'Logo variations for different applications (full color, monochrome, icon)',
+      'File formats for print (AI, EPS, PDF) and digital (PNG, SVG)',
+      'Comprehensive brand style guide document',
+      'Business card and stationery designs',
+      'Social media templates and brand graphics',
+      'Marketing collateral templates (brochures, flyers, presentations)'
+    ],
+    tech: ['Adobe Illustrator', 'Adobe Photoshop', 'Adobe InDesign', 'Figma', 'CorelDRAW'],
+    story: `Your brand is more than just a logo – it's the complete visual and emotional experience customers have with your business. We create brand identities that tell your story and connect with your audience.\n\nOur designers have years of experience across diverse industries. We understand design principles, color psychology, and what makes a brand memorable. Every element is crafted with intention.\n\nWe believe in collaboration. Throughout the design process, you'll be involved, providing feedback and direction. We offer unlimited revisions within the project scope because we're not satisfied until you love your brand.\n\nThe brand guidelines we provide ensure that anyone using your brand – whether internal team members or external partners – maintains consistency. This builds brand recognition and trust over time.\n\nAfter delivery, we remain available for additional design needs – whether it's new marketing materials, packaging design, or updating your brand assets as your business evolves.`,
+    ctaHeading: 'Build a Brand That Stands Out',
+    ctaText: 'Let\'s create a visual identity that makes your business unforgettable.'
+  },
+
+  'digital-content': {
+    badge: 'Content Marketing',
+    title: 'Content Marketing Strategy',
+    subtitle: 'Strategic content that builds authority, drives traffic, and converts readers into customers.',
+    client: 'B2B & B2C Businesses',
+    industry: 'Content Marketing',
+    duration: 'Ongoing Monthly',
+    kpis: [
+      { value: '400%', label: 'Organic Traffic Growth' },
+      { value: '8+', label: 'Quality Articles/Month' },
+      { value: '3x', label: 'Lead Conversion' }
+    ],
+    challenge: `Creating valuable, consistent content that ranks well in search engines and engages readers is time-consuming and requires expertise. Many businesses struggle to maintain a regular publishing schedule or create content that actually drives business results.\n\nPoor content fails to rank in search engines, doesn't engage readers, and generates no leads or sales. Without a clear strategy, content efforts become scattered and ineffective.`,
+    solution: `Serina Systems develops and executes content marketing strategies that position your business as an industry authority while driving measurable business results.\n\nWe start with comprehensive keyword research to identify what your target audience is searching for. Then we create a content calendar aligned with your business goals – balancing informational content that builds trust with conversion-focused content that drives action.\n\nOur team of experienced writers creates in-depth, well-researched articles that provide genuine value to readers. Every piece is optimized for search engines using proven SEO techniques – from keyword placement to meta descriptions to internal linking.\n\nContent is distributed across multiple channels – your blog, email newsletters, social media, and industry publications – to maximize reach and impact. We track performance metrics to continuously refine the strategy.`,
+    steps: [
+      { title: 'Content Audit', desc: 'Analyzing existing content and identifying gaps' },
+      { title: 'Keyword Research', desc: 'Finding high-value keywords your audience searches for' },
+      { title: 'Strategy Planning', desc: 'Creating a content calendar and distribution plan' },
+      { title: 'Content Creation', desc: 'Writing, editing, and optimizing quality articles' },
+      { title: 'Publishing', desc: 'Scheduling and publishing content across platforms' },
+      { title: 'Promotion', desc: 'Social media sharing, email distribution, and outreach' },
+      { title: 'Analytics', desc: 'Tracking performance and optimizing based on data' }
+    ],
+    outcomes: [
+      'Consistent publishing schedule with 8-12 articles per month',
+      'SEO-optimized content that ranks in Google search results',
+      'Increased organic traffic to your website',
+      'Higher domain authority and search visibility',
+      'Email newsletter content that nurtures leads',
+      'Social media content that drives engagement',
+      'Thought leadership positioning in your industry',
+      'More qualified leads from organic search',
+      'Lower customer acquisition costs compared to paid ads',
+      'Comprehensive monthly reports with traffic and conversion metrics'
+    ],
+    tech: ['WordPress', 'Yoast SEO', 'Google Search Console', 'Ahrefs', 'Grammarly', 'Canva', 'Google Analytics', 'Mailchimp'],
+    story: `Content marketing is one of the most cost-effective ways to grow your business, but only if done correctly. We create content that attracts your ideal customers at every stage of their journey – from awareness to consideration to decision.\n\nOur writers are skilled at making complex topics accessible and engaging. Whether you're in technology, healthcare, finance, or any other industry, we take the time to understand your field so we can write with authority.\n\nEvery article is thoroughly researched, fact-checked, and optimized for both readers and search engines. We focus on creating evergreen content that continues to drive traffic months and years after publication.\n\nContent distribution is just as important as creation. We ensure your content reaches the right audience through strategic social media promotion, email marketing, and when appropriate, outreach to industry publications and influencers.\n\nThe results speak for themselves – our clients typically see significant increases in organic traffic within 3-6 months, with continuous growth as we publish more content and build topical authority.`,
+    ctaHeading: 'Start Building Your Content Authority',
+    ctaText: 'Let\'s create a content strategy that attracts, engages, and converts your ideal customers.'
+  }
+});
+
+// ─── RENDER HELPER ──────────────────────────────────────────────────────────
+function renderCaseStudy(key) {
+  const d = projectData[key];
+  if (!d) return '<div style="padding:60px;text-align:center;color:var(--muted)">Project not found</div>';
+
+  // Detect format: service offerings use {value,label} kpis, {title,desc} steps, and .story/.badge/.subtitle
+  const isServiceOffering = d.badge !== undefined;
+
+  if (isServiceOffering) {
+    // ── SERVICE OFFERING FORMAT (from updated portfolio) ──────────────────
+    const kpiHTML = d.kpis.map(kpi => `
+      <div class="cs-kpi">
+        <div class="cs-kpi-num">${kpi.value}</div>
+        <div class="cs-kpi-label">${kpi.label}</div>
+      </div>`).join('');
+
+    const stepsHTML = d.steps.map((step, i) => `
+      <div class="cs-step">
+        <div class="cs-step-num">${i + 1}</div>
+        <div class="cs-step-text">
+          <strong>${step.title}</strong>
+          <span>${step.desc}</span>
+        </div>
+      </div>`).join('');
+
+    const outcomesHTML = d.outcomes.map(o => `
+      <div class="cs-outcome"><div class="cs-outcome-dot"></div>${o}</div>`).join('');
+
+    const techHTML = d.tech.map(t => `<span class="cs-tech-tag">${t}</span>`).join('');
+
+    const storyParas = d.story.split('\n\n').filter(Boolean).map(p => `
+      <p style="margin-bottom:14px;font-size:0.88rem;line-height:1.75;color:var(--text)">${p}</p>`).join('');
+
+    return `
+      <button class="cs-close" onclick="closeCaseStudy()" aria-label="Close">✕</button>
+      <div class="cs-hero" style="background:linear-gradient(135deg, var(--primary) 0%, #0d3260 100%); min-height:200px;">
+        <div class="cs-hero-content">
+          <div class="cs-hero-tag">
+            <iconify-icon icon="mdi:briefcase-variant" style="font-size:0.85rem;"></iconify-icon>
+            ${d.badge}
+          </div>
+          <h2>${d.title}</h2>
+          <p style="color:rgba(255,255,255,0.75);font-size:0.95rem;margin-top:8px;line-height:1.6;">${d.subtitle}</p>
+        </div>
+      </div>
+
+      <div class="cs-body">
+        <div style="display:flex;gap:32px;flex-wrap:wrap;padding:20px 0 24px;border-bottom:1px solid var(--border);margin-bottom:8px;">
+          <div><div style="font-size:0.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Service Type</div><div style="font-size:0.88rem;font-weight:600;color:var(--primary);">${d.client}</div></div>
+          <div><div style="font-size:0.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Industry</div><div style="font-size:0.88rem;font-weight:600;color:var(--primary);">${d.industry}</div></div>
+          <div><div style="font-size:0.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Timeline</div><div style="font-size:0.88rem;font-weight:600;color:var(--primary);">${d.duration}</div></div>
+        </div>
+
+        <div class="cs-kpis">${kpiHTML}</div>
+
+        <div class="cs-grid">
+          <div class="cs-block">
+            <div class="cs-block-title">
+              <iconify-icon icon="mdi:target" style="font-size:1rem;"></iconify-icon>
+              The Challenge
+            </div>
+            ${d.challenge.split('\n\n').filter(Boolean).map(p=>`<p style="margin-bottom:10px;font-size:0.88rem;line-height:1.7;color:var(--text)">${p}</p>`).join('')}
+          </div>
+          <div class="cs-block">
+            <div class="cs-block-title">
+              <iconify-icon icon="mdi:lightbulb-outline" style="font-size:1rem;"></iconify-icon>
+              Our Approach
+            </div>
+            ${d.solution.split('\n\n').filter(Boolean).map(p=>`<p style="margin-bottom:10px;font-size:0.88rem;line-height:1.7;color:var(--text)">${p}</p>`).join('')}
+          </div>
+        </div>
+
+        <div class="cs-block-full">
+          <div class="cs-block-title">
+            <iconify-icon icon="mdi:timeline-outline" style="font-size:1rem;"></iconify-icon>
+            Our Process
+          </div>
+          <div class="cs-steps">${stepsHTML}</div>
+        </div>
+
+        <div class="cs-grid">
+          <div class="cs-block">
+            <div class="cs-block-title">
+              <iconify-icon icon="mdi:trophy-outline" style="font-size:1rem;"></iconify-icon>
+              What You Get
+            </div>
+            <div class="cs-outcomes">${outcomesHTML}</div>
+          </div>
+          <div class="cs-block">
+            <div class="cs-block-title">
+              <iconify-icon icon="mdi:code-tags" style="font-size:1rem;"></iconify-icon>
+              Technologies Used
+            </div>
+            <div class="cs-tech">${techHTML}</div>
+          </div>
+        </div>
+
+        <div class="cs-block-full" style="margin-top:0">
+          <div class="cs-block-title" style="margin-bottom:14px">
+            <iconify-icon icon="mdi:check-decagram" style="font-size:1rem;"></iconify-icon>
+            Why Choose Serina Systems
+          </div>
+          ${storyParas}
+        </div>
+
+        <div class="cs-cta-strip">
+          <div>
+            <h4>${d.ctaHeading}</h4>
+            <p>${d.ctaText}</p>
+          </div>
+          <a href="serina-contact.html" class="cs-cta-btn">Get Started Today →</a>
+        </div>
+      </div>
+    `;
+  }
+
+  // ── ORIGINAL PROJECT FORMAT (case studies with heroImg, chips, successStory) ─
+  const kpiHTML = d.kpis.map(([num, lbl]) => `
+    <div class="cs-kpi">
+      <div class="cs-kpi-num">${num}</div>
+      <div class="cs-kpi-label">${lbl}</div>
+    </div>`).join('');
+
+  const chipsHTML = d.chips.map(c => `<span class="cs-chip">${c}</span>`).join('');
+
+  const stepsHTML = d.steps.map((s, i) => `
+    <div class="cs-step">
+      <div class="cs-step-num">${String(i+1).padStart(2,'0')}</div>
+      <div class="cs-step-text">
+        <strong>${s[0]}</strong>
+        <span>${s[1]}</span>
+      </div>
+    </div>`).join('');
+
+  const outcomesHTML = d.outcomes.map(o => `
+    <div class="cs-outcome"><div class="cs-outcome-dot"></div>${o}</div>`).join('');
+
+  const techHTML = d.tech.map(t => `<span class="cs-tech-tag">${t}</span>`).join('');
+
+  const storyParas = d.successStory.split('\n\n').filter(Boolean).map(p => `<p style="margin-bottom:14px;font-size:0.88rem;line-height:1.75;color:var(--text)">${p}</p>`).join('');
+
+  return `
+    <div class="cs-hero" style="background-image: url('${d.heroImg}');">
+      <button class="cs-close" onclick="closeCaseStudy()" aria-label="Close">✕</button>
+      <div class="cs-hero-content">
+        <div class="cs-hero-tag">
+          <iconify-icon icon="mdi:star" style="font-size:0.85rem;"></iconify-icon>
+          ${d.tag}
+        </div>
+        <h2>${d.title}</h2>
+        <div class="cs-hero-chips">${chipsHTML}</div>
+      </div>
+    </div>
+
+    <div class="cs-body">
+
+      <div class="cs-kpis">${kpiHTML}</div>
+
+      <div class="cs-grid">
+        <div class="cs-block">
+          <div class="cs-block-title">
+            <iconify-icon icon="mdi:alert-circle-outline" style="font-size:1rem;"></iconify-icon>
+            The Challenge
+          </div>
+          ${d.challenge.split('\n\n').filter(Boolean).map(p=>`<p style="margin-bottom:10px;font-size:0.88rem;line-height:1.7;color:var(--text)">${p}</p>`).join('')}
+        </div>
+        <div class="cs-block">
+          <div class="cs-block-title">
+            <iconify-icon icon="mdi:lightbulb-outline" style="font-size:1rem;"></iconify-icon>
+            Our Solution
+          </div>
+          ${d.solution.split('\n\n').filter(Boolean).map(p=>`<p style="margin-bottom:10px;font-size:0.88rem;line-height:1.7;color:var(--text)">${p}</p>`).join('')}
+        </div>
+      </div>
+
+      <div class="cs-block-full">
+        <div class="cs-block-title">
+          <iconify-icon icon="mdi:timeline-outline" style="font-size:1rem;"></iconify-icon>
+          Our Build Process
+        </div>
+        <div class="cs-steps">${stepsHTML}</div>
+      </div>
+
+      <div class="cs-grid">
+        <div class="cs-block">
+          <div class="cs-block-title">
+            <iconify-icon icon="mdi:trophy-outline" style="font-size:1rem;"></iconify-icon>
+            Key Outcomes
+          </div>
+          <div class="cs-outcomes">${outcomesHTML}</div>
+        </div>
+        <div class="cs-block">
+          <div class="cs-block-title">
+            <iconify-icon icon="mdi:code-tags" style="font-size:1rem;"></iconify-icon>
+            Tech Stack
+          </div>
+          <div class="cs-tech">${techHTML}</div>
+        </div>
+      </div>
+
+      <div class="cs-block-full" style="margin-top:0">
+        <div class="cs-block-title" style="margin-bottom:14px">
+          <iconify-icon icon="mdi:check-decagram" style="font-size:1rem;"></iconify-icon>
+          The Success Story
+        </div>
+        ${storyParas}
+      </div>
+
+      <div class="cs-cta-strip">
+        <div>
+          <h4>${d.ctaHeading}</h4>
+          <p>${d.ctaText}</p>
+        </div>
+        <a href="serina-contact.html" class="cs-cta-btn">Book a Free Discovery Call →</a>
+      </div>
+
+    </div>
+  `;
+}
+
+// ─── SCROLL PROGRESS ────────────────────────────────────────────────────────
+const bar = document.getElementById('scroll-progress');
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  bar.style.width = (window.scrollY / total * 100) + '%';
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ─── SCROLL REVEAL ──────────────────────────────────────────────────────────
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ─── COUNTER ANIMATION ──────────────────────────────────────────────────────
+function animateCounter(el) {
+  const target = parseInt(el.getAttribute('data-target'));
+  const start = performance.now();
+  const dur = 1600;
+  const step = now => {
+    const p = Math.min((now - start) / dur, 1);
+    el.textContent = Math.floor(p * p * target);
+    if (p < 1) requestAnimationFrame(step);
+    else el.textContent = target;
+  };
+  requestAnimationFrame(step);
+}
+const cObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); cObs.unobserve(e.target); } });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(el => cObs.observe(el));
+
+// ─── FILTER BUTTONS ─────────────────────────────────────────────────────────
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    const filter = this.getAttribute('data-filter');
+    document.querySelectorAll('.proj-card').forEach(card => {
+      const cats = card.getAttribute('data-category') || '';
+      if (filter === 'all' || cats.includes(filter)) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+
+// ─── FILTER TABS ────────────────────────────────────────────────────────────
+document.querySelectorAll('.filter-tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+    const region = this.getAttribute('data-tab');
+    document.querySelectorAll('.proj-card').forEach(card => {
+      const r = card.getAttribute('data-region') || '';
+      if (region === 'all' || region === 'featured' || r === region) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+
+// ─── MOBILE HAMBURGER ───────────────────────────────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+
+// ─── CASE STUDY OVERLAY ─────────────────────────────────────────────────────
+function openProjectStudy(key) {
+  const modal = document.getElementById('cs-modal');
+  modal.innerHTML = renderCaseStudy(key);
+  // Re-init iconify in newly injected HTML
+  if (window.IconifyIconify) window.IconifyIconify.scan();
+  const overlay = document.getElementById('cs-overlay');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  overlay.scrollTop = 0;
+}
+
+// Featured case study — Amoh Tours Expeditions
+function openCaseStudy() {
+  openProjectStudy('amoh-tours');
+}
+
+function closeCaseStudy() {
+  const overlay = document.getElementById('cs-overlay');
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('cs-overlay')) {
+    closeCaseStudy();
+  }
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeCaseStudy();
+});
+</script>
+</body>
+</html>

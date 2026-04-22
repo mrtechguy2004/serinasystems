@@ -4,12 +4,20 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="google-site-verification" content="z0quCiA23GtKzPwewS-vnprINSQp_exawvOk28ehvKA" />
-<title>Software Development and Digital Marketing Company in Nakuru Kenya | Serina Systems</title>
-<link rel="icon" type="image/jpeg" href="https://scontent.fnbo9-1.fna.fbcdn.net/v/t39.30808-6/658830941_879559735081624_5616131752165756627_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=13d280&_nc_ohc=47WqhLkxDRgQ7kNvwF8nV_Q&_nc_oc=AdoAC3V_RFO2l74yJEMdvOX5-1yQdBY__H62B_l1W9dq8pb-YfoI_IoH7FA-XaMQnQQ&_nc_zt=23&_nc_ht=scontent.fnbo9-1.fna&_nc_gid=DiqQfLU-EOKgc1EXq1unvw&_nc_ss=7a3a8&oh=00_Af16NwNcD-gSD31UByf5Jtc27aYjXGCmk6sPIz4ySHFrrw&oe=69EC0E65">
-<link rel="shortcut icon" type="image/jpeg" href="https://scontent.fnbo9-1.fna.fbcdn.net/v/t39.30808-6/658830941_879559735081624_5616131752165756627_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=13d280&_nc_ohc=47WqhLkxDRgQ7kNvwF8nV_Q&_nc_oc=AdoAC3V_RFO2l74yJEMdvOX5-1yQdBY__H62B_l1W9dq8pb-YfoI_IoH7FA-XaMQnQQ&_nc_zt=23&_nc_ht=scontent.fnbo9-1.fna&_nc_gid=DiqQfLU-EOKgc1EXq1unvw&_nc_ss=7a3a8&oh=00_Af16NwNcD-gSD31UByf5Jtc27aYjXGCmk6sPIz4ySHFrrw&oe=69EC0E65">
-<link rel="apple-touch-icon" href="https://scontent.fnbo9-1.fna.fbcdn.net/v/t39.30808-6/658830941_879559735081624_5616131752165756627_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=13d280&_nc_ohc=47WqhLkxDRgQ7kNvwF8nV_Q&_nc_oc=AdoAC3V_RFO2l74yJEMdvOX5-1yQdBY__H62B_l1W9dq8pb-YfoI_IoH7FA-XaMQnQQ&_nc_zt=23&_nc_ht=scontent.fnbo9-1.fna&_nc_gid=DiqQfLU-EOKgc1EXq1unvw&_nc_ss=7a3a8&oh=00_Af16NwNcD-gSD31UByf5Jtc27aYjXGCmk6sPIz4ySHFrrw&oe=69EC0E65">
+<title>Serina Systems | Software Development and Digital Marketing Company in Nakuru Kenya</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<!-- Preconnect to speed up font loading -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Preload hero image for faster LCP -->
+<link rel="preload" as="image" href="https://images.pexels.com/photos/19805876/pexels-photo-19805876.jpeg?cs=srgb&dl=pexels-naboth-otieno-83498565-19805876.jpg&fm=jpg">
+<!-- Load fonts without blocking render -->
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+<!-- Defer iconify so it doesn't block rendering -->
 <style>
   
   :root {
@@ -29,6 +37,16 @@
   body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; }
   a { text-decoration: none; color: inherit; }
   img { max-width: 100%; }
+
+  /* ═══════════════════════════════════════════
+     PERFORMANCE — skip rendering off-screen sections
+  ═══════════════════════════════════════════ */
+  .clients-bar,
+  .section:not(.hero),
+  footer {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
 
   /* ═══════════════════════════════════════════
      SCROLL PROGRESS BAR
@@ -199,17 +217,11 @@
     text-align: center;
     isolation: isolate;
   }
-  /* Background video */
+  /* Background image (replaces video for performance) */
   .hero-video-bg {
     position: absolute; inset: 0; width: 100%; height: 100%;
     overflow: hidden; z-index: 0; pointer-events: none;
-  }
-  .hero-video-bg video {
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%; min-height: 100%;
-    width: auto; height: auto;
-    object-fit: cover;
+    background: url('https://images.pexels.com/photos/19805876/pexels-photo-19805876.jpeg?cs=srgb&dl=pexels-naboth-otieno-83498565-19805876.jpg&fm=jpg') center/cover no-repeat;
   }
   /* Dark overlay so text stays readable */
   .hero-video-bg::after {
@@ -233,96 +245,17 @@
   }
   .hero-inner {
     position: relative; z-index: 3;
-    max-width: 1200px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 48px; text-align: left;
+    max-width: 860px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: center;
+    gap: 48px; text-align: center;
   }
   .hero-text-col {
     flex: 1; min-width: 0;
   }
-  .hero-image-col {
-    flex-shrink: 0; width: 420px;
-    position: relative;
-    animation: fadeInRight 1s ease 0.5s both;
-    will-change: transform;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-  }
-  @keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(40px); }
-    to   { opacity: 1; transform: translateX(0); }
-  }
-  .hero-img-frame {
-    position: relative; border-radius: 24px; overflow: visible;
-    box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 0 60px rgba(4,119,190,0.2);
-    animation: heroImgFloat 6s ease-in-out infinite;
-    will-change: transform;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
-  @keyframes heroImgFloat {
-    0%, 100% { transform: translateY(0px); }
-    50%       { transform: translateY(-12px); }
-  }
-  .hero-img-frame img {
-    display: block; width: 100%; height: 460px;
-    object-fit: cover; object-position: center top;
-    border-radius: 24px;
-    border: 2px solid rgba(4,119,190,0.35);
-    box-shadow: 0 0 40px rgba(4,119,190,0.25), inset 0 0 0 1px rgba(255,255,255,0.06);
-  }
-  /* Floating accent badge on the image */
-  .hero-img-badge {
-    position: absolute; bottom: 24px; left: -22px; z-index: 4;
-    background: rgba(10,37,64,0.92); backdrop-filter: blur(12px);
-    border: 1px solid rgba(4,119,190,0.4);
-    border-radius: 14px; padding: 12px 18px;
-    display: flex; align-items: center; gap: 10px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-    animation: badgeBounce 5s ease-in-out infinite 1.5s;
-    will-change: transform;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
-  @keyframes badgeBounce {
-    0%,100% { transform: translateY(0); }
-    50%      { transform: translateY(-6px); }
-  }
-  .hero-img-badge-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: #00c2a8; flex-shrink: 0;
-    box-shadow: 0 0 10px rgba(0,194,168,0.8);
-    animation: pulse-dot 1.8s ease-in-out infinite;
-  }
-  .hero-img-badge-text { color: #fff; font-size: 0.78rem; font-weight: 600; line-height: 1.3; }
-  .hero-img-badge-text span { color: rgba(255,255,255,0.5); font-size: 0.7rem; font-weight: 400; display: block; }
-  /* Floating stat chip top-right */
-  .hero-img-stat {
-    position: absolute; top: 20px; right: -18px; z-index: 4;
-    background: rgba(10,37,64,0.92); backdrop-filter: blur(12px);
-    border: 1px solid rgba(99,91,255,0.4);
-    border-radius: 12px; padding: 10px 16px; text-align: center;
-    box-shadow: 0 8px 28px rgba(0,0,0,0.4);
-    animation: badgeBounce 5s ease-in-out infinite 0.8s;
-    will-change: transform;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
-  .hero-img-stat-num { font-family: 'Sora', sans-serif; color: #fff; font-size: 1.3rem; font-weight: 800; line-height: 1; }
-  .hero-img-stat-num span { color: #635bff; }
   .hero-img-stat-label { color: rgba(255,255,255,0.5); font-size: 0.65rem; margin-top: 3px; }
   /* Responsive */
   @media (max-width: 960px) {
-    .hero-inner { flex-direction: column; text-align: center; }
-    .hero-image-col { width: 100%; max-width: 420px; margin: 0 auto; }
-    .hero-img-badge { left: 10px; }
-    .hero-img-stat { right: 10px; }
+    .hero-inner { text-align: center; }
     .hero-sub { margin-left: auto; margin-right: auto; }
     .hero-btns { justify-content: center; }
     .hero-trust { justify-content: center; }
@@ -357,18 +290,40 @@
   .hero h1 {
     font-family: 'Sora', sans-serif;
     font-size: clamp(2.6rem, 6vw, 4.6rem);
-    font-weight: 800; line-height: 1.08;
+    font-weight: 800; line-height: 1.15;
     color: #fff; letter-spacing: -0.04em; margin-bottom: 24px;
     animation: fadeInUp 0.9s ease 0.4s both;
+    /* Fixed height prevents layout shift when typed text changes */
+    min-height: calc(clamp(2.6rem, 6vw, 4.6rem) * 1.15 * 2);
   }
-  .hero h1 span {
+  /* Fixed-height container for the typed line so nothing shifts */
+  .typed-line {
+    display: block;
+    height: calc(clamp(2.6rem, 6vw, 4.6rem) * 1.15);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .hero h1 span#typed-text {
     background: linear-gradient(90deg, #0477be, #00c2a8);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
+  /* Typing cursor */
+  .typed-cursor {
+    display: inline-block;
+    color: #00c2a8;
+    font-weight: 300;
+    animation: cursorBlink 0.75s step-end infinite;
+    -webkit-text-fill-color: #00c2a8;
+    margin-left: 2px;
+  }
+  @keyframes cursorBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
   .hero-sub {
     color: rgba(255,255,255,0.65); font-size: 1.15rem; line-height: 1.75;
-    margin-bottom: 40px; max-width: 620px; margin-left: auto; margin-right: auto;
-    animation: fadeInUp 0.9s ease 0.6s both;
+    margin-bottom: 40px; max-width: 680px; margin-left: auto; margin-right: auto;
+    animation: fadeInUp 0.9s ease 0.6s both; text-align: center;
   }
   .hero-sub strong { color: rgba(255,255,255,0.92); }
   .hero-btns {
@@ -932,7 +887,8 @@
   }
   @media (max-width: 480px) {
     .hero { padding: 72px 5% 0; }
-    .hero h1 { font-size: 2.2rem; }
+    .hero h1 { font-size: 2.2rem; min-height: calc(2.2rem * 1.15 * 2); }
+    .typed-line { height: calc(2.2rem * 1.15); }
     .stack-grid { grid-template-columns: repeat(2,1fr); }
     .footer-grid { grid-template-columns: 1fr; }
     .hero-btns { flex-direction: column; align-items: center; }
@@ -972,7 +928,7 @@
   gap: 8px;           /* Space between logo and text */
 }
 </style>
-<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js" defer></script>
 </head>
 <body>
   <a href="https://wa.me/254745883650" target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">
@@ -993,12 +949,12 @@
 <!-- NAV -->
 <nav id="main-nav">
   <a href="index.html" class="logo">
-    <img src="https://media.licdn.com/dms/image/v2/D4D22AQEJmas2iNVJNQ/feedshare-shrink_2048_1536/B4DZ00uq4QJ4Ag-/0/1774706142963?e=1778112000&v=beta&t=QOOtTuvV_0hNDqG2aj1UQZ21RrE5_xMBGAQL3li7nHA" alt="Serina Systems Logo">
+    <img src="logo.png" alt="Serina Systems Logo" width="60" height="60">
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="serina-about.html">About Us</a></li>
     <li><a href="serina-systems-services.html">Services</a></li>
-    <li><a href="serina-portfolio (1).html">Portfolio</a></li>
+    <li><a href="serina-portfolio.html">Portfolio</a></li>
     <li><a href="serina-process.html">Our Process</a></li>
     <li><a href="serina-blog.html">Blogs</a></li>
     <li><a href="serina-contact.html">Contact Us</a></li>
@@ -1012,7 +968,7 @@
   <a href="index.html">Home</a>
   <a href="serina-about.html">About Us</a>
   <a href="serina-systems-services.html">Services</a>
-  <a href="serina-portfolio (1).html">Portfolio</a>
+  <a href="serina-portfolio.html">Portfolio</a>
   <a href="serina-process.html">Our Process</a>
   <a href="serina-blog.html">Blogs</a>
   <a href="serina-contact.html">Contact Us</a>
@@ -1021,17 +977,13 @@
 
 <!-- HERO -->
 <section class="hero">
-  <!-- Background Video -->
-  <div class="hero-video-bg">
-    <video autoplay muted loop playsinline preload="auto">
-      <source src="https://videos.pexels.com/video-files/6266246/6266246-uhd_2560_1440_25fps.mp4" type="video/mp4">
-    </video>
-  </div>
+  
+  <div class="hero-video-bg"></div>
   <div class="hero-inner">
     <!-- Text column -->
     <div class="hero-text-col">
       <div class="hero-badge">Nakuru's #1 Software Studio</div>
-      <h1>Crafting Digital <span>Masterpieces.</span></h1>
+      <h1>Crafting Digital<br><span class="typed-line"><span id="typed-text"></span><span class="typed-cursor">|</span></span></h1>
       <p class="hero-sub">
         We turn your ideas into <strong>powerful software products</strong> — from mobile apps to AI platforms and dynamic functioning systems.
         Trusted by clients in over <strong>40 counties</strong>, Serina Systems delivers with precision and craft.
@@ -1048,29 +1000,6 @@
         <div class="trust-item"><strong>40+</strong> Counties Served</div>
         <span class="trust-divider">·</span>
         <div class="trust-item"><iconify-icon icon="mdi:star" style="color:#fbbf24;font-size:1rem;vertical-align:middle;margin-right:2px;"></iconify-icon> <strong>4.9/5</strong> Client Rating</div>
-      </div>
-    </div>
-    <!-- Image column -->
-    <div class="hero-image-col">
-      <div class="hero-img-frame">
-        <img
-          src="https://media.istockphoto.com/id/2215497029/photo/upbeat-it-engineer-coding-advanced-ai-algorithm-in-startup-office.jpg?s=612x612&w=0&k=20&c=u5za06kcGxIiuGbfL_KYMsJS5Y8GC-IaX20nOWSF4ow="
-          alt="Developer working on a laptop"
-          loading="eager"
-        />
-        <!-- Floating badge bottom-left -->
-        <div class="hero-img-badge">
-          <div class="hero-img-badge-dot"></div>
-          <div class="hero-img-badge-text">
-            Building Now
-            <span>Active development session</span>
-          </div>
-        </div>
-        <!-- Floating stat top-right -->
-        <div class="hero-img-stat">
-          <div class="hero-img-stat-num">50<span>+</span></div>
-          <div class="hero-img-stat-label">Projects Done</div>
-        </div>
       </div>
     </div>
   </div>
@@ -1223,7 +1152,7 @@
     <div class="about-grid">
       <div>
         <p class="section-label reveal">About Us</p>
-        <h2 class="section-title reveal delay-1">Software Development Company in Nakuru Kenya | Serina Systems.</h2>
+        <h2 class="section-title reveal delay-1">Software Development and Digital Marketing Company in Nakuru Kenya | Serina Systems.</h2>
         <p class="section-sub reveal delay-2">Serina Systems is a tech-solutions company built by passionate individuals, dedicated to helping our clients continuously create value for their customers. We believe in transforming ideas into reality through technology — converting your business use-case into an innovative software solution leveraging modern-day tech stacks.</p>
         <div class="about-stats">
           <div class="stat-card hover-glow reveal delay-1">
@@ -1426,7 +1355,7 @@
       </div>
     </div>
     <div style="text-align:center;margin-top:36px" class="reveal">
-      <a href="serina-portfolio (1).html" class="btn-primary hover-glow">View More Projects</a>
+      <a href="serina-portfolio.html" class="btn-primary hover-glow">View More Projects</a>
     </div>
   </div>
 </section>
@@ -1453,7 +1382,7 @@
   <div class="footer-grid">
     <div class="footer-brand reveal">
       <a href="index.html" class="logo">
-      <img src="https://media.licdn.com/dms/image/v2/D4D22AQEJmas2iNVJNQ/feedshare-shrink_2048_1536/B4DZ00uq4QJ4Ag-/0/1774706142963?e=1778112000&v=beta&t=QOOtTuvV_0hNDqG2aj1UQZ21RrE5_xMBGAQL3li7nHA" alt="Serina Systems Logo"></a>
+      <img src="logo.png" alt="Serina Systems Logo" width="60" height="60" loading="lazy"></a>
       <p>Serina Systems is the frontier of digital transformation. We engineer intelligent systems, craft compelling digital identities, and amplify brands through cutting-edge marketing strategies. Rooted in Nakuru yet built for global scalability, we merge technology, creativity, and strategy into one seamless experience.</p>
       <div class="footer-contact">
         <a href="#"><iconify-icon icon="mdi:map-marker" style="vertical-align:middle;font-size:1rem;margin-right:5px;"></iconify-icon> Nyahururu Along Nyahururu-Nakuru Road, Nakuru</a>
@@ -1476,7 +1405,7 @@
       <h4>Company</h4>
       <ul>
         <li><a href="serina-about.html">About Us</a></li>
-        <li><a href="serina-portfolio (1).html">Portfolio</a></li>
+        <li><a href="serina-portfolio.html">Portfolio</a></li>
         <li><a href="serina-process.html">Our Process</a></li>
         <li><a href="serina-blog.html">Blogs</a></li>
         <li><a href="serina-systems-services.html">Services</a></li>
@@ -1796,6 +1725,48 @@ function handleBackdropClick(e) {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeServiceModal();
 });
+
+/* ═══════════════════════════════════════════
+   TYPING ANIMATION
+═══════════════════════════════════════════ */
+(function() {
+  const words = ['Masterpieces.', 'Solutions.', 'Experiences.', 'Innovation.', 'The Future.'];
+  const el = document.getElementById('typed-text');
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let pauseTimer = null;
+
+  function type() {
+    const currentWord = words[wordIndex];
+
+    if (isDeleting) {
+      charIndex--;
+    } else {
+      charIndex++;
+    }
+
+    el.textContent = currentWord.substring(0, charIndex);
+
+    let delay = isDeleting ? 60 : 100;
+
+    if (!isDeleting && charIndex === currentWord.length) {
+      // Finished typing — pause then start deleting
+      delay = 2000;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      // Finished deleting — move to next word
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      delay = 400;
+    }
+
+    pauseTimer = setTimeout(type, delay);
+  }
+
+  // Start after page load animation completes
+  setTimeout(type, 1200);
+})();
 </script>
 </body>
 </html>
