@@ -803,6 +803,12 @@
         <p class="service-desc">End-to-end MIS solutions including Healthcare, School, Sacco, ERP, and Insurance management systems built for operational efficiency.</p>
         <button class="service-link" onclick="openServiceModal('mis')">Explore Service <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
       </div>
+      <div class="service-card hover-glow reveal delay-1">
+        <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <div class="service-title">Web Development</div>
+        <p class="service-desc">High-performance websites and web applications built with modern frameworks — from landing pages to complex portals, designed to convert and scale.</p>
+        <button class="service-link" onclick="openServiceModal('webdev')">Explore Service <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+      </div>
     </div>
   </div>
 </section>
@@ -1041,6 +1047,48 @@
           <span class="tech-pill">AWS</span>
           <span class="tech-pill">Redis</span>
           <span class="tech-pill">Nginx</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- WEB DEVELOPMENT DETAIL -->
+<section id="webdev">
+  <div class="container">
+    <div class="service-detail">
+      <div class="reveal-left">
+        <div class="detail-badge">Web Development</div>
+        <p class="section-label">Websites &amp; Web Apps</p>
+        <h2 class="section-title">Built for the Web. <span style="color:var(--accent)">Built to Perform.</span></h2>
+        <p class="section-sub">Serina Systems crafts high-performance websites and web applications that look stunning and convert visitors into customers. From business landing pages to complex web portals, we deliver pixel-perfect, scalable solutions for Kenyan businesses and global brands.</p>
+        <div class="detail-features">
+          <div class="detail-feat">Custom website design &amp; UI/UX development</div>
+          <div class="detail-feat">E-commerce stores with M-Pesa &amp; payment integration</div>
+          <div class="detail-feat">Progressive Web Apps (PWA) &amp; SPA development</div>
+          <div class="detail-feat">CMS integration (WordPress, Strapi, Sanity)</div>
+          <div class="detail-feat">SEO-optimized &amp; Core Web Vitals compliant builds</div>
+          <div class="detail-feat">API development, third-party integrations &amp; hosting</div>
+        </div>
+        <div style="margin-top:32px">
+          <a href="serina-contact.html" class="btn-primary hover-glow" style="display:inline-block;color:#fff">Get a Quote</a>
+        </div>
+      </div>
+      <div class="service-detail-visual reveal-right float-3" style="background-image:url('https://images.unsplash.com/photo-1547658719-da2b51169166?w=900&q=80&fit=crop&crop=center')">
+        <div class="service-detail-visual-title">Web Tech Stack</div>
+        <div style="position:relative;z-index:3">
+          <span class="tech-pill">React</span>
+          <span class="tech-pill">Next.js</span>
+          <span class="tech-pill">Vue.js</span>
+          <span class="tech-pill">Node.js</span>
+          <span class="tech-pill">TypeScript</span>
+          <span class="tech-pill">Tailwind CSS</span>
+          <span class="tech-pill">WordPress</span>
+          <span class="tech-pill">Strapi</span>
+          <span class="tech-pill">PostgreSQL</span>
+          <span class="tech-pill">Vercel</span>
         </div>
       </div>
     </div>
@@ -1333,6 +1381,21 @@ const serviceData = {
       'Post-MVP roadmap planning & strategy'
     ],
     stack: ['Next.js','React','Node.js','Flutter','Firebase','Supabase','PostgreSQL','Vercel','Stripe','M-Pesa']
+  },
+  webdev: {
+    badge: 'Web Development',
+    title: 'Built for the Web. <span>Built to Perform.</span>',
+    desc: 'Serina Systems crafts high-performance websites and web applications that look stunning and convert visitors into customers. From business landing pages to complex web portals, we deliver pixel-perfect, scalable solutions for Kenyan businesses and global brands.',
+    image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=900&q=80&fit=crop&crop=center',
+    features: [
+      'Custom website design & UI/UX development',
+      'E-commerce stores with M-Pesa & payment integration',
+      'Progressive Web Apps (PWA) & SPA development',
+      'CMS integration (WordPress, Strapi, Sanity)',
+      'SEO-optimized & Core Web Vitals compliant builds',
+      'API development, third-party integrations & hosting'
+    ],
+    stack: ['React','Next.js','Vue.js','Node.js','TypeScript','Tailwind CSS','WordPress','Strapi','PostgreSQL','Vercel']
   },
   mis: {
     badge: 'Management Information Systems',
