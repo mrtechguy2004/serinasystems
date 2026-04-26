@@ -401,8 +401,15 @@
   .ticker-track { display: flex; gap: 60px; animation: ticker 22s linear infinite; width: max-content; }
   .ticker-track:hover { animation-play-state: paused; }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .ticker-text { color: var(--muted); font-size: 1rem; font-weight: 700; white-space: nowrap; letter-spacing: 0.05em; transition: color 0.2s; }
-  .ticker-text:hover { color: var(--accent); }
+  .ticker-text {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-size: 0.82rem; font-weight: 700;
+    white-space: nowrap; letter-spacing: 0.06em; text-transform: uppercase;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .ticker-text:hover { opacity: 0.75; transform: scale(1.05); }
+  .ticker-text iconify-icon { font-size: 1.25rem; flex-shrink: 0; }
+  .ticker-sep { color: var(--border); font-size: 1rem; line-height: 1; }
 
   /* SECTION GENERIC */
   section { padding: 88px 5%; }
@@ -922,22 +929,22 @@
 <!-- CLIENTS TICKER -->
 <div class="clients-bar">
   <div class="ticker-track">
-    <span class="ticker-text">WEB DEVELOPMENT</span><span class="ticker-text">●</span>
-    <span class="ticker-text">MOBILE APPS</span><span class="ticker-text">●</span>
-    <span class="ticker-text">AI &amp; MACHINE LEARNING</span><span class="ticker-text">●</span>
-    <span class="ticker-text">CLOUD &amp; DEVOPS</span><span class="ticker-text">●</span>
-    <span class="ticker-text">UI/UX DESIGN</span><span class="ticker-text">●</span>
-    <span class="ticker-text">STARTUPS &amp; INNOVATION</span><span class="ticker-text">●</span>
-    <span class="ticker-text">FINTECH</span><span class="ticker-text">●</span>
-    <span class="ticker-text">HEALTHTECH</span><span class="ticker-text">●</span>
-    <span class="ticker-text">WEB DEVELOPMENT</span><span class="ticker-text">●</span>
-    <span class="ticker-text">MOBILE APPS</span><span class="ticker-text">●</span>
-    <span class="ticker-text">AI &amp; MACHINE LEARNING</span><span class="ticker-text">●</span>
-    <span class="ticker-text">CLOUD &amp; DEVOPS</span><span class="ticker-text">●</span>
-    <span class="ticker-text">UI/UX DESIGN</span><span class="ticker-text">●</span>
-    <span class="ticker-text">STARTUPS &amp; INNOVATION</span><span class="ticker-text">●</span>
-    <span class="ticker-text">FINTECH</span><span class="ticker-text">●</span>
-    <span class="ticker-text">HEALTHTECH</span><span class="ticker-text">●</span>
+    <span class="ticker-text" style="color:#0477be"><iconify-icon icon="mdi:monitor-code" style="color:#0477be"></iconify-icon>Web Development</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#28c840"><iconify-icon icon="mdi:cellphone" style="color:#28c840"></iconify-icon>Mobile Apps</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#9b59b6"><iconify-icon icon="mdi:brain" style="color:#9b59b6"></iconify-icon>AI &amp; Machine Learning</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#00c2a8"><iconify-icon icon="mdi:cloud-outline" style="color:#00c2a8"></iconify-icon>Cloud &amp; DevOps</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#f5a623"><iconify-icon icon="mdi:palette-outline" style="color:#f5a623"></iconify-icon>UI/UX Design</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#635bff"><iconify-icon icon="mdi:rocket-launch-outline" style="color:#635bff"></iconify-icon>Startups &amp; Innovation</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#f5a623"><iconify-icon icon="mdi:bank-outline" style="color:#f5a623"></iconify-icon>Fintech</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#e03e3e"><iconify-icon icon="mdi:hospital-box-outline" style="color:#e03e3e"></iconify-icon>Healthtech</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#0477be"><iconify-icon icon="mdi:monitor-code" style="color:#0477be"></iconify-icon>Web Development</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#28c840"><iconify-icon icon="mdi:cellphone" style="color:#28c840"></iconify-icon>Mobile Apps</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#9b59b6"><iconify-icon icon="mdi:brain" style="color:#9b59b6"></iconify-icon>AI &amp; Machine Learning</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#00c2a8"><iconify-icon icon="mdi:cloud-outline" style="color:#00c2a8"></iconify-icon>Cloud &amp; DevOps</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#f5a623"><iconify-icon icon="mdi:palette-outline" style="color:#f5a623"></iconify-icon>UI/UX Design</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#635bff"><iconify-icon icon="mdi:rocket-launch-outline" style="color:#635bff"></iconify-icon>Startups &amp; Innovation</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#f5a623"><iconify-icon icon="mdi:bank-outline" style="color:#f5a623"></iconify-icon>Fintech</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#e03e3e"><iconify-icon icon="mdi:hospital-box-outline" style="color:#e03e3e"></iconify-icon>Healthtech</span><span class="ticker-sep">✦</span>
   </div>
 </div>
 

@@ -251,8 +251,15 @@
   .ticker-track { display: flex; gap: 60px; animation: ticker 22s linear infinite; width: max-content; }
   .ticker-track:hover { animation-play-state: paused; }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .ticker-text { color: var(--muted); font-size: 1rem; font-weight: 700; white-space: nowrap; letter-spacing: 0.05em; transition: color 0.2s; }
-  .ticker-text:hover { color: var(--accent); }
+  .ticker-text {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-size: 0.82rem; font-weight: 700;
+    white-space: nowrap; letter-spacing: 0.06em; text-transform: uppercase;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .ticker-text:hover { opacity: 0.75; transform: scale(1.05); }
+  .ticker-text iconify-icon { font-size: 1.25rem; flex-shrink: 0; }
+  .ticker-sep { color: var(--border); font-size: 1rem; line-height: 1; }
 
   /* ═══════════════════════════════════════════
      SECTION GENERIC
@@ -704,24 +711,24 @@
 <!-- CLIENTS TICKER -->
 <div class="clients-bar">
   <div class="ticker-track">
-    <span class="ticker-text">TRUSTED CLIENTS</span><span class="ticker-text">●</span>
-    <span class="ticker-text">FINTECH</span><span class="ticker-text">●</span>
-    <span class="ticker-text">HEALTHTECH</span><span class="ticker-text">●</span>
-    <span class="ticker-text">EDTECH</span><span class="ticker-text">●</span>
-    <span class="ticker-text">AGRITECH</span><span class="ticker-text">●</span>
-    <span class="ticker-text">LOGISTICS</span><span class="ticker-text">●</span>
-    <span class="ticker-text">E-COMMERCE</span><span class="ticker-text">●</span>
-    <span class="ticker-text">STARTUPS</span><span class="ticker-text">●</span>
-    <span class="ticker-text">ENTERPRISES</span><span class="ticker-text">●</span>
-    <span class="ticker-text">TRUSTED CLIENTS</span><span class="ticker-text">●</span>
-    <span class="ticker-text">FINTECH</span><span class="ticker-text">●</span>
-    <span class="ticker-text">HEALTHTECH</span><span class="ticker-text">●</span>
-    <span class="ticker-text">EDTECH</span><span class="ticker-text">●</span>
-    <span class="ticker-text">AGRITECH</span><span class="ticker-text">●</span>
-    <span class="ticker-text">LOGISTICS</span><span class="ticker-text">●</span>
-    <span class="ticker-text">E-COMMERCE</span><span class="ticker-text">●</span>
-    <span class="ticker-text">STARTUPS</span><span class="ticker-text">●</span>
-    <span class="ticker-text">ENTERPRISES</span><span class="ticker-text">●</span>
+    <span class="ticker-text" style="color:#0477be"><iconify-icon icon="mdi:handshake-outline" style="color:#0477be"></iconify-icon>Trusted Clients</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#f5a623"><iconify-icon icon="mdi:bank-outline" style="color:#f5a623"></iconify-icon>Fintech</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#e03e3e"><iconify-icon icon="mdi:hospital-box-outline" style="color:#e03e3e"></iconify-icon>Healthtech</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#4f8ef7"><iconify-icon icon="mdi:school-outline" style="color:#4f8ef7"></iconify-icon>Edtech</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#2e9e44"><iconify-icon icon="mdi:sprout-outline" style="color:#2e9e44"></iconify-icon>Agritech</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#e67e22"><iconify-icon icon="mdi:truck-fast-outline" style="color:#e67e22"></iconify-icon>Logistics</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#9b59b6"><iconify-icon icon="mdi:shopping-outline" style="color:#9b59b6"></iconify-icon>E-Commerce</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#635bff"><iconify-icon icon="mdi:rocket-launch-outline" style="color:#635bff"></iconify-icon>Startups</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#475569"><iconify-icon icon="mdi:office-building-outline" style="color:#475569"></iconify-icon>Enterprises</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#0477be"><iconify-icon icon="mdi:handshake-outline" style="color:#0477be"></iconify-icon>Trusted Clients</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#f5a623"><iconify-icon icon="mdi:bank-outline" style="color:#f5a623"></iconify-icon>Fintech</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#e03e3e"><iconify-icon icon="mdi:hospital-box-outline" style="color:#e03e3e"></iconify-icon>Healthtech</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#4f8ef7"><iconify-icon icon="mdi:school-outline" style="color:#4f8ef7"></iconify-icon>Edtech</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#2e9e44"><iconify-icon icon="mdi:sprout-outline" style="color:#2e9e44"></iconify-icon>Agritech</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#e67e22"><iconify-icon icon="mdi:truck-fast-outline" style="color:#e67e22"></iconify-icon>Logistics</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#9b59b6"><iconify-icon icon="mdi:shopping-outline" style="color:#9b59b6"></iconify-icon>E-Commerce</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#635bff"><iconify-icon icon="mdi:rocket-launch-outline" style="color:#635bff"></iconify-icon>Startups</span><span class="ticker-sep">✦</span>
+    <span class="ticker-text" style="color:#475569"><iconify-icon icon="mdi:office-building-outline" style="color:#475569"></iconify-icon>Enterprises</span><span class="ticker-sep">✦</span>
   </div>
 </div>
 
@@ -1444,5 +1451,6 @@ function toggleMobile() {
   ham.classList.toggle('open');
 }
 </script>
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js" defer></script>
 </body>
 </html>
