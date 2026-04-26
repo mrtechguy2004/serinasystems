@@ -15,6 +15,9 @@
     --primary: #0a2540;
     --accent: #0477be;
     --accent2: #635bff;
+    --highlight: #10b981;
+    --highlight2: #34d399;
+    --glow-green: 0 0 30px rgba(16, 185, 129, 0.4);
     --text: #1a1a2e;
     --muted: #64748b;
     --bg: #ffffff;
@@ -134,7 +137,7 @@
     font-size: 0.78rem; padding: 8px 0;
     text-align: center; letter-spacing: 0.01em;
   }
-  .topbar a { color: var(--accent); margin: 0 8px; }
+  .topbar a { color: var(--highlight); margin: 0 8px; }
 
   /* ═══════════════════════════════════════════
      NAV
@@ -148,10 +151,10 @@
   }
   nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
   .logo { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.45rem; color: var(--primary); letter-spacing: -0.03em; }
-  .logo span { color: var(--accent); }
+  .logo span { color: var(--highlight); }
   .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
   .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--primary); transition: color 0.2s; }
-  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .nav-links a:hover, .nav-links a.active { color: var(--highlight); }
   .nav-cta {
     background: var(--accent); color: #fff !important;
     padding: 10px 22px; border-radius: 8px;
@@ -207,7 +210,7 @@
     margin-bottom: 20px;
     animation: fadeInUp 0.9s ease 0.5s both;
   }
-  .page-hero h1 span { color: var(--accent); }
+  .page-hero h1 span { color: var(--highlight); }
   .page-hero p {
     color: rgba(255,255,255,0.72); font-size: 1.05rem; line-height: 1.7; margin-bottom: 36px;
     animation: fadeInUp 0.9s ease 0.7s both;
@@ -230,7 +233,7 @@
     font-weight: 600; font-size: 0.95rem;
     transition: all 0.25s; display: inline-block;
   }
-  .btn-outline:hover { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 20px rgba(4,119,190,0.2); }
+  .btn-outline:hover { border-color: var(--highlight); color: var(--accent); box-shadow: 0 0 20px rgba(4,119,190,0.2); }
 
   /* ═══════════════════════════════════════════
      SECTION GENERIC
@@ -238,7 +241,7 @@
   section { padding: 88px 5%; }
   .container { max-width: 1200px; margin: 0 auto; }
   .section-label {
-    color: var(--accent); font-size: 0.78rem; font-weight: 700;
+    color: var(--highlight); font-size: 0.78rem; font-weight: 700;
     text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px;
   }
   .section-title {
@@ -319,7 +322,7 @@
   .form-group input:focus,
   .form-group select:focus,
   .form-group textarea:focus {
-    border-color: var(--accent);
+    border-color: var(--highlight);
     box-shadow: 0 0 0 4px rgba(4,119,190,0.12);
     background: #fff;
   }
@@ -364,10 +367,10 @@
     background: var(--bg2); transition: all 0.2s;
     display: flex; align-items: center; justify-content: center;
   }
-  .checkbox-item input:checked + .checkbox-box { background: var(--accent); border-color: var(--accent); }
+  .checkbox-item input:checked + .checkbox-box { background: var(--accent); border-color: var(--highlight); }
   .checkbox-item input:checked + .checkbox-box::after { content: '✓'; color: #fff; font-size: 0.7rem; font-weight: 900; }
   .checkbox-label { font-size: 0.85rem; color: var(--text); transition: color 0.2s; }
-  .checkbox-item:hover .checkbox-box { border-color: var(--accent); }
+  .checkbox-item:hover .checkbox-box { border-color: var(--highlight); }
   .checkbox-item:hover .checkbox-label { color: var(--accent); }
 
   /* submit btn */
@@ -479,7 +482,7 @@
     font-size: 0.82rem; font-weight: 600; color: var(--primary);
     transition: all 0.2s; cursor: pointer;
   }
-  .social-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(4,119,190,0.15); }
+  .social-btn:hover { border-color: var(--highlight); color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(4,119,190,0.15); }
 
   /* ═══════════════════════════════════════════
      FAQ

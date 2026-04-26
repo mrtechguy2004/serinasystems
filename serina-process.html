@@ -15,6 +15,9 @@
     --primary: #0a2540;
     --accent: #0477be;
     --accent2: #635bff;
+    --highlight: #10b981;
+    --highlight2: #34d399;
+    --glow-green: 0 0 30px rgba(16, 185, 129, 0.4);
     --text: #1a1a2e;
     --muted: #64748b;
     --bg: #ffffff;
@@ -91,7 +94,7 @@
 
   /* TOP BAR */
   .topbar { background: var(--primary); color: #fff; font-size: 0.78rem; padding: 8px 0; text-align: center; letter-spacing: 0.01em; }
-  .topbar a { color: var(--accent); margin: 0 8px; }
+  .topbar a { color: var(--highlight); margin: 0 8px; }
 
   /* NAV */
   nav {
@@ -103,10 +106,10 @@
   }
   nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
   .logo { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.45rem; color: var(--primary); letter-spacing: -0.03em; }
-  .logo span { color: var(--accent); }
+  .logo span { color: var(--highlight); }
   .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
   .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--primary); transition: color 0.2s; }
-  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .nav-links a:hover, .nav-links a.active { color: var(--highlight); }
   .nav-cta { background: var(--accent); color: #fff !important; padding: 10px 22px; border-radius: 8px; font-weight: 600 !important; font-size: 0.875rem !important; transition: background 0.2s, transform 0.15s, box-shadow 0.3s !important; }
   .nav-cta:hover { background: #035fa0 !important; transform: translateY(-1px) !important; box-shadow: 0 0 20px rgba(4,119,190,0.4) !important; }
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; border: none; background: none; outline: none; }
@@ -165,7 +168,7 @@
     margin-bottom: 24px; animation: fadeInUp 0.9s ease 0.5s both;
   }
   @keyframes fadeInUp { from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);} }
-  .process-hero h1 span { color: var(--accent); }
+  .process-hero h1 span { color: var(--highlight); }
   .process-hero p {
     color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.75; max-width: 620px; margin: 0 auto 40px;
     animation: fadeInUp 0.9s ease 0.7s both;
@@ -209,7 +212,7 @@
     transition: all 0.35s; margin-bottom: 14px; position: relative; z-index: 2;
   }
   .ov-step:hover .ov-num {
-    background: var(--accent); border-color: var(--accent);
+    background: var(--accent); border-color: var(--highlight);
     color: #fff; box-shadow: 0 0 25px rgba(0,194,168,0.5);
     transform: scale(1.15);
   }
@@ -338,7 +341,7 @@
     border: 1px solid rgba(255,255,255,0.12); padding: 5px 12px; border-radius: 14px;
     font-size: 0.72rem; font-weight: 500; transition: all 0.2s;
   }
-  .pv-tag:hover { background: rgba(0,194,168,0.2); border-color: var(--accent); color: var(--accent); }
+  .pv-tag:hover { background: rgba(0,194,168,0.2); border-color: var(--highlight); color: var(--accent); }
 
   /* Phase divider */
   .phase-divider {
@@ -411,7 +414,7 @@
     transition: all 0.35s; cursor: default;
   }
   .timeline-item:hover .timeline-dot {
-    background: var(--accent); border-color: var(--accent); color: #fff;
+    background: var(--accent); border-color: var(--highlight); color: #fff;
     box-shadow: 0 0 30px rgba(0,194,168,0.6); transform: translateX(-50%) scale(1.15);
   }
   .timeline-week {
@@ -467,7 +470,7 @@
     display: flex; align-items: center; justify-content: center;
     font-size: 0.9rem; flex-shrink: 0; transition: all 0.3s;
   }
-  .faq-item.open .faq-arrow { background: var(--accent); border-color: var(--accent); color: #fff; transform: rotate(180deg); }
+  .faq-item.open .faq-arrow { background: var(--accent); border-color: var(--highlight); color: #fff; transform: rotate(180deg); }
   .faq-a {
     display: none; padding: 0 24px 20px; color: var(--muted); font-size: 0.9rem; line-height: 1.75;
     border-top: 1px solid var(--border); background: #fff;
@@ -502,10 +505,10 @@
   .cta-title span { color: var(--accent); }
   .cta-sub { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.7; margin-bottom: 40px; }
   .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-  .btn-primary { background: var(--accent); color: #fff; padding: 15px 32px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; transition: all 0.25s; display: inline-block; box-shadow: 0 4px 20px rgba(0,194,168,0.4); }
+  .btn-primary { background: var(--highlight); color: #fff; padding: 15px 32px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; transition: all 0.25s; display: inline-block; box-shadow: 0 4px 20px rgba(0,194,168,0.4); }
   .btn-primary:hover { background: #035fa0; transform: translateY(-2px); box-shadow: 0 0 30px rgba(4,119,190,0.55); }
   .btn-outline { border: 1.5px solid rgba(255,255,255,0.35); color: #fff; padding: 15px 32px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; transition: all 0.25s; display: inline-block; }
-  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-outline:hover { border-color: var(--highlight); color: var(--accent); }
 
   /* ═══════════════════════════════════════════
      FOOTER
