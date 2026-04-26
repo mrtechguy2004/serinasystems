@@ -205,16 +205,14 @@
   ═══════════════════════════════════════════ */
   .hero {
     background: #060f20;
-    padding: 100px 5% 0;
+    padding: 0;
     position: relative; overflow-x: clip;
     text-align: center;
     isolation: isolate;
   }
   /* Background image (replaces video for performance) */
   .hero-video-bg {
-    position: absolute; inset: 0; width: 100%; height: 100%;
-    overflow: hidden; z-index: 0; pointer-events: none;
-    background: url('hero.webp') center/cover no-repeat;
+    display: none;
   }
   /* Dark overlay so text stays readable */
   .hero-video-bg::after {
@@ -222,9 +220,9 @@
     position: absolute; inset: 0;
     background: linear-gradient(
       160deg,
-      rgba(4, 10, 22, 0.82) 0%,
-      rgba(6, 20, 45, 0.75) 50%,
-      rgba(4, 10, 22, 0.88) 100%
+      rgba(20, 20, 20, 0.45) 0%,
+      rgba(20, 20, 20, 0.35) 50%,
+      rgba(20, 20, 20, 0.45) 100%
     );
   }
   /* Subtle dot-grid texture */
@@ -234,7 +232,7 @@
     background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
     background-size: 32px 32px;
     pointer-events: none;
-    z-index: 1;
+    z-index: 2;
   }
   .hero-inner {
     position: relative; z-index: 3;
@@ -920,6 +918,76 @@
   align-items: center;
   gap: 8px;           /* Space between logo and text */
 }
+
+/* ═══════════════════════════════════════════
+   HERO BACKGROUND IMAGE SLIDER (images only)
+═══════════════════════════════════════════ */
+
+/* The sliding backgrounds sit behind everything */
+.hero-bg-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1.4s cubic-bezier(0.4,0,0.2,1), transform 6s cubic-bezier(0.4,0,0.2,1);
+}
+
+.hero-bg-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Dark overlay over ALL background images */
+.hero-bg-slider::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(4,10,22,0.82) 0%,
+    rgba(6,20,45,0.72) 50%,
+    rgba(4,10,22,0.88) 100%
+  );
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Dot indicators — sit at the bottom of the hero */
+.slider-dots {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.slider-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.35);
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+.slider-dot.active {
+  background: #0477be;
+  width: 28px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(4,119,190,0.7);
+}
 </style>
 <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js" defer></script>
 </head>
@@ -969,11 +1037,28 @@
 </div>
 
 <!-- HERO -->
-<section class="hero">
-  
-  <div class="hero-video-bg"></div>
+<section class="hero" style="padding:100px 5% 0;">
+
+  <!-- ── BACKGROUND IMAGE SLIDER (images only, no text duplication) ── -->
+  <div class="hero-bg-slider" id="heroBgSlider">
+    <div class="hero-bg-slide active" style="background-image:url('hero7.webp')"></div>
+    <div class="hero-bg-slide" style="background-image:url('hero.webp')"></div>
+    <div class="hero-bg-slide" style="background-image:url('hero1.webp')"></div>
+    <div class="hero-bg-slide" style="background-image:url('hero4.webp')"></div>
+    <!-- Dark overlay -->
+    <div class="hero-video-bg" style="background:none;"></div>
+  </div>
+
+  <!-- Dot indicators -->
+  <div class="slider-dots" id="sliderDots">
+    <button class="slider-dot active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+    <button class="slider-dot" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+    <button class="slider-dot" onclick="goToSlide(2)" aria-label="Slide 3"></button>
+    <button class="slider-dot" onclick="goToSlide(3)" aria-label="Slide 4"></button>
+  </div>
+
+  <!-- Single static content block — never changes -->
   <div class="hero-inner">
-    <!-- Text column -->
     <div class="hero-text-col">
       <div class="hero-badge">Nakuru's #1 Software Studio</div>
       <h1>Crafting Digital<br><span class="typed-line"><span id="typed-text"></span><span class="typed-cursor">|</span></span></h1>
@@ -1717,6 +1802,28 @@ function handleBackdropClick(e) {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeServiceModal();
 });
+
+/* ═══════════════════════════════════════════
+   HERO BACKGROUND SLIDER (images only)
+═══════════════════════════════════════════ */
+(function() {
+  let current = 0;
+  const slides = document.querySelectorAll('.hero-bg-slide');
+  const dots   = document.querySelectorAll('.slider-dot');
+
+  function activateSlide(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  window.goToSlide = function(index) { activateSlide(index); };
+
+  // Auto-advance every 5 seconds
+  setInterval(() => activateSlide(current + 1), 5000);
+})();
 
 /* ═══════════════════════════════════════════
    TYPING ANIMATION
