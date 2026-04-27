@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="description" content="Serina Systems pricing plans for web design, mobile app development, SEO and digital marketing services in Nyahururu and Nakuru, Kenya." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google-site-verification" content="z0quCiA23GtKzPwewS-vnprINSQp_exawvOk28ehvKA" />
+<title>Pricing | Serina Systems — Web Design & Digital Marketing Kenya</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js" defer></script>
+<style>
+  /* ═══════════════════════════════════════════
+     ROOT — identical token set to index.html
+  ═══════════════════════════════════════════ */
+  :root {
+    --primary:   #0a2540;            /* deep navy — headings, nav text, footer bg */
+    --accent:    #0477be;            /* blue  — links, interactive borders, icon fills, step nums */
+    --accent2:   #635bff;            /* purple — gradient pair for bars & CTAs */
+    --highlight: #10b981;            /* green — section labels, nav CTA, primary buttons, card hovers */
+    --highlight2:#34d399;            /* light green — minor decorative */
+    --glow-green: 0 0 30px rgba(16,185,129,0.4);
+    --text:      #1a1a2e;
+    --muted:     #64748b;
+    --bg:        #ffffff;
+    --bg2:       #f8fafc;
+    --border:    #e2e8f0;
+    --radius:    12px;
+    --glow:      0 0 30px rgba(6,69,215,0.89);   /* blue glow for non-CTA hovers */
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; }
+
+  /* ── SCROLL PROGRESS — blue→purple (same as index.html) ── */
+  #scroll-progress {
+    position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    width: 0%; transition: width 0.1s linear;
+    box-shadow: 0 0 10px rgba(0,194,168,0.6);
+  }
+
+  /* ── REVEAL ANIMATIONS ── */
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+  .reveal-scale { opacity: 0; transform: scale(0.88); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-scale.visible { opacity: 1; transform: scale(1); }
+  .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; }
+  .delay-3 { transition-delay: 0.3s; } .delay-4 { transition-delay: 0.4s; }
+  .delay-5 { transition-delay: 0.5s; } .delay-6 { transition-delay: 0.6s; }
+
+  /* ── NAV — exact match to index.html ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%; display: flex; align-items: center; justify-content: space-between;
+    height: 68px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); transition: box-shadow 0.3s;
+    will-change: transform; transform: translateZ(0);
+  }
+  nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
+  .logo { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.45rem; color: var(--primary); letter-spacing: -0.03em; }
+  .logo span { color: var(--accent); }               /* blue accent on logo dot */
+  .logo img { height: 60px; width: auto; vertical-align: middle; border-radius: 20px; padding: 1px; }
+  .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--primary); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--highlight); } /* GREEN hover — same as index */
+  .nav-cta {
+    background: var(--highlight); color: #fff !important;      /* GREEN CTA — same as index */
+    padding: 10px 22px; border-radius: 8px;
+    font-weight: 600 !important; font-size: 0.875rem !important;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.3s !important;
+  }
+  .nav-cta:hover { background: #059669 !important; transform: translateY(-1px) !important; box-shadow: 0 0 20px rgba(16,185,129,0.4) !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; border: none; background: none; outline: none; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--primary); border-radius: 2px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-nav {
+    display: none; position: fixed; top: 68px; left: 0; right: 0;
+    background: #fff; border-bottom: 1px solid var(--border);
+    padding: 20px 5%; flex-direction: column; gap: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1); z-index: 99;
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { font-size: 1rem; font-weight: 500; color: var(--primary); padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .mobile-nav a:last-child { border-bottom: none; }
+
+  /* ── HERO — blue radial glow, accent h1 span, green pulse dot (brand energy) ── */
+  .pricing-hero {
+    background:
+      linear-gradient(135deg, rgba(6,15,32,0.92) 0%, rgba(10,37,64,0.88) 60%, rgba(13,48,96,0.92) 100%),
+      url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=85') center/cover no-repeat;
+    padding: 100px 5% 80px; text-align: center; position: relative; overflow: hidden;
+  }
+  .pricing-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(4,119,190,0.18) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  /* Badge pulse — uses highlight (green) for the live dot, matches index.html hero badge style */
+  .pricing-hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4);
+    color: var(--highlight2); padding: 7px 16px; border-radius: 50px;
+    font-size: 0.76rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .pricing-hero-badge::before {
+    content: ''; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--highlight); box-shadow: 0 0 8px var(--highlight);
+    animation: pulse-dot 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse-dot { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(1.4);opacity:0.7;} }
+  .pricing-hero h1 {
+    font-family: 'Sora', sans-serif; font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 20px;
+  }
+  .pricing-hero h1 span { color: var(--highlight); }   /* GREEN span — matches index.html hero typed text */
+  .pricing-hero p {
+    font-size: 1.1rem; color: rgba(255,255,255,0.7);
+    max-width: 600px; margin: 0 auto 40px; line-height: 1.7;
+  }
+
+  /* ── BILLING TOGGLE — green active (matches hero btn-primary) ── */
+  .billing-toggle {
+    display: inline-flex; align-items: center; gap: 14px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+    padding: 6px 6px 6px 18px; border-radius: 50px; margin-bottom: 60px;
+  }
+  .billing-toggle span { color: rgba(255,255,255,0.8); font-size: 0.9rem; font-weight: 500; }
+  .billing-toggle .save-badge {
+    background: var(--highlight); color: #fff;           /* GREEN save badge */
+    padding: 3px 10px; border-radius: 50px; font-size: 0.72rem; font-weight: 700;
+  }
+  .toggle-btn {
+    position: relative; width: 52px; height: 28px;
+    background: rgba(255,255,255,0.2); border-radius: 50px; cursor: pointer;
+    border: none; transition: background 0.3s;
+  }
+  .toggle-btn.active { background: var(--highlight); }   /* GREEN active toggle */
+  .toggle-btn::after {
+    content: ''; position: absolute; top: 3px; left: 3px;
+    width: 22px; height: 22px; border-radius: 50%; background: #fff; transition: transform 0.3s;
+  }
+  .toggle-btn.active::after { transform: translateX(24px); }
+
+  /* ── SECTION GLOBALS ── */
+  section { padding: 80px 5%; }
+  /* section-label GREEN — exact match to index.html .section-label */
+  .section-label { color: var(--highlight); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; }
+  .section-title { font-family: 'Sora', sans-serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800; color: var(--primary); line-height: 1.2; margin-bottom: 16px; }
+  .section-sub { color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 600px; }
+  .section-head { text-align: center; margin-bottom: 56px; }
+  .section-head .section-sub { margin: 0 auto; }
+
+  /* ── PRICING CARDS ── */
+  .pricing-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 28px; max-width: 1200px; margin: 0 auto; align-items: start;
+  }
+  .pricing-card {
+    background: var(--bg); border: 1.5px solid var(--border);
+    border-radius: 20px; padding: 40px 36px; position: relative;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  }
+  .pricing-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.1); }
+  /* Popular card — GREEN highlight (matches index.html stat-card:hover green glow) */
+  .pricing-card.popular {
+    border-color: var(--highlight);
+    box-shadow: 0 0 0 1px var(--highlight), var(--glow-green);
+    transform: translateY(-8px);
+    background: linear-gradient(145deg, #fff 80%, #f0fdf9 100%);
+  }
+  .popular-badge {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--highlight); color: #fff;                /* GREEN badge */
+    padding: 4px 20px; border-radius: 50px; font-size: 0.75rem; font-weight: 700;
+    white-space: nowrap; letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  /* Plan tag — BLUE accent (matches index.html service-link, step-num color) */
+  .plan-tag {
+    display: inline-block; background: var(--bg2); color: var(--accent);
+    padding: 4px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px;
+    border: 1px solid var(--border);
+  }
+  .plan-name { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+  .plan-desc { color: var(--muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 28px; }
+  .plan-price { margin-bottom: 32px; }
+  .plan-price .currency { font-size: 1.1rem; font-weight: 700; color: var(--primary); vertical-align: top; margin-top: 8px; display: inline-block; }
+  .plan-price .amount { font-family: 'Sora', sans-serif; font-size: 3.2rem; font-weight: 800; color: var(--primary); line-height: 1; }
+  .plan-price .period { color: var(--muted); font-size: 0.85rem; margin-left: 4px; }
+  .plan-price .yearly-price { display: none; }
+  .plan-price.yearly .monthly-price { display: none; }
+  .plan-price.yearly .yearly-price { display: inline; }
+  .plan-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 28px; }
+  .plan-features { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
+  .plan-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; color: var(--text); line-height: 1.5; }
+  /* Check — ACCENT blue (matches index.html feat-row::before and service-link) */
+  .plan-features li .check { color: var(--accent); font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+  .plan-features li .cross { color: #cbd5e1; font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+  .plan-features li.disabled { color: var(--muted); }
+  /* Plan buttons — outline uses accent (blue), primary uses highlight (green) */
+  .plan-btn {
+    display: block; width: 100%; text-align: center;
+    padding: 14px 24px; border-radius: 10px; font-weight: 700; font-size: 0.95rem;
+    transition: all 0.25s; border: 2px solid var(--accent); color: var(--accent);
+    background: transparent; cursor: pointer;
+  }
+  .plan-btn:hover { background: var(--accent); color: #fff; transform: translateY(-2px); box-shadow: var(--glow); }
+  /* Primary (Most Popular) plan btn — GREEN, same as index.html btn-primary */
+  .plan-btn.primary {
+    background: var(--highlight); color: #fff;
+    border-color: var(--highlight);
+    box-shadow: 0 4px 24px rgba(16,185,129,0.45);
+  }
+  .plan-btn.primary:hover { background: #059669; border-color: #059669; box-shadow: 0 8px 32px rgba(16,185,129,0.6); transform: translateY(-2px); }
+
+  /* ── SERVICE PRICING TABS ── */
+  .services-pricing { background: var(--bg2); }
+  .services-tabs { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 48px; }
+  .stab {
+    padding: 10px 22px; border-radius: 50px; border: 1.5px solid var(--border);
+    font-size: 0.88rem; font-weight: 600; color: var(--muted);
+    cursor: pointer; transition: all 0.2s; background: #fff;
+  }
+  /* Tab hover — ACCENT blue (same as index.html interactive hover pattern) */
+  .stab:hover { border-color: var(--accent); color: var(--accent); }
+  /* Tab active — ACCENT blue with blue glow */
+  .stab.active {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff; border-color: var(--accent); box-shadow: var(--glow);
+  }
+  .services-panel { display: none; }
+  .services-panel.active { display: block; }
+  .service-pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
+  .svc-price-card {
+    background: #fff; border: 1.5px solid var(--border); border-radius: 16px;
+    padding: 32px 28px; transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  /* Service card top bar on hover — blue→purple gradient, matches index.html .service-card::before */
+  .svc-price-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    transform: scaleX(0); transform-origin: left; transition: transform 0.35s;
+  }
+  .svc-price-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-color: transparent; }
+  .svc-price-card:hover::before { transform: scaleX(1); }
+  .svc-price-card h3 { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+  .svc-price-card p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; margin-bottom: 20px; }
+  /* Price tag — HIGHLIGHT green (matches index.html stat-num span color) */
+  .svc-price-tag { font-family: 'Sora', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--highlight); margin-bottom: 20px; }
+  .svc-price-tag span { font-size: 0.85rem; font-weight: 500; color: var(--muted); }
+  .svc-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+  .svc-features li { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text); }
+  /* Feature check — ACCENT blue (matches index.html feat-row::before) */
+  .svc-features li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+  /* Service CTA — ACCENT blue (matches index.html service-link and step-num) */
+  .svc-cta {
+    display: block; text-align: center; padding: 11px 20px; border-radius: 8px;
+    font-weight: 600; font-size: 0.88rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff; transition: all 0.2s;
+    box-shadow: 0 4px 16px rgba(4,119,190,0.35);
+  }
+  .svc-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(4,119,190,0.5); }
+
+  /* ── FAQ — accent (blue) open state, matches index.html interactive elements ── */
+  .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+  .faq-item { border: 1.5px solid var(--border); border-radius: 14px; overflow: hidden; transition: border-color 0.2s; }
+  .faq-item.open { border-color: var(--accent); }
+  .faq-q {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 28px; cursor: pointer; font-weight: 600; font-size: 0.98rem;
+    color: var(--primary); background: var(--bg); transition: background 0.2s; gap: 16px;
+  }
+  .faq-item.open .faq-q { background: #f0f7ff; color: var(--accent); }
+  .faq-icon { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem; transition: all 0.3s; color: var(--muted); }
+  .faq-item.open .faq-icon { background: var(--accent); border-color: var(--accent); color: #fff; transform: rotate(45deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; padding: 0 28px; color: var(--muted); font-size: 0.92rem; line-height: 1.7; }
+  .faq-item.open .faq-a { max-height: 300px; padding: 0 28px 22px; }
+
+  /* ── CTA SECTION — green primary btn, white outline, same as index.html hero ── */
+  .cta-section {
+    background: linear-gradient(135deg, #0a2540, #0f172a);
+    text-align: center; padding: 100px 5%;
+  }
+  .cta-section h2 { font-family: 'Sora', sans-serif; font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 800; color: #fff; margin-bottom: 16px; }
+  .cta-section p { color: rgba(255,255,255,0.7); font-size: 1.05rem; max-width: 560px; margin: 0 auto 36px; line-height: 1.7; }
+  .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  /* btn-primary — GREEN, exact match to index.html .btn-primary */
+  .btn-primary {
+    background: var(--highlight); color: #fff;
+    padding: 15px 32px; border-radius: 50px;
+    font-weight: 700; font-size: 0.95rem; transition: all 0.25s; display: inline-block;
+    box-shadow: 0 4px 24px rgba(16,185,129,0.45);
+  }
+  .btn-primary:hover { background: #059669; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(16,185,129,0.6); }
+  /* btn-outline — white border, hover turns blue, exact match to index.html .btn-outline */
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,0.28); color: rgba(255,255,255,0.88);
+    padding: 15px 32px; border-radius: 50px;
+    font-weight: 600; font-size: 0.95rem; transition: all 0.25s; display: inline-block;
+    backdrop-filter: blur(6px); background: rgba(255,255,255,0.05);
+  }
+  .btn-outline:hover { border-color: rgba(4,119,190,0.7); color: #60c8ff; background: rgba(4,119,190,0.1); }
+
+  /* ── TRUST STRIP — accent blue icons (matches index.html service-link color) ── */
+  .trust-strip { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 28px 5%; }
+  .trust-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
+  .trust-item { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 0.88rem; font-weight: 500; }
+  .trust-item iconify-icon { font-size: 1.4rem; color: var(--accent); }
+
+  /* ── FOOTER — exact match to index.html footer ── */
+  footer { background: var(--primary); color: rgba(255,255,255,0.7); padding: 80px 5% 0; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; max-width: 1200px; margin: 0 auto; padding-bottom: 60px; }
+  .footer-brand .logo { color: #fff; }
+  .footer-brand p { font-size: 0.88rem; line-height: 1.7; margin-top: 16px; }
+  .footer-contact { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+  .footer-contact a { font-size: 0.85rem; transition: color 0.2s; }
+  .footer-contact a:hover { color: var(--accent); }   /* BLUE hover — same as index.html */
+  .footer-col h4 { font-family: 'Sora', sans-serif; font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 20px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-col a { font-size: 0.875rem; transition: color 0.2s, transform 0.2s; display: inline-block; }
+  .footer-col a:hover { color: var(--accent); transform: translateX(4px); }   /* BLUE hover */
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 24px 0; text-align: center; font-size: 0.8rem; max-width: 1200px; margin: 0 auto; }
+
+  /* ── WHATSAPP — brand green, unchanged ── */
+  .whatsapp-btn {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    background: #25D366; color: #fff; border-radius: 50%;
+    width: 56px; height: 56px; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5); transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 1.6rem;
+  }
+  .whatsapp-btn:hover { transform: scale(1.12); box-shadow: 0 8px 30px rgba(37,211,102,0.6); }
+
+  /* ── WHAT'S INCLUDED — blue accent icons (matches index.html service-icon pattern) ── */
+  .included-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
+  .included-card {
+    background: #fff; border: 1.5px solid var(--border); border-radius: 16px;
+    padding: 28px 24px; text-align: center; transition: all 0.3s;
+  }
+  /* Card hover — HIGHLIGHT green (matches index.html .stat-card:hover) */
+  .included-card:hover { transform: translateY(-4px); border-color: var(--highlight); box-shadow: var(--glow-green); }
+  .included-icon {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: linear-gradient(135deg, rgba(4,119,190,0.1), rgba(99,91,255,0.15));
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px; font-size: 1.6rem; color: var(--accent);
+    border: 1px solid rgba(4,119,190,0.18);
+  }
+  .included-card h3 { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+  .included-card p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
+
+  /* ── WHY CHOOSE US — accent blue hover (matches index.html stack-item:hover) ── */
+  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+  .why-card {
+    display: flex; gap: 20px; align-items: flex-start;
+    background: var(--bg2); border: 1.5px solid var(--border); border-radius: 16px;
+    padding: 28px 24px; transition: all 0.3s;
+  }
+  .why-card:hover { border-color: var(--highlight); box-shadow: var(--glow-green); transform: translateY(-3px); }
+  /* Number — highlight green tint (matches index.html stat-num span) */
+  .why-number {
+    font-family: 'Sora', sans-serif; font-size: 2rem; font-weight: 800;
+    color: rgba(16,185,129,0.25); line-height: 1; flex-shrink: 0; min-width: 48px;
+  }
+  .why-content h3 { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+  .why-content p { color: var(--muted); font-size: 0.875rem; line-height: 1.6; }
+
+  /* ── PROCESS STEPS — accent blue numbering (matches index.html .step-num) ── */
+  .process-steps { display: flex; align-items: center; justify-content: center; gap: 12px; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; }
+  .process-step {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px; padding: 32px 24px; text-align: center;
+    flex: 1; min-width: 200px; max-width: 240px; transition: all 0.3s; position: relative;
+  }
+  .process-step:hover { background: rgba(4,119,190,0.1); border-color: rgba(4,119,190,0.4); transform: translateY(-4px); }
+  /* Step number text — ACCENT blue (matches index.html .step-num background) */
+  .process-num {
+    font-family: 'Sora', sans-serif; font-size: 0.72rem; font-weight: 700;
+    color: var(--highlight2); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px;
+  }
+  /* Process icon — blue background (matches index.html .step-num circle) */
+  .process-icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--accent); border: none;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px; font-size: 1.4rem; color: #fff;
+    box-shadow: 0 4px 16px rgba(4,119,190,0.4);
+  }
+  .process-step h3 { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+  .process-step p { color: rgba(255,255,255,0.6); font-size: 0.82rem; line-height: 1.6; }
+  .process-arrow { font-size: 1.5rem; color: rgba(255,255,255,0.3); flex-shrink: 0; }
+
+  /* ── QUOTE FORM — accent blue focus (matches index.html form pattern) ── */
+  .quote-form-wrap { max-width: 800px; margin: 0 auto; }
+  .quote-form { background: #fff; border: 1.5px solid var(--border); border-radius: 20px; padding: 48px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+  .form-group label { font-size: 0.88rem; font-weight: 600; color: var(--primary); }
+  .form-group label span { color: var(--highlight); }   /* required asterisk — GREEN */
+  .form-group input, .form-group select, .form-group textarea {
+    padding: 12px 16px; border: 1.5px solid var(--border); border-radius: 10px;
+    font-size: 0.9rem; font-family: 'Inter', sans-serif; color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s; background: var(--bg2); outline: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--accent); box-shadow: 0 0 0 3px rgba(4,119,190,0.1); background: #fff;
+  }
+  .form-group textarea { resize: vertical; }
+  /* Submit — GREEN primary (matches index.html btn-primary) */
+  .quote-submit {
+    width: 100%; padding: 16px 24px; background: var(--highlight); color: #fff;
+    border: none; border-radius: 12px; font-size: 1rem; font-weight: 700;
+    cursor: pointer; transition: all 0.25s; font-family: 'Inter', sans-serif;
+    box-shadow: 0 4px 24px rgba(16,185,129,0.4);
+  }
+  .quote-submit:hover { background: #059669; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(16,185,129,0.5); }
+  .form-note { text-align: center; color: var(--muted); font-size: 0.8rem; margin-top: 16px; }
+  .quote-success { text-align: center; padding: 60px 40px; background: #fff; border: 1.5px solid var(--border); border-radius: 20px; }
+  .quote-success h3 { font-family: 'Sora', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--primary); margin: 16px 0 8px; }
+  .quote-success p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+    .service-pricing-grid { grid-template-columns: repeat(2, 1fr); }
+    .included-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .pricing-grid { grid-template-columns: 1fr; }
+    .pricing-card.popular { transform: none; }
+    .service-pricing-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .trust-inner { gap: 24px; }
+    .included-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr; }
+    .process-steps { flex-direction: column; align-items: center; }
+    .process-arrow { transform: rotate(90deg); }
+    .process-step { max-width: 100%; width: 100%; }
+    .form-row { grid-template-columns: 1fr; }
+    .quote-form { padding: 28px 20px; }
+  }
+  @media (max-width: 480px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .cta-btns { flex-direction: column; align-items: center; }
+    .pricing-hero { padding: 80px 5% 60px; }
+    .included-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="Serina Systems Logo" width="60" height="60">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="serina-about.html">About Us</a></li>
+    <li><a href="serina-systems-services.html">Services</a></li>
+    <li><a href="serina-portfolio.html">Portfolio</a></li>
+    <li><a href="serina-process.html">Our Process</a></li>
+    <li><a href="serina-blog.html">Blogs</a></li>
+    <li><a href="serina-pricing.html" class="active">Pricing</a></li>
+    <li><a href="serina-contact.html">Contact Us</a></li>
+  </ul>
+  <a href="serina-contact.html" class="nav-cta" style="display:block">Schedule Meeting</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="serina-about.html">About Us</a>
+  <a href="serina-systems-services.html">Services</a>
+  <a href="serina-portfolio.html">Portfolio</a>
+  <a href="serina-process.html">Our Process</a>
+  <a href="serina-blog.html">Blogs</a>
+  <a href="serina-pricing.html">Pricing</a>
+  <a href="serina-contact.html">Contact Us</a>
+  <a href="serina-contact.html" class="nav-cta" style="background:var(--highlight);color:#fff;padding:12px;text-align:center;border-radius:8px;font-weight:700;">Schedule Meeting</a>
+</div>
+
+<!-- HERO -->
+<div class="pricing-hero">
+  <div class="pricing-hero-badge">Transparent Pricing</div>
+  <h1>Simple, <span>Honest Pricing</span><br>No Hidden Costs</h1>
+  <p>Choose a plan that fits your business. All plans include a free consultation, dedicated support and a satisfaction guarantee.</p>
+
+  <!-- BILLING TOGGLE -->
+  <div class="billing-toggle">
+    <span>Monthly</span>
+    <button class="toggle-btn" id="billingToggle" onclick="toggleBilling()"></button>
+    <span>Yearly</span>
+    <span class="save-badge">Save 20%</span>
+  </div>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item reveal"><iconify-icon icon="mdi:shield-check"></iconify-icon> Satisfaction Guaranteed</div>
+    <div class="trust-item reveal delay-1"><iconify-icon icon="mdi:clock-outline"></iconify-icon> 24hr Response Time</div>
+    <div class="trust-item reveal delay-2"><iconify-icon icon="mdi:credit-card-off"></iconify-icon> No Hidden Fees</div>
+    <div class="trust-item reveal delay-3"><iconify-icon icon="mdi:headset"></iconify-icon> Dedicated Support</div>
+    <div class="trust-item reveal delay-4"><iconify-icon icon="mdi:star"></iconify-icon> 98% Client Satisfaction</div>
+  </div>
+</div>
+
+<!-- WEBSITE PLANS -->
+<section>
+  <div class="section-head">
+    <p class="section-label reveal">Website Plans</p>
+    <h2 class="section-title reveal delay-1">The Right Plan for<br>Every Business</h2>
+    <p class="section-sub reveal delay-2">Whether you're a startup or an established enterprise, we have a plan that fits your goals and budget.</p>
+  </div>
+
+  <div class="pricing-grid">
+
+    <!-- STARTER -->
+    <div class="pricing-card reveal-scale delay-1">
+      <div class="plan-tag">Starter</div>
+      <div class="plan-name"><iconify-icon icon="mdi:rocket-launch-outline" style="vertical-align:middle;margin-right:8px;font-size:1.3rem;color:var(--accent);"></iconify-icon>Basic Website</div>
+      <p class="plan-desc">Perfect for small businesses and individuals looking to establish a professional online presence.</p>
+      <div class="plan-price" id="price-starter">
+        <span class="currency">KES</span>
+        <span class="amount monthly-price">15,000</span>
+        <span class="amount yearly-price">12,000</span>
+        <span class="period">/ one-time</span>
+      </div>
+      <hr class="plan-divider">
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Up to 5 pages</li>
+        <li><span class="check">✓</span> Mobile responsive design</li>
+        <li><span class="check">✓</span> Contact form</li>
+        <li><span class="check">✓</span> Google Analytics setup</li>
+        <li><span class="check">✓</span> Basic SEO optimization</li>
+        <li><span class="check">✓</span> Social media links</li>
+        <li class="disabled"><span class="cross">✗</span> E-commerce functionality</li>
+        <li class="disabled"><span class="cross">✗</span> Custom animations</li>
+        <li class="disabled"><span class="cross">✗</span> CMS / Blog</li>
+      </ul>
+      <a href="serina-contact.html" class="plan-btn">Get Started</a>
+    </div>
+
+    <!-- PROFESSIONAL (POPULAR) -->
+    <div class="pricing-card popular reveal-scale delay-2">
+      <div class="popular-badge">⭐ Most Popular</div>
+      <div class="plan-tag">Professional</div>
+      <div class="plan-name"><iconify-icon icon="mdi:briefcase-outline" style="vertical-align:middle;margin-right:8px;font-size:1.3rem;color:var(--highlight);"></iconify-icon>Business Website</div>
+      <p class="plan-desc">Ideal for growing businesses that need a powerful, feature-rich website that converts visitors into clients.</p>
+      <div class="plan-price" id="price-pro">
+        <span class="currency">KES</span>
+        <span class="amount monthly-price">35,000</span>
+        <span class="amount yearly-price">28,000</span>
+        <span class="period">/ one-time</span>
+      </div>
+      <hr class="plan-divider">
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Up to 10 pages</li>
+        <li><span class="check">✓</span> Mobile responsive design</li>
+        <li><span class="check">✓</span> Contact & quote forms</li>
+        <li><span class="check">✓</span> Advanced SEO optimization</li>
+        <li><span class="check">✓</span> Blog / CMS integration</li>
+        <li><span class="check">✓</span> Custom animations</li>
+        <li><span class="check">✓</span> Google Search Console setup</li>
+        <li><span class="check">✓</span> Speed & performance optimization</li>
+        <li class="disabled"><span class="cross">✗</span> E-commerce functionality</li>
+      </ul>
+      <a href="serina-contact.html" class="plan-btn primary">Get Started</a>
+    </div>
+
+    <!-- ENTERPRISE -->
+    <div class="pricing-card reveal-scale delay-3">
+      <div class="plan-tag">Enterprise</div>
+      <div class="plan-name"><iconify-icon icon="mdi:domain" style="vertical-align:middle;margin-right:8px;font-size:1.3rem;color:var(--accent2);"></iconify-icon>E-Commerce & Custom</div>
+      <p class="plan-desc">For businesses that need a fully custom, scalable solution with e-commerce, integrations and ongoing support.</p>
+      <div class="plan-price" id="price-enterprise">
+        <span class="currency">KES</span>
+        <span class="amount monthly-price">75,000</span>
+        <span class="amount yearly-price">60,000</span>
+        <span class="period">/ starting from</span>
+      </div>
+      <hr class="plan-divider">
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Unlimited pages</li>
+        <li><span class="check">✓</span> E-commerce / payment gateway</li>
+        <li><span class="check">✓</span> Custom web application</li>
+        <li><span class="check">✓</span> Admin dashboard</li>
+        <li><span class="check">✓</span> API integrations</li>
+        <li><span class="check">✓</span> Full SEO & performance audit</li>
+        <li><span class="check">✓</span> 3 months free maintenance</li>
+        <li><span class="check">✓</span> Priority support</li>
+        <li><span class="check">✓</span> Custom domain & hosting setup</li>
+      </ul>
+      <a href="serina-contact.html" class="plan-btn">Get Started</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICE SPECIFIC PRICING -->
+<section class="services-pricing">
+  <div class="section-head">
+    <p class="section-label reveal">Service Pricing</p>
+    <h2 class="section-title reveal delay-1">Pricing by Service</h2>
+    <p class="section-sub reveal delay-2">Browse pricing for our individual services. All prices are starting points — final pricing depends on your specific requirements.</p>
+  </div>
+
+  <!-- TABS -->
+  <div class="services-tabs reveal">
+    <button class="stab active" onclick="showTab('mobile')"><iconify-icon icon="mdi:cellphone" style="vertical-align:middle;margin-right:6px;font-size:1.1rem;"></iconify-icon> Mobile Apps</button>
+    <button class="stab" onclick="showTab('marketing')"><iconify-icon icon="mdi:bullhorn" style="vertical-align:middle;margin-right:6px;font-size:1.1rem;"></iconify-icon> Digital Marketing</button>
+    <button class="stab" onclick="showTab('seo')"><iconify-icon icon="mdi:magnify" style="vertical-align:middle;margin-right:6px;font-size:1.1rem;"></iconify-icon> SEO</button>
+    <button class="stab" onclick="showTab('branding')"><iconify-icon icon="mdi:palette" style="vertical-align:middle;margin-right:6px;font-size:1.1rem;"></iconify-icon> Branding</button>
+    <button class="stab" onclick="showTab('mis')"><iconify-icon icon="mdi:office-building" style="vertical-align:middle;margin-right:6px;font-size:1.1rem;"></iconify-icon> MIS / Systems</button>
+  </div>
+
+  <!-- MOBILE APPS -->
+  <div class="services-panel active" id="panel-mobile">
+    <div class="service-pricing-grid">
+      <div class="svc-price-card reveal-scale delay-1">
+        <h3><iconify-icon icon="mdi:cellphone-basic" style="vertical-align:middle;margin-right:8px;font-size:1.2rem;color:var(--accent);"></iconify-icon>Basic Mobile App</h3>
+        <p>Simple Android or iOS app with core features, user authentication and basic UI.</p>
+        <div class="svc-price-tag">KES 80,000 <span>/ starting</span></div>
+        <ul class="svc-features">
+          <li>Android or iOS (single platform)</li>
+          <li>User login & registration</li>
+          <li>Up to 8 screens</li>
+          <li>Basic push notifications</li>
+          <li>Firebase backend</li>
+        </ul>
+        <a href="serina-contact.html" class="svc-cta">Get a Quote</a>
+      </div>
+      <div class="svc-price-card reveal-scale delay-2">
+        <h3><iconify-icon icon="mdi:cellphone-link" style="vertical-align:middle;margin-right:8px;font-size:1.2rem;color:var(--accent);"></iconify-icon>Cross-Platform App</h3>
+        <p>Flutter app that runs on both Android and iOS from a single codebase.</p>
+        <div class="svc-price-tag">KES 150,000 <span>/ starting</span></div>
+        <ul class="svc-features">
+          <li>Android & iOS (both platforms)</li>
+          <li>Custom UI & animations</li>
+          <li>Up to 15 screens</li>
+          <li>REST API integration</li>
+          <li>Payment gateway</li>
+        </ul>
+        <a href="serina-contact.html" class="svc-cta">Get a Quote</a>
+      </div>
+      <div class="svc-price-card reveal-scale delay-3">
+        <h3><iconify-icon icon="mdi:cellphone-cog" style="vertical-align:middle;margin-right:8px;font-size:1.2rem;color:var(--accent);"></iconify-icon>Enterprise App</h3>
+        <p>Full-featured enterprise mobile application with complex integrations and custom backend.</p>
+        <div class="svc-price-tag">KES 300,000 <span>/ starting</span></div>
+        <ul class="svc-features">
+          <li>Android, iOS & web</li>
+          <li>Custom backend & admin panel</li>
+          <li>Advanced analytics</li>
+          <li>Offline mode support</li>
+          <li>3 months post-launch support</li>
+        </ul>
+        <a href="serina-contact.html" class="svc-cta">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIGITAL MARKETING -->
+  <div class="services-panel" id="panel-marketing">
+    <div class="service-pricing-grid">
+      <div class="svc-price-card reveal-scale delay-1">
+        <h3><iconify-icon icon="mdi:bullhorn-outline" style="vertical-align:middle;margin-right:8px;font-size:1.2rem;color:var(--accent);"></iconify-icon>Starter Marketing</h3>
+        <p>Get your brand noticed online with consistent social media presence and basic ad campaigns.</p>
+        <div class="svc-price-tag">KES 15,000 <span>/ month</span></div>
+        <ul class="svc-features">
+          <li>2 social media platforms</li>
+          <li>12 posts per month</li>
+          <li>Basic ad management</li>
+          <li>Monthly performance report</li>
+          <li>Content creation</li>
+        </ul>
+        <a href="serina-contact.html" class="svc-cta">Get a Quote</a>
+      </div>
+      <div class="svc-price-card reveal-scale delay-2">
+        <h3><iconify-icon icon="mdi:chart-line" style="vertical-align:middle;margin-right:8px;font-size:1.2rem;color:var(--accent);"></iconify-icon>Growth Marketing</h3>
+        <p>Scale your online presence with multi-platform marketing, paid ads and email campaigns.</p>
+        <div class="svc-price-tag">KES 35,000 <span>/ month</span></div>
+        <ul class="svc-features">
+          <li>4 social media platforms</li>
+          <li>20 posts per month</li>
+          <li>Google & Meta Ads management</li>
+          <li>Email marketing campaigns</li>
+          <li>Bi-weekly performance report</li>
+        </ul>
+        <a href="serina-contact.html" class="svc-cta">Get a Quote</a>
+      </div>
+      <div class="svc-price-card reveal-scale delay-3">
+        <h3><iconify-icon icon="mdi:rocket" style="vertical-align:middle;margin-right:8px;font-size:1.2rem;color:var(--accent);"></iconify-icon>Full-Scale Marketing</h3>
+        <p>Complete digital marketing management for businesses serious about dominant online growth.</p>
+        <div class="svc-price-tag">KES 65,000 <span>/ month</span></div>
+        <ul class="svc-features">
+          <li>All social media platforms</li>
+          <li>Unlimited content creation</li>
+          <li>Full paid ads management</li>
+          <li>Influencer outreach</li>
+          <li>Weekly strategy calls</li>
+        </ul>
+        <a href="serina-contact.html" class="svc-cta">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEO -->
+  <div class="services-panel" id="panel-seo">
+    <div class="service-pricing-grid">
+      <div class="svc-price-card reveal-scale delay-1">
+        <h3><iconify-icon icon="mdi:map-marker-radius" style="vertical-align:middle;margin-right:8px;font-size:1.2rem;color:var(--accent);"></iconify-icon>Local SEO</h3>
+        <p>Get found by customers in your city. Perfect for local businesses in Nakuru, Nyahururu and beyond.</p>
+        <div class="svc-price-tag">KES 12,000 <span>/ month</span></div>
+        <ul class="svc-features">
+          <li>Google Business Profile optimization</li>
+          <li>Local keyword targeting</li>
+          <li>On-page SEO (5 pages)</li>
+          <li>Monthly ranking report</li>
+          <li>Citation building</li>
+        </ul>
+        <a href="serina-contact.html" class="svc-cta">Get a Quote</a>
+      </div>
+      <div class="svc-price-card reveal-scale delay-2">
+        <h3><iconify-icon icon="mdi:earth" style="vertical-align:middle;margin-right:8px;font-size:1.2rem;color:var(--accent);"></iconify-icon>National SEO</h3>
+        <p>Rank across Kenya for your target keywords and drive consistent organic traffic.</p>
+        <div class="svc-price-tag">KES 28,000 <span>/ month</span></div>
+        <ul class="svc-features">
+          <li>Full technical SEO audit</li>
+          <li>On-page SEO (all pages)</li>
+          <li>Content strategy & blog posts</li>
+          <li>Link building campaign</li>
+          <li>Bi-weekly ranking reports</li>
+        </ul>
+        <a href="serina-contact.html" class="svc-cta">Get a Quote</a>
+      </div>
+      <div class="svc-price-card reveal-scale delay-3">
+        <h3><iconify-icon icon="mdi:file-chart" style="vertical-align:middle;margin-right:8px;font-size:1.2rem;color:var(--accent);"></iconify-icon>SEO + Content</h3>
+        <p>The complete package — SEO strategy combined with high-quality content that ranks and converts.</p>
+        <div class="svc-price-tag">KES 45,000 <span>/ month</span></div>
+        <ul class="svc-features">
+          <li>Everything in National SEO</li>
+          <li>4 blog posts per month</li>
+          <li>Competitor analysis</li>
+          <li>Schema markup</li>
+          <li>Weekly strategy session</li>
+        </ul>
+        <a href="serina-contact.html" class="svc-cta">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRANDING -->
+  <div class="services-panel" id="panel-branding">
+    <div class="service-pricing-grid">
+      <div class="svc-price-card reveal-scale delay-1">
+        <h3><iconify-icon icon="mdi:pen-plus" style="vertical-align:middle;margin-right:8px;font-size:1.2rem;color:var(--accent);"></iconify-icon>Logo Design</h3>
+        <p>Professional logo design that captures your brand identity and stands out from the crowd.</p>
+        <div class="svc-price-tag">KES 8,000 <span>/ one-time</span></div>
+        <ul class="svc-features">
+          <li>3 unique logo concepts</li>
+          <li>2 revision rounds</li>
+          <li>All file formats (PNG, SVG, PDF)</li>
+          <li>Light & dark versions</li>
+          <li>Brand color palette</li>
+        </ul>
+        <a href="serina-contact.html" class="svc-cta">Get a Quote</a>
+      </div>
+      <div class="svc-price-card reveal-scale delay-2">
+        <h3><iconify-icon icon="mdi:palette-outline" style="vertical-align:middle;margin-right:8px;font-size:1.2rem;color:var(--accent);"></iconify-icon>Brand Identity</h3>
+        <p>Complete brand identity package — logo, colors, typography and brand guidelines document.</p>
+        <div class="svc-price-tag">KES 25,000 <span>/ one-time</span></div>
+        <ul class="svc-features">
+          <li>Logo design (5 concepts)</li>
+          <li>Brand color palette</li>
+          <li>Typography system</li>
+          <li>Business card design</li>
+          <li>Brand guidelines PDF</li>
+        </ul>
+        <a href="serina-contact.html" class="svc-cta">Get a Quote</a>
+      </div>
+      <div class="svc-price-card reveal-scale delay-3">
+        <h3><iconify-icon icon="mdi:star-circle-outline" style="vertical-align:middle;margin-right:8px;font-size:1.2rem;color:var(--accent);"></iconify-icon>Full Brand Package</h3>
+        <p>Everything your business needs to look world-class — from logo to social media templates.</p>
+        <div class="svc-price-tag">KES 55,000 <span>/ one-time</span></div>
+        <ul class="svc-features">
+          <li>Everything in Brand Identity</li>
+          <li>Social media templates (10)</li>
+          <li>Email signature design</li>
+          <li>Letterhead & stationery</li>
+          <li>Branded presentation template</li>
+        </ul>
+        <a href="serina-contact.html" class="svc-cta">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MIS -->
+  <div class="services-panel" id="panel-mis">
+    <div class="service-pricing-grid">
+      <div class="svc-price-card reveal-scale delay-1">
+        <h3><iconify-icon icon="mdi:monitor-dashboard" style="vertical-align:middle;margin-right:8px;font-size:1.2rem;color:var(--accent);"></iconify-icon>Basic MIS</h3>
+        <p>Simple management information system for tracking inventory, sales or staff records.</p>
+        <div class="svc-price-tag">KES 120,000 <span>/ starting</span></div>
+        <ul class="svc-features">
+          <li>Web-based dashboard</li>
+          <li>User roles & permissions</li>
+          <li>Basic reporting & exports</li>
+          <li>Data backup</li>
+          <li>Staff training included</li>
+        </ul>
+        <a href="serina-contact.html" class="svc-cta">Get a Quote</a>
+      </div>
+      <div class="svc-price-card reveal-scale delay-2">
+        <h3><iconify-icon icon="mdi:chart-bar" style="vertical-align:middle;margin-right:8px;font-size:1.2rem;color:var(--accent);"></iconify-icon>Business MIS</h3>
+        <p>Comprehensive MIS with advanced analytics, multi-branch support and custom workflows.</p>
+        <div class="svc-price-tag">KES 280,000 <span>/ starting</span></div>
+        <ul class="svc-features">
+          <li>Multi-branch / department support</li>
+          <li>Advanced analytics dashboard</li>
+          <li>Custom workflows & automation</li>
+          <li>API integrations</li>
+          <li>6 months support & maintenance</li>
+        </ul>
+        <a href="serina-contact.html" class="svc-cta">Get a Quote</a>
+      </div>
+      <div class="svc-price-card reveal-scale delay-3">
+        <h3><iconify-icon icon="mdi:server-network" style="vertical-align:middle;margin-right:8px;font-size:1.2rem;color:var(--accent);"></iconify-icon>Enterprise MIS</h3>
+        <p>Full enterprise resource planning system built specifically for your organization's unique needs.</p>
+        <div class="svc-price-tag">KES 500,000 <span>/ starting</span></div>
+        <ul class="svc-features">
+          <li>Fully custom ERP system</li>
+          <li>Mobile app companion</li>
+          <li>Real-time data & reporting</li>
+          <li>Third-party integrations</li>
+          <li>12 months dedicated support</li>
+        </ul>
+        <a href="serina-contact.html" class="svc-cta">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- WHAT'S INCLUDED IN EVERY PLAN -->
+<section style="background: var(--bg2);">
+  <div class="section-head">
+    <p class="section-label reveal">Every Plan Includes</p>
+    <h2 class="section-title reveal delay-1">What You Always Get,<br>Regardless of Plan</h2>
+    <p class="section-sub reveal delay-2">Every project we take on comes with these standard inclusions — no hidden extras, no surprise charges.</p>
+  </div>
+  <div class="included-grid">
+    <div class="included-card reveal-scale delay-1">
+      <div class="included-icon"><iconify-icon icon="mdi:handshake-outline"></iconify-icon></div>
+      <h3>Free Consultation</h3>
+      <p>A no-obligation 30-minute discovery call to understand your goals and recommend the best solution.</p>
+    </div>
+    <div class="included-card reveal-scale delay-2">
+      <div class="included-icon"><iconify-icon icon="mdi:file-document-edit-outline"></iconify-icon></div>
+      <h3>Detailed Quote</h3>
+      <p>A clear, itemized quote before we start — so you know exactly what you're paying for and why.</p>
+    </div>
+    <div class="included-card reveal-scale delay-3">
+      <div class="included-icon"><iconify-icon icon="mdi:cellphone-check"></iconify-icon></div>
+      <h3>Mobile Responsive</h3>
+      <p>Every website and app we build works perfectly on all screen sizes — phones, tablets and desktops.</p>
+    </div>
+    <div class="included-card reveal-scale delay-4">
+      <div class="included-icon"><iconify-icon icon="mdi:magnify-scan"></iconify-icon></div>
+      <h3>Basic SEO Setup</h3>
+      <p>Meta titles, descriptions, sitemap and robots.txt configured correctly from day one.</p>
+    </div>
+    <div class="included-card reveal-scale delay-1">
+      <div class="included-icon"><iconify-icon icon="mdi:shield-check-outline"></iconify-icon></div>
+      <h3>Quality Assurance</h3>
+      <p>Every project goes through thorough testing across devices and browsers before delivery.</p>
+    </div>
+    <div class="included-card reveal-scale delay-2">
+      <div class="included-icon"><iconify-icon icon="mdi:rotate-right"></iconify-icon></div>
+      <h3>Revision Rounds</h3>
+      <p>We include revision rounds in every project so the final result matches your vision perfectly.</p>
+    </div>
+    <div class="included-card reveal-scale delay-3">
+      <div class="included-icon"><iconify-icon icon="mdi:account-tie-outline"></iconify-icon></div>
+      <h3>Dedicated Contact</h3>
+      <p>A single point of contact throughout your project — no confusion, no passed-around emails.</p>
+    </div>
+    <div class="included-card reveal-scale delay-4">
+      <div class="included-icon"><iconify-icon icon="mdi:clock-fast"></iconify-icon></div>
+      <h3>On-Time Delivery</h3>
+      <p>We agree on a timeline before starting and commit to delivering on schedule, every time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section style="background: var(--bg);">
+  <div class="section-head">
+    <p class="section-label reveal">Why Serina Systems</p>
+    <h2 class="section-title reveal delay-1">Why Businesses in Kenya<br>Choose Us</h2>
+    <p class="section-sub reveal delay-2">We're not just another agency. Here's what makes working with Serina Systems different.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal-left delay-1">
+      <div class="why-number">01</div>
+      <div class="why-content">
+        <h3><iconify-icon icon="mdi:speedometer" style="vertical-align:middle;margin-right:8px;color:var(--accent);"></iconify-icon>97/100 Performance Score</h3>
+        <p>Our own website scores 97/100 on Google PageSpeed. Every site we build is optimized for speed, SEO and performance from day one — not as an afterthought.</p>
+      </div>
+    </div>
+    <div class="why-card reveal-right delay-2">
+      <div class="why-number">02</div>
+      <div class="why-content">
+        <h3><iconify-icon icon="mdi:map-marker-check" style="vertical-align:middle;margin-right:8px;color:var(--accent);"></iconify-icon>Proudly Kenyan, Globally Capable</h3>
+        <p>Based in Nyahururu, Kenya, we understand the local market deeply while delivering world-class digital solutions. We serve clients across Kenya and beyond.</p>
+      </div>
+    </div>
+    <div class="why-card reveal-left delay-3">
+      <div class="why-number">03</div>
+      <div class="why-content">
+        <h3><iconify-icon icon="mdi:currency-usd-off" style="vertical-align:middle;margin-right:8px;color:var(--accent);"></iconify-icon>No Hidden Costs, Ever</h3>
+        <p>What we quote is what you pay. We provide itemized quotes before starting and never add charges mid-project without your approval.</p>
+      </div>
+    </div>
+    <div class="why-card reveal-right delay-4">
+      <div class="why-number">04</div>
+      <div class="why-content">
+        <h3><iconify-icon icon="mdi:puzzle-outline" style="vertical-align:middle;margin-right:8px;color:var(--accent);"></iconify-icon>Full-Stack Capability</h3>
+        <p>From logo design to mobile apps to MIS systems — we handle everything in-house. No subcontracting, no quality loss, no communication gaps.</p>
+      </div>
+    </div>
+    <div class="why-card reveal-left delay-5">
+      <div class="why-number">05</div>
+      <div class="why-content">
+        <h3><iconify-icon icon="mdi:headset" style="vertical-align:middle;margin-right:8px;color:var(--accent);"></iconify-icon>Support After Launch</h3>
+        <p>We don't disappear after delivering. We offer ongoing maintenance, support and growth services to ensure your digital presence keeps improving.</p>
+      </div>
+    </div>
+    <div class="why-card reveal-right delay-6">
+      <div class="why-number">06</div>
+      <div class="why-content">
+        <h3><iconify-icon icon="mdi:chart-line-variant" style="vertical-align:middle;margin-right:8px;color:var(--accent);"></iconify-icon>Results That Matter</h3>
+        <p>We measure success by your outcomes — more traffic, more leads, more sales. Our 98% client satisfaction rate speaks for itself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS PREVIEW -->
+<section style="background: linear-gradient(135deg, #060f20 0%, #0a2540 100%); padding: 80px 5%;">
+  <div class="section-head">
+    <p class="section-label reveal" style="color: var(--highlight2);">How It Works</p>
+    <h2 class="section-title reveal delay-1" style="color: #fff;">From Enquiry to Launch<br>in 4 Simple Steps</h2>
+    <p class="section-sub reveal delay-2" style="color: rgba(255,255,255,0.65);">Getting started with Serina Systems is easy. Here's exactly what happens after you reach out.</p>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal-scale delay-1">
+      <div class="process-num">01</div>
+      <div class="process-icon"><iconify-icon icon="mdi:calendar-check-outline"></iconify-icon></div>
+      <h3>Free Consultation</h3>
+      <p>Book a free 30-minute call. We listen to your goals, ask the right questions and understand exactly what you need.</p>
+    </div>
+    <div class="process-arrow reveal delay-2">→</div>
+    <div class="process-step reveal-scale delay-3">
+      <div class="process-num">02</div>
+      <div class="process-icon"><iconify-icon icon="mdi:file-sign"></iconify-icon></div>
+      <h3>Proposal & Quote</h3>
+      <p>Within 24 hours we send a detailed proposal with timeline, scope and itemized pricing. No vague estimates.</p>
+    </div>
+    <div class="process-arrow reveal delay-4">→</div>
+    <div class="process-step reveal-scale delay-5">
+      <div class="process-num">03</div>
+      <div class="process-icon"><iconify-icon icon="mdi:code-braces"></iconify-icon></div>
+      <h3>Build & Review</h3>
+      <p>We build your project with regular updates and check-ins. You review and give feedback at each milestone.</p>
+    </div>
+    <div class="process-arrow reveal delay-4">→</div>
+    <div class="process-step reveal-scale delay-6">
+      <div class="process-num">04</div>
+      <div class="process-icon"><iconify-icon icon="mdi:rocket-launch"></iconify-icon></div>
+      <h3>Launch & Support</h3>
+      <p>We launch your project, submit to search engines and provide post-launch support to ensure everything runs perfectly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOM QUOTE FORM -->
+<section style="background: var(--bg2);">
+  <div class="section-head">
+    <p class="section-label reveal">Get a Custom Quote</p>
+    <h2 class="section-title reveal delay-1">Tell Us About Your Project</h2>
+    <p class="section-sub reveal delay-2">Not sure which plan fits? Fill in this form and we'll send you a custom quote within 24 hours — completely free.</p>
+  </div>
+  <div class="quote-form-wrap reveal delay-2">
+    <form class="quote-form" onsubmit="submitQuote(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name <span>*</span></label>
+          <input type="text" placeholder="e.g. John Kamau" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address <span>*</span></label>
+          <input type="email" placeholder="john@company.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="+254 700 000 000">
+        </div>
+        <div class="form-group">
+          <label>Company / Business Name</label>
+          <input type="text" placeholder="Your company name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Service You Need <span>*</span></label>
+        <select required>
+          <option value="" disabled selected>Select a service...</option>
+          <option>Website Design & Development</option>
+          <option>Mobile App Development</option>
+          <option>Digital Marketing</option>
+          <option>SEO Services</option>
+          <option>Branding & Logo Design</option>
+          <option>Management Information System (MIS)</option>
+          <option>Multiple Services</option>
+          <option>Not Sure — Need Advice</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Your Budget Range</label>
+        <select>
+          <option value="" disabled selected>Select your budget...</option>
+          <option>Under KES 20,000</option>
+          <option>KES 20,000 – 50,000</option>
+          <option>KES 50,000 – 100,000</option>
+          <option>KES 100,000 – 300,000</option>
+          <option>KES 300,000+</option>
+          <option>Not Sure</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tell Us About Your Project <span>*</span></label>
+        <textarea rows="5" placeholder="Describe what you need. The more detail you provide, the more accurate your quote will be..." required></textarea>
+      </div>
+      <div class="form-group">
+        <label>Preferred Timeline</label>
+        <select>
+          <option value="" disabled selected>When do you need this?</option>
+          <option>As soon as possible</option>
+          <option>Within 1 month</option>
+          <option>Within 3 months</option>
+          <option>Flexible</option>
+        </select>
+      </div>
+      <button type="submit" class="quote-submit">
+        <iconify-icon icon="mdi:send" style="vertical-align:middle;margin-right:8px;"></iconify-icon>
+        Send My Quote Request
+      </button>
+      <p class="form-note"><iconify-icon icon="mdi:lock-outline" style="vertical-align:middle;margin-right:4px;"></iconify-icon>Your information is private and secure. We respond within 24 hours.</p>
+    </form>
+    <div class="quote-success" id="quoteSuccess" style="display:none;">
+      <iconify-icon icon="mdi:check-circle" style="font-size:3rem;color:var(--accent);"></iconify-icon>
+      <h3>Quote Request Sent!</h3>
+      <p>Thank you! We've received your request and will send a detailed quote to your email within 24 hours.</p>
+      <a href="serina-contact.html" class="btn-primary" style="margin-top:24px;display:inline-block;">Schedule a Call Too</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background: var(--bg);">
+  <div class="section-head">
+    <p class="section-label reveal">FAQ</p>
+    <h2 class="section-title reveal delay-1">Frequently Asked Questions</h2>
+    <p class="section-sub reveal delay-2">Everything you need to know about our pricing and how we work.</p>
+  </div>
+
+  <div class="faq-list">
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">Do you offer payment plans? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Yes! We offer flexible payment plans for all our services. Typically we require a 50% deposit to start the project and the remaining 50% upon completion. For larger projects we can split payments into 3 milestones. Contact us to discuss what works best for you.</div>
+    </div>
+    <div class="faq-item reveal delay-1" onclick="toggleFaq(this)">
+      <div class="faq-q">Are these prices fixed or negotiable? <span class="faq-icon">+</span></div>
+      <div class="faq-a">The prices shown are starting points. Final pricing depends on your specific requirements, timeline and project complexity. We always provide a detailed quote before any work begins — no surprises. Book a free consultation and we'll give you an accurate estimate within 24 hours.</div>
+    </div>
+    <div class="faq-item reveal delay-2" onclick="toggleFaq(this)">
+      <div class="faq-q">What is included in the free consultation? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Our free 30-minute consultation covers understanding your business goals, discussing your project requirements, recommending the best solution for your budget, and providing a rough timeline and cost estimate. There is absolutely no obligation to proceed after the consultation.</div>
+    </div>
+    <div class="faq-item reveal delay-3" onclick="toggleFaq(this)">
+      <div class="faq-q">Do you offer ongoing maintenance after project completion? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Yes. We offer monthly maintenance packages starting from KES 5,000/month that cover security updates, content updates, performance monitoring and technical support. Enterprise packages include maintenance for the first 3-12 months at no extra cost.</div>
+    </div>
+    <div class="faq-item reveal delay-4" onclick="toggleFaq(this)">
+      <div class="faq-q">How long does a typical project take? <span class="faq-icon">+</span></div>
+      <div class="faq-a">A basic website takes 1-2 weeks. A business website takes 3-4 weeks. A custom web application or mobile app typically takes 6-12 weeks depending on complexity. We always agree on a timeline before starting and keep you updated throughout the process.</div>
+    </div>
+    <div class="faq-item reveal delay-5" onclick="toggleFaq(this)">
+      <div class="faq-q">Do the prices include hosting and domain? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Our website prices do not include hosting and domain costs as these vary by provider. However we can recommend affordable hosting options and help you set everything up. Domain registration in Kenya typically costs KES 1,000-3,000 per year and hosting from KES 3,000-8,000 per year.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2 class="reveal">Not Sure Which Plan is Right for You?</h2>
+  <p class="reveal delay-1">Book a free 30-minute consultation and our team will recommend the best solution for your business and budget — no pressure, no obligation.</p>
+  <div class="cta-btns reveal delay-2">
+    <a href="serina-contact.html" class="btn-primary">Book Free Consultation</a>
+    <a href="serina-systems-services.html" class="btn-outline">View All Services</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand reveal">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="Serina Systems Logo" width="60" height="60" loading="lazy">
+      </a>
+      <p>Serina Systems is the frontier of digital transformation. We engineer intelligent systems, craft compelling digital identities, and amplify brands through cutting-edge marketing strategies. Rooted in Nakuru yet built for global scalability, we merge technology, creativity, and strategy into one seamless experience.</p>
+      <div class="footer-contact">
+        <a href="#"><iconify-icon icon="mdi:map-marker" style="vertical-align:middle;font-size:1rem;margin-right:5px;"></iconify-icon> Nyahururu Along Nyahururu-Nakuru Road, Nakuru</a>
+        <a href="mailto:info@serinasystems.gmail.com"><iconify-icon icon="mdi:email" style="vertical-align:middle;font-size:1rem;margin-right:5px;"></iconify-icon> info@serinasystems.gmail.com</a>
+        <a href="tel:+254745883650"><iconify-icon icon="mdi:phone" style="vertical-align:middle;font-size:1rem;margin-right:5px;"></iconify-icon> +254 745 883 650</a>
+      </div>
+    </div>
+    <div class="footer-col reveal delay-1">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="serina-systems-services.html#mobile">Mobile Apps</a></li>
+        <li><a href="serina-systems-services.html#ai-ml">AI &amp; ML</a></li>
+        <li><a href="serina-systems-services.html#lowcode">Low Code / No Code</a></li>
+        <li><a href="serina-systems-services.html#seo">SEO</a></li>
+        <li><a href="serina-systems-services.html#mvp">MVP Development</a></li>
+        <li><a href="serina-systems-services.html#mis">MIS</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal delay-2">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="serina-about.html">About Us</a></li>
+        <li><a href="serina-portfolio.html">Portfolio</a></li>
+        <li><a href="serina-process.html">Our Process</a></li>
+        <li><a href="serina-blog.html">Blogs</a></li>
+        <li><a href="serina-systems-services.html">Services</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal delay-3">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="serina-contact.html">Get a Quote</a></li>
+        <li><a href="serina-contact.html">Schedule Meeting</a></li>
+        <li><a href="serina-contact.html">Support</a></li>
+        <li><a href="https://www.facebook.com/share/14iSjGfaSJF/">Facebook</a></li>
+        <li><a href="https://www.instagram.com/serinasystems/">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© Copyright Serina Systems 2026. All Rights Reserved</div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/254745883650" target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+  <iconify-icon icon="mdi:whatsapp"></iconify-icon>
+</a>
+
+<script>
+// SCROLL PROGRESS
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const pct = (scrollTop / docHeight) * 100;
+  document.getElementById('scroll-progress').style.width = pct + '%';
+  document.getElementById('main-nav').classList.toggle('scrolled', scrollTop > 50);
+});
+
+// SCROLL REVEAL
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+revealEls.forEach(el => revealObs.observe(el));
+
+// MOBILE NAV
+function toggleMobile() {
+  document.getElementById('mobile-nav').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('open');
+}
+
+// QUOTE FORM
+function submitQuote(e) {
+  e.preventDefault();
+  document.querySelector('.quote-form').style.display = 'none';
+  document.getElementById('quoteSuccess').style.display = 'block';
+}
+
+// BILLING TOGGLE
+let isYearly = false;
+function toggleBilling() {
+  isYearly = !isYearly;
+  document.getElementById('billingToggle').classList.toggle('active', isYearly);
+  document.querySelectorAll('.plan-price').forEach(p => {
+    p.classList.toggle('yearly', isYearly);
+  });
+}
+
+// SERVICE TABS
+function showTab(tab) {
+  document.querySelectorAll('.services-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.stab').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + tab).classList.add('active');
+  event.target.classList.add('active');
+
+  // Re-trigger reveal animations
+  const newEls = document.querySelectorAll('#panel-' + tab + ' .reveal-scale');
+  newEls.forEach(el => {
+    el.classList.remove('visible');
+    setTimeout(() => el.classList.add('visible'), 50);
+  });
+}
+
+// FAQ TOGGLE
+function toggleFaq(item) {
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
