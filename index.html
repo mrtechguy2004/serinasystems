@@ -41,9 +41,9 @@
   a { text-decoration: none; color: inherit; }
   img { max-width: 100%; }
 
-  /* ═══════════════════════════════════════════
+  /* 
      PERFORMANCE — skip rendering off-screen sections
-  ═══════════════════════════════════════════ */
+   */
   .clients-bar,
   .section:not(.hero),
   footer {
@@ -51,9 +51,9 @@
     contain-intrinsic-size: 0 500px;
   }
 
-  /* ═══════════════════════════════════════════
+  /* 
      SCROLL PROGRESS BAR
-  ═══════════════════════════════════════════ */
+   */
   #scroll-progress {
     position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
     background: linear-gradient(90deg, var(--accent), var(--accent2));
@@ -61,9 +61,9 @@
     box-shadow: 0 0 10px rgba(0,194,168,0.6);
   }
 
-  /* ═══════════════════════════════════════════
+  /* 
      PAGE LOADER — Logo Spinner
-  ═══════════════════════════════════════════ */
+   */
   #page-loader {
     position: fixed; inset: 0; z-index: 99999;
     background: #ffffff;
@@ -129,9 +129,9 @@
     40% { opacity: 1; transform: scale(1.3); }
   }
 
-  /* ═══════════════════════════════════════════
+  /*
      SCROLL REVEAL ANIMATIONS
-  ═══════════════════════════════════════════ */
+   */
   .reveal {
     opacity: 0; transform: translateY(40px);
     transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
@@ -152,9 +152,9 @@
   .delay-5 { transition-delay: 0.5s; }
   .delay-6 { transition-delay: 0.6s; }
 
-  /* ═══════════════════════════════════════════
+  /* 
      TEXT REVEAL (PREMIUM)
-  ═══════════════════════════════════════════ */
+   */
   .text-reveal-wrap { overflow: hidden; }
   .text-reveal {
     display: inline-block;
@@ -167,9 +167,9 @@
     opacity: 1;
   }
 
-  /* ═══════════════════════════════════════════
+  /* 
      FLOATING UI
-  ═══════════════════════════════════════════ */
+   */
   @keyframes floatY {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-12px); }
@@ -189,9 +189,9 @@
   }
   
 
-  /* ═══════════════════════════════════════════
+  /* 
      HOVER GLOW
-  ═══════════════════════════════════════════ */
+   */
   .hover-glow {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
@@ -253,9 +253,9 @@
   .mobile-nav a { font-size: 1rem; font-weight: 500; color: var(--primary); padding: 8px 0; border-bottom: 1px solid var(--border); }
   .mobile-nav a:last-child { border-bottom: none; }
 
-  /* ═══════════════════════════════════════════
+  /*
      HERO — UserWay-style centered layout
-  ═══════════════════════════════════════════ */
+   */
   .hero {
     background: #060f20;
     padding: 0;
@@ -406,9 +406,9 @@
   .trust-item strong { color: rgba(255,255,255,0.85); }
   .trust-divider { color: rgba(255,255,255,0.15); font-size: 1.2rem; }
 
-  /* ═══════════════════════════════════════════
+  /* 
      DASHBOARD MOCKUP — macOS Apple Light Design
-  ═══════════════════════════════════════════ */
+   */
   .hero-dashboard-wrap {
     position: relative; z-index: 3;
     animation: fadeInUp 1s ease 1.1s both;
@@ -682,9 +682,8 @@
   .service-link { color: var(--accent); font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 6px; transition: gap 0.2s; background: none; border: none; cursor: pointer; padding: 0; font-family: inherit; }
   .service-link:hover { gap: 12px; }
 
-  /* ═══════════════════════════════════════════
-     SERVICE MODAL
-  ═══════════════════════════════════════════ */
+  /*
+     SERVICE MODAL */
   .svc-modal-backdrop {
     position: fixed; inset: 0; z-index: 2000;
     background: rgba(6,15,32,0.75); backdrop-filter: blur(6px);
@@ -835,7 +834,7 @@
   .feat-row:hover { color: var(--accent); transform: translateX(4px); }
   .feat-row::before { content: '✓'; color: var(--accent); font-weight: 800; }
 
-  /* COUNTRIES */
+  /* COUNTIES */
   .countries-bg {
     background:
       linear-gradient(135deg, rgba(10,37,64,0.92) 0%, rgba(13,50,96,0.88) 60%, rgba(10,37,64,0.94) 100%),
@@ -977,16 +976,14 @@
 
 
 
-/* If you want spacing around the logo */
+
 .logo {
   display: flex;      /* Helps align logo and text side by side */
   align-items: center;
   gap: 8px;           /* Space between logo and text */
 }
 
-/* ═══════════════════════════════════════════
-   HERO BACKGROUND IMAGE SLIDER (images only)
-═══════════════════════════════════════════ */
+
 
 /* The sliding backgrounds sit behind everything */
 .hero-bg-slider {
