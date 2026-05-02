@@ -62,18 +62,71 @@
   }
 
   /* ═══════════════════════════════════════════
-     PAGE LOAD FADE OVERLAY
+     PAGE LOADER — Logo Spinner
   ═══════════════════════════════════════════ */
-  .loader-logo {
-    font-family: 'Sora', sans-serif;
-    font-size: 2rem; font-weight: 800; color: #fff;
-    letter-spacing: -0.03em;
-    animation: loaderPulse 1s ease infinite alternate;
+  #page-loader {
+    position: fixed; inset: 0; z-index: 99999;
+    background: #ffffff;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 28px;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
   }
-  .loader-logo span { color: var(--accent); }
-  @keyframes loaderPulse {
-    from { opacity: 0.5; transform: scale(0.97); }
-    to { opacity: 1; transform: scale(1.02); }
+  #page-loader.hidden {
+    opacity: 0; visibility: hidden; pointer-events: none;
+  }
+  .loader-ring-wrap {
+    position: relative; width: 130px; height: 130px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .loader-arc {
+    position: absolute; top: 0; left: 0;
+    width: 130px; height: 130px;
+    animation: loaderSpin 1s linear infinite;
+  }
+  .loader-arc-inner {
+    position: absolute; top: 0; left: 0;
+    width: 130px; height: 130px;
+    animation: loaderSpinReverse 2.6s linear infinite;
+    opacity: 0.15;
+  }
+  .loader-bird {
+    width: 66px; height: auto;
+    position: relative; z-index: 2;
+    object-fit: contain;
+  }
+  .loader-wordmark {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem; font-weight: 800;
+    color: var(--primary); letter-spacing: 0.14em;
+    text-transform: uppercase; white-space: nowrap;
+  }
+  .loader-wordmark span { color: var(--accent); }
+  .loader-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem; color: rgba(0,0,0,0.35);
+    letter-spacing: 0.12em; font-style: italic;
+    margin-top: -20px;
+  }
+  .loader-dots {
+    display: flex; gap: 7px; align-items: center;
+  }
+  .loader-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    animation: loaderDot 1.2s ease-in-out infinite;
+  }
+  .loader-dot:nth-child(1) { background: #10b981; animation-delay: 0s; }
+  .loader-dot:nth-child(2) { background: #0477be; animation-delay: 0.2s; }
+  .loader-dot:nth-child(3) { background: #635bff; animation-delay: 0.4s; }
+  @keyframes loaderSpin {
+    from { transform: rotate(0deg); } to { transform: rotate(360deg); }
+  }
+  @keyframes loaderSpinReverse {
+    from { transform: rotate(0deg); } to { transform: rotate(-360deg); }
+  }
+  @keyframes loaderDot {
+    0%, 80%, 100% { opacity: 0.2; transform: scale(0.8); }
+    40% { opacity: 1; transform: scale(1.3); }
   }
 
   /* ═══════════════════════════════════════════
@@ -1012,7 +1065,37 @@
 <div id="scroll-progress"></div>
 
 <!-- PAGE LOADER -->
-
+<div id="page-loader">
+  <div class="loader-ring-wrap">
+    <!-- Spinning gradient arc -->
+    <svg class="loader-arc" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="loaderArcGrad" x1="0" y1="0" x2="130" y2="130" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#635bff"/>
+          <stop offset="50%" stop-color="#0477be"/>
+          <stop offset="100%" stop-color="#10b981"/>
+        </linearGradient>
+      </defs>
+      <circle cx="65" cy="65" r="61" stroke="rgba(0,0,0,0.07)" stroke-width="3"/>
+      <circle cx="65" cy="65" r="61" stroke="url(#loaderArcGrad)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="100 284"/>
+    </svg>
+    <!-- Counter-rotating dashed ring -->
+    <svg class="loader-arc-inner" viewBox="0 0 130 130" fill="none">
+      <circle cx="65" cy="65" r="53" stroke="#0477be" stroke-width="1" stroke-linecap="round" stroke-dasharray="14 14"/>
+    </svg>
+    <!-- Exact logo image -->
+    <img src="favicon.webp" class="loader-bird" alt="Serina Systems"/>
+  </div>
+  <div>
+    <div class="loader-wordmark">SERINA <span>SYSTEMS</span></div>
+  </div>
+  <div class="loader-tagline">"where clarity meets innovation"</div>
+  <div class="loader-dots">
+    <div class="loader-dot"></div>
+    <div class="loader-dot"></div>
+    <div class="loader-dot"></div>
+  </div>
+</div>
 
 <!-- TOP BAR -->
 
@@ -1521,9 +1604,14 @@
 // ══════════════════════════════
 // PAGE LOADER
 // ══════════════════════════════
+const loaderStart = performance.now();
 window.addEventListener('load', () => {
-  setTimeout(() => {
-  }, 700);
+  const loader = document.getElementById('page-loader');
+  if (!loader) return;
+  const elapsed = performance.now() - loaderStart;
+  const minDisplay = 500; // show for at least 500ms to avoid a flash
+  const wait = Math.max(0, minDisplay - elapsed);
+  setTimeout(() => loader.classList.add('hidden'), wait);
 });
 
 // ══════════════════════════════
