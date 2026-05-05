@@ -917,9 +917,9 @@
   .footer-col a:hover { color: var(--accent); transform: translateX(4px); }
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 24px 0; text-align: center; font-size: 0.8rem; max-width: 1200px; margin: 0 auto; }
 
-  /* ═══════════════════════════════════════════
+  /* 
      RESPONSIVE
-  ═══════════════════════════════════════════ */
+   */
   @media (max-width: 1024px) {
     .services-grid { grid-template-columns: repeat(2,1fr); }
     .stack-grid { grid-template-columns: repeat(4,1fr); }
@@ -962,12 +962,12 @@
    /* Aligns with text if combined */
 }
 .footer-brandreveal .logo img {
-  height: 60px;          /* Adjust size to fit footer */
-  width: auto;           /* Maintain aspect ratio */
-  display: block;        /* Keeps it clean above text */
-  margin-bottom: 10px;   /* Space between logo and description */
-  border-radius: 20px;   /* Rounded corners */
-  padding: 1px;          /* Space between logo and border */
+  height: 60px;          
+  width: auto;           
+  display: block;        
+  margin-bottom: 10px;   
+  border-radius: 20px;   
+  padding: 1px;          
 }
 .whatsapp-btn { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 30px rgba(37,211,102,0.5); transition: all 0.3s; text-decoration: none; animation: pulse-wa 2.5s infinite; }
   .whatsapp-btn:hover { transform: scale(1.1); animation: none; }
@@ -978,9 +978,9 @@
 
 
 .logo {
-  display: flex;      /* Helps align logo and text side by side */
+  display: flex;      
   align-items: center;
-  gap: 8px;           /* Space between logo and text */
+  gap: 8px;           
 }
 
 
@@ -1455,7 +1455,7 @@
   </div>
 </section>
 
-<!-- COUNTRIES -->
+<!-- COUNTIES -->
 <section class="countries-bg">
   <div class="container" style="text-align:center;">
     <p class="section-label reveal" style="color:var(--accent)">Vast Regional Reach</p>
@@ -1598,9 +1598,9 @@
 </footer>
 
 <script>
-// ══════════════════════════════
+// 
 // PAGE LOADER
-// ══════════════════════════════
+// 
 const loaderStart = performance.now();
 window.addEventListener('load', () => {
   const loader = document.getElementById('page-loader');
@@ -1611,9 +1611,9 @@ window.addEventListener('load', () => {
   setTimeout(() => loader.classList.add('hidden'), wait);
 });
 
-// ══════════════════════════════
+// 
 // SCROLL PROGRESS BAR
-// ══════════════════════════════
+//
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY;
   const docHeight = document.body.scrollHeight - window.innerHeight;
@@ -1625,9 +1625,9 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', scrollTop > 50);
 });
 
-// ══════════════════════════════
+// 
 // SCROLL REVEAL
-// ══════════════════════════════
+//
 const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -1639,9 +1639,9 @@ const revealObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 revealEls.forEach(el => revealObs.observe(el));
 
-// ══════════════════════════════
+//
 // COUNTER ANIMATION
-// ══════════════════════════════
+// 
 const counterEls = document.querySelectorAll('.counter');
 const counterObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -1661,9 +1661,9 @@ const counterObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 counterEls.forEach(el => counterObs.observe(el));
 
-// ══════════════════════════════
+// 
 // MOBILE NAV
-// ══════════════════════════════
+//
 function toggleMobile() {
   const nav = document.getElementById('mobile-nav');
   const ham = document.getElementById('hamburger');
@@ -1685,9 +1685,9 @@ function toggleMobile() {
 </div>
 
 <script>
-// ══════════════════════════════
+// 
 // SERVICE MODAL DATA
-// ══════════════════════════════
+//
 const serviceData = {
   mobile: {
     icon: 'mdi:cellphone',
@@ -1902,9 +1902,9 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeServiceModal();
 });
 
-/* ═══════════════════════════════════════════
+/* 
    HERO BACKGROUND SLIDER (images only)
-═══════════════════════════════════════════ */
+ */
 (function() {
   let current = 0;
   const slides = document.querySelectorAll('.hero-bg-slide');
@@ -1924,9 +1924,9 @@ document.addEventListener('keydown', e => {
   setInterval(() => activateSlide(current + 1), 5000);
 })();
 
-/* ═══════════════════════════════════════════
+/* 
    TYPING ANIMATION
-═══════════════════════════════════════════ */
+ */
 (function() {
   const words = ['Masterpieces.', 'Solutions.', 'Experiences.', 'Innovation.', 'Softwares.'];
   const el = document.getElementById('typed-text');

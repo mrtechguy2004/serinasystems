@@ -33,9 +33,9 @@
   a { text-decoration: none; color: inherit; }
   img { max-width: 100%; }
 
-  /* ═══════════════════════════════════════════
+  /*
      SCROLL PROGRESS BAR
-  ═══════════════════════════════════════════ */
+   */
   #scroll-progress {
     position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
     background: linear-gradient(90deg, var(--accent), var(--accent2));
@@ -43,9 +43,8 @@
     box-shadow: 0 0 10px rgba(0,194,168,0.6);
   }
 
-  /* ═══════════════════════════════════════════
-     PAGE LOAD FADE OVERLAY
-  ═══════════════════════════════════════════ */
+  /* 
+     PAGE LOAD FADE OVERLAY */
   .loader-logo {
     font-family: 'Sora', sans-serif;
     font-size: 2rem; font-weight: 800; color: #fff;
@@ -58,9 +57,8 @@
     to { opacity: 1; transform: scale(1.02); }
   }
 
-  /* ═══════════════════════════════════════════
-     SCROLL REVEAL ANIMATIONS
-  ═══════════════════════════════════════════ */
+  /* 
+     SCROLL REVEAL ANIMATION */
   .reveal {
     opacity: 0; transform: translateY(40px);
     transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
@@ -81,9 +79,8 @@
   .delay-5 { transition-delay: 0.5s; }
   .delay-6 { transition-delay: 0.6s; }
 
-  /* ═══════════════════════════════════════════
-     FLOATING UI
-  ═══════════════════════════════════════════ */
+  /* 
+     FLOATING UI */
   @keyframes floatY {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-12px); }
@@ -96,9 +93,9 @@
   .float-2 { animation: floatY 6.5s ease-in-out infinite 1s; }
   .float-3 { animation: floatRotate 7s ease-in-out infinite 0.5s; }
 
-  /* ═══════════════════════════════════════════
+  /* 
      HOVER GLOW
-  ═══════════════════════════════════════════ */
+   */
   .hover-glow {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
@@ -151,9 +148,9 @@
   .mobile-nav a { font-size: 1rem; font-weight: 500; color: var(--primary); padding: 8px 0; border-bottom: 1px solid var(--border); }
   .mobile-nav a:last-child { border-bottom: none; }
 
-  /* ═══════════════════════════════════════════
+  /* 
      HERO SECTION
-  ═══════════════════════════════════════════ */
+   */
   .about-hero {
     position: relative; padding: 120px 5% 80px;
     background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1800&q=80&fit=crop&crop=center');
@@ -202,9 +199,9 @@
     font-size: 0.95rem; color: rgba(255,255,255,0.8); font-weight: 500;
   }
 
-  /* ═══════════════════════════════════════════
+  /* 
      CONTAINER & SECTIONS
-  ═══════════════════════════════════════════ */
+  */
   .container {
     max-width: 1200px; margin: 0 auto; padding: 0 5%;
   }
@@ -223,9 +220,9 @@
     max-width: 700px; margin-bottom: 48px;
   }
 
-  /* ═══════════════════════════════════════════
+  /* 
      STORY SECTION
-  ═══════════════════════════════════════════ */
+  */
   .story-grid {
     display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
     align-items: center; margin-top: 40px;
@@ -250,7 +247,7 @@
   /* Overlay image container */
   .story-images-col {
     position: relative;
-    padding-top: 50px; /* breathing room so the overlay doesn't clip above */
+    padding-top: 50px; 
     padding-left: 30px;
   }
 
@@ -279,9 +276,9 @@
     75%       { transform: rotate(1deg)    scale(1.02); box-shadow: 0 22px 56px rgba(99,91,255,0.4); }
   }
 
-  /* ═══════════════════════════════════════════
+  /* 
      VALUES SECTION
-  ═══════════════════════════════════════════ */
+   */
   .values-bg {
     background: var(--bg2);
   }
@@ -313,9 +310,9 @@
     font-size: 0.97rem; line-height: 1.7; color: var(--muted);
   }
 
-  /* ═══════════════════════════════════════════
+  /* 
      TEAM SECTION — FOUNDER LAYOUT
-  ═══════════════════════════════════════════ */
+   */
   .founder-layout {
     display: grid; grid-template-columns: 420px 1fr;
     gap: 64px; align-items: center; margin-top: 48px;
@@ -387,9 +384,9 @@
     .founder-socials { justify-content: center; }
   }
 
-  /* ═══════════════════════════════════════════
+  /* 
      EXPERTISE SECTION
-  ═══════════════════════════════════════════ */
+   */
   .expertise-bg {
     background: linear-gradient(135deg, var(--primary) 0%, #0d3260 100%);
     color: #fff;
@@ -425,9 +422,9 @@
     font-size: 0.92rem; line-height: 1.7; color: rgba(255,255,255,0.75);
   }
 
-  /* ═══════════════════════════════════════════
+/*
      WHY CHOOSE US SECTION
-  ═══════════════════════════════════════════ */
+   */
   .why-grid {
     display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
     margin-top: 48px;
@@ -457,9 +454,9 @@
     font-size: 0.98rem; line-height: 1.7; color: var(--muted);
   }
 
-  /* ═══════════════════════════════════════════
+  /* 
      CTA SECTION
-  ═══════════════════════════════════════════ */
+   */
   .cta-section {
     position: relative;
     background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&auto=format&fit=crop&q=80');
@@ -498,9 +495,9 @@
     box-shadow: 0 8px 30px rgba(0,0,0,0.25);
   }
 
-  /* ═══════════════════════════════════════════
+  /* 
      FOOTER
-  ═══════════════════════════════════════════ */
+   */
   footer {
     background: var(--primary); color: rgba(255,255,255,0.8);
     padding: 60px 5% 30px;
@@ -537,9 +534,9 @@
     font-size: 0.85rem; color: rgba(255,255,255,0.6);
   }
 
-  /* ═══════════════════════════════════════════
+  /* 
      RESPONSIVE
-  ═══════════════════════════════════════════ */
+*/
   @media (max-width: 768px) {
     .nav-links { display: none; }
     .hamburger { display: flex; }
@@ -625,20 +622,20 @@
     }
   }
   .logo img {
-  height: 60px;       /* Adjust height to fit your navbar */
-  width: auto;        /* Keeps aspect ratio */
+  height: 60px;    
+  width: auto;       
   vertical-align: middle;
   border-radius:20px;
   padding: 1px;
-   /* Aligns with text if combined */
+   
 }
 .footer-brandreveal .logo img {
-  height: 60px;          /* Adjust size to fit footer */
-  width: auto;           /* Maintain aspect ratio */
-  display: block;        /* Keeps it clean above text */
-  margin-bottom: 10px;   /* Space between logo and description */
-  border-radius: 20px;   /* Rounded corners */
-  padding: 1px;          /* Space between logo and border */
+  height: 60px;       
+  width: auto;          
+  display: block;   
+  margin-bottom: 10px;   
+  border-radius: 20px;   
+  padding: 1px;          
 }
 .whatsapp-btn { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 30px rgba(37,211,102,0.5); transition: all 0.3s; text-decoration: none; animation: pulse-wa 2.5s infinite; }
   .whatsapp-btn:hover { transform: scale(1.1); animation: none; }
@@ -647,11 +644,11 @@
 
 
 
-/* If you want spacing around the logo */
+
 .logo {
-  display: flex;      /* Helps align logo and text side by side */
+  display: flex;      
   align-items: center;
-  gap: 8px;           /* Space between logo and text */
+  gap: 8px;           
 }
 </style>
 </head>
@@ -1030,17 +1027,17 @@
 </footer>
 
 <script>
-// ══════════════════════════════
+// 
 // PAGE LOADER
-// ══════════════════════════════
+// 
 window.addEventListener('load', () => {
   setTimeout(() => {
   }, 700);
 });
 
-// ══════════════════════════════
+// 
 // SCROLL PROGRESS BAR
-// ══════════════════════════════
+// 
 window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY;
   const docHeight = document.body.scrollHeight - window.innerHeight;
@@ -1052,9 +1049,9 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', scrollTop > 50);
 });
 
-// ══════════════════════════════
+// 
 // SCROLL REVEAL
-// ══════════════════════════════
+//
 const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -1066,9 +1063,9 @@ const revealObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 revealEls.forEach(el => revealObs.observe(el));
 
-// ══════════════════════════════
+// 
 // COUNTER ANIMATION
-// ══════════════════════════════
+// 
 const counterEls = document.querySelectorAll('.counter');
 const counterObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -1088,9 +1085,9 @@ const counterObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 counterEls.forEach(el => counterObs.observe(el));
 
-// ══════════════════════════════
+// 
 // MOBILE NAV
-// ══════════════════════════════
+// 
 function toggleMobile() {
   const nav = document.getElementById('mobile-nav');
   const ham = document.getElementById('hamburger');

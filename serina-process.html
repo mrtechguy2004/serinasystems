@@ -31,9 +31,9 @@
   body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; }
   a { text-decoration: none; color: inherit; }
 
-  /* ═══════════════════════════════════════════
+  /* 
      SCROLL PROGRESS BAR
-  ═══════════════════════════════════════════ */
+  */
   #scroll-progress {
     position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
     background: linear-gradient(90deg, var(--accent), var(--accent2));
@@ -41,9 +41,9 @@
     box-shadow: 0 0 10px rgba(0,194,168,0.6);
   }
 
-  /* ═══════════════════════════════════════════
+  /* 
      PAGE LOAD FADE OVERLAY
-  ═══════════════════════════════════════════ */
+   */
   .loader-logo {
     font-family: 'Sora', sans-serif;
     font-size: 2rem; font-weight: 800; color: #fff;
@@ -55,9 +55,9 @@
     to { opacity: 1; transform: scale(1.02); }
   }
 
-  /* ═══════════════════════════════════════════
+  /* 
      SCROLL REVEAL
-  ═══════════════════════════════════════════ */
+   */
   .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
@@ -69,16 +69,15 @@
   .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
   .delay-4 { transition-delay: 0.4s; } .delay-5 { transition-delay: 0.5s; } .delay-6 { transition-delay: 0.6s; }
 
-  /* ═══════════════════════════════════════════
+  /* 
      TEXT REVEAL (PREMIUM)
-  ═══════════════════════════════════════════ */
+ */
   .text-reveal-wrap { overflow: hidden; display: block; }
   .text-reveal { display: block; transform: translateY(110%); opacity: 0; transition: transform 1s cubic-bezier(0.16,1,0.3,1), opacity 0.6s ease; }
   .text-reveal.visible { transform: translateY(0); opacity: 1; }
 
-  /* ═══════════════════════════════════════════
-     FLOATING
-  ═══════════════════════════════════════════ */
+  /* 
+     FLOATING*/
   @keyframes floatY { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);} }
   @keyframes floatSlow { 0%,100%{transform:translateY(0) rotate(-2deg);} 50%{transform:translateY(-8px) rotate(2deg);} }
   .float-1 { animation: floatY 5s ease-in-out infinite; }
@@ -86,9 +85,9 @@
   .float-slow { animation: floatSlow 9s ease-in-out infinite; }
   .float-orb { position: absolute; border-radius: 50%; pointer-events: none; }
 
-  /* ═══════════════════════════════════════════
+  /* 
      HOVER GLOW
-  ═══════════════════════════════════════════ */
+   */
   .hover-glow { transition: box-shadow 0.3s, transform 0.3s; }
   .hover-glow:hover { box-shadow: var(--glow); transform: translateY(-4px); }
 
@@ -121,9 +120,9 @@
   .mobile-nav.open { display: flex; }
   .mobile-nav a { font-size: 1rem; font-weight: 500; color: var(--primary); padding: 8px 0; border-bottom: 1px solid var(--border); }
 
-  /* ═══════════════════════════════════════════
+  /* 
      PROCESS HERO
-  ═══════════════════════════════════════════ */
+   */
   .process-hero {
     background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
     padding: 100px 5% 80px;
@@ -182,9 +181,9 @@
   .hero-stat-num span { color: var(--accent); }
   .hero-stat-label { color: rgba(255,255,255,0.5); font-size: 0.82rem; margin-top: 4px; }
 
-  /* ═══════════════════════════════════════════
+  /* 
      PROCESS OVERVIEW STRIP (Glitex style)
-  ═══════════════════════════════════════════ */
+ */
   .process-overview {
     background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
     padding: 48px 5%;
@@ -219,18 +218,16 @@
   .ov-label { font-size: 0.78rem; font-weight: 600; color: var(--muted); text-align: center; transition: color 0.3s; }
   .ov-step:hover .ov-label { color: var(--accent); }
 
-  /* ═══════════════════════════════════════════
-     MAIN CONTAINER
-  ═══════════════════════════════════════════ */
+  /* 
+     MAIN CONTAINER */
   section { padding: 88px 5%; }
   .container { max-width: 1200px; margin: 0 auto; }
   .section-label { color: var(--accent); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; }
   .section-title { font-family: 'Sora', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; line-height: 1.2; color: var(--primary); letter-spacing: -0.03em; margin-bottom: 16px; }
   .section-sub { color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 600px; }
 
-  /* ═══════════════════════════════════════════
-     PROCESS PHASES (Glitex-inspired alternating layout)
-  ═══════════════════════════════════════════ */
+  /* 
+     PROCESS PHASES*/
   .phases { padding: 80px 5%; }
   .phase {
     display: grid; grid-template-columns: 1fr 1fr;
@@ -356,9 +353,8 @@
     background: var(--accent); box-shadow: 0 0 12px rgba(0,194,168,0.6);
   }
 
-  /* ═══════════════════════════════════════════
-     WHY SECTION (Glitex-style cards)
-  ═══════════════════════════════════════════ */
+  /* 
+     WHY SECTION  */
   .why-bg { background: var(--bg2); }
   .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 52px; }
   .why-card {
@@ -385,9 +381,8 @@
   .why-title { font-family: 'Sora', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
   .why-desc { color: var(--muted); font-size: 0.875rem; line-height: 1.7; }
 
-  /* ═══════════════════════════════════════════
-     TIMELINE (Glitex style)
-  ═══════════════════════════════════════════ */
+  /* 
+     TIMELINE */
   .timeline-section {
     background: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=2068&auto=format&fit=crop') center/cover no-repeat;
     padding: 88px 5%; overflow: hidden; position: relative;
@@ -424,9 +419,9 @@
   .timeline-label { font-family: 'Sora', sans-serif; color: #fff; font-size: 0.92rem; font-weight: 700; margin-bottom: 8px; }
   .timeline-text { color: rgba(255,255,255,0.5); font-size: 0.78rem; line-height: 1.5; padding: 0 10px; }
 
-  /* ═══════════════════════════════════════════
+  /* 
      TOOLS & TECH
-  ═══════════════════════════════════════════ */
+   */
   .tools-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 52px; }
   .tool-category { background: var(--bg2); border-radius: 16px; padding: 28px; border: 1px solid var(--border); transition: all 0.3s; }
   .tool-category:hover { transform: translateY(-6px); box-shadow: var(--glow); border-color: rgba(0,194,168,0.2); }
@@ -447,9 +442,9 @@
   .tool-emoji { width: 20px; height: 20px; display: inline-flex; align-items: center; flex-shrink: 0; }
   .tool-emoji img { width: 100%; height: 100%; object-fit: contain; }
 
-  /* ═══════════════════════════════════════════
-     FAQ (Glitex style)
-  ═══════════════════════════════════════════ */
+  /* 
+     FAQ 
+ */
   .faq-list { margin-top: 52px; display: flex; flex-direction: column; gap: 16px; max-width: 800px; }
   .faq-item {
     border: 1px solid var(--border); border-radius: var(--radius);
@@ -477,9 +472,9 @@
   }
   .faq-item.open .faq-a { display: block; }
 
-  /* ═══════════════════════════════════════════
+  /*
      CTA SECTION
-  ═══════════════════════════════════════════ */
+  */
   .cta-section {
     background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop') center/cover no-repeat;
     padding: 100px 5%; text-align: center; position: relative; overflow: hidden;
@@ -510,9 +505,9 @@
   .btn-outline { border: 1.5px solid rgba(255,255,255,0.35); color: #fff; padding: 15px 32px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; transition: all 0.25s; display: inline-block; }
   .btn-outline:hover { border-color: var(--highlight); color: var(--accent); }
 
-  /* ═══════════════════════════════════════════
+  /* 
      FOOTER
-  ═══════════════════════════════════════════ */
+  */
   footer { background: var(--primary); color: rgba(255,255,255,0.7); padding: 80px 5% 0; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; max-width: 1200px; margin: 0 auto; padding-bottom: 60px; }
   .footer-brand p { font-size: 0.88rem; line-height: 1.7; margin-top: 16px; }
@@ -525,9 +520,9 @@
   .footer-col a:hover { color: var(--accent); transform: translateX(4px); }
   .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 24px 0; text-align: center; font-size: 0.8rem; max-width: 1200px; margin: 0 auto; }
 
-  /* ═══════════════════════════════════════════
+  /* 
      RESPONSIVE
-  ═══════════════════════════════════════════ */
+  */
   @media (max-width: 1024px) {
     .why-grid { grid-template-columns: repeat(2,1fr); }
     .tools-grid { grid-template-columns: repeat(2,1fr); }
@@ -563,20 +558,20 @@
     .overview-steps { grid-template-columns: repeat(2,1fr); }
   }
   .logo img {
-  height: 60px;       /* Adjust height to fit your navbar */
-  width: auto;        /* Keeps aspect ratio */
+  height: 60px;       
+  width: auto;        
   vertical-align: middle;
   border-radius:20px;
   padding: 1px;
    /* Aligns with text if combined */
 }
 .footer-brandreveal .logo img {
-  height: 60px;          /* Adjust size to fit footer */
-  width: auto;           /* Maintain aspect ratio */
-  display: block;        /* Keeps it clean above text */
-  margin-bottom: 10px;   /* Space between logo and description */
-  border-radius: 20px;   /* Rounded corners */
-  padding: 1px;          /* Space between logo and border */
+  height: 60px;       
+  width: auto;           
+  display: block;       
+  margin-bottom: 10px; 
+  border-radius: 20px;   
+  padding: 1px;          
 }
 .whatsapp-btn { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 30px rgba(37,211,102,0.5); transition: all 0.3s; text-decoration: none; animation: pulse-wa 2.5s infinite; }
   .whatsapp-btn:hover { transform: scale(1.1); animation: none; }
@@ -585,11 +580,11 @@
 
 
 
-/* If you want spacing around the logo */
+
 .logo {
-  display: flex;      /* Helps align logo and text side by side */
+  display: flex;     
   align-items: center;
-  gap: 8px;           /* Space between logo and text */
+  gap: 8px;           
 }
 </style>
 <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>

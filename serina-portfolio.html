@@ -475,29 +475,29 @@
     .cs-hero-content { padding:28px 24px; }
   }
    .logo img {
-  height: 60px;       /* Adjust height to fit your navbar */
-  width: auto;        /* Keeps aspect ratio */
+  height: 60px;       
+  width: auto;       
   vertical-align: middle;
   border-radius:20px;
   padding: 1px;
    /* Aligns with text if combined */
 }
 .footer-brandreveal .logo img {
-  height: 60px;          /* Adjust size to fit footer */
-  width: auto;           /* Maintain aspect ratio */
-  display: block;        /* Keeps it clean above text */
-  margin-bottom: 10px;   /* Space between logo and description */
-  border-radius: 20px;   /* Rounded corners */
-  padding: 1px;          /* Space between logo and border */
+  height: 60px;          
+  width: auto;           
+  display: block;        
+  margin-bottom: 10px;  
+  border-radius: 20px;  
+  padding: 1px;          
 }
 
 
 
-/* If you want spacing around the logo */
+
 .logo {
-  display: flex;      /* Helps align logo and text side by side */
+  display: flex;      
   align-items: center;
-  gap: 8px;           /* Space between logo and text */
+  gap: 8px;           
 }
 </style>
 <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
@@ -1041,7 +1041,7 @@
 </div><!-- end cs-overlay -->
 
 <script>
-// ─── PROJECT CASE STUDY DATA ────────────────────────────────────────────────
+// ─── PROJECT CASE STUDY DATA ─
 const projectData = {
 
   
@@ -1365,7 +1365,7 @@ Object.assign(projectData, {
   }
 });
 
-// ─── RENDER HELPER ──────────────────────────────────────────────────────────
+// ─── RENDER HELPER ────
 function renderCaseStudy(key) {
   const d = projectData[key];
   if (!d) return '<div style="padding:60px;text-align:center;color:var(--muted)">Project not found</div>';
@@ -1374,7 +1374,7 @@ function renderCaseStudy(key) {
   const isServiceOffering = d.badge !== undefined;
 
   if (isServiceOffering) {
-    // ── SERVICE OFFERING FORMAT (from updated portfolio) ──────────────────
+    // ── SERVICE OFFERING FORMAT (from updated portfolio) ─────
     const kpiHTML = d.kpis.map(kpi => `
       <div class="cs-kpi">
         <div class="cs-kpi-num">${kpi.value}</div>
@@ -1635,7 +1635,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-// ─── FILTER TABS ────────────────────────────────────────────────────────────
+// ─── FILTER TABS ────
 document.querySelectorAll('.filter-tab').forEach(tab => {
   tab.addEventListener('click', function() {
     document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
@@ -1652,7 +1652,7 @@ document.querySelectorAll('.filter-tab').forEach(tab => {
   });
 });
 
-// ─── MOBILE HAMBURGER ───────────────────────────────────────────────────────
+// ─── MOBILE HAMBURGER ────
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
 hamburger.addEventListener('click', () => {
@@ -1660,7 +1660,7 @@ hamburger.addEventListener('click', () => {
   mobileMenu.classList.toggle('open');
 });
 
-// ─── CASE STUDY OVERLAY ─────────────────────────────────────────────────────
+// ─── CASE STUDY OVERLAY ───────
 function openProjectStudy(key) {
   const modal = document.getElementById('cs-modal');
   modal.innerHTML = renderCaseStudy(key);
