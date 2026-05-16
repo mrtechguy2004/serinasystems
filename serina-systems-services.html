@@ -654,16 +654,16 @@
 
 
 
-/* If you want spacing around the logo */
+
 .logo {
-  display: flex;      /* Helps align logo and text side by side */
+  display: flex;     
   align-items: center;
-  gap: 8px;           /* Space between logo and text */
+  gap: 8px;           
 }
 
-/* =============================================
+/* 
    SERVICE IMAGE ANIMATIONS
-   ============================================= */
+    */
 
 /* Base wrapper — clips the zoom effect */
 .svc-img-wrap {
@@ -1623,9 +1623,9 @@ function closeModalOnOverlay(e) {
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeServiceModal(); });
 
-/* =============================================
+/* 
    IMAGE PAIR ANIMATIONS — scroll reveal + Ken Burns
-   ============================================= */
+  */
 (function() {
   // Observe each image pair for scroll-in
   const pairObserver = new IntersectionObserver((entries) => {
