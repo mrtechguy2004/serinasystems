@@ -409,10 +409,10 @@
      DETAILED SERVICE SECTIONS
   */
   .service-detail {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 72px; align-items: center;
+    display: grid; grid-template-columns: 1fr 1.2fr;
+    gap: 56px; align-items: center;
   }
-  .service-detail.reverse { direction: rtl; }
+  .service-detail.reverse { grid-template-columns: 1.2fr 1fr; direction: rtl; }
   .service-detail.reverse > * { direction: ltr; }
   .service-detail-visual {
     background-size: cover;
@@ -585,9 +585,15 @@
     .industries-grid { grid-template-columns: repeat(2, 1fr); }
     .stats-row { grid-template-columns: repeat(2, 1fr); }
     .stack-grid { grid-template-columns: repeat(4, 1fr); }
+    .service-detail { grid-template-columns: 1fr 1.1fr; gap: 40px; }
+    .service-detail.reverse { grid-template-columns: 1.1fr 1fr; }
+    .svc-img-wrap { min-height: 360px; }
   }
   @media (max-width: 900px) {
     .service-detail, .service-detail.reverse { grid-template-columns: 1fr; direction: ltr; }
+    .service-detail.reverse > * { direction: ltr; }
+    .svc-img-pair { grid-template-columns: 1fr 1fr; }
+    .svc-img-wrap { min-height: 300px; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   }
   @media (max-width: 768px) {
@@ -604,6 +610,7 @@
     section { padding: 60px 5%; }
     .page-hero { padding: 60px 5% 52px; }
     .service-detail-visual { min-height: 240px; }
+    .svc-img-wrap { min-height: 260px; }
     .cta-banner { padding: 60px 5%; }
   }
   @media (max-width: 600px) {
@@ -611,6 +618,8 @@
     .process-grid { grid-template-columns: 1fr; }
     .industries-grid { grid-template-columns: 1fr 1fr; }
     .stats-row { grid-template-columns: 1fr 1fr; }
+    .svc-img-pair { grid-template-columns: 1fr; }
+    .svc-img-wrap { min-height: 240px; }
   }
   @media (max-width: 480px) {
     .stack-grid { grid-template-columns: repeat(2, 1fr); }
@@ -620,6 +629,7 @@
     .industries-grid { grid-template-columns: 1fr 1fr; }
     .topbar { font-size: 0.7rem; padding: 6px 4%; }
     .nav-cta { padding: 7px 10px; font-size: 0.72rem !important; }
+    .svc-img-wrap { min-height: 200px; }
   }
    .logo img {
   height: 60px;      
@@ -649,6 +659,118 @@
   display: flex;      /* Helps align logo and text side by side */
   align-items: center;
   gap: 8px;           /* Space between logo and text */
+}
+
+/* =============================================
+   SERVICE IMAGE ANIMATIONS
+   ============================================= */
+
+/* Base wrapper — clips the zoom effect */
+.svc-img-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  min-height: 420px;
+}
+
+/* The image itself */
+.svc-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.08);
+  filter: brightness(0.92);
+  transition:
+    transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    filter 0.5s ease;
+  will-change: transform, filter;
+}
+
+/* Ken Burns: play when parent reveal becomes visible */
+.svc-img-wrap.img-revealed img {
+  animation: kenBurns 9s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+  0%   { transform: scale(1.08) translate(0, 0); }
+  33%  { transform: scale(1.13) translate(-1.5%, 1%); }
+  66%  { transform: scale(1.10) translate(1%, -1%); }
+  100% { transform: scale(1.08) translate(-0.5%, 0.5%); }
+}
+
+/* Hover: brighten + slight zoom */
+.svc-img-wrap:hover img {
+  filter: brightness(1.08) saturate(1.1);
+  transform: scale(1.14) !important;
+  animation-play-state: paused;
+}
+
+/* Shimmer glint sweep on hover */
+.svc-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255,255,255,0.14) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 0s;
+  pointer-events: none;
+  z-index: 4;
+  border-radius: 16px;
+}
+.svc-img-wrap:hover::after {
+  transform: translateX(100%);
+  transition: transform 0.6s ease;
+}
+
+/* Overlay gradient (captions stay readable) */
+.svc-img-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(6,15,32,0.92), transparent);
+  padding: 16px 14px;
+  z-index: 3;
+  transition: padding 0.35s ease;
+}
+.svc-img-wrap:hover .svc-img-caption {
+  padding-bottom: 20px;
+}
+
+/* Stagger the two images in a pair */
+.svc-img-pair > .svc-img-wrap:nth-child(1) { transition-delay: 0s; }
+.svc-img-pair > .svc-img-wrap:nth-child(2) { transition-delay: 0.15s; }
+
+/* Scroll-reveal for image pairs */
+.svc-img-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  opacity: 0;
+  transform: translateY(36px) scale(0.97);
+  transition:
+    opacity 0.85s cubic-bezier(0.16,1,0.3,1),
+    transform 0.85s cubic-bezier(0.16,1,0.3,1);
+}
+.svc-img-pair.pair-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Floating badge label */
+.svc-img-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Tilt on mouse-move — applied via JS */
+.svc-img-wrap {
+  transform-style: preserve-3d;
 }
 
 </style>
@@ -838,19 +960,26 @@
           <a href="serina-contact.html" class="btn-primary hover-glow" style="display:inline-block;color:#fff">Get a Quote</a>
         </div>
       </div>
-      <div class="service-detail-visual reveal-right float-3" style="background-image:url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=900&q=80&fit=crop&crop=center')">
-        <div class="service-detail-visual-title">Mobile Tech Stack</div>
-        <div style="position:relative;z-index:3">
-          <span class="tech-pill">Flutter</span>
-          <span class="tech-pill">Kotlin</span>
-          <span class="tech-pill">Swift</span>
-          <span class="tech-pill">React Native</span>
-          <span class="tech-pill">Firebase</span>
-          <span class="tech-pill">REST API</span>
-          <span class="tech-pill">GraphQL</span>
-          <span class="tech-pill">AWS Amplify</span>
-          <span class="tech-pill">Play Store</span>
-          <span class="tech-pill">App Store</span>
+      <div class="svc-img-pair">
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80&fit=crop&crop=center" alt="Android App Development">
+          <div class="svc-img-caption">
+            <div class="svc-img-badge">
+              <iconify-icon icon="mdi:android" style="color:#3ddc84;font-size:1.4rem;"></iconify-icon>
+              <span style="color:#fff;font-weight:700;font-size:0.85rem;font-family:'Sora',sans-serif;">Android Development</span>
+            </div>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin-top:4px;">Kotlin · Flutter · Play Store</p>
+          </div>
+        </div>
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=600&q=80&fit=crop&crop=center" alt="iOS App Development">
+          <div class="svc-img-caption">
+            <div class="svc-img-badge">
+              <iconify-icon icon="mdi:apple" style="color:#fff;font-size:1.4rem;"></iconify-icon>
+              <span style="color:#fff;font-weight:700;font-size:0.85rem;font-family:'Sora',sans-serif;">iOS Development</span>
+            </div>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin-top:4px;">Swift · Xcode · App Store</p>
+          </div>
         </div>
       </div>
     </div>
@@ -879,19 +1008,26 @@
           <a href="serina-contact.html" class="btn-primary hover-glow" style="display:inline-block;color:#fff">Get a Quote</a>
         </div>
       </div>
-      <div class="service-detail-visual reveal-right float-1" style="background-image:url('https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=900&q=80&fit=crop&crop=center')">
-        <div class="service-detail-visual-title">AI &amp; ML Tech Stack</div>
-        <div style="position:relative;z-index:3">
-          <span class="tech-pill">TensorFlow</span>
-          <span class="tech-pill">PyTorch</span>
-          <span class="tech-pill">Python</span>
-          <span class="tech-pill">Scikit-learn</span>
-          <span class="tech-pill">OpenAI API</span>
-          <span class="tech-pill">Hugging Face</span>
-          <span class="tech-pill">LangChain</span>
-          <span class="tech-pill">FastAPI</span>
-          <span class="tech-pill">AWS SageMaker</span>
-          <span class="tech-pill">OpenCV</span>
+      <div class="svc-img-pair">
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80&fit=crop&crop=center" alt="AI Machine Learning">
+          <div class="svc-img-caption">
+            <div class="svc-img-badge">
+              <iconify-icon icon="mdi:brain" style="color:#635bff;font-size:1.4rem;"></iconify-icon>
+              <span style="color:#fff;font-weight:700;font-size:0.85rem;font-family:'Sora',sans-serif;">Machine Learning</span>
+            </div>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin-top:4px;">TensorFlow · PyTorch · Scikit-learn</p>
+          </div>
+        </div>
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&q=80&fit=crop&crop=center" alt="AI Natural Language Processing">
+          <div class="svc-img-caption">
+            <div class="svc-img-badge">
+              <iconify-icon icon="mdi:robot-outline" style="color:#0477be;font-size:1.4rem;"></iconify-icon>
+              <span style="color:#fff;font-weight:700;font-size:0.85rem;font-family:'Sora',sans-serif;">AI & NLP</span>
+            </div>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin-top:4px;">OpenAI · LangChain · Hugging Face</p>
+          </div>
         </div>
       </div>
     </div>
@@ -920,18 +1056,26 @@
           <a href="serina-contact.html" class="btn-primary hover-glow" style="display:inline-block;color:#fff">Get a Quote</a>
         </div>
       </div>
-      <div class="service-detail-visual reveal-right float-2" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&fit=crop&crop=center')">
-        <div class="service-detail-visual-title">Low Code Platforms</div>
-        <div style="position:relative;z-index:3">
-          <span class="tech-pill">Bubble</span>
-          <span class="tech-pill">FlutterFlow</span>
-          <span class="tech-pill">Webflow</span>
-          <span class="tech-pill">AppGyver</span>
-          <span class="tech-pill">Power Apps</span>
-          <span class="tech-pill">Retool</span>
-          <span class="tech-pill">Airtable</span>
-          <span class="tech-pill">Zapier</span>
-          <span class="tech-pill">Make</span>
+      <div class="svc-img-pair">
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&fit=crop&crop=center" alt="Low Code Dashboard">
+          <div class="svc-img-caption">
+            <div class="svc-img-badge">
+              <iconify-icon icon="mdi:drag-variant" style="color:#f5a623;font-size:1.4rem;"></iconify-icon>
+              <span style="color:#fff;font-weight:700;font-size:0.85rem;font-family:'Sora',sans-serif;">Drag & Drop Builder</span>
+            </div>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin-top:4px;">Bubble · FlutterFlow · Webflow</p>
+          </div>
+        </div>
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&fit=crop&crop=center" alt="Workflow Automation">
+          <div class="svc-img-caption">
+            <div class="svc-img-badge">
+              <iconify-icon icon="mdi:lightning-bolt" style="color:#10b981;font-size:1.4rem;"></iconify-icon>
+              <span style="color:#fff;font-weight:700;font-size:0.85rem;font-family:'Sora',sans-serif;">Workflow Automation</span>
+            </div>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin-top:4px;">Zapier · Make · Power Apps</p>
+          </div>
         </div>
       </div>
     </div>
@@ -960,17 +1104,26 @@
           <a href="serina-contact.html" class="btn-primary hover-glow" style="display:inline-block;color:#fff">Get a Quote</a>
         </div>
       </div>
-      <div class="service-detail-visual reveal-right float-3" style="background-image:url('https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=900&q=80&fit=crop&crop=center')">
-        <div class="service-detail-visual-title">SEO Toolkit</div>
-        <div style="position:relative;z-index:3">
-          <span class="tech-pill">Ahrefs</span>
-          <span class="tech-pill">SEMrush</span>
-          <span class="tech-pill">Google Search Console</span>
-          <span class="tech-pill">Screaming Frog</span>
-          <span class="tech-pill">GA4</span>
-          <span class="tech-pill">Moz</span>
-          <span class="tech-pill">Schema Markup</span>
-          <span class="tech-pill">Core Web Vitals</span>
+      <div class="svc-img-pair">
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=600&q=80&fit=crop&crop=center" alt="SEO Analytics">
+          <div class="svc-img-caption">
+            <div class="svc-img-badge">
+              <iconify-icon icon="mdi:chart-line" style="color:#10b981;font-size:1.4rem;"></iconify-icon>
+              <span style="color:#fff;font-weight:700;font-size:0.85rem;font-family:'Sora',sans-serif;">SEO Analytics</span>
+            </div>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin-top:4px;">Ahrefs · SEMrush · GA4</p>
+          </div>
+        </div>
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80&fit=crop&crop=center" alt="Content Strategy">
+          <div class="svc-img-caption">
+            <div class="svc-img-badge">
+              <iconify-icon icon="mdi:text-search" style="color:#0477be;font-size:1.4rem;"></iconify-icon>
+              <span style="color:#fff;font-weight:700;font-size:0.85rem;font-family:'Sora',sans-serif;">Content & Keywords</span>
+            </div>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin-top:4px;">Moz · Search Console · Schema</p>
+          </div>
         </div>
       </div>
     </div>
@@ -999,19 +1152,26 @@
           <a href="serina-contact.html" class="btn-primary hover-glow" style="display:inline-block;color:#fff">Get a Quote</a>
         </div>
       </div>
-      <div class="service-detail-visual reveal-right float-1" style="background-image:url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=900&q=80&fit=crop&crop=center')">
-        <div class="service-detail-visual-title">MVP Stack</div>
-        <div style="position:relative;z-index:3">
-          <span class="tech-pill">Next.js</span>
-          <span class="tech-pill">React</span>
-          <span class="tech-pill">Node.js</span>
-          <span class="tech-pill">Flutter</span>
-          <span class="tech-pill">Firebase</span>
-          <span class="tech-pill">Supabase</span>
-          <span class="tech-pill">PostgreSQL</span>
-          <span class="tech-pill">Vercel</span>
-          <span class="tech-pill">Stripe</span>
-          <span class="tech-pill">M-Pesa</span>
+      <div class="svc-img-pair">
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&q=80&fit=crop&crop=center" alt="MVP Prototyping">
+          <div class="svc-img-caption">
+            <div class="svc-img-badge">
+              <iconify-icon icon="mdi:rocket-launch-outline" style="color:#635bff;font-size:1.4rem;"></iconify-icon>
+              <span style="color:#fff;font-weight:700;font-size:0.85rem;font-family:'Sora',sans-serif;">Rapid Prototyping</span>
+            </div>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin-top:4px;">Next.js · React · Flutter</p>
+          </div>
+        </div>
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80&fit=crop&crop=center" alt="Startup Launch">
+          <div class="svc-img-caption">
+            <div class="svc-img-badge">
+              <iconify-icon icon="mdi:lightbulb-on-outline" style="color:#f5a623;font-size:1.4rem;"></iconify-icon>
+              <span style="color:#fff;font-weight:700;font-size:0.85rem;font-family:'Sora',sans-serif;">Investor Ready</span>
+            </div>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin-top:4px;">Firebase · Supabase · Stripe</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1040,18 +1200,26 @@
           <a href="serina-contact.html" class="btn-primary hover-glow" style="display:inline-block;color:#fff">Get a Quote</a>
         </div>
       </div>
-      <div class="service-detail-visual reveal-right float-2" style="background-image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=80&fit=crop&crop=center')">
-        <div class="service-detail-visual-title">MIS Tech Stack</div>
-        <div style="position:relative;z-index:3">
-          <span class="tech-pill">Spring Boot</span>
-          <span class="tech-pill">React</span>
-          <span class="tech-pill">Node.js</span>
-          <span class="tech-pill">PostgreSQL</span>
-          <span class="tech-pill">MongoDB</span>
-          <span class="tech-pill">Docker</span>
-          <span class="tech-pill">AWS</span>
-          <span class="tech-pill">Redis</span>
-          <span class="tech-pill">Nginx</span>
+      <div class="svc-img-pair">
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80&fit=crop&crop=center" alt="Healthcare Management System">
+          <div class="svc-img-caption">
+            <div class="svc-img-badge">
+              <iconify-icon icon="mdi:hospital-building" style="color:#e03e3e;font-size:1.4rem;"></iconify-icon>
+              <span style="color:#fff;font-weight:700;font-size:0.85rem;font-family:'Sora',sans-serif;">Healthcare & School MIS</span>
+            </div>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin-top:4px;">HMS · School Portals · E-Learning</p>
+          </div>
+        </div>
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80&fit=crop&crop=center" alt="ERP System">
+          <div class="svc-img-caption">
+            <div class="svc-img-badge">
+              <iconify-icon icon="mdi:office-building-cog" style="color:#0477be;font-size:1.4rem;"></iconify-icon>
+              <span style="color:#fff;font-weight:700;font-size:0.85rem;font-family:'Sora',sans-serif;">ERP & Sacco Systems</span>
+            </div>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin-top:4px;">Spring Boot · PostgreSQL · Docker</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1081,19 +1249,26 @@
           <a href="serina-contact.html" class="btn-primary hover-glow" style="display:inline-block;color:#fff">Get a Quote</a>
         </div>
       </div>
-      <div class="service-detail-visual reveal-right float-3" style="background-image:url('https://images.unsplash.com/photo-1547658719-da2b51169166?w=900&q=80&fit=crop&crop=center')">
-        <div class="service-detail-visual-title">Web Tech Stack</div>
-        <div style="position:relative;z-index:3">
-          <span class="tech-pill">React</span>
-          <span class="tech-pill">Next.js</span>
-          <span class="tech-pill">Vue.js</span>
-          <span class="tech-pill">Node.js</span>
-          <span class="tech-pill">TypeScript</span>
-          <span class="tech-pill">Tailwind CSS</span>
-          <span class="tech-pill">WordPress</span>
-          <span class="tech-pill">Strapi</span>
-          <span class="tech-pill">PostgreSQL</span>
-          <span class="tech-pill">Vercel</span>
+      <div class="svc-img-pair">
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80&fit=crop&crop=center" alt="Web Design">
+          <div class="svc-img-caption">
+            <div class="svc-img-badge">
+              <iconify-icon icon="mdi:web" style="color:#0477be;font-size:1.4rem;"></iconify-icon>
+              <span style="color:#fff;font-weight:700;font-size:0.85rem;font-family:'Sora',sans-serif;">Web Design & UI/UX</span>
+            </div>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin-top:4px;">React · Next.js · Tailwind CSS</p>
+          </div>
+        </div>
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80&fit=crop&crop=center" alt="E-Commerce Development">
+          <div class="svc-img-caption">
+            <div class="svc-img-badge">
+              <iconify-icon icon="mdi:shopping-outline" style="color:#10b981;font-size:1.4rem;"></iconify-icon>
+              <span style="color:#fff;font-weight:700;font-size:0.85rem;font-family:'Sora',sans-serif;">E-Commerce & Portals</span>
+            </div>
+            <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin-top:4px;">WordPress · M-Pesa · Strapi</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1447,6 +1622,45 @@ function closeModalOnOverlay(e) {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeServiceModal(); });
+
+/* =============================================
+   IMAGE PAIR ANIMATIONS — scroll reveal + Ken Burns
+   ============================================= */
+(function() {
+  // Observe each image pair for scroll-in
+  const pairObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const pair = entry.target;
+        pair.classList.add('pair-visible');
+
+        // Trigger Ken Burns on the individual wrappers inside
+        pair.querySelectorAll('.svc-img-wrap').forEach((wrap, i) => {
+          setTimeout(() => wrap.classList.add('img-revealed'), i * 150);
+        });
+
+        pairObserver.unobserve(pair);
+      }
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.svc-img-pair').forEach(pair => {
+    pairObserver.observe(pair);
+  });
+
+  // 3D tilt on mouse-move for each wrap
+  document.querySelectorAll('.svc-img-wrap').forEach(wrap => {
+    wrap.addEventListener('mousemove', (e) => {
+      const rect = wrap.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width  - 0.5;  // -0.5 … 0.5
+      const y = (e.clientY - rect.top)  / rect.height - 0.5;
+      wrap.style.transform = `perspective(800px) rotateY(${x * 8}deg) rotateX(${-y * 6}deg) scale(1.02)`;
+    });
+    wrap.addEventListener('mouseleave', () => {
+      wrap.style.transform = '';
+    });
+  });
+})();
 
 function toggleMobile() {
   const nav = document.getElementById('mobile-nav');
