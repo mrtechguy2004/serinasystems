@@ -650,6 +650,116 @@
   align-items: center;
   gap: 8px;           
 }
+
+  /* ── DEVELOPERS SECTION ── */
+  .dev-section { padding: 80px 5%; background: var(--bg2); }
+  .dev-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .dev-card {
+    perspective: 1000px;
+    height: 420px;
+    cursor: pointer;
+  }
+  .dev-card-inner {
+    position: relative;
+    width: 100%; height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    border-radius: 20px;
+  }
+  .dev-card:hover .dev-card-inner { transform: rotateY(180deg); }
+  .dev-front, .dev-back {
+    position: absolute; inset: 0;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+  }
+  .dev-front {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    display: flex; flex-direction: column; align-items: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    transition: box-shadow 0.3s;
+  }
+  .dev-card:hover .dev-front { box-shadow: 0 20px 60px rgba(4,119,190,0.18); }
+  .dev-img-wrap {
+    width: 100%; height: 260px; overflow: hidden; position: relative;
+    border-radius: 20px 20px 0 0;
+  }
+  .dev-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top;
+    transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  }
+  .dev-card:hover .dev-img-wrap img { transform: scale(1.06); }
+  .dev-role-badge {
+    position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: #fff;
+    padding: 5px 16px; border-radius: 20px;
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    white-space: nowrap; box-shadow: 0 4px 12px rgba(4,119,190,0.4);
+  }
+  .dev-role-badge.backend { background: var(--accent2); box-shadow: 0 4px 12px rgba(99,91,255,0.4); }
+  .dev-role-badge.fullstack { background: var(--highlight); box-shadow: 0 4px 12px rgba(16,185,129,0.4); }
+  .dev-info {
+    padding: 20px 24px; text-align: center; flex: 1;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .dev-name {
+    font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 800;
+    color: var(--primary); margin-bottom: 6px;
+  }
+  .dev-title { color: var(--muted); font-size: 0.85rem; font-weight: 500; }
+  .dev-flip-hint {
+    font-size: 0.72rem; color: var(--accent); font-weight: 600;
+    margin-top: 10px; letter-spacing: 0.04em;
+    display: flex; align-items: center; justify-content: center; gap: 5px;
+    opacity: 0.7;
+  }
+  .dev-back {
+    background: linear-gradient(145deg, var(--primary), #0d3060);
+    transform: rotateY(180deg);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 36px 28px; text-align: center;
+    border: 1.5px solid rgba(255,255,255,0.08);
+  }
+  .dev-back-avatar {
+    width: 80px; height: 80px; border-radius: 50%;
+    overflow: hidden; margin-bottom: 18px;
+    border: 3px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 20px rgba(4,119,190,0.4);
+  }
+  .dev-back-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .dev-back-name {
+    font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 800;
+    color: #fff; margin-bottom: 4px;
+  }
+  .dev-back-role {
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; margin-bottom: 16px; padding: 3px 12px;
+    border-radius: 20px;
+  }
+  .dev-back-role.frontend { background: rgba(4,119,190,0.25); color: #60c8ff; }
+  .dev-back-role.backend { background: rgba(99,91,255,0.25); color: #a5b4fc; }
+  .dev-back-role.fullstack { background: rgba(16,185,129,0.25); color: var(--highlight2); }
+  .dev-back-bio {
+    color: rgba(255,255,255,0.7); font-size: 0.85rem; line-height: 1.7; margin-bottom: 20px;
+  }
+  .dev-back-skills { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+  .dev-skill-tag {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
+    color: rgba(255,255,255,0.8); padding: 4px 10px; border-radius: 12px;
+    font-size: 0.72rem; font-weight: 600;
+  }
+  @media (max-width: 900px) { .dev-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 580px) { .dev-grid { grid-template-columns: 1fr; } .dev-card { height: 400px; } }
 </style>
 </head>
 <body>
@@ -870,6 +980,116 @@
     </div>
   </div>
 </section>
+
+<!-- MEET OUR DEVELOPERS -->
+<section class="dev-section">
+  <div class="container">
+    <p class="section-label reveal">The Builders</p>
+    <h2 class="section-title reveal delay-1">Meet Our Developers</h2>
+    <p class="section-sub reveal delay-2" style="margin: 0 auto 56px;">Born and built in Kenya, our developers bring world-class engineering to every project. From sleek frontends to powerful backends — this is the team turning African innovation into global solutions.</p>
+
+    <div class="dev-grid">
+
+      <!-- Developer 1 — Backend & Digital Marketing -->
+      <div class="dev-card reveal-scale delay-1">
+        <div class="dev-card-inner">
+          <div class="dev-front">
+            <div class="dev-img-wrap">
+              <img src="peter.jpeg" alt="Backend Developer">
+              <div class="dev-role-badge backend">Backend & Marketing</div>
+            </div>
+            <div class="dev-info">
+              <div class="dev-name">Peter Githinji</div>
+              <div class="dev-title">Backend Developer & Digital Marketing Strategist</div>
+              <div class="dev-flip-hint">&#8635; Hover to learn more</div>
+            </div>
+          </div>
+          <div class="dev-back">
+            <div class="dev-back-avatar">
+              <img src="peter.jpeg" alt="Peter Githinji">
+            </div>
+            <div class="dev-back-name">Peter Githinji</div>
+            <div class="dev-back-role backend">Backend & Digital Marketing</div>
+            <p class="dev-back-bio">Architects robust server-side systems while driving Serina Systems' digital presence. Combines technical depth with marketing strategy to deliver solutions that perform and convert.</p>
+            <div class="dev-back-skills">
+              <span class="dev-skill-tag">Node.js</span>
+              <span class="dev-skill-tag">Python</span>
+              <span class="dev-skill-tag">PostgreSQL</span>
+              <span class="dev-skill-tag">SEO</span>
+              <span class="dev-skill-tag">Google Ads</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Developer 2 — Frontend -->
+      <div class="dev-card reveal-scale delay-2">
+        <div class="dev-card-inner">
+          <div class="dev-front">
+            <div class="dev-img-wrap">
+              <img src="samuel.jpeg" alt="Frontend Developer">
+              <div class="dev-role-badge">Frontend Developer</div>
+            </div>
+            <div class="dev-info">
+              <div class="dev-name">Samuel Kiviasi</div>
+              <div class="dev-title">Frontend Developer</div>
+              <div class="dev-flip-hint">&#8635; Hover to learn more</div>
+            </div>
+          </div>
+          <div class="dev-back">
+            <div class="dev-back-avatar">
+              <img src="samuel.jpeg" alt="Samuel Kiviasi">
+            </div>
+            <div class="dev-back-name">Samuel Kiviasi</div>
+            <div class="dev-back-role frontend">Frontend Developer</div>
+            <p class="dev-back-bio">Crafts pixel-perfect, responsive interfaces that delight users. Passionate about clean UI, smooth animations, and delivering performance-first web experiences.</p>
+            <div class="dev-back-skills">
+              <span class="dev-skill-tag">React</span>
+              <span class="dev-skill-tag">Next.js</span>
+              <span class="dev-skill-tag">Tailwind</span>
+              <span class="dev-skill-tag">Figma</span>
+              <span class="dev-skill-tag">TypeScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Developer 3 — Frontend -->
+      <div class="dev-card reveal-scale delay-3">
+        <div class="dev-card-inner">
+          <div class="dev-front">
+            <div class="dev-img-wrap">
+              <img src="abraham.jpeg" alt="Frontend Developer">
+              <div class="dev-role-badge">Frontend Developer</div>
+            </div>
+            <div class="dev-info">
+              <div class="dev-name">Abraham Ndiwa</div>
+              <div class="dev-title">Frontend Developer</div>
+              <div class="dev-flip-hint">&#8635; Hover to learn more</div>
+            </div>
+          </div>
+          <div class="dev-back">
+            <div class="dev-back-avatar">
+              <img src="abraham.jpeg" alt="Abraham Ndiwa">
+            </div>
+            <div class="dev-back-name">Abraham Ndiwa</div>
+            <div class="dev-back-role frontend">Frontend Developer</div>
+            <p class="dev-back-bio">Builds beautiful, accessible user interfaces with a sharp eye for detail. Transforms complex designs into smooth, intuitive digital experiences users love.</p>
+            <div class="dev-back-skills">
+              <span class="dev-skill-tag">Vue.js</span>
+              <span class="dev-skill-tag">Flutter</span>
+              <span class="dev-skill-tag">CSS Animations</span>
+              <span class="dev-skill-tag">Figma</span>
+              <span class="dev-skill-tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- OUR EXPERTISE -->
 <section class="expertise-bg">
