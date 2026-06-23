@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="description" content="Meet Fidel Ouma, Founder & CEO of Serina Systems — a software and web development company based in Nakuru, Kenya. Learn about his journey, expertise, and vision." />
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About the Founder | Fidel Ouma, Founder & CEO | Serina Systems</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+
+  :root {
+    --primary: #0a2540;
+    --accent: #0477be;
+    --accent2: #635bff;
+    --highlight: #10b981;
+    --highlight2: #34d399;
+    --glow-green: 0 0 30px rgba(16, 185, 129, 0.4);
+    --text: #1a1a2e;
+    --muted: #64748b;
+    --bg: #ffffff;
+    --bg2: #f8fafc;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --glow: 0 0 30px rgba(6, 69, 215, 0.89);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; }
+
+  #scroll-progress {
+    position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    width: 0%; transition: width 0.1s linear;
+    box-shadow: 0 0 10px rgba(0,194,168,0.6);
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+  .reveal-scale { opacity: 0; transform: scale(0.88); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.2s; }
+  .delay-3 { transition-delay: 0.3s; }
+  .delay-4 { transition-delay: 0.4s; }
+  .delay-5 { transition-delay: 0.5s; }
+  .delay-6 { transition-delay: 0.6s; }
+
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+  @keyframes floatRotate {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(3deg); }
+  }
+  .float-1 { animation: floatY 5s ease-in-out infinite; }
+  .float-2 { animation: floatY 6.5s ease-in-out infinite 1s; }
+  .float-3 { animation: floatRotate 7s ease-in-out infinite 0.5s; }
+
+  .hover-glow { transition: box-shadow 0.3s ease, transform 0.3s ease; }
+  .hover-glow:hover { box-shadow: var(--glow); transform: translateY(-4px); }
+
+  /* NAV (identical to site-wide navigation) */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%; display: flex; align-items: center; justify-content: space-between;
+    height: 68px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
+  .logo { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.45rem; color: var(--primary); letter-spacing: -0.03em; display:flex; align-items:center; gap:8px; }
+  .logo span { color: var(--highlight); }
+  .logo img { height: 60px; width: auto; vertical-align: middle; border-radius:20px; padding: 1px; }
+  .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--primary); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--highlight); }
+  .nav-cta {
+    background: var(--highlight); color: #fff !important;
+    padding: 10px 22px; border-radius: 8px;
+    font-weight: 600 !important; font-size: 0.875rem !important;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.3s !important;
+  }
+  .nav-cta:hover { background: #059669 !important; transform: translateY(-1px) !important; box-shadow: 0 0 20px rgba(16,185,129,0.4) !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--primary); border-radius: 2px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-nav {
+    display: none; position: fixed; top: 68px; left: 0; right: 0;
+    background: #fff; border-bottom: 1px solid var(--border);
+    padding: 20px 5%; flex-direction: column; gap: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1); z-index: 99;
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { font-size: 1rem; font-weight: 500; color: var(--primary); padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .mobile-nav a:last-child { border-bottom: none; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+  section { padding: 100px 5%; }
+  .section-label { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--highlight); margin-bottom: 12px; }
+  .section-title { font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 800; line-height: 1.2; color: var(--primary); margin-bottom: 16px; letter-spacing: -0.02em; }
+  .section-sub { font-size: 1.15rem; line-height: 1.7; color: var(--muted); max-width: 700px; margin-bottom: 48px; }
+
+  /* ============ HERO — FOUNDER ============ */
+  .founder-hero {
+    position: relative; padding: 130px 5% 90px;
+    background: linear-gradient(135deg, #060f20 0%, var(--primary) 60%, #0d3260 100%);
+    overflow: hidden; color: #fff;
+  }
+  .founder-hero::before {
+    content: ''; position: absolute; top: -30%; right: -10%;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(4,119,190,0.18), transparent);
+    animation: floatY 8s ease-in-out infinite; z-index: 1;
+  }
+  .fh-grid {
+    position: relative; z-index: 2; max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 380px 1fr; gap: 64px; align-items: center;
+  }
+  .fh-photo img {
+    width: 100%; max-width: 380px; aspect-ratio: 3/4; object-fit: cover; object-position: center top;
+    border-radius: 16px; border: 5px solid rgba(255,255,255,0.15);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.4); display: block;
+  }
+  .fh-eyebrow {
+    font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--highlight2);
+    margin-bottom: 16px;
+  }
+  .fh-name {
+    font-family: 'Sora', sans-serif; font-size: 3rem; font-weight: 800;
+    line-height: 1.1; margin-bottom: 8px; letter-spacing: -0.02em;
+  }
+  .fh-title { font-size: 1.1rem; color: rgba(255,255,255,0.8); font-weight: 500; margin-bottom: 24px; }
+  .fh-title span { color: var(--highlight2); font-weight: 700; }
+  .fh-intro { font-size: 1.15rem; line-height: 1.8; color: rgba(255,255,255,0.88); max-width: 640px; margin-bottom: 36px; }
+  .fh-cta-row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-outline-white {
+    display: inline-block; border: 1.5px solid rgba(255,255,255,0.4); color: #fff;
+    padding: 13px 30px; border-radius: 8px; font-weight: 600; font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+  .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: #fff; transform: translateY(-2px); }
+
+  @media (max-width: 900px) {
+    .fh-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+    .fh-photo img { max-width: 260px; margin: 0 auto; }
+    .fh-intro { margin-left: auto; margin-right: auto; }
+    .fh-cta-row { justify-content: center; }
+    .fh-name { font-size: 2.2rem; }
+  }
+
+  /* ============ MY STORY (reuses story-grid pattern) ============ */
+  .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 40px; }
+  .story-content h3 { font-family: 'Sora', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--primary); margin-bottom: 20px; }
+  .story-content p { font-size: 1.05rem; line-height: 1.8; color: var(--muted); margin-bottom: 20px; }
+  .story-image { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--highlight), var(--highlight2)); }
+  .story-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .story-images-col { position: relative; padding-top: 50px; padding-left: 30px; }
+  .story-image-small {
+    position: absolute; top: 0px; left: 0px; z-index: 3; width: 55%;
+    aspect-ratio: 4/3; border-radius: var(--radius); overflow: hidden;
+    border: 4px solid #ffffff; box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+    animation: tiltSwing 6s ease-in-out infinite;
+  }
+  .story-image-small img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  @keyframes tiltSwing {
+    0%, 100% { transform: rotate(-1.5deg) scale(1);   box-shadow: 0 16px 48px rgba(0,0,0,0.35); }
+    25%       { transform: rotate(1.5deg)  scale(1.02); box-shadow: 0 22px 56px rgba(99,91,255,0.4); }
+    50%       { transform: rotate(-1deg)   scale(1.01); box-shadow: 0 16px 48px rgba(0,0,0,0.35); }
+    75%       { transform: rotate(1deg)    scale(1.02); box-shadow: 0 22px 56px rgba(99,91,255,0.4); }
+  }
+
+  /* ============ EDUCATION & QUALIFICATIONS ============ */
+  .edu-bg { background: var(--bg2); }
+  .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; margin-top: 48px; }
+  .edu-card {
+    background: #fff; border-radius: var(--radius); border: 1px solid var(--border);
+    padding: 28px; transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+  }
+  .edu-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); border-color: var(--highlight); }
+  .edu-icon {
+    width: 48px; height: 48px; border-radius: 10px; background: rgba(4,119,190,0.1);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: var(--accent);
+  }
+  .edu-card h3 { font-family: 'Sora', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+  .edu-card .edu-meta { font-size: 0.88rem; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+  .edu-card p { font-size: 0.95rem; line-height: 1.6; color: var(--muted); }
+  .edu-placeholder-note {
+    margin-top: 28px; font-size: 0.9rem; color: var(--muted); font-style: italic;
+    border-left: 3px solid var(--highlight); padding-left: 14px;
+  }
+
+  /* ============ SKILLS & EXPERTISE (reuses expertise-card style) ============ */
+  .expertise-bg { background: linear-gradient(135deg, var(--primary) 0%, #0d3260 100%); color: #fff; }
+  .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-top: 48px; }
+  .expertise-card {
+    background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);
+    border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.1);
+    padding: 28px; transition: all 0.3s ease;
+  }
+  .expertise-card:hover { background: rgba(255,255,255,0.08); border-color: var(--highlight); transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+  .expertise-card .exp-icon {
+    width: 44px; height: 44px; border-radius: 10px; background: rgba(16,185,129,0.15);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 14px; color: var(--highlight2);
+  }
+  .expertise-card h3 { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: #fff; }
+  .expertise-card p { font-size: 0.9rem; line-height: 1.65; color: rgba(255,255,255,0.75); }
+
+  /* ============ ACHIEVEMENTS ============ */
+  .achieve-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-top: 48px; text-align: center; }
+  .achieve-item { padding: 20px; }
+  .achieve-number { font-family: 'Sora', sans-serif; font-size: 3rem; font-weight: 800; color: var(--accent); display: block; margin-bottom: 8px; }
+  .achieve-label { font-size: 0.95rem; color: var(--muted); font-weight: 500; }
+  .achieve-list { margin-top: 56px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 20px; }
+  .achieve-list-item {
+    display: flex; gap: 14px; align-items: flex-start; background: var(--bg2);
+    padding: 20px 22px; border-radius: var(--radius); border-left: 4px solid var(--highlight);
+  }
+  .achieve-list-item .check { color: var(--highlight); font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+  .achieve-list-item p { font-size: 0.97rem; line-height: 1.6; color: var(--muted); }
+
+  /* ============ MISSION & VISION ============ */
+  .mv-bg { background: var(--bg2); }
+  .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
+  .mv-card {
+    background: #fff; border-radius: var(--radius); padding: 40px;
+    border: 1px solid var(--border); position: relative; overflow: hidden;
+  }
+  .mv-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--accent), var(--highlight)); }
+  .mv-card h3 { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 16px; }
+  .mv-card p { font-size: 1.02rem; line-height: 1.8; color: var(--muted); }
+
+  /* ============ PERSONAL VALUES ============ */
+  .pvalues-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 48px; }
+  .pvalue-card {
+    text-align: center; padding: 32px 20px; border-radius: var(--radius);
+    background: #fff; border: 1px solid var(--border); transition: all 0.3s ease;
+  }
+  .pvalue-card:hover { border-color: var(--highlight); transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+  .pvalue-icon {
+    width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 16px;
+    background: rgba(16,185,129,0.1); color: var(--highlight);
+    display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+  }
+  .pvalue-card h4 { font-family: 'Sora', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+  .pvalue-card p { font-size: 0.88rem; line-height: 1.6; color: var(--muted); }
+
+  /* ============ CONNECT ============ */
+  .connect-bg { background: linear-gradient(135deg, var(--primary) 0%, #0d3260 100%); color: #fff; text-align: center; }
+  .connect-bg .section-title, .connect-bg .section-label { color: #fff; }
+  .connect-bg .section-sub { color: rgba(255,255,255,0.8); margin-left: auto; margin-right: auto; }
+  .founder-socials { display: flex; gap: 16px; margin-top: 36px; justify-content: center; flex-wrap: wrap; }
+  .social-icon {
+    width: 52px; height: 52px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2);
+    color: #fff; font-size: 1.1rem; transition: all 0.25s ease;
+  }
+  .social-icon:hover { background: var(--highlight); border-color: var(--highlight); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(16,185,129,0.4); }
+  .connect-cta-row { margin-top: 40px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-block; background: var(--highlight); color: #fff;
+    padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 0.95rem;
+    transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(16,185,129,0.3);
+  }
+  .btn-primary:hover { background: #059669; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(16,185,129,0.4); }
+
+  /* ============ FINAL CTA ============ */
+  .cta-section {
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&auto=format&fit=crop&q=80');
+    background-size: cover; background-position: center; background-attachment: fixed;
+    padding: 80px 5%; text-align: center; color: #fff; overflow: hidden;
+  }
+  .cta-section::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(4,119,190,0.82) 0%, rgba(10,37,64,0.90) 100%); z-index: 0; }
+  .cta-section > .container { position: relative; z-index: 1; }
+  .cta-section h2 { font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em; }
+  .cta-section p { font-size: 1.15rem; line-height: 1.7; margin-bottom: 36px; max-width: 600px; margin-left: auto; margin-right: auto; color: rgba(255,255,255,0.95); }
+
+  /* ============ FOOTER ============ */
+  footer { background: var(--primary); color: rgba(255,255,255,0.8); padding: 60px 5% 30px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+  .footer-brand .logo { color: #fff; margin-bottom: 20px; display: block; }
+  .footer-brand p { font-size: 0.92rem; line-height: 1.7; margin-bottom: 24px; }
+  .footer-contact a { display: block; font-size: 0.88rem; margin-bottom: 12px; color: rgba(255,255,255,0.7); transition: color 0.2s; }
+  .footer-contact a:hover { color: var(--accent); }
+  .footer-col h4 { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 20px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 12px; }
+  .footer-col ul li a { font-size: 0.9rem; color: rgba(255,255,255,0.7); transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--accent); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+
+  .whatsapp-btn { position: fixed; bottom: 28px; left: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 30px rgba(37,211,102,0.5); transition: all 0.3s; text-decoration: none; animation: pulse-wa 2.5s infinite; }
+  .whatsapp-btn:hover { transform: scale(1.1); animation: none; }
+  .whatsapp-btn svg { width: 30px; height: 30px; fill: #fff; }
+  @keyframes pulse-wa { 0%, 100% { box-shadow: 0 6px 30px rgba(37,211,102,0.5); } 50% { box-shadow: 0 6px 30px rgba(37,211,102,0.5), 0 0 0 12px rgba(37,211,102,0.12); } }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    section { padding: 60px 5%; }
+    .section-title { font-size: 1.8rem; }
+    .section-sub { font-size: 1rem; }
+    .story-grid { grid-template-columns: 1fr; gap: 40px; }
+    .story-images-col { padding-top: 40px; padding-left: 20px; }
+    .story-image-small { width: 50%; top: -10px; left: -10px; }
+    .mv-grid { grid-template-columns: 1fr; }
+    .achieve-list { grid-template-columns: 1fr; }
+    .cta-section h2 { font-size: 1.8rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+  <a href="https://wa.me/254745883650" target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<div id="scroll-progress"></div>
+
+<!-- NAVIGATION (matches site-wide nav) -->
+<nav id="main-nav">
+  <a href="index.html" class="logo"><img src="logo.png" alt="Serina Systems Logo"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="serina-about.html">About Us</a></li>
+    <li><a href="serina-systems-services.html">Services</a></li>
+    <li><a href="serina-portfolio.html">Portfolio</a></li>
+    <li><a href="serina-process.html">Our Process</a></li>
+    <li><a href="serina-blog.html">Blogs</a></li>
+    <li><a href="serina-pricing.html">Pricing</a></li>
+    <li><a href="serina-contact.html">Contact Us</a></li>
+  </ul>
+  <a href="serina-contact.html" class="nav-cta" style="display:block">Schedule Meeting</a>
+  <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="serina-about.html">About Us</a>
+  <a href="serina-systems-services.html">Services</a>
+  <a href="serina-portfolio.html">Portfolio</a>
+  <a href="serina-process.html">Our Process</a>
+  <a href="serina-blog.html">Blogs</a>
+  <a href="serina-pricing.html">Pricing</a>
+  <a href="serina-contact.html">Contact</a>
+</div>
+
+<!-- 1. HERO SECTION -->
+<section class="founder-hero">
+  <div class="fh-grid">
+    <div class="fh-photo reveal-left">
+      <img src="founder1.webp" alt="Fidel Ouma - Founder & CEO of Serina Systems">
+    </div>
+    <div class="fh-text reveal-right">
+      <p class="fh-eyebrow">About the Founder</p>
+      <h1 class="fh-name">Fidel Ouma</h1>
+      <p class="fh-title">Founder &amp; CEO, <span>Serina Systems</span></p>
+      <p class="fh-intro">Hi, I'm Fidel Ouma, Founder &amp; CEO of Serina Systems. I help businesses across Nakuru, Laikipia, and Nairobi leverage technology through custom software development, web design, AI &amp; automation, and digital marketing — building solutions that drive real, measurable growth.</p>
+      <div class="fh-cta-row">
+        <a href="serina-contact.html" class="btn-primary">Let's Work Together</a>
+        <a href="mailto:serinasystems@gmail.com" class="btn-outline-white">Email Me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. MY STORY -->
+<section id="my-story">
+  <div class="container">
+    <p class="section-label reveal">My Story</p>
+    <h2 class="section-title reveal delay-1">Why I Started Serina Systems</h2>
+    <p class="section-sub reveal delay-2">A journey rooted in purpose, driven by the belief that great technology should be within reach of every ambitious business.</p>
+
+    <div class="story-grid">
+      <div class="story-content reveal-left">
+        <h3>Where It All Began</h3>
+        <p>I founded Serina Systems with the vision of making innovative and affordable digital solutions accessible to businesses across Kenya and beyond. Growing up, I saw the gap between innovation and opportunity on the continent — talented businesses with big ideas, but without easy access to the technology and talent needed to bring them to life. I was determined to bridge that gap.</p>
+        <p>The name itself carries the mission: SERINA stands for Systems, Engineering, Research, Intelligence, Networking, and Advancement — the principles I wanted every project we touch to embody.</p>
+        <p>Starting in Nakuru with a small, dedicated team, I set out to build a company that could deliver world-class software solutions while staying rooted in the realities and opportunities of the African market.</p>
+        <p>Today, that vision has grown into a digital transformation partner serving clients across Laikipia, Nakuru, and Nairobi — and I'm just getting started.</p>
+      </div>
+      <div class="story-images-col reveal-right">
+        <div class="story-image-small">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop&q=60" alt="Fidel Ouma working on a project">
+        </div>
+        <div class="story-image float-1">
+          <img src="founder1.webp" alt="Fidel Ouma, Founder of Serina Systems">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. EDUCATION & QUALIFICATIONS -->
+<section class="edu-bg" id="education">
+  <div class="container">
+    <p class="section-label reveal">Education &amp; Qualifications</p>
+    <h2 class="section-title reveal delay-1">Continuous Learning, Always</h2>
+    <p class="section-sub reveal delay-2">A grounding in technology and business, backed by ongoing professional certification.</p>
+
+    <div class="edu-grid">
+      <div class="edu-card reveal delay-1">
+        <div class="edu-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <h3>[Add your degree / field of study]</h3>
+        <div class="edu-meta">[Institution name, Year]</div>
+        <p>Replace this card with your degree, diploma, or core academic qualification.</p>
+      </div>
+
+      <div class="edu-card reveal delay-2">
+        <div class="edu-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L18 22l-6-4-6 4 2.5-8.5"/></svg>
+        </div>
+        <h3>Cisco CCNA 200-301</h3>
+        <div class="edu-meta">In Progress</div>
+        <p>Currently pursuing the Cisco Certified Network Associate certification, deepening networking expertise to complement full-stack development skills.</p>
+      </div>
+
+      <div class="edu-card reveal delay-3">
+        <div class="edu-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+        </div>
+        <h3>[Add a course or training]</h3>
+        <div class="edu-meta">[Provider, Year]</div>
+        <p>Add any bootcamps, online courses, or professional training relevant to software development, AI, or digital marketing.</p>
+      </div>
+    </div>
+    <p class="edu-placeholder-note">Note: cards in brackets are placeholders — swap in your exact degree, institution, and any other certifications so this section stays fully accurate.</p>
+  </div>
+</section>
+
+<!-- 4. SKILLS & EXPERTISE -->
+<section class="expertise-bg" id="skills">
+  <div class="container">
+    <p class="section-label reveal" style="color: var(--highlight2);">Skills &amp; Expertise</p>
+    <h2 class="section-title reveal delay-1" style="color:#fff;">What I Bring to the Table</h2>
+    <p class="section-sub reveal delay-2" style="color: rgba(255,255,255,0.8);">A hands-on, full-stack skill set built across every Serina Systems project.</p>
+
+    <div class="expertise-grid">
+      <div class="expertise-card reveal delay-1">
+        <div class="exp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <h3>Software Development</h3>
+        <p>End-to-end custom software, from architecture and database design through deployment and support.</p>
+      </div>
+      <div class="expertise-card reveal delay-2">
+        <div class="exp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3>Web Development</h3>
+        <p>Modern, responsive websites and web apps — from marketing sites to full booking and dashboard systems.</p>
+      </div>
+      <div class="expertise-card reveal delay-3">
+        <div class="exp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg></div>
+        <h3>Mobile Applications</h3>
+        <p>Exploring native and cross-platform mobile development, with a growing focus on iOS and macOS app development.</p>
+      </div>
+      <div class="expertise-card reveal delay-4">
+        <div class="exp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>AI &amp; Automation</h3>
+        <p>Building practical AI-powered tools and workflow automations — including the AI &amp; Automation track at Serina Academy.</p>
+      </div>
+      <div class="expertise-card reveal delay-5">
+        <div class="exp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>SEO &amp; Digital Marketing</h3>
+        <p>Technical SEO, content strategy, and data-driven campaigns that help brands grow their organic reach.</p>
+      </div>
+      <div class="expertise-card reveal delay-6">
+        <div class="exp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg></div>
+        <h3>UI/UX Design</h3>
+        <p>Designing clean, intuitive interfaces with consistent design systems, typography, and responsive layouts.</p>
+      </div>
+      <div class="expertise-card reveal delay-1">
+        <div class="exp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg></div>
+        <h3>Cloud &amp; Deployment</h3>
+        <p>Git-based workflows with continuous deployment via Vercel, keeping every project live and up to date.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="container">
+    <p class="section-label reveal">Achievements</p>
+    <h2 class="section-title reveal delay-1">Building Momentum</h2>
+    <p class="section-sub reveal delay-2">In under a year, Serina Systems has grown into a multi-region digital transformation partner.</p>
+
+    <div class="achieve-grid">
+      <div class="achieve-item reveal delay-1">
+        <span class="achieve-number counter" data-target="50">0</span>
+        <span class="achieve-label">Projects Delivered</span>
+      </div>
+      <div class="achieve-item reveal delay-2">
+        <span class="achieve-number counter" data-target="98">0</span>
+        <span class="achieve-label">Client Satisfaction %</span>
+      </div>
+      <div class="achieve-item reveal delay-3">
+        <span class="achieve-number counter" data-target="3">0</span>
+        <span class="achieve-label">Regions Served</span>
+      </div>
+      <div class="achieve-item reveal delay-4">
+        <span class="achieve-number counter" data-target="4">0</span>
+        <span class="achieve-label">Team Members Led</span>
+      </div>
+    </div>
+
+    <div class="achieve-list">
+      <div class="achieve-list-item reveal delay-1">
+        <span class="check">✓</span>
+        <p>Founded and grew Serina Systems from a lean Nakuru-based startup into a digital transformation partner serving Nakuru, Laikipia, and Nairobi.</p>
+      </div>
+      <div class="achieve-list-item reveal delay-2">
+        <span class="check">✓</span>
+        <p>Launched Serina Academy, a tech training division offering Web Development, Graphic Design, and AI &amp; Automation courses for Kenyan high school leavers.</p>
+      </div>
+      <div class="achieve-list-item reveal delay-3">
+        <span class="check">✓</span>
+        <p>Led the design and development of multi-page web platforms — including the Serina Systems site, the full Serina Academy ecosystem, and the Lantana Gardens booking platform.</p>
+      </div>
+      <div class="achieve-list-item reveal delay-4">
+        <span class="check">✓</span>
+        <p>[Add an award, recognition, or notable accomplishment here]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. MISSION & VISION -->
+<section class="mv-bg" id="mission-vision">
+  <div class="container">
+    <p class="section-label reveal">Mission &amp; Vision</p>
+    <h2 class="section-title reveal delay-1">What Drives Me</h2>
+
+    <div class="mv-grid">
+      <div class="mv-card reveal-left">
+        <h3>Mission</h3>
+        <p>To make world-class digital solutions accessible to businesses across Kenya and beyond — empowering organizations of every size to leverage custom software, web design, AI, and digital marketing to grow with confidence.</p>
+      </div>
+      <div class="mv-card reveal-right">
+        <h3>Vision</h3>
+        <p>A future where every ambitious African business has access to the technology and talent it needs to thrive — and where Serina Systems and Serina Academy stand as the engine and the training ground driving that future forward.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. PERSONAL VALUES -->
+<section id="personal-values">
+  <div class="container">
+    <p class="section-label reveal">Personal Values</p>
+    <h2 class="section-title reveal delay-1">What Guides My Work</h2>
+    <p class="section-sub reveal delay-2">The principles I hold myself to, on every project and every client relationship.</p>
+
+    <div class="pvalues-grid">
+      <div class="pvalue-card reveal delay-1">
+        <div class="pvalue-icon">★</div>
+        <h4>Innovation</h4>
+        <p>Always exploring new technologies and approaches to solve problems better.</p>
+      </div>
+      <div class="pvalue-card reveal delay-2">
+        <div class="pvalue-icon">✓</div>
+        <h4>Integrity</h4>
+        <p>Honest, transparent communication — even when it's not the easy answer.</p>
+      </div>
+      <div class="pvalue-card reveal delay-3">
+        <div class="pvalue-icon">↻</div>
+        <h4>Continuous Learning</h4>
+        <p>From CCNA prep to new frameworks — I'm always investing in growth.</p>
+      </div>
+      <div class="pvalue-card reveal delay-4">
+        <div class="pvalue-icon">♥</div>
+        <h4>Customer Satisfaction</h4>
+        <p>A project isn't done until the client is genuinely happy with the result.</p>
+      </div>
+      <div class="pvalue-card reveal delay-5">
+        <div class="pvalue-icon">◆</div>
+        <h4>Excellence</h4>
+        <p>Precision and accuracy matter — in code, in communication, in delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. CONNECT WITH ME -->
+<section class="connect-bg" id="connect">
+  <div class="container">
+    <p class="section-label reveal">Connect With Me</p>
+    <h2 class="section-title reveal delay-1">Let's Stay in Touch</h2>
+    <p class="section-sub reveal delay-2">Reach out directly, or follow Serina Systems for updates on new projects and courses.</p>
+
+    <div class="founder-socials">
+      <a href="#" class="social-icon" title="LinkedIn (add your profile URL)" aria-label="LinkedIn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.27c-.97 0-1.75-.78-1.75-1.75s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.27h-3v-4.5c0-1.07-.02-2.45-1.5-2.45-1.5 0-1.73 1.17-1.73 2.37v4.58h-3v-9h2.88v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg>
+      </a>
+      <a href="#" class="social-icon" title="GitHub (add your profile URL)" aria-label="GitHub">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .3z"/></svg>
+      </a>
+      <a href="https://x.com/serinasystems" class="social-icon" title="X / Twitter (add your handle)" aria-label="X / Twitter">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.8l-5.3-6.9L4.7 22H1.6l8.1-9.3L1 2h7l4.8 6.3L18.9 2z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/serinasystems/" class="social-icon" title="Instagram" aria-label="Instagram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.facebook.com/share/14iSjGfaSJF/" class="social-icon" title="Facebook" aria-label="Facebook">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="mailto:serinasystems@gmail.com?subject=Hello&body=Hi Fidel" class="social-icon" title="Email" aria-label="Email">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+    </div>
+
+    <div class="connect-cta-row">
+      <a href="serina-contact.html" class="btn-primary">Go to Contact Form</a>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FINAL CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="reveal">Looking to Bring Your Ideas to Life?</h2>
+    <p class="reveal delay-1">I'd love to hear about your project. Let's build something remarkable together.</p>
+    <a href="serina-contact.html" class="btn-primary reveal delay-2">Start a Conversation</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand reveal">
+      <a href="index.html" class="logo"><img src="logo.png" alt="Serina Systems Logo"></a>
+      <p>Serina Systems is the frontier of digital transformation. We engineer intelligent systems, craft compelling digital identities, and amplify brands through cutting-edge marketing strategies. Rooted in Nakuru yet built for global scalability, we merge technology, creativity, and strategy into one seamless experience.</p>
+      <div class="footer-contact">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:middle;margin-right:6px;color:#0477be"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Nyahururu Along Nyahururu-Nakuru Road, Nakuru</a>
+        <a href="mailto:serinasystems@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:6px;color:#0477be"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@serinasystems.gmail.com</a>
+        <a href="tel:+254745883650"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:middle;margin-right:6px;color:#0477be"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> +254 745 883 650</a>
+      </div>
+    </div>
+    <div class="footer-col reveal delay-1">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="serina-systems-services.html#mobile">Mobile Apps</a></li>
+        <li><a href="serina-systems-services.html#ai-ml">AI & ML</a></li>
+        <li><a href="serina-systems-services.html#lowcode">Low Code / No Code</a></li>
+        <li><a href="serina-systems-services.html#seo">SEO</a></li>
+        <li><a href="serina-systems-services.html#mvp">MVP Development</a></li>
+        <li><a href="serina-systems-services.html#mis">MIS</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal delay-2">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="serina-about.html">About Us</a></li>
+        <li><a href="serina-about-founder.html">About the Founder</a></li>
+        <li><a href="serina-portfolio.html">Portfolio</a></li>
+        <li><a href="serina-process.html">Our Process</a></li>
+        <li><a href="serina-blog.html">Blogs</a></li>
+        <li><a href="serina-systems-services.html">Services</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal delay-3">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="serina-contact.html">Get a Quote</a></li>
+        <li><a href="serina-contact.html">Schedule Meeting</a></li>
+        <li><a href="serina-contact.html">Support</a></li>
+        <li><a href="https://www.facebook.com/share/14iSjGfaSJF/">Facebook</a></li>
+        <li><a href="https://www.instagram.com/serinasystems/">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© Copyright Serina Systems 2026. All Rights Reserved</div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const pct = (scrollTop / docHeight) * 100;
+  document.getElementById('scroll-progress').style.width = pct + '%';
+  document.getElementById('main-nav').classList.toggle('scrolled', scrollTop > 50);
+});
+
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+revealEls.forEach(el => revealObs.observe(el));
+
+const counterEls = document.querySelectorAll('.counter');
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const target = +e.target.dataset.target;
+      const duration = 1800;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(timer); }
+        e.target.textContent = Math.floor(current);
+      }, 16);
+      counterObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+counterEls.forEach(el => counterObs.observe(el));
+
+function toggleMobile() {
+  const nav = document.getElementById('mobile-nav');
+  const ham = document.getElementById('hamburger');
+  nav.classList.toggle('open');
+  ham.classList.toggle('open');
+}
+</script>
+
+<!-- Botpress Chat Label -->
+<style>
+  .chat-label { position: fixed; bottom: 90px; right: 20px; background: #0477be; color: #fff; padding: 8px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; font-family: 'Inter', sans-serif; box-shadow: 0 4px 12px rgba(4,119,190,0.4); z-index: 9998; animation: chatBounce 2s ease-in-out infinite; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+  .chat-label::after { content: ''; position: absolute; bottom: -6px; right: 18px; width: 10px; height: 10px; background: #0477be; clip-path: polygon(0 0, 100% 0, 50% 100%); }
+  @keyframes chatBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  .chat-label-dot { width: 7px; height: 7px; background: #a7f3d0; border-radius: 50%; box-shadow: 0 0 6px #a7f3d0; animation: dotPulse 1.5s ease-in-out infinite; flex-shrink: 0; }
+  @keyframes dotPulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.4); opacity: 0.7; } }
+</style>
+<div class="chat-label">
+  <span class="chat-label-dot"></span>
+  Talk to us
+</div>
+
+<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/05/16/05/20260516054617-X1LXS1G1.js" defer></script>
+</body>
+</html>
