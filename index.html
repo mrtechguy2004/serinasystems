@@ -257,24 +257,18 @@
 
   /* NAV */
   nav {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(255,255,255,0.97);
+     position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     padding: 0 5%; display: flex; align-items: center; justify-content: space-between;
     height: 68px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); transition: box-shadow 0.3s;
-    will-change: transform;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
   }
   nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
   .logo { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.45rem; color: var(--primary); letter-spacing: -0.03em; }
-  .logo span { color: var(--accent); }
+  .logo span { color: var(--highlight); }
   .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
   .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--primary); transition: color 0.2s; }
   .nav-links a:hover, .nav-links a.active { color: var(--highlight); }
-  .nav-cta { background: var(--highlight); color: #fff !important; padding: 10px 22px; border-radius: 8px; font-weight: 600 !important; font-size: 0.875rem !important; transition: background 0.2s, transform 0.15s; }
-  .nav-cta:hover { background: #059669 !important; transform: translateY(-1px) !important; box-shadow: 0 0 20px rgba(16,185,129,0.4) !important; }
-  .logo span { color: var(--accent); }
   .nav-cta {
     background: var(--highlight); color: #fff !important;
     padding: 10px 22px; border-radius: 8px;
@@ -282,7 +276,7 @@
     transition: background 0.2s, transform 0.15s, box-shadow 0.3s !important;
   }
   .nav-cta:hover { background: #059669 !important; transform: translateY(-1px) !important; box-shadow: 0 0 20px rgba(16,185,129,0.4) !important; }
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; border: none; background: none; outline: none; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
   .hamburger span { display: block; width: 24px; height: 2px; background: var(--primary); border-radius: 2px; transition: all 0.3s; }
   .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
@@ -1658,7 +1652,7 @@
     <p class="section-sub reveal delay-2"><iconify-icon icon="mdi:lightning-bolt" style="color:#0477be;font-size:1.1rem;vertical-align:middle;margin-right:6px;"></iconify-icon>We deliver end-to-end technology solutions tailored to your business needs.</p>
     <div class="services-grid">
       <div class="service-card hover-glow reveal delay-1">
-        <div class="service-icon"><img src="https://e1.pxfuel.com/desktop-wallpaper/105/899/desktop-wallpaper-mobile-app-development.jpg" alt="Mobile Applications Development"></div>
+        <div class="service-icon"><img src="https://static-site.tinymdm.net/images/2025/11/12145526/android-vs-ios.png" alt="Mobile Applications Development"></div>
         <div class="service-title">Mobile Applications</div>
         <p class="service-desc">Leading Mobile App Development in Nakuru, Kenya. Specialized in Android and iOS delivering top-tier solutions. We have built solutions for organizations around the Kenyan Region.</p>
         <button class="service-link" onclick="openServiceModal('mobile')">View Services →</button>
