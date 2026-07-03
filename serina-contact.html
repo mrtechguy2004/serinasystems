@@ -27,8 +27,8 @@
     --glow: 0 0 30px rgba(6, 69, 215, 0.89);
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; }
+  html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; width: 100%; padding-top: 68px; }
   a { text-decoration: none; color: inherit; }
   img { max-width: 100%; }
 
@@ -143,7 +143,7 @@
      NAV
    */
   nav {
-    position: sticky; top: 0; z-index: 100;
+    position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 100;
     background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     padding: 0 5%; display: flex; align-items: center; justify-content: space-between;
@@ -674,6 +674,7 @@
     .contact-sidebar { grid-row: 1; }
     .contact-form-wrap { padding: 36px 30px; }
     .contact-cards-grid { grid-template-columns: repeat(3, 1fr); }
+    .reveal-left, .reveal-right { transform: translateY(20px); }
   }
   @media (max-width: 900px) {
     .contact-cards-grid { grid-template-columns: repeat(2, 1fr); }
