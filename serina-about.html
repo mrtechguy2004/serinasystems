@@ -432,28 +432,47 @@
     margin-top: 48px;
   }
   .why-card {
+    position: relative;
     background: var(--bg2); padding: 32px; border-radius: var(--radius);
     border-left: 4px solid var(--accent);
     transition: all 0.3s ease;
+    overflow: hidden;
   }
+  .why-card:nth-child(2){ border-left-color: var(--accent2); }
+  .why-card:nth-child(3){ border-left-color: var(--highlight); }
+  .why-card:nth-child(4){ border-left-color: var(--accent); }
+  .why-card:nth-child(5){ border-left-color: var(--accent2); }
+  .why-card:nth-child(6){ border-left-color: var(--highlight); }
   .why-card:hover {
     background: #fff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transform: translateX(8px);
+    box-shadow: 0 16px 36px rgba(10,37,64,0.1);
+    transform: translateY(-6px);
+  }
+  .why-card::after {
+    content: attr(data-index);
+    position: absolute; top: 14px; right: 22px;
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 2.6rem;
+    color: var(--primary); opacity: 0.05; line-height: 1; pointer-events: none;
   }
   .why-card h3 {
     font-family: 'Sora', sans-serif; font-size: 1.4rem; font-weight: 700;
     color: var(--primary); margin-bottom: 12px;
-    display: flex; align-items: center; gap: 12px;
+    display: flex; align-items: center; gap: 14px;
   }
-  .why-card h3::before {
-    content: '✓'; color: var(--accent); font-size: 1.6rem;
-    width: 36px; height: 36px; background: rgba(4,119,190,0.1);
-    border-radius: 50%; display: flex; align-items: center;
-    justify-content: center; flex-shrink: 0;
+  .why-card-icon {
+    width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(4,119,190,0.1);
   }
+  .why-card:nth-child(2) .why-card-icon{ background: rgba(99,91,255,0.1); }
+  .why-card:nth-child(3) .why-card-icon{ background: rgba(16,185,129,0.1); }
+  .why-card:nth-child(4) .why-card-icon{ background: rgba(4,119,190,0.1); }
+  .why-card:nth-child(5) .why-card-icon{ background: rgba(99,91,255,0.1); }
+  .why-card:nth-child(6) .why-card-icon{ background: rgba(16,185,129,0.1); }
+  .why-card-icon img{ width: 22px; height: 22px; display: block; }
   .why-card p {
     font-size: 0.98rem; line-height: 1.7; color: var(--muted);
+    position: relative; z-index: 1;
   }
 
   /* 
@@ -1106,33 +1125,33 @@
     <p class="section-sub reveal delay-2">We combine technical expertise with business acumen to deliver solutions that drive measurable results.</p>
     
     <div class="why-grid">
-      <div class="why-card reveal-left delay-1">
-        <h3>Proven Track Record</h3>
+      <div class="why-card reveal-left delay-1" data-index="01">
+        <h3><span class="why-card-icon"><img src="https://api.iconify.design/lucide:trophy.svg?color=%230477be" alt="" loading="lazy"></span>Proven Track Record</h3>
         <p>With over 50+ successful projects delivered across multiple industries, we have the experience and expertise to handle projects of any complexity.</p>
       </div>
       
-      <div class="why-card reveal-right delay-2">
-        <h3>Custom Solutions</h3>
+      <div class="why-card reveal-right delay-2" data-index="02">
+        <h3><span class="why-card-icon"><img src="https://api.iconify.design/lucide:puzzle.svg?color=%23635bff" alt="" loading="lazy"></span>Custom Solutions</h3>
         <p>We understand that every business is unique. Our solutions are tailored to your specific needs, ensuring a perfect fit for your goals and challenges.</p>
       </div>
       
-      <div class="why-card reveal-left delay-3">
-        <h3>Cutting-Edge Technology</h3>
+      <div class="why-card reveal-left delay-3" data-index="03">
+        <h3><span class="why-card-icon"><img src="https://api.iconify.design/lucide:cpu.svg?color=%2310b981" alt="" loading="lazy"></span>Cutting-Edge Technology</h3>
         <p>We stay ahead of the curve with the latest technologies and frameworks, ensuring your solution is built for today and ready for tomorrow.</p>
       </div>
       
-      <div class="why-card reveal-right delay-4">
-        <h3>Transparent Communication</h3>
+      <div class="why-card reveal-right delay-4" data-index="04">
+        <h3><span class="why-card-icon"><img src="https://api.iconify.design/lucide:message-square.svg?color=%230477be" alt="" loading="lazy"></span>Transparent Communication</h3>
         <p>From initial consultation to final deployment, we keep you informed every step of the way with clear, honest communication.</p>
       </div>
       
-      <div class="why-card reveal-left delay-5">
-        <h3>Scalable Architecture</h3>
+      <div class="why-card reveal-left delay-5" data-index="05">
+        <h3><span class="why-card-icon"><img src="https://api.iconify.design/lucide:layers.svg?color=%23635bff" alt="" loading="lazy"></span>Scalable Architecture</h3>
         <p>Our solutions are designed to grow with your business, ensuring long-term value and adaptability as your needs evolve.</p>
       </div>
       
-      <div class="why-card reveal-right delay-6">
-        <h3>Ongoing Support</h3>
+      <div class="why-card reveal-right delay-6" data-index="06">
+        <h3><span class="why-card-icon"><img src="https://api.iconify.design/lucide:life-buoy.svg?color=%2310b981" alt="" loading="lazy"></span>Ongoing Support</h3>
         <p>Our relationship doesn't end at deployment. We provide comprehensive support and maintenance to ensure your solution continues to perform flawlessly.</p>
       </div>
     </div>
