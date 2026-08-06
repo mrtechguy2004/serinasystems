@@ -282,7 +282,22 @@
      VALUES SECTION
    */
   .values-bg {
-    background: var(--bg2);
+    background-color: var(--bg2);
+    background-image: url('https://wallpaperaccess.com/full/210888.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .values-bg .container { position: relative; z-index: 1; }
+  .values-intro {
+    display: inline-block;
+    max-width: 640px;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: var(--radius);
+    padding: 28px 32px;
   }
   .values-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -643,6 +658,7 @@
 
   @media (max-width: 480px) {
     .nav-cta { padding: 7px 10px; font-size: 0.72rem !important; }
+    .values-intro { display: block; padding: 20px; }
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -899,9 +915,11 @@
 <!-- OUR VALUES -->
 <section class="values-bg">
   <div class="container">
-    <p class="section-label reveal">Our Values</p>
-    <h2 class="section-title reveal delay-1">The Principles That Drive Us</h2>
-    <p class="section-sub reveal delay-2">Our core values shape every decision we make and every solution we deliver.</p>
+    <div class="values-intro">
+      <p class="section-label reveal">Our Values</p>
+      <h2 class="section-title reveal delay-1">The Principles That Drive Us</h2>
+      <p class="section-sub reveal delay-2">Our core values shape every decision we make and every solution we deliver.</p>
+    </div>
     
     <div class="values-grid">
       <div class="value-card reveal delay-1 hover-glow">
