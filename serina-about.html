@@ -225,6 +225,9 @@
   /* 
      STORY SECTION
   */
+  .story-bg {
+    background: #e8edf4;
+  }
   .story-grid {
     display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
     align-items: center; margin-top: 40px;
@@ -282,49 +285,90 @@
      VALUES SECTION
    */
   .values-bg {
-    background-color: var(--bg2);
-    background-image: url('https://wallpaperaccess.com/full/210888.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #ffffff;
     position: relative;
   }
   .values-bg .container { position: relative; z-index: 1; }
   .values-intro {
-    display: inline-block;
-    max-width: 640px;
-    background: rgba(255,255,255,0.88);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: var(--radius);
-    padding: 28px 32px;
+    max-width: 720px;
+    margin: 0 auto 8px;
+    background: var(--primary);
+    border-radius: 999px;
+    padding: 40px 48px 32px;
+    text-align: center;
   }
-  .values-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px; margin-top: 48px;
+  .values-intro .section-title {
+    color: #ffffff;
+    font-size: 1.9rem;
   }
-  .value-card {
-    background: #fff; border-radius: var(--radius); overflow: hidden;
-    border: 1px solid var(--border); position: relative;
-    transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+  .values-intro .section-sub {
+    color: rgba(255,255,255,0.75);
+    margin: 0 auto;
   }
-  .value-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-    border-color: var(--highlight);
+  .values-showcase {
+    display: grid; grid-template-columns: 1fr 560px;
+    gap: 40px; align-items: center; margin-top: 40px;
   }
-  .value-card-img {
-    width: 100%; height: 150px; object-fit: cover; display: block;
-    transition: transform 0.4s ease;
+
+  /* Right-hand image, no wrapper styling — kept exactly as-is */
+  .values-side-image {
+    width: 100%; height: auto; display: block;
   }
-  .value-card:hover .value-card-img { transform: scale(1.05); }
-  .value-card-body { padding: 24px 24px 28px; }
-  .value-card h3 {
-    font-family: 'Sora', sans-serif; font-size: 1.3rem; font-weight: 700;
-    color: var(--primary); margin-bottom: 10px;
+
+  /* Pill rows */
+  .values-list {
+    display: flex; flex-direction: column;
+    gap: 28px;
   }
-  .value-card p {
-    font-size: 0.97rem; line-height: 1.7; color: var(--muted);
+  .value-row {
+    position: relative;
+    display: flex; align-items: center; gap: 16px;
+    background: var(--primary);
+    border-radius: 999px;
+    padding: 11px 26px;
+  }
+  .value-row.reverse { flex-direction: row-reverse; text-align: right; }
+
+  .value-edge-icon {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary);
+    border: 2px solid #ffffff;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 2;
+  }
+  .value-edge-icon img { width: 16px; height: 16px; }
+  .value-row:not(.reverse) .value-edge-icon { right: -12px; }
+  .value-row.reverse .value-edge-icon { left: -12px; }
+
+  .value-number {
+    flex-shrink: 0; width: 62px; height: 62px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--highlight), var(--highlight2));
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; color: #fff;
+    box-shadow: 0 6px 16px rgba(16,185,129,0.35);
+    z-index: 1;
+  }
+  .value-number .value-number-digit {
+    font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.05rem; line-height: 1;
+  }
+  .value-number .value-number-label {
+    font-size: 0.44rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.02em; margin-top: 2px; opacity: 0.92; padding: 0 6px;
+  }
+
+  .value-text { flex: 1; min-width: 0; }
+  .value-text .value-eyebrow {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16);
+    padding: 2px 9px; border-radius: 999px;
+    font-size: 0.54rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em;
+    color: var(--highlight2); margin-bottom: 5px;
+  }
+  .value-eyebrow img { width: 9px; height: 9px; }
+  .value-row.reverse .value-eyebrow { flex-direction: row-reverse; }
+  .value-text p {
+    font-size: 0.78rem; line-height: 1.5; color: rgba(255,255,255,0.82);
   }
 
   /* 
@@ -630,8 +674,27 @@
       left: -10px;
     }
     
-    .values-grid {
+    .values-showcase {
       grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .values-showcase .values-side-image {
+      order: -1;
+      max-width: 480px; margin: 0 auto;
+    }
+    .value-row, .value-row.reverse {
+      flex-direction: column; text-align: center;
+      border-radius: var(--radius);
+      padding: 28px 18px 18px;
+      gap: 10px;
+    }
+    .value-row .value-eyebrow,
+    .value-row.reverse .value-eyebrow {
+      flex-direction: row;
+    }
+    .value-row:not(.reverse) .value-edge-icon,
+    .value-row.reverse .value-edge-icon {
+      left: 50%; right: auto; top: 0; transform: translate(-50%, -50%);
     }
     
     .team-grid {
@@ -658,7 +721,12 @@
 
   @media (max-width: 480px) {
     .nav-cta { padding: 7px 10px; font-size: 0.72rem !important; }
-    .values-intro { display: block; padding: 20px; }
+    .values-intro { padding: 28px 24px; }
+    .value-row, .value-row.reverse { padding: 24px 14px 14px; gap: 10px; }
+    .value-number { width: 52px; height: 52px; }
+    .value-number .value-number-digit { font-size: 0.9rem; }
+    .value-edge-icon { width: 30px; height: 30px; }
+    .value-edge-icon img { width: 13px; height: 13px; }
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -672,6 +740,11 @@
     
     .footer-grid {
       grid-template-columns: 1fr 1fr;
+    }
+
+    .values-showcase {
+      grid-template-columns: 1fr 340px;
+      gap: 28px;
     }
   }
   .logo img {
@@ -878,7 +951,7 @@
 </section>
 
 <!-- OUR STORY -->
-<section>
+<section class="story-bg">
   <div class="container">
     <p class="section-label reveal">Our Story</p>
     <h2 class="section-title reveal delay-1">Building the Future, One Line of Code at a Time</h2>
@@ -921,54 +994,82 @@
       <p class="section-sub reveal delay-2">Our core values shape every decision we make and every solution we deliver.</p>
     </div>
     
-    <div class="values-grid">
-      <div class="value-card reveal delay-1 hover-glow">
-        <img class="value-card-img" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80&fit=crop" alt="Excellence" />
-        <div class="value-card-body">
-          <h3>Excellence</h3>
-          <p>We don't just meet expectations — we exceed them. Every project is an opportunity to deliver exceptional quality and create lasting value for our clients.</p>
+    <div class="values-showcase">
+      <div class="values-list">
+        <div class="value-row reveal-left">
+          <div class="value-text">
+            <span class="value-eyebrow"><img src="https://api.iconify.design/lucide:sparkles.svg?color=%2334d399" alt="" loading="lazy" />Value 01</span>
+            <p>We don't just meet expectations — we exceed them. Every project is an opportunity to deliver exceptional quality and create lasting value for our clients.</p>
+          </div>
+          <div class="value-number">
+            <span class="value-number-digit">01</span>
+            <span class="value-number-label">Excellence</span>
+          </div>
+          <div class="value-edge-icon"><img src="https://api.iconify.design/lucide:trophy.svg?color=%2310b981" alt="Excellence" loading="lazy" /></div>
+        </div>
+
+        <div class="value-row reverse reveal-right">
+          <div class="value-text">
+            <span class="value-eyebrow"><img src="https://api.iconify.design/lucide:sparkles.svg?color=%2334d399" alt="" loading="lazy" />Value 02</span>
+            <p>We embrace emerging technologies and creative thinking to solve complex problems in ways that set our clients apart from their competition.</p>
+          </div>
+          <div class="value-number">
+            <span class="value-number-digit">02</span>
+            <span class="value-number-label">Innovation</span>
+          </div>
+          <div class="value-edge-icon"><img src="https://api.iconify.design/lucide:cpu.svg?color=%2310b981" alt="Innovation" loading="lazy" /></div>
+        </div>
+
+        <div class="value-row reveal-left">
+          <div class="value-text">
+            <span class="value-eyebrow"><img src="https://api.iconify.design/lucide:sparkles.svg?color=%2334d399" alt="" loading="lazy" />Value 03</span>
+            <p>Your success is our success. We build long-term relationships based on trust, transparency, and mutual growth.</p>
+          </div>
+          <div class="value-number">
+            <span class="value-number-digit">03</span>
+            <span class="value-number-label">Partnership</span>
+          </div>
+          <div class="value-edge-icon"><img src="https://api.iconify.design/lucide:handshake.svg?color=%2310b981" alt="Partnership" loading="lazy" /></div>
+        </div>
+
+        <div class="value-row reverse reveal-right">
+          <div class="value-text">
+            <span class="value-eyebrow"><img src="https://api.iconify.design/lucide:sparkles.svg?color=%2334d399" alt="" loading="lazy" />Value 04</span>
+            <p>In a rapidly changing digital landscape, we stay nimble and responsive, adapting quickly to new challenges and opportunities.</p>
+          </div>
+          <div class="value-number">
+            <span class="value-number-digit">04</span>
+            <span class="value-number-label">Agility</span>
+          </div>
+          <div class="value-edge-icon"><img src="https://api.iconify.design/lucide:zap.svg?color=%2310b981" alt="Agility" loading="lazy" /></div>
+        </div>
+
+        <div class="value-row reveal-left">
+          <div class="value-text">
+            <span class="value-eyebrow"><img src="https://api.iconify.design/lucide:sparkles.svg?color=%2334d399" alt="" loading="lazy" />Value 05</span>
+            <p>Technology never stands still, and neither do we. We invest in our team's growth and stay at the forefront of industry trends.</p>
+          </div>
+          <div class="value-number">
+            <span class="value-number-digit">05</span>
+            <span class="value-number-label">Learning</span>
+          </div>
+          <div class="value-edge-icon"><img src="https://api.iconify.design/lucide:graduation-cap.svg?color=%2310b981" alt="Continuous Learning" loading="lazy" /></div>
+        </div>
+
+        <div class="value-row reverse reveal-right">
+          <div class="value-text">
+            <span class="value-eyebrow"><img src="https://api.iconify.design/lucide:sparkles.svg?color=%2334d399" alt="" loading="lazy" />Value 06</span>
+            <p>We measure our success by the tangible difference we make in our clients' businesses and the communities we serve.</p>
+          </div>
+          <div class="value-number">
+            <span class="value-number-digit">06</span>
+            <span class="value-number-label">Impact</span>
+          </div>
+          <div class="value-edge-icon"><img src="https://api.iconify.design/lucide:target.svg?color=%2310b981" alt="Impact" loading="lazy" /></div>
         </div>
       </div>
-      
-      <div class="value-card reveal delay-2 hover-glow">
-        <img class="value-card-img" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80&fit=crop" alt="Innovation" />
-        <div class="value-card-body">
-          <h3>Innovation</h3>
-          <p>We embrace emerging technologies and creative thinking to solve complex problems in ways that set our clients apart from their competition.</p>
-        </div>
-      </div>
-      
-      <div class="value-card reveal delay-3 hover-glow">
-        <img class="value-card-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&fit=crop" alt="Partnership" />
-        <div class="value-card-body">
-          <h3>Partnership</h3>
-          <p>Your success is our success. We build long-term relationships based on trust, transparency, and mutual growth.</p>
-        </div>
-      </div>
-      
-      <div class="value-card reveal delay-4 hover-glow">
-        <img class="value-card-img" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&fit=crop" alt="Agility" />
-        <div class="value-card-body">
-          <h3>Agility</h3>
-          <p>In a rapidly changing digital landscape, we stay nimble and responsive, adapting quickly to new challenges and opportunities.</p>
-        </div>
-      </div>
-      
-      <div class="value-card reveal delay-5 hover-glow">
-        <img class="value-card-img" src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80&fit=crop" alt="Continuous Learning" />
-        <div class="value-card-body">
-          <h3>Continuous Learning</h3>
-          <p>Technology never stands still, and neither do we. We invest in our team's growth and stay at the forefront of industry trends.</p>
-        </div>
-      </div>
-      
-      <div class="value-card reveal delay-6 hover-glow">
-        <img class="value-card-img" src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80&fit=crop" alt="Impact" />
-        <div class="value-card-body">
-          <h3>Impact</h3>
-          <p>We measure our success by the tangible difference we make in our clients' businesses and the communities we serve.</p>
-        </div>
-      </div>
+
+      <img class="values-side-image reveal-scale" src="section.jpg" alt="Serina Systems team at work" loading="lazy" />
     </div>
   </div>
 </section>
