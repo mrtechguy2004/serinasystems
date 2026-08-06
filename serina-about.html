@@ -372,77 +372,56 @@
   }
 
   /* 
-     TEAM SECTION — FOUNDER LAYOUT
+     TEAM SECTION — FOUNDER LAYOUT (about1 concept)
    */
   .founder-layout {
-    display: grid; grid-template-columns: 420px 1fr;
+    display: grid; grid-template-columns: 1.15fr 1fr;
     gap: 64px; align-items: center; margin-top: 48px;
   }
-  .founder-image-col {
-    display: flex; flex-direction: column; align-items: center; text-align: center;
+  .founder-image-col img {
+    width: 100%; height: auto; border-radius: 6px; display: block;
   }
-  .founder-photo img {
-    width: 100%; max-width: 420px; height: auto; max-height: 560px;
-    object-fit: cover; object-position: center top;
-    border-radius: 10%;
-    display: block;
-    border: 5px solid var(--border);
-    box-shadow: 0 16px 48px rgba(4,119,190,0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 20px;
+  .founder-eyebrow {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--accent); font-weight: 700; font-size: 0.78rem;
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px;
   }
-  .founder-photo img:hover {
-    transform: scale(1.04);
-    box-shadow: 0 20px 56px rgba(144, 152, 157, 0.35);
+  .founder-eyebrow img { width: 18px; height: 18px; }
+  .founder-headline {
+    font-family: 'Sora', sans-serif; font-size: 1.9rem; font-weight: 800;
+    color: var(--primary); line-height: 1.2; margin-bottom: 22px;
+    letter-spacing: -0.02em;
   }
   .founder-name {
-    font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 800;
-    color: var(--primary); margin-bottom: 6px;
+    font-weight: 700; color: var(--primary); margin-bottom: 4px; font-size: 1.05rem;
   }
   .founder-title {
-    font-size: 0.95rem; color: var(--accent); font-weight: 600;
-    letter-spacing: 0.01em;
-  }
-  .founder-text-col {
-    display: flex; flex-direction: column; gap: 0;
-  }
-  .founder-meet {
-    font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);
-    margin-bottom: 12px;
-  }
-  .founder-headline {
-    font-family: 'Sora', sans-serif; font-size: 2rem; font-weight: 800;
-    color: var(--primary); line-height: 1.2; margin-bottom: 20px;
-    letter-spacing: -0.02em;
+    color: var(--accent); font-weight: 600; font-size: 0.8rem;
+    text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 22px;
   }
   .founder-bio p {
     font-size: 1.05rem; line-height: 1.8; color: var(--muted); margin-bottom: 16px;
   }
   .founder-bio p:last-child { margin-bottom: 0; }
   .founder-socials {
-    display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap;
+    display: flex; gap: 14px; margin-top: 26px; flex-wrap: wrap;
   }
   .social-icon {
     width: 44px; height: 44px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    background: var(--bg2); border: 1.5px solid var(--border);
+    background: transparent; border: 1px solid var(--border);
     color: var(--primary); font-size: 1.1rem;
-    transition: all 0.25s ease; text-decoration: none;
+    transition: all 0.2s ease; text-decoration: none;
   }
+  .social-icon svg { width: 19px; height: 19px; }
   .social-icon:hover {
-    background: var(--accent); border-color: var(--highlight);
-    color: #fff; transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(4,119,190,0.35);
+    background: var(--accent); border-color: var(--accent);
+    color: #fff;
   }
   @media (max-width: 768px) {
     .founder-layout {
-      grid-template-columns: 1fr; gap: 50px; text-align: center;
+      grid-template-columns: 1fr; gap: 40px;
     }
-    .founder-photo img {
-      max-width: 320px; max-height: 400px;
-    }
-    .founder-socials { justify-content: center; }
   }
 
   /* 
@@ -1082,17 +1061,20 @@
     <p class="section-sub reveal delay-2">Our diverse team of experts brings together decades of combined experience in software development, design, and digital strategy.</p>
     
     <div class="founder-layout">
-      <!-- LEFT: Photo + Name + Title -->
+      <!-- LEFT: Plain founder photo -->
       <div class="founder-image-col reveal-left">
-        <div class="founder-photo"><img src="founder1.webp" alt="Fidel Ouma - Founder & CEO of Serina Systems"></div>
-        <div class="founder-name">Fidel Ouma</div>
-        <div class="founder-title">Founder &amp;  CEO, Serina Systems</div>
+        <img src="founder1.webp" alt="Fidel Ouma - Founder & CEO of Serina Systems">
       </div>
 
-      <!-- RIGHT: Bio text + Social Icons -->
+      <!-- RIGHT: Eyebrow + headline + name/title + bio + socials -->
       <div class="founder-text-col reveal-right">
-        <p class="founder-meet">Meet our Founder and Lead Head</p>
-        <h3 class="founder-headline">A Visionary Rooted in Purpose, <br>Driven by Impact</h3>
+        <div class="founder-eyebrow">
+          <img src="https://api.iconify.design/lucide:star.svg?color=%230477be" alt="" loading="lazy" />
+          Meet Our Founder
+        </div>
+        <h3 class="founder-headline">A Visionary Rooted in Purpose, Driven by Impact</h3>
+        <p class="founder-name">Fidel Ouma</p>
+        <p class="founder-title">Founder &amp; CEO, Serina Systems</p>
         <div class="founder-bio">
           <p>Fidel Ouma is a passionate technologist and entrepreneur who built Serina Systems on a bold dream — to make world-class digital solutions accessible to businesses across Africa and beyond. Growing up witnessing the gap between innovation and opportunity in the continent, Fidel was determined to bridge it.</p>
           <p>With a background spanning software engineering, product strategy, and business development, Fidel has steered Serina Systems from a lean startup in Nakuru to a full-service digital transformation partner serving clients across multiple regions. His leadership philosophy centres on excellence, empathy, and the relentless belief that African ingenuity can compete on the global stage.</p>
