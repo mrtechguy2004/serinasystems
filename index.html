@@ -782,7 +782,24 @@
   }
 
   /* SERVICES */
-  .services-bg { background: var(--bg2); }
+  .services-bg {
+    background-color: var(--bg2);
+    background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1600&q=80&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .services-bg .container { position: relative; z-index: 1; }
+  .services-intro {
+    display: inline-block;
+    max-width: 640px;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+  }
   .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 52px; }
   .service-card {
     background: #fff; border-radius: var(--radius);
@@ -1167,7 +1184,24 @@
   .chip:hover { background: rgba(16,185,129,0.1); color: var(--highlight); border-color: rgba(16,185,129,0.3); }
 
   /* TECH STACK */
-  .stack-bg { background: var(--bg2); }
+  .stack-bg {
+    background-color: var(--bg2);
+    background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .stack-bg .container { position: relative; z-index: 1; }
+  .stack-intro {
+    display: inline-block;
+    max-width: 640px;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+  }
   .stack-grid { display: grid; grid-template-columns: repeat(7,1fr); gap: 20px; margin-top: 52px; }
   .stack-item {
     background: #fff; border-radius: var(--radius);
@@ -1227,6 +1261,8 @@
     .dash-projects { grid-template-columns: 1fr; }
     .trust-divider { display: none; }
     .hero-trust { flex-direction: column; gap: 8px; }
+    .services-intro { display: block; padding: 20px; }
+    .stack-intro { display: block; padding: 20px; }
   }
   .logo img {
   height: 60px;       /* Adjust height to fit your navbar */
@@ -1521,9 +1557,11 @@
 <!-- SERVICES -->
 <section class="services-bg" id="services">
   <div class="container">
-    <p class="section-label reveal">What We Do</p>
-    <h2 class="section-title reveal delay-1">Your Imagination, Our Execution</h2>
-    <p class="section-sub reveal delay-2"><iconify-icon icon="mdi:lightning-bolt" style="color:#0477be;font-size:1.1rem;vertical-align:middle;margin-right:6px;"></iconify-icon>We deliver end-to-end technology solutions tailored to your business needs.</p>
+    <div class="services-intro">
+      <p class="section-label reveal">What We Do</p>
+      <h2 class="section-title reveal delay-1">Your Imagination, Our Execution</h2>
+      <p class="section-sub reveal delay-2"><iconify-icon icon="mdi:lightning-bolt" style="color:#0477be;font-size:1.1rem;vertical-align:middle;margin-right:6px;"></iconify-icon>We deliver end-to-end technology solutions tailored to your business needs.</p>
+    </div>
     <div class="services-grid">
       <div class="service-card hover-glow reveal delay-1">
         <div class="service-icon"><img src="https://static-site.tinymdm.net/images/2025/11/12145526/android-vs-ios.png" alt="Mobile Applications Development"></div>
@@ -1925,8 +1963,10 @@
 <!-- TECH STACK -->
 <section class="stack-bg">
   <div class="container">
-    <p class="section-label reveal">Our Tech Stack</p>
-    <h2 class="section-title reveal delay-1">Powered by Modern Technologies</h2>
+    <div class="stack-intro">
+      <p class="section-label reveal">Our Tech Stack</p>
+      <h2 class="section-title reveal delay-1">Powered by Modern Technologies</h2>
+    </div>
     <div class="stack-grid">
       <div class="stack-item reveal delay-1"><div class="stack-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" style="width:48px;height:48px;object-fit:contain;"></div><div class="stack-name">Spring Boot</div></div>
       <div class="stack-item reveal delay-2"><div class="stack-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" style="width:48px;height:48px;object-fit:contain;"></div><div class="stack-name">React</div></div>
