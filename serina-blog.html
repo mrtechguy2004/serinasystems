@@ -1081,9 +1081,9 @@
       </article>
 
       <!-- Blog Card 4 -->
-      <article class="blog-card reveal-scale delay-4 hover-glow" data-id="4" data-title="Flutter vs React Native: Which is Right for Your Project?" data-excerpt="A comprehensive comparison of two leading cross-platform frameworks to help you make an informed decision for your next mobile app." data-tag="Mobile Apps" data-author="Fidel Ouma" onclick="openArticle(4)">
+      <article class="blog-card reveal-scale delay-4 hover-glow" data-id="4" data-title="Choosing the Right Language for Mobile App Development: Native vs. Cross-Platform" data-excerpt="Weighing Swift and Kotlin against Flutter and React Native? Here's how to decide between native and cross-platform development for your next mobile app." data-tag="Mobile Apps" data-author="Fidel Ouma" onclick="openArticle(4)">
         <div class="blog-image" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
-          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&q=80" alt="Flutter React Native Mobile Apps" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&q=80" alt="Native vs Cross-Platform Mobile Development" loading="lazy">
           <span class="blog-tag">Mobile Apps</span>
         </div>
         <div class="blog-body">
@@ -1091,13 +1091,13 @@
             <span><iconify-icon icon="mdi:calendar" style="vertical-align:middle;font-size:0.95rem;margin-right:4px;opacity:0.7;color:#64748b;"></iconify-icon> Apr 8, 2026</span>
             <span><iconify-icon icon="mdi:clock-outline" style="vertical-align:middle;font-size:0.95rem;margin-right:4px;opacity:0.7;color:#64748b;"></iconify-icon> 7 min read</span>
           </div>
-          <h3 class="blog-title">Flutter vs React Native: Which is Right for Your Project?</h3>
-          <p class="blog-excerpt">A comprehensive comparison of two leading cross-platform frameworks to help you make an informed decision for your next mobile app.</p>
+          <h3 class="blog-title">Choosing the Right Language for Mobile App Development: Native vs. Cross-Platform</h3>
+          <p class="blog-excerpt">Weighing Swift and Kotlin against Flutter and React Native? Here's how to decide between native and cross-platform development for your next mobile app.</p>
           <div class="blog-author">
             <div class="author-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">FO</div>
             <div class="author-info">
               <h4>Fidel Ouma</h4>
-              <p>Senior Developer</p>
+              <p>Founder &amp; CEO</p>
             </div>
           </div>
           <span class="read-more-link">Read Article <img src="https://cdn-icons-png.flaticon.com/512/724/724954.png" style="width:13px;height:13px;object-fit:contain;"></span>
@@ -1629,60 +1629,91 @@ interpreter.run(input, output);</code></pre>
   },
   4: {
     tag: 'Mobile Apps',
-    title: 'Flutter vs React Native: Which is Right for Your Project?',
+    title: 'Choosing the Right Language for Mobile App Development: Native vs. Cross-Platform',
     date: 'April 8, 2026',
     readTime: '7 min read',
     author: 'Fidel Ouma',
-    role: 'Senior Developer',
+    role: 'Founder & CEO',
     avatar: 'FO',
     avatarBg: 'linear-gradient(135deg, #f59e0b, #d97706)',
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&q=80',
     content: `
-      <p>If you're building a cross-platform mobile app in 2026, two frameworks dominate the conversation: <strong>Flutter</strong> and <strong>React Native</strong>. Both are mature, well-supported, and capable of producing exceptional apps. But they make different trade-offs, and choosing the wrong one for your project can cost you months of pain down the line.</p>
+      <p>If you're planning a mobile app for your business, one of the first — and most consequential — decisions you'll make isn't about design or features. It's about how the app gets built. Do you go native, writing separate codebases for iOS and Android? Or do you go cross-platform, using a single codebase that runs on both?</p>
+      <p>At Serina Systems, this is one of the questions clients ask us most often, and the honest answer is: it depends on your goals, budget, and timeline. Here's a breakdown to help you make an informed choice.</p>
 
-      <h2>A Quick Overview</h2>
-      <p><strong>Flutter</strong> (by Google) uses the Dart language and renders its own UI components using the Skia/Impeller graphics engine. This means it doesn't rely on native UI components at all — it draws everything itself, pixel by pixel.</p>
-      <p><strong>React Native</strong> (by Meta) uses JavaScript/TypeScript and React, bridging to native UI components on each platform. If you already know React, the learning curve is minimal.</p>
-
-      <h2>Performance</h2>
-      <p>Flutter generally has the edge here. Because it renders its own UI rather than bridging to native components, there's no JavaScript bridge overhead. Complex animations and transitions tend to be smoother. Flutter apps consistently hit 60fps (and 120fps on supported hardware) even with rich UIs.</p>
-      <p>React Native has improved dramatically with the new <strong>Fabric</strong> renderer and <strong>JSI</strong> (JavaScript Interface) in recent versions, significantly reducing bridge overhead. For most app categories, the performance difference is no longer perceptible to users. But for highly animated, graphics-intensive applications, Flutter still wins.</p>
-
-      <h2>Developer Experience</h2>
-      <p>This is where React Native often wins, especially for teams coming from a web background:</p>
+      <h2>What "Native" Actually Means</h2>
+      <p>Native development means building an app specifically for one operating system, using the language and tools that platform was designed around:</p>
       <ul>
-        <li>JavaScript/TypeScript is familiar to a much larger pool of developers</li>
-        <li>You can share business logic and some components with your web app</li>
-        <li>The npm ecosystem is vast and well-known</li>
+        <li><strong>iOS</strong> — built with Swift (or older Objective-C) in Xcode</li>
+        <li><strong>Android</strong> — built with Kotlin (or older Java) in Android Studio</li>
       </ul>
-      <p>Flutter requires learning Dart, which is a small barrier. However, Dart is a genuinely pleasant language — clean, strongly typed, and fast to compile. Most developers find they're productive in Dart within a week or two.</p>
+      <p>Each platform gets its own dedicated codebase, tailored to its own design guidelines, APIs, and hardware capabilities.</p>
+
+      <h3>Advantages of Native Development</h3>
+      <ul>
+        <li><strong>Best possible performance.</strong> Native apps talk directly to the device's operating system and hardware, with no translation layer in between. For graphics-heavy apps, games, or anything doing intensive processing, this matters.</li>
+        <li><strong>Full access to platform features.</strong> New OS features, sensors, and APIs are available to native apps immediately — cross-platform tools often lag behind while they catch up.</li>
+        <li><strong>Platform-authentic look and feel.</strong> Native apps naturally follow each platform's design language (Human Interface Guidelines on iOS, Material Design on Android), which tends to feel more polished to users.</li>
+        <li><strong>Fewer compatibility surprises.</strong> You're not relying on a third-party framework to correctly translate your code for two very different operating systems.</li>
+      </ul>
+
+      <h3>Disadvantages of Native Development</h3>
+      <ul>
+        <li><strong>Two codebases, two teams (or double the work).</strong> You're essentially building two separate apps that happen to do the same thing — which usually means double the development time and cost.</li>
+        <li><strong>Slower to market.</strong> Maintaining feature parity across two codebases takes longer, especially for small teams.</li>
+        <li><strong>Higher long-term maintenance cost.</strong> Every new feature or bug fix has to be built and tested twice.</li>
+      </ul>
+
+      <h2>What "Cross-Platform" Actually Means</h2>
+      <p>Cross-platform development uses a single codebase, written in one language, that gets compiled or interpreted to run on both iOS and Android. The most common frameworks today are:</p>
+      <ul>
+        <li><strong>Flutter</strong> (Dart) — Google's framework, known for smooth performance and a large widget library</li>
+        <li><strong>React Native</strong> (JavaScript/TypeScript) — Meta's framework, popular for its huge ecosystem and reuse of web development skills</li>
+        <li><strong>.NET MAUI / Xamarin</strong> (C#) — Microsoft's option, common in enterprise environments</li>
+      </ul>
+
+      <blockquote>"The right framework isn't the trendiest one — it's the one that matches your team's skills, your timeline, and what the app actually needs to do." — Fidel Ouma, Serina Systems</blockquote>
+
+      <h3>Advantages of Cross-Platform Development</h3>
+      <ul>
+        <li><strong>One codebase, both platforms.</strong> This is the headline benefit — write the logic once, ship it everywhere, and cut development time significantly.</li>
+        <li><strong>Lower cost.</strong> Fewer developer-hours generally means a smaller budget, which matters a lot for startups and small businesses testing an idea.</li>
+        <li><strong>Faster iteration.</strong> Bug fixes and new features go out to both platforms at once, rather than being built and tested twice.</li>
+        <li><strong>Easier to staff.</strong> It's often simpler to find developers skilled in JavaScript or Dart than to find and manage two separate native specialists.</li>
+      </ul>
+
+      <h3>Disadvantages of Cross-Platform Development</h3>
+      <ul>
+        <li><strong>Performance trade-offs.</strong> Most cross-platform apps run through an abstraction layer, which can introduce slight lag for animation-heavy or resource-intensive apps — though tools like Flutter have narrowed this gap significantly.</li>
+        <li><strong>Delayed access to new OS features.</strong> When Apple or Google release a new capability, cross-platform frameworks need time to add support for it.</li>
+        <li><strong>Occasional platform inconsistencies.</strong> Getting an app to feel truly native on both iOS and Android sometimes requires extra custom work, which can eat into the time savings.</li>
+        <li><strong>Framework dependency risk.</strong> You're tying your app's future to the framework's own roadmap, community, and long-term support.</li>
+      </ul>
 
       <div class="callout">
         <img src="https://cdn-icons-png.flaticon.com/512/1828/1828665.png" alt="Tip">
-        <span class="callout-text"><strong>Our Recommendation:</strong> If your team already knows React, choose React Native. If you're starting fresh or need pixel-perfect custom UI, choose Flutter. Both are excellent choices in 2026.</span>
+        <span class="callout-text"><strong>Our Take:</strong> For most small and medium businesses we work with — retail shops, hospitality venues, service providers — cross-platform frameworks like Flutter offer the best balance of cost, speed, and quality.</span>
       </div>
 
-      <h2>UI Fidelity and Customisation</h2>
-      <p>Flutter is unmatched for pixel-perfect custom UIs. Because it owns the entire rendering pipeline, you can build any design — no matter how unconventional — with complete consistency across iOS and Android. There are no platform-specific quirks to work around.</p>
-      <p>React Native defers to native UI components by default, which means your app automatically respects each platform's design language (Material Design on Android, Human Interface Guidelines on iOS). This is a strength for apps where "feeling native" matters, but a constraint when you need precise custom designs.</p>
-
-      <h2>Ecosystem and Community</h2>
-      <p>Both ecosystems are large and healthy. Flutter has grown rapidly and now has over 45,000 packages on pub.dev. React Native benefits from the massive npm ecosystem and the React community, though not all npm packages are compatible with React Native.</p>
-      <p>For production support and long-term maintenance, both Google (Flutter) and Meta (React Native) have demonstrated sustained commitment to their frameworks.</p>
-
-      <h2>Decision Framework</h2>
-      <p>Use this simple decision tree:</p>
+      <h2>So, Which Should You Choose?</h2>
+      <p>There's no universally correct answer, but a few questions can point you in the right direction.</p>
+      <p><strong>Choose native if:</strong></p>
       <ul>
-        <li>Team knows React well → <strong>React Native</strong></li>
-        <li>Need pixel-perfect custom design → <strong>Flutter</strong></li>
-        <li>Sharing code with a web app is important → <strong>React Native</strong></li>
-        <li>Complex animations and games → <strong>Flutter</strong></li>
-        <li>Want "feels native" platform UI → <strong>React Native</strong></li>
-        <li>Starting fresh with no framework preference → <strong>Flutter</strong> (slight edge)</li>
+        <li>Performance is critical (games, AR/VR, heavy media processing)</li>
+        <li>Your app depends on cutting-edge or platform-specific hardware features</li>
+        <li>You have the budget and timeline to support two codebases</li>
+        <li>You're building for one platform only, at least initially</li>
+      </ul>
+      <p><strong>Choose cross-platform if:</strong></p>
+      <ul>
+        <li>You need to launch on both iOS and Android quickly</li>
+        <li>Budget and team size are limited</li>
+        <li>Your app is primarily content-, form-, or business-logic-driven rather than performance-intensive</li>
+        <li>You want a single team to maintain the whole product going forward</li>
       </ul>
 
       <hr class="article-divider">
-      <p>At Serina Systems, we build with both. We default to Flutter for greenfield projects where design fidelity is paramount, and React Native when clients have existing React/JavaScript teams. The most important thing is to make a deliberate choice based on your specific context — and then commit to it.</p>
+      <p>The right call ultimately comes down to what your app needs to do, who it needs to reach, and how fast you need it in users' hands. Native development earns its extra cost when an app's success genuinely depends on squeezing out every bit of performance or leaning heavily on platform-specific capabilities from day one — otherwise, cross-platform usually gets you a genuinely good product faster and for less. If you're weighing this decision for your own project, the Serina Systems team is happy to walk through the specifics with you.</p>
     `
   },
   5: {
