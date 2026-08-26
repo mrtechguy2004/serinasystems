@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="google-site-verification" content="z0quCiA23GtKzPwewS-vnprINSQp_exawvOk28ehvKA" />
+<meta name="description" content="Meet Fidel Ouma, Founder and CEO of Serina Systems - a software development and digital marketing company based in Nakuru, Kenya. Learn about his journey, philosophy, and vision." />
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About the Founder | Fidel Ouma, CEO of Serina Systems | Nakuru Kenya</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  
+  :root {
+    --primary: #0a2540;
+    --accent: #0477be;
+    --accent2: #635bff;
+    --highlight: #10b981;
+    --highlight2: #34d399;
+    --glow-green: 0 0 30px rgba(16, 185, 129, 0.4);
+    --text: #1a1a2e;
+    --muted: #64748b;
+    --bg: #ffffff;
+    --bg2: #f8fafc;
+    --border: #e2e8f0;
+    --radius: 12px;
+    --glow: 0 0 30px rgba(6, 69, 215, 0.89);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); overflow-x: hidden; width: 100%; padding-top: 68px; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; }
+
+  /*
+     SCROLL PROGRESS BAR
+   */
+  #scroll-progress {
+    position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    width: 0%; transition: width 0.1s linear;
+    box-shadow: 0 0 10px rgba(0,194,168,0.6);
+  }
+
+  /* 
+     PAGE LOAD FADE OVERLAY */
+  .loader-logo {
+    font-family: 'Sora', sans-serif;
+    font-size: 2rem; font-weight: 800; color: #fff;
+    letter-spacing: -0.03em;
+    animation: loaderPulse 1s ease infinite alternate;
+  }
+  .loader-logo span { color: var(--accent); }
+  @keyframes loaderPulse {
+    from { opacity: 0.5; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1.02); }
+  }
+
+  /* 
+     SCROLL REVEAL ANIMATION */
+  .reveal {
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+  .reveal-scale { opacity: 0; transform: scale(0.88); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+  /* stagger delays */
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.2s; }
+  .delay-3 { transition-delay: 0.3s; }
+  .delay-4 { transition-delay: 0.4s; }
+  .delay-5 { transition-delay: 0.5s; }
+  .delay-6 { transition-delay: 0.6s; }
+
+  /* 
+     FLOATING UI */
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+  @keyframes floatRotate {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(3deg); }
+  }
+  .float-1 { animation: floatY 5s ease-in-out infinite; }
+  .float-2 { animation: floatY 6.5s ease-in-out infinite 1s; }
+  .float-3 { animation: floatRotate 7s ease-in-out infinite 0.5s; }
+
+  /* 
+     HOVER GLOW
+   */
+  .hover-glow {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .hover-glow:hover {
+    box-shadow: var(--glow);
+    transform: translateY(-4px);
+  }
+
+  /* TOP BAR */
+  .topbar {
+    background: var(--primary); color: #fff;
+    font-size: 0.78rem; padding: 8px 0;
+    text-align: center; letter-spacing: 0.01em;
+  }
+  .topbar a { color: var(--highlight); margin: 0 8px; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 100;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%; display: flex; align-items: center; justify-content: space-between;
+    height: 68px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
+  .logo { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.45rem; color: var(--primary); letter-spacing: -0.03em; }
+  .logo span { color: var(--highlight); }
+  .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--primary); transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--highlight); }
+  .nav-cta {
+    background: var(--highlight); color: #fff !important;
+    padding: 10px 22px; border-radius: 8px;
+    font-weight: 600 !important; font-size: 0.875rem !important;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.3s !important;
+  }
+  .nav-cta:hover { background: #059669 !important; transform: translateY(-1px) !important; box-shadow: 0 0 20px rgba(16,185,129,0.4) !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--primary); border-radius: 2px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-nav {
+    display: none; position: fixed; top: 68px; left: 0; right: 0;
+    background: #fff; border-bottom: 1px solid var(--border);
+    padding: 20px 5%; flex-direction: column; gap: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1); z-index: 99;
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { font-size: 1rem; font-weight: 500; color: var(--primary); padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .mobile-nav a:last-child { border-bottom: none; }
+
+  /* 
+     HERO SECTION
+   */
+  .about-hero {
+    position: relative; padding: 120px 5% 80px;
+    background-image: url('https://images.unsplash.com/photo-1510519138101-570d1dca3d66?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGFyayUyMG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  .about-hero::after {
+    content: none;
+  }
+  .about-hero::before {
+    content: ''; position: absolute; top: -50%; right: -20%;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(4,119,190,0.15), transparent);
+    animation: floatY 8s ease-in-out infinite;
+    z-index: 2;
+  }
+  .about-hero-content {
+    position: relative; z-index: 3; max-width: 900px; margin: 0 auto;
+    text-align: center; color: #fff;
+  }
+  .about-hero h1 {
+    font-family: 'Sora', sans-serif; font-size: 3.5rem; font-weight: 800;
+    line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.02em;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.65), 0 1px 4px rgba(0,0,0,0.5);
+  }
+  .about-hero h1 span { color: var(--highlight); }
+  .about-hero p {
+    font-size: 1.25rem; line-height: 1.7; color: rgba(255,255,255,0.9);
+    max-width: 700px; margin: 0 auto 40px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5);
+  }
+  .stats-row {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px; max-width: 800px; margin: 60px auto 0;
+  }
+  .stat-item {
+    text-align: center;
+  }
+  .stat-number {
+    font-family: 'Sora', sans-serif; font-size: 3rem; font-weight: 800;
+    color: var(--highlight); display: block; margin-bottom: 8px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  }
+  .stat-label {
+    font-size: 0.95rem; color: rgba(255,255,255,0.8); font-weight: 500;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+  }
+
+  /* 
+     CONTAINER & SECTIONS
+  */
+  .container {
+    max-width: 1200px; margin: 0 auto; padding: 0 5%;
+  }
+  section { padding: 100px 5%; }
+  .section-label {
+    font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--highlight); margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 800;
+    line-height: 1.2; color: var(--primary); margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .section-sub {
+    font-size: 1.15rem; line-height: 1.7; color: var(--muted);
+    max-width: 700px; margin-bottom: 48px;
+  }
+
+  /* 
+     STORY SECTION
+  */
+  .story-bg {
+    background: #e8edf4;
+  }
+  .story-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+    align-items: center; margin-top: 40px;
+  }
+  .story-content h3 {
+    font-family: 'Sora', sans-serif; font-size: 1.8rem; font-weight: 700;
+    color: var(--primary); margin-bottom: 20px;
+  }
+  .story-content p {
+    font-size: 1.05rem; line-height: 1.8; color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .story-image {
+    position: relative; border-radius: var(--radius);
+    overflow: hidden; aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--highlight), var(--highlight2));
+  }
+  .story-image img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+
+  /* Overlay image container */
+  .story-images-col {
+    position: relative;
+    padding-top: 50px; 
+    padding-left: 30px;
+  }
+
+  /* Smaller image — overlays on top of the big image */
+  .story-image-small {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    width: 55%;
+    aspect-ratio: 4/3;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 4px solid #ffffff;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+    animation: tiltSwing 6s ease-in-out infinite;
+  }
+  .story-image-small img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+
+  @keyframes tiltSwing {
+    0%, 100% { transform: rotate(-1.5deg) scale(1);   box-shadow: 0 16px 48px rgba(0,0,0,0.35); }
+    25%       { transform: rotate(1.5deg)  scale(1.02); box-shadow: 0 22px 56px rgba(99,91,255,0.4); }
+    50%       { transform: rotate(-1deg)   scale(1.01); box-shadow: 0 16px 48px rgba(0,0,0,0.35); }
+    75%       { transform: rotate(1deg)    scale(1.02); box-shadow: 0 22px 56px rgba(99,91,255,0.4); }
+  }
+
+  /* 
+     VALUES SECTION
+   */
+  .values-bg {
+    background-color: #ffffff;
+    position: relative;
+  }
+  .values-bg .container { position: relative; z-index: 1; }
+  .values-intro {
+    max-width: 720px;
+    margin: 0 auto 8px;
+    background: var(--primary);
+    border-radius: 999px;
+    padding: 40px 48px 32px;
+    text-align: center;
+  }
+  .values-intro .section-title {
+    color: #ffffff;
+    font-size: 1.9rem;
+  }
+  .values-intro .section-sub {
+    color: rgba(255,255,255,0.75);
+    margin: 0 auto;
+  }
+  .values-showcase {
+    display: grid; grid-template-columns: 1fr 560px;
+    gap: 40px; align-items: center; margin-top: 40px;
+  }
+
+  /* Right-hand image, no wrapper styling — kept exactly as-is */
+  .values-side-image {
+    width: 100%; height: auto; display: block;
+  }
+
+  /* Pill rows */
+  .values-list {
+    display: flex; flex-direction: column;
+    gap: 28px;
+  }
+  .value-row {
+    position: relative;
+    display: flex; align-items: center; gap: 16px;
+    background: var(--primary);
+    border-radius: 999px;
+    padding: 11px 26px;
+  }
+  .value-row.reverse { flex-direction: row-reverse; text-align: right; }
+
+  .value-edge-icon {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary);
+    border: 2px solid #ffffff;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 2;
+  }
+  .value-edge-icon img { width: 16px; height: 16px; }
+  .value-row:not(.reverse) .value-edge-icon { right: -12px; }
+  .value-row.reverse .value-edge-icon { left: -12px; }
+
+  .value-number {
+    flex-shrink: 0; width: 62px; height: 62px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--highlight), var(--highlight2));
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; color: #fff;
+    box-shadow: 0 6px 16px rgba(16,185,129,0.35);
+    z-index: 1;
+  }
+  .value-number .value-number-digit {
+    font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.05rem; line-height: 1;
+  }
+  .value-number .value-number-label {
+    font-size: 0.44rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.02em; margin-top: 2px; opacity: 0.92; padding: 0 6px;
+  }
+
+  .value-text { flex: 1; min-width: 0; }
+  .value-text .value-eyebrow {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16);
+    padding: 2px 9px; border-radius: 999px;
+    font-size: 0.54rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em;
+    color: var(--highlight2); margin-bottom: 5px;
+  }
+  .value-eyebrow img { width: 9px; height: 9px; }
+  .value-row.reverse .value-eyebrow { flex-direction: row-reverse; }
+  .value-text p {
+    font-size: 0.78rem; line-height: 1.5; color: rgba(255,255,255,0.82);
+  }
+
+  /* 
+     TEAM SECTION — FOUNDER LAYOUT (about1 concept)
+   */
+  .founder-layout {
+    display: grid; grid-template-columns: 1.15fr 1fr;
+    gap: 64px; align-items: center; margin-top: 48px;
+  }
+  .founder-image-col img {
+    width: 100%; height: auto; border-radius: 6px; display: block;
+  }
+  .founder-eyebrow {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--accent); font-weight: 700; font-size: 0.78rem;
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px;
+  }
+  .founder-eyebrow img { width: 18px; height: 18px; }
+  .founder-headline {
+    font-family: 'Sora', sans-serif; font-size: 1.9rem; font-weight: 800;
+    color: var(--primary); line-height: 1.2; margin-bottom: 22px;
+    letter-spacing: -0.02em;
+  }
+  .founder-name {
+    font-weight: 700; color: var(--primary); margin-bottom: 4px; font-size: 1.05rem;
+  }
+  .founder-title {
+    color: var(--accent); font-weight: 600; font-size: 0.8rem;
+    text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 22px;
+  }
+  .founder-bio p {
+    font-size: 1.05rem; line-height: 1.8; color: var(--muted); margin-bottom: 16px;
+  }
+  .founder-bio p:last-child { margin-bottom: 0; }
+  .founder-cta-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: #fff;
+    padding: 13px 26px; border-radius: 8px;
+    font-weight: 600; font-size: 0.9rem;
+    margin-top: 30px; transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(4,119,190,0.3);
+  }
+  .founder-cta-btn img { width: 15px; height: 15px; transition: transform 0.2s ease; }
+  .founder-cta-btn:hover {
+    background: #035f99; transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(4,119,190,0.4);
+  }
+  .founder-cta-btn:hover img { transform: translateX(3px); }
+  .founder-socials {
+    display: flex; gap: 14px; margin-top: 26px; flex-wrap: wrap;
+  }
+  .social-icon {
+    width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: transparent; border: 1px solid var(--border);
+    color: var(--primary); font-size: 1.1rem;
+    transition: all 0.2s ease; text-decoration: none;
+  }
+  .social-icon svg { width: 19px; height: 19px; }
+  .social-icon:hover {
+    background: var(--accent); border-color: var(--accent);
+    color: #fff;
+  }
+  @media (max-width: 768px) {
+    .founder-layout {
+      grid-template-columns: 1fr; gap: 40px;
+    }
+  }
+
+  /* 
+     EXPERTISE SECTION
+   */
+  .expertise-bg {
+    background: linear-gradient(135deg, var(--primary) 0%, #0d3260 100%);
+    color: #fff;
+  }
+  .expertise-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px; margin-top: 48px;
+  }
+  .expertise-card {
+    background: rgba(255,255,255,0.05); backdrop-filter: blur(10px);
+    border-radius: var(--radius); overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+  }
+  .expertise-card:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: var(--highlight);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  }
+  .expertise-card-img {
+    width: 100%; height: 160px; object-fit: cover; display: block;
+    transition: transform 0.4s ease;
+    overflow: hidden;
+  }
+  .expertise-card:hover .expertise-card-img { transform: scale(1.05); }
+  .expertise-card-body { padding: 24px 24px 28px; }
+  .expertise-card h3 {
+    font-family: 'Sora', sans-serif; font-size: 1.2rem; font-weight: 700;
+    margin-bottom: 10px; color: #fff;
+  }
+  .expertise-card p {
+    font-size: 0.92rem; line-height: 1.7; color: rgba(255,255,255,0.75);
+  }
+
+/*
+     WHY CHOOSE US SECTION
+   */
+  .why-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+    margin-top: 48px;
+  }
+  .why-card {
+    position: relative;
+    background: var(--bg2); padding: 32px; border-radius: var(--radius);
+    border-left: 4px solid var(--accent);
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  .why-card:nth-child(2){ border-left-color: var(--accent2); }
+  .why-card:nth-child(3){ border-left-color: var(--highlight); }
+  .why-card:nth-child(4){ border-left-color: var(--accent); }
+  .why-card:nth-child(5){ border-left-color: var(--accent2); }
+  .why-card:nth-child(6){ border-left-color: var(--highlight); }
+  .why-card:hover {
+    background: #fff;
+    box-shadow: 0 16px 36px rgba(10,37,64,0.1);
+    transform: translateY(-6px);
+  }
+  .why-card::after {
+    content: attr(data-index);
+    position: absolute; top: 14px; right: 22px;
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 2.6rem;
+    color: var(--primary); opacity: 0.05; line-height: 1; pointer-events: none;
+  }
+  .why-card h3 {
+    font-family: 'Sora', sans-serif; font-size: 1.4rem; font-weight: 700;
+    color: var(--primary); margin-bottom: 12px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .why-card-icon {
+    width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(4,119,190,0.1);
+  }
+  .why-card:nth-child(2) .why-card-icon{ background: rgba(99,91,255,0.1); }
+  .why-card:nth-child(3) .why-card-icon{ background: rgba(16,185,129,0.1); }
+  .why-card:nth-child(4) .why-card-icon{ background: rgba(4,119,190,0.1); }
+  .why-card:nth-child(5) .why-card-icon{ background: rgba(99,91,255,0.1); }
+  .why-card:nth-child(6) .why-card-icon{ background: rgba(16,185,129,0.1); }
+  .why-card-icon img{ width: 22px; height: 22px; display: block; }
+  .why-card p {
+    font-size: 0.98rem; line-height: 1.7; color: var(--muted);
+    position: relative; z-index: 1;
+  }
+
+  /* 
+     CTA SECTION
+   */
+  .cta-section {
+    position: relative;
+    background-image: url('about22.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 5%; text-align: center; color: #fff;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(21, 36, 45, 0.82) 0%, rgba(46, 52, 57, 0.9) 100%);
+    z-index: 0;
+  }
+  .cta-section > .container {
+    position: relative; z-index: 1;
+  }
+  .cta-section h2 {
+    font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 800;
+    margin-bottom: 20px; letter-spacing: -0.02em;
+  }
+  .cta-section p {
+    font-size: 1.15rem; line-height: 1.7; margin-bottom: 36px;
+    max-width: 600px; margin-left: auto; margin-right: auto;
+    color: rgba(255,255,255,0.95);
+  }
+  .btn-primary {
+    display: inline-block; background: #fff; color: var(--primary);
+    padding: 14px 32px; border-radius: 8px; font-weight: 600;
+    font-size: 0.95rem; transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  }
+
+  /* 
+     FOOTER
+   */
+  footer {
+    background: var(--primary); color: rgba(255,255,255,0.8);
+    padding: 60px 5% 30px;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px; margin-bottom: 40px;
+  }
+  .footer-brand .logo {
+    color: #fff; margin-bottom: 20px; display: block;
+  }
+  .footer-brand p {
+    font-size: 0.92rem; line-height: 1.7; margin-bottom: 24px;
+  }
+  .footer-contact a {
+    display: block; font-size: 0.88rem; margin-bottom: 12px;
+    color: rgba(255,255,255,0.7); transition: color 0.2s;
+  }
+  .footer-contact a:hover { color: var(--accent); }
+  .footer-col h4 {
+    font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700;
+    color: #fff; margin-bottom: 20px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 12px; }
+  .footer-col ul li a {
+    font-size: 0.9rem; color: rgba(255,255,255,0.7);
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--accent); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 24px; text-align: center;
+    font-size: 0.85rem; color: rgba(255,255,255,0.6);
+  }
+
+  /* 
+     RESPONSIVE
+*/
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .nav-cta {
+      display: inline-flex !important;
+      padding: 8px 14px;
+      font-size: 0.78rem !important;
+      white-space: nowrap;
+    }
+    .reveal-left, .reveal-right {
+      transform: translateX(0) translateY(20px);
+    }
+    .reveal-left.visible, .reveal-right.visible {
+      transform: translateX(0) translateY(0);
+    }
+    
+    .about-hero {
+      padding: 80px 5% 60px;
+    }
+    .about-hero h1 {
+      font-size: 2.2rem;
+    }
+    .about-hero p {
+      font-size: 1.05rem;
+    }
+    .stats-row {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    .stat-number {
+      font-size: 2.2rem;
+    }
+    
+    section {
+      padding: 60px 5%;
+    }
+    .section-title {
+      font-size: 1.8rem;
+    }
+    .section-sub {
+      font-size: 1rem;
+    }
+    
+    .story-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .story-images-col {
+      padding-top: 40px;
+      padding-left: 20px;
+    }
+    .story-image-small {
+      width: 50%;
+      top: -10px;
+      left: -10px;
+    }
+    
+    .values-showcase {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .values-showcase .values-side-image {
+      order: -1;
+      max-width: 480px; margin: 0 auto;
+    }
+    .value-row, .value-row.reverse {
+      flex-direction: column; text-align: center;
+      border-radius: var(--radius);
+      padding: 28px 18px 18px;
+      gap: 10px;
+    }
+    .value-row .value-eyebrow,
+    .value-row.reverse .value-eyebrow {
+      flex-direction: row;
+    }
+    .value-row:not(.reverse) .value-edge-icon,
+    .value-row.reverse .value-edge-icon {
+      left: 50%; right: auto; top: 0; transform: translate(-50%, -50%);
+    }
+    
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .expertise-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    
+    .cta-section h2 {
+      font-size: 1.8rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav-cta { padding: 7px 10px; font-size: 0.72rem !important; }
+    .values-intro { padding: 28px 24px; }
+    .value-row, .value-row.reverse { padding: 24px 14px 14px; gap: 10px; }
+    .value-number { width: 52px; height: 52px; }
+    .value-number .value-number-digit { font-size: 0.9rem; }
+    .value-edge-icon { width: 30px; height: 30px; }
+    .value-edge-icon img { width: 13px; height: 13px; }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .about-hero h1 {
+      font-size: 2.8rem;
+    }
+    
+    .story-grid {
+      gap: 40px;
+    }
+    
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .values-showcase {
+      grid-template-columns: 1fr 340px;
+      gap: 28px;
+    }
+  }
+  .logo img {
+  height: 60px;    
+  width: auto;       
+  vertical-align: middle;
+  border-radius:20px;
+  padding: 1px;
+   
+}
+.footer-brandreveal .logo img {
+  height: 60px;       
+  width: auto;          
+  display: block;   
+  margin-bottom: 10px;   
+  border-radius: 20px;   
+  padding: 1px;          
+}
+.whatsapp-btn { position: fixed; bottom: 28px; left: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 30px rgba(37,211,102,0.5); transition: all 0.3s; text-decoration: none; animation: pulse-wa 2.5s infinite; }
+  .whatsapp-btn:hover { transform: scale(1.1); animation: none; }
+  .whatsapp-btn svg { width: 30px; height: 30px; fill: #fff; }
+  @keyframes pulse-wa { 0%, 100% { box-shadow: 0 6px 30px rgba(37,211,102,0.5); } 50% { box-shadow: 0 6px 30px rgba(37,211,102,0.5), 0 0 0 12px rgba(37,211,102,0.12); } }
+
+
+
+
+.logo {
+  display: flex;      
+  align-items: center;
+  gap: 8px;           
+}
+
+  /*DEVELOPERS SECTION*/
+  /* ══ BUILDERS SECTION — oval portrait grid, light bg ══ */
+  .dev-section {
+    padding: 90px 5% 100px;
+    background: #e8edf4;
+  }
+  .dev-section-header {
+    margin-bottom: 64px;
+  }
+  .dev-section-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    font-weight: 800;
+    color: #0e0e0e;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .dev-section-sub {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-weight: 400;
+    color: #6b7280;
+    letter-spacing: -0.01em;
+  }
+  /* 4-column portrait grid */
+  .dev-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 36px;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  /* Each member: oval photo + name + role */
+  .dev-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: default;
+    perspective: none;
+    height: auto;
+  }
+  /* Oval photo container */
+  .dev-oval {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 50% / 40%;
+    overflow: hidden;
+    margin-bottom: 22px;
+    background: #c8d0db;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .dev-card:hover .dev-oval {
+    box-shadow: 0 16px 48px rgba(0,0,0,0.16);
+    transform: translateY(-4px);
+  }
+  .dev-oval img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+  }
+  .dev-card:hover .dev-oval img { transform: scale(1.04); }
+  /* Name */
+  .dev-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0e0e0e;
+    margin-bottom: 5px;
+    letter-spacing: -0.01em;
+  }
+  /* Role */
+  .dev-title {
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: #6b7280;
+  }
+  /* Hide old flip-card elements */
+  .dev-card-inner, .dev-front, .dev-back,
+  .dev-img-wrap, .dev-role-badge, .dev-info,
+  .dev-flip-hint, .dev-back-avatar, .dev-back-name,
+  .dev-back-role, .dev-back-bio, .dev-back-skills,
+  .dev-skill-tag { display: none !important; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .dev-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  }
+  @media (max-width: 480px) {
+    .dev-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .dev-name { font-size: 0.95rem; }
+  }
+
+/* 
+   FOUNDER PAGE — HERO
+ */
+.founder-hero {
+  position: relative; padding: 130px 5% 90px;
+  background: linear-gradient(180deg, var(--primary) 0%, #0d3358 100%);
+  overflow: hidden;
+}
+.founder-hero::before {
+  content: ''; position: absolute; top: -30%; left: -10%;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(16,185,129,0.12), transparent);
+  animation: floatY 9s ease-in-out infinite;
+}
+.founder-hero::after {
+  content: ''; position: absolute; bottom: -25%; right: -8%;
+  width: 450px; height: 450px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(4,119,190,0.18), transparent);
+  animation: floatY 7s ease-in-out infinite 1.2s;
+}
+.founder-hero-grid {
+  position: relative; z-index: 2; max-width: 1180px; margin: 0 auto;
+  display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 60px; align-items: center;
+}
+.founder-hero-photo {
+  position: relative; border-radius: 16px; overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.founder-hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.founder-hero-badge {
+  position: absolute; bottom: 20px; left: 20px; right: 20px;
+  background: rgba(10,37,64,0.85); backdrop-filter: blur(8px);
+  border-radius: 10px; padding: 14px 18px;
+  display: flex; align-items: center; gap: 10px;
+}
+.founder-hero-badge img { width: 20px; height: 20px; flex-shrink: 0; }
+.founder-hero-badge span { color: #fff; font-size: 0.82rem; font-weight: 500; line-height: 1.4; }
+.founder-hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--highlight2); font-weight: 700; font-size: 0.78rem;
+  letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 18px;
+}
+.founder-hero-eyebrow img { width: 16px; height: 16px; }
+.founder-hero-content h1 {
+  font-family: 'Sora', sans-serif; font-size: 2.9rem; font-weight: 800;
+  color: #fff; line-height: 1.15; margin-bottom: 10px; letter-spacing: -0.02em;
+}
+.founder-hero-content .founder-hero-role {
+  color: var(--highlight2); font-weight: 600; font-size: 1.05rem;
+  margin-bottom: 22px; letter-spacing: 0.01em;
+}
+.founder-hero-content .founder-hero-lede {
+  color: rgba(255,255,255,0.82); font-size: 1.1rem; line-height: 1.8; margin-bottom: 32px; max-width: 560px;
+}
+.founder-hero-stats {
+  display: grid; grid-template-columns: repeat(4, auto); gap: 32px; margin-bottom: 34px;
+}
+.founder-hero-stats .stat-item { text-align: left; }
+.founder-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.founder-hero-actions .founder-cta-btn { margin-top: 0; }
+.founder-hero-actions .founder-ghost-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  border: 1px solid rgba(255,255,255,0.25); color: #fff;
+  padding: 13px 26px; border-radius: 8px; font-weight: 600; font-size: 0.9rem;
+  transition: all 0.25s ease;
+}
+.founder-hero-actions .founder-ghost-btn:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); }
+.founder-hero-social { display: flex; gap: 12px; margin-top: 26px; }
+.founder-hero-social a {
+  width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,0.2); color: #fff; transition: all 0.2s ease;
+}
+.founder-hero-social a svg { width: 17px; height: 17px; }
+.founder-hero-social a:hover { background: var(--highlight); border-color: var(--highlight); }
+@media (max-width: 900px) {
+  .founder-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .founder-hero-content h1 { font-size: 2.2rem; }
+  .founder-hero-stats { grid-template-columns: repeat(2, auto); }
+}
+
+/* 
+   PULL QUOTE
+ */
+.founder-pullquote-section { padding: 70px 5%; background: var(--bg2); }
+.founder-pullquote {
+  max-width: 850px; margin: 0 auto; text-align: center; position: relative;
+}
+.founder-pullquote .quote-mark {
+  font-family: 'Sora', sans-serif; font-size: 4rem; color: var(--accent); line-height: 1;
+  opacity: 0.25; margin-bottom: 6px;
+}
+.founder-pullquote p {
+  font-family: 'Sora', sans-serif; font-size: 1.7rem; font-weight: 600; color: var(--primary);
+  line-height: 1.5; letter-spacing: -0.01em;
+}
+.founder-pullquote .quote-attribution {
+  margin-top: 22px; color: var(--muted); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+}
+
+/* 
+   STORY SECTIONS (alternating)
+ */
+.founder-story-block { padding: 90px 5%; }
+.founder-story-block.alt-bg { background: var(--bg2); }
+.founder-story-row {
+  max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: center;
+}
+.founder-story-row.reverse .founder-story-img { order: 2; }
+.founder-story-row.reverse .founder-story-copy { order: 1; }
+.founder-story-img {
+  border-radius: var(--radius); overflow: hidden; box-shadow: 0 16px 50px rgba(10,37,64,0.15);
+}
+.founder-story-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.founder-story-copy .section-label { margin-bottom: 14px; }
+.founder-story-copy h2 {
+  font-family: 'Sora', sans-serif; font-size: 2rem; font-weight: 800; color: var(--primary);
+  margin-bottom: 20px; line-height: 1.2; letter-spacing: -0.01em;
+}
+.founder-story-copy p { font-size: 1.02rem; line-height: 1.8; color: var(--muted); margin-bottom: 16px; }
+.founder-story-copy p:last-child { margin-bottom: 0; }
+@media (max-width: 900px) {
+  .founder-story-row { grid-template-columns: 1fr; gap: 36px; }
+  .founder-story-row.reverse .founder-story-img,
+  .founder-story-row.reverse .founder-story-copy { order: unset; }
+}
+
+/* 
+   TIMELINE
+ */
+.founder-timeline-section { padding: 90px 5%; }
+.founder-timeline {
+  max-width: 780px; margin: 56px auto 0; position: relative;
+  padding-left: 40px; border-left: 2px solid var(--border);
+}
+.timeline-item { position: relative; padding-bottom: 44px; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before {
+  content: ''; position: absolute; left: -46px; top: 2px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--accent); border: 3px solid #fff; box-shadow: 0 0 0 2px var(--accent);
+}
+.timeline-year {
+  color: var(--accent); font-weight: 700; font-size: 0.85rem;
+  text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;
+}
+.timeline-item h4 { font-family: 'Sora', sans-serif; font-size: 1.2rem; color: var(--primary); margin-bottom: 8px; font-weight: 700; }
+.timeline-item p { color: var(--muted); font-size: 0.98rem; line-height: 1.7; }
+
+/* 
+   SKILLS / EXPERTISE GRID
+ */
+.founder-skills-section { padding: 90px 5%; background: var(--bg2); }
+.founder-skills-grid {
+  max-width: 1180px; margin: 50px auto 0; display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;
+}
+.skill-card {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 28px 24px; transition: all 0.3s ease;
+}
+.skill-card:hover { border-color: var(--accent); box-shadow: 0 10px 30px rgba(4,119,190,0.1); transform: translateY(-3px); }
+.skill-card img { width: 30px; height: 30px; margin-bottom: 16px; }
+.skill-card h4 { font-family: 'Sora', sans-serif; font-size: 1.02rem; color: var(--primary); margin-bottom: 8px; font-weight: 700; }
+.skill-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+
+/* 
+   PRINCIPLES LIST
+ */
+.founder-principles-section { padding: 90px 5%; }
+.founder-principles-grid {
+  max-width: 1180px; margin: 50px auto 0; display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px;
+}
+.principle-item { display: flex; gap: 18px; }
+.principle-number {
+  font-family: 'Sora', sans-serif; font-size: 1.6rem; font-weight: 800;
+  color: var(--accent); opacity: 0.5; flex-shrink: 0; min-width: 42px;
+}
+.principle-copy h4 { font-family: 'Sora', sans-serif; font-size: 1.05rem; color: var(--primary); margin-bottom: 6px; font-weight: 700; }
+.principle-copy p { color: var(--muted); font-size: 0.92rem; line-height: 1.7; }
+
+/* 
+   FOUNDER FOOTER CTA
+ */
+.founder-final-cta { padding: 90px 5%; text-align: center; }
+.founder-final-cta .founder-eyebrow { justify-content: center; }
+.founder-final-cta h2 {
+  font-family: 'Sora', sans-serif; font-size: 2.1rem; font-weight: 800; color: var(--primary);
+  max-width: 700px; margin: 14px auto 18px; line-height: 1.25;
+}
+.founder-final-cta p { color: var(--muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 34px; line-height: 1.7; }
+.founder-final-cta .founder-cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+  <a href="https://wa.me/254745883650" target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- NAVIGATION -->
+<nav id="main-nav">
+ <a href="index.html" class="logo"><img src="logo.png"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="serina-about.html" class="active">About Us</a></li>
+    <li><a href="serina-systems-services.html">Services</a></li>
+    <li><a href="serina-portfolio.html">Portfolio</a></li>
+    <li><a href="serina-process.html">Our Process</a></li>
+    <li><a href="serina-blog.html">Blogs</a></li>
+    <li><a href="serina-pricing.html">Pricing</a></li>
+    <li><a href="serina-contact.html">Contact Us</a></li>
+  </ul>
+  <a href="serina-contact.html" class="nav-cta" style="display:block">Schedule Meeting</a>
+  <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="serina-about.html">About Us</a>
+  <a href="serina-systems-services.html">Services</a>
+  <a href="serina-portfolio.html">Portfolio</a>
+  <a href="serina-process.html">Our Process</a>
+  <a href="serina-blog.html">Blogs</a>
+  <a href="serina-pricing.html">Pricing</a>
+  <a href="serina-contact.html">Contact</a>
+</div>
+
+<!-- FOUNDER HERO -->
+<section class="founder-hero">
+  <div class="founder-hero-grid">
+    <div class="founder-hero-photo reveal-left">
+      <img src="otis 1.jpg" alt="Fidel Ouma - Founder and CEO of Serina Systems">
+      <div class="founder-hero-badge">
+        <img src="https://api.iconify.design/lucide:map-pin.svg?color=%2334d399" alt="" loading="lazy" />
+        <span>Nakuru, Kenya &mdash; Building for Africa and beyond</span>
+      </div>
+    </div>
+    <div class="founder-hero-content reveal-right">
+      <div class="founder-hero-eyebrow">
+        <img src="https://api.iconify.design/lucide:sparkles.svg?color=%2334d399" alt="" loading="lazy" />
+        About the Founder
+      </div>
+      <h1>Fidel Ouma</h1>
+      <p class="founder-hero-role">Founder &amp; CEO, Serina Systems</p>
+      <p class="founder-hero-lede">A software engineer and entrepreneur who builds digital systems end-to-end &mdash; from backend architecture to client relationships. Fidel founded Serina Systems in Nakuru to bring dependable, world-class software to businesses across Kenya and the wider region.</p>
+
+      <div class="founder-hero-stats">
+        <div class="stat-item">
+          <span class="stat-number counter" data-target="50">0</span>
+          <span class="stat-label">Projects Delivered</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number counter" data-target="98">0</span>
+          <span class="stat-label">Client Satisfaction %</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number counter" data-target="40">0</span>
+          <span class="stat-label">Counties Served</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number counter" data-target="2">0</span>
+          <span class="stat-label">Years Building Serina</span>
+        </div>
+      </div>
+
+      <div class="founder-hero-actions">
+        <a href="serina-contact.html" class="founder-cta-btn">
+          Work With Fidel
+          <img src="https://api.iconify.design/lucide:arrow-right.svg?color=%23ffffff" alt="" loading="lazy" />
+        </a>
+        <a href="serina-portfolio.html" class="founder-ghost-btn">View Portfolio</a>
+      </div>
+
+      <div class="founder-hero-social">
+        <a href="https://www.instagram.com/serinasystems/" aria-label="Instagram" title="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/14iSjGfaSJF/" aria-label="Facebook" title="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="mailto:serinasystems@gmail.com?subject=Hello&body=Hi Fidel" aria-label="Email" title="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+        <a href="tel:+254745883650" aria-label="Phone" title="Call">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="founder-pullquote-section">
+  <div class="founder-pullquote reveal">
+    <div class="quote-mark">&ldquo;</div>
+    <p>Technology should empower businesses, not complicate them. That belief is the reason Serina Systems exists.</p>
+    <div class="quote-attribution">Fidel Ouma, Founder &amp; CEO</div>
+  </div>
+</section>
+
+<!-- STORY: THE BEGINNING -->
+<section class="founder-story-block">
+  <div class="founder-story-row">
+    <div class="founder-story-img reveal-left">
+      <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0" alt="Computer science studies and early coding journey">
+    </div>
+    <div class="founder-story-copy reveal-right">
+      <p class="section-label">The Beginning</p>
+      <h2>From Computer Science Student to Systems Builder</h2>
+      <p>Fidel Ouma's path into technology started the way most serious ones do &mdash; with curiosity and a lot of late nights. He studied for a BSc in Computer Science at Laikipia University, where his interest gradually narrowed from general programming into the specific craft of building complete, working systems: databases, servers, and the interfaces people actually use.</p>
+      <p>What set his approach apart early on was a refusal to stay purely academic. While many classmates focused on theory, Fidel kept building &mdash; small tools, experiments, and eventually full applications &mdash; because he wanted to understand software the way a mechanic understands an engine: by taking it apart and putting it back together himself.</p>
+      <p>That hands-on instinct became the foundation of everything that followed. He didn't just want to write code; he wanted to ship products that solved real problems for real businesses.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY: BUILDING SERINA SYSTEMS -->
+<section class="founder-story-block alt-bg">
+  <div class="founder-story-row reverse">
+    <div class="founder-story-img reveal-right">
+      <img src="founder1.webp" alt="Fidel Ouma, Founder of Serina Systems">
+    </div>
+    <div class="founder-story-copy reveal-left">
+      <p class="section-label">Building Serina Systems</p>
+      <h2>A One-Man Engineering Team, Scaling by Reputation</h2>
+      <p>Serina Systems was founded in Nakuru, Kenya, as a software development and digital marketing agency &mdash; and for most of its life, Fidel has been the sole developer behind it. Every backend, every deployment, every late-stage bug fix has passed through his hands directly, which is precisely why clients keep coming back: there's no hand-off, no dilution, just one person who understands the whole system from top to bottom.</p>
+      <p>His technical foundation is built on Node.js, Express, and PostgreSQL for backends, paired with clean, dependency-light HTML, CSS, and JavaScript on the frontend. It's a stack chosen for reliability and speed of delivery over trend-chasing &mdash; software that works well today and is still easy to maintain years from now.</p>
+      <p>The client list reflects that philosophy: construction and engineering firms, hospitality venues, retail shops, and educational platforms across Kenya, each with a working, deployed system built from the ground up. Along the way, Fidel has also taken on the technical groundwork that most agencies outsource &mdash; SEO setup, PageSpeed optimization, and M-Pesa payment integrations &mdash; because he sees those as part of building software that actually performs, not just software that looks good in a pitch.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="founder-timeline-section">
+  <div class="container">
+    <p class="section-label reveal">The Journey</p>
+    <h2 class="section-title reveal delay-1">Milestones Along the Way</h2>
+    <div class="founder-timeline">
+      <div class="timeline-item reveal-left">
+        <div class="timeline-year">Education</div>
+        <h4>BSc in Computer Science, Laikipia University</h4>
+        <p>Built a grounding in software engineering fundamentals, while independently building and shipping small projects outside the classroom.</p>
+      </div>
+      <div class="timeline-item reveal-left delay-1">
+        <div class="timeline-year">Founding</div>
+        <h4>Serina Systems is Established in Nakuru</h4>
+        <p>Fidel founded Serina Systems as a software development and digital marketing agency, taking on the role of founder, CEO, and sole developer.</p>
+      </div>
+      <div class="timeline-item reveal-left delay-2">
+        <div class="timeline-year">Early Builds</div>
+        <h4>First Client Platforms Go Live</h4>
+        <p>Delivered early projects including Serina Academy, an educational training platform, and Lantana Gardens, an event and restaurant booking system with M-Pesa integration.</p>
+      </div>
+      <div class="timeline-item reveal-left delay-3">
+        <div class="timeline-year">Growth</div>
+        <h4>Expanding Across Sectors and Counties</h4>
+        <p>Took on construction and engineering firms, retail shops, and hospitality venues, growing Serina Systems into a full-service digital transformation partner.</p>
+      </div>
+      <div class="timeline-item reveal-left delay-4">
+        <div class="timeline-year">Today</div>
+        <h4>Continued Hands-On Development</h4>
+        <p>Fidel remains directly involved in every build &mdash; from architecture to deployment &mdash; while pursuing further technical certification, including CCNA networking studies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS / EXPERTISE -->
+<section class="founder-skills-section">
+  <div class="container">
+    <p class="section-label reveal">Technical Expertise</p>
+    <h2 class="section-title reveal delay-1">What Fidel Builds With</h2>
+    <p class="section-sub reveal delay-2">A focused, dependable toolkit chosen for performance and long-term maintainability &mdash; not for chasing trends.</p>
+
+    <div class="founder-skills-grid">
+      <div class="skill-card reveal-scale">
+        <img src="https://api.iconify.design/lucide:server.svg?color=%230477be" alt="" loading="lazy" />
+        <h4>Backend Engineering</h4>
+        <p>Node.js and Express for building reliable, scalable server-side applications and APIs.</p>
+      </div>
+      <div class="skill-card reveal-scale delay-1">
+        <img src="https://api.iconify.design/lucide:database.svg?color=%230477be" alt="" loading="lazy" />
+        <h4>Database Architecture</h4>
+        <p>PostgreSQL for structured, relational data with an emphasis on integrity and performance.</p>
+      </div>
+      <div class="skill-card reveal-scale delay-2">
+        <img src="https://api.iconify.design/lucide:layout.svg?color=%230477be" alt="" loading="lazy" />
+        <h4>Frontend Development</h4>
+        <p>Clean, dependency-light HTML, CSS, and JavaScript for fast-loading, maintainable interfaces.</p>
+      </div>
+      <div class="skill-card reveal-scale delay-3">
+        <img src="https://api.iconify.design/lucide:credit-card.svg?color=%230477be" alt="" loading="lazy" />
+        <h4>Payments Integration</h4>
+        <p>M-Pesa STK push and deposit flow integrations for e-commerce and booking platforms.</p>
+      </div>
+      <div class="skill-card reveal-scale delay-4">
+        <img src="https://api.iconify.design/lucide:search.svg?color=%230477be" alt="" loading="lazy" />
+        <h4>SEO &amp; Performance</h4>
+        <p>Search Console, IndexNow, and WebP-driven optimization &mdash; taking sites from the 40s into the 90s on PageSpeed.</p>
+      </div>
+      <div class="skill-card reveal-scale delay-5">
+        <img src="https://api.iconify.design/lucide:network.svg?color=%230477be" alt="" loading="lazy" />
+        <h4>Infrastructure &amp; Networking</h4>
+        <p>Multi-OS virtualized environments for testing and deployment, with CCNA certification in progress.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="founder-principles-section">
+  <div class="container">
+    <p class="section-label reveal">Leadership Philosophy</p>
+    <h2 class="section-title reveal delay-1">How Fidel Approaches Every Build</h2>
+
+    <div class="founder-principles-grid">
+      <div class="principle-item reveal delay-1">
+        <span class="principle-number">01</span>
+        <div class="principle-copy">
+          <h4>Own the Whole System</h4>
+          <p>Working end-to-end &mdash; database to deployment &mdash; means nothing gets lost in translation between teams.</p>
+        </div>
+      </div>
+      <div class="principle-item reveal delay-2">
+        <span class="principle-number">02</span>
+        <div class="principle-copy">
+          <h4>Build for Longevity</h4>
+          <p>Choosing dependable, well-understood technology over trends that will need replacing in two years.</p>
+        </div>
+      </div>
+      <div class="principle-item reveal delay-3">
+        <span class="principle-number">03</span>
+        <div class="principle-copy">
+          <h4>Performance is Non-Negotiable</h4>
+          <p>A slow, poorly indexed site is a business cost. Speed and SEO groundwork are part of the build, not an add-on.</p>
+        </div>
+      </div>
+      <div class="principle-item reveal delay-4">
+        <span class="principle-number">04</span>
+        <div class="principle-copy">
+          <h4>Stay Close to the Client</h4>
+          <p>Direct, sole-developer involvement keeps communication clear and decisions fast, from brief to launch.</p>
+        </div>
+      </div>
+      <div class="principle-item reveal delay-5">
+        <span class="principle-number">05</span>
+        <div class="principle-copy">
+          <h4>Keep Learning</h4>
+          <p>Continued study &mdash; including CCNA networking &mdash; to keep Serina Systems' technical foundation current.</p>
+        </div>
+      </div>
+      <div class="principle-item reveal delay-6">
+        <span class="principle-number">06</span>
+        <div class="principle-copy">
+          <h4>African Businesses, Global Standard</h4>
+          <p>Every project is built to compete on quality with anything delivered anywhere else in the world.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="founder-final-cta">
+  <div class="founder-hero-eyebrow" style="color:var(--accent); justify-content:center;">
+    <img src="https://api.iconify.design/lucide:message-circle.svg?color=%230477be" alt="" loading="lazy" />
+    Let's Build Something
+  </div>
+  <h2 class="reveal">Have a Project in Mind? Talk to Fidel Directly.</h2>
+  <p class="reveal delay-1">As the sole developer behind every Serina Systems build, Fidel personally reviews every project brief &mdash; no account managers, no relay teams, just a direct line to the person who will build it.</p>
+  <div class="founder-cta-row">
+    <a href="serina-contact.html" class="founder-cta-btn reveal delay-2">
+      Start a Conversation
+      <img src="https://api.iconify.design/lucide:arrow-right.svg?color=%23ffffff" alt="" loading="lazy" />
+    </a>
+    <a href="serina-about.html" class="founder-ghost-btn reveal delay-3" style="color:var(--primary); border-color:var(--border);">Back to About Us</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand reveal">
+      <a href="index.html" class="logo">
+      <img src="logo.png" alt="Serina Systems Logo"></a>
+      <p>Serina Systems is the frontier of digital transformation. We engineer intelligent systems, craft compelling digital identities, and amplify brands through cutting-edge marketing strategies. Rooted in Nakuru yet built for global scalability, we merge technology, creativity, and strategy into one seamless experience.</p>
+      <div class="footer-contact">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:middle;margin-right:6px;color:#0477be"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Nyahururu Along Nyahururu-Nakuru Road, Nakuru</a>
+        <a href="mailto:serinasystems@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:6px;color:#0477be"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@serinasystems.gmail.com</a>
+        <a href="tel:+254745883650"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:middle;margin-right:6px;color:#0477be"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> +254 745 883 650</a>
+      </div>
+    </div>
+    <div class="footer-col reveal delay-1">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="serina-systems-services.html#mobile">Mobile Apps</a></li>
+        <li><a href="serina-systems-services.html#ai-ml">AI &amp; ML</a></li>
+        <li><a href="serina-systems-services.html#lowcode">Low Code / No Code</a></li>
+        <li><a href="serina-systems-services.html#seo">SEO</a></li>
+        <li><a href="serina-systems-services.html#mvp">MVP Development</a></li>
+        <li><a href="serina-systems-services.html#mis">MIS</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal delay-2">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="serina-about.html">About Us</a></li>
+        <li><a href="serina-portfolio.html">Portfolio</a></li>
+        <li><a href="serina-process.html">Our Process</a></li>
+        <li><a href="serina-blog.html">Blogs</a></li>
+        <li><a href="serina-systems-services.html">Services</a></li>
+      </ul>
+    </div>
+    <div class="footer-col reveal delay-3">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="serina-contact.html">Get a Quote</a></li>
+        <li><a href="serina-contact.html">Schedule Meeting</a></li>
+        <li><a href="serina-contact.html">Support</a></li>
+        <li><a href="https://www.facebook.com/share/14iSjGfaSJF/">Facebook</a></li>
+        <li><a href="https://www.instagram.com/serinasystems/">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; Copyright Serina Systems 2026. All Rights Reserved</div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const pct = (scrollTop / docHeight) * 100;
+  document.getElementById('scroll-progress').style.width = pct + '%';
+  const nav = document.getElementById('main-nav');
+  nav.classList.toggle('scrolled', scrollTop > 50);
+});
+
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+revealEls.forEach(el => revealObs.observe(el));
+
+const counterEls = document.querySelectorAll('.counter');
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const target = +e.target.dataset.target;
+      const duration = 1800;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(timer); }
+        e.target.textContent = Math.floor(current);
+      }, 16);
+      counterObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+counterEls.forEach(el => counterObs.observe(el));
+
+function toggleMobile() {
+  const nav = document.getElementById('mobile-nav');
+  const ham = document.getElementById('hamburger');
+  nav.classList.toggle('open');
+  ham.classList.toggle('open');
+}
+</script>
+<!-- Botpress Chat Label -->
+<style>
+  .chat-label {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: #0477be;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 4px 12px rgba(4,119,190,0.4);
+    z-index: 9998;
+    animation: chatBounce 2s ease-in-out infinite;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .chat-label::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    right: 18px;
+    width: 10px;
+    height: 10px;
+    background: #0477be;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  }
+  @keyframes chatBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  .chat-label-dot {
+    width: 7px;
+    height: 7px;
+    background: #a7f3d0;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #a7f3d0;
+    animation: dotPulse 1.5s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes dotPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.7; }
+  }
+</style>
+<div class="chat-label">
+  <span class="chat-label-dot"></span>
+  Talk to us
+</div>
+
+<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2026/05/16/05/20260516054617-X1LXS1G1.js" defer></script>
+</body>
+</html>
