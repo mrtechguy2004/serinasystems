@@ -1009,23 +1009,23 @@
     <div class="blog-grid" id="blog-grid">
 
       <!-- Blog Card 1 -->
-      <article class="blog-card reveal-scale delay-1 hover-glow" data-id="1" data-title="Building Scalable Web Applications with Next.js 15" data-excerpt="Discover the latest features in Next.js 15 and learn how to build high-performance, scalable web applications that deliver exceptional user experiences." data-tag="Web Development" data-author="Fidel Ouma" onclick="openArticle(1)">
-        <div class="blog-image">
-          <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=700&q=80" alt="Next.js Web Development" loading="lazy">
-          <span class="blog-tag">Web Development</span>
+      <article class="blog-card reveal-scale delay-1 hover-glow" data-id="1" data-title="PWA vs Mobile App: Which Should Your Business Choose?" data-excerpt="Should you build a Progressive Web App or a native mobile app for the Play Store/App Store? Here's a full breakdown to help you decide." data-tag="Mobile Apps" data-author="Fidel Ouma" onclick="openArticle(1)">
+        <div class="blog-image" style="background: linear-gradient(135deg, #0a2540, #0477be);">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=700&q=80" alt="PWA vs Native Mobile App" loading="lazy">
+          <span class="blog-tag">Mobile Apps</span>
         </div>
         <div class="blog-body">
           <div class="blog-meta">
-            <span><iconify-icon icon="mdi:calendar" style="vertical-align:middle;font-size:0.95rem;margin-right:4px;opacity:0.7;color:#64748b;"></iconify-icon> Apr 15, 2026</span>
-            <span><iconify-icon icon="mdi:clock-outline" style="vertical-align:middle;font-size:0.95rem;margin-right:4px;opacity:0.7;color:#64748b;"></iconify-icon> 5 min read</span>
+            <span><iconify-icon icon="mdi:calendar" style="vertical-align:middle;font-size:0.95rem;margin-right:4px;opacity:0.7;color:#64748b;"></iconify-icon> Sep 1, 2026</span>
+            <span><iconify-icon icon="mdi:clock-outline" style="vertical-align:middle;font-size:0.95rem;margin-right:4px;opacity:0.7;color:#64748b;"></iconify-icon> 9 min read</span>
           </div>
-          <h3 class="blog-title">Building Scalable Web Applications with Next.js 15</h3>
-          <p class="blog-excerpt">Discover the latest features in Next.js 15 and learn how to build high-performance, scalable web applications that deliver exceptional user experiences.</p>
+          <h3 class="blog-title">PWA vs Mobile App: Which Should Your Business Choose?</h3>
+          <p class="blog-excerpt">Should you build a Progressive Web App or a native mobile app for the Play Store/App Store? Here's a full breakdown to help you decide.</p>
           <div class="blog-author">
-            <div class="author-avatar">FO</div>
+            <div class="author-avatar" style="background: linear-gradient(135deg, #0a2540, #0477be);">FO</div>
             <div class="author-info">
               <h4>Fidel Ouma</h4>
-              <p>Senior Developer</p>
+              <p>Founder &amp; CEO</p>
             </div>
           </div>
           <span class="read-more-link">Read Article <img src="https://cdn-icons-png.flaticon.com/512/724/724954.png" style="width:13px;height:13px;object-fit:contain;"></span>
@@ -1419,87 +1419,124 @@ document.querySelectorAll('.mobile-nav a').forEach(link => {
 // 
 const articles = {
   1: {
-    tag: 'Web Development',
-    title: 'Building Scalable Web Applications with Next.js 15',
-    date: 'April 15, 2026',
-    readTime: '5 min read',
+    tag: 'Mobile Apps',
+    title: 'PWA vs Mobile App: Which Should Your Business Choose?',
+    date: 'September 1, 2026',
+    readTime: '9 min read',
     author: 'Fidel Ouma',
-    role: 'Senior Developer',
+    role: 'Founder & CEO',
     avatar: 'FO',
-    avatarBg: 'linear-gradient(135deg, #0477be, #635bff)',
-    image: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=1200&q=80',
+    avatarBg: 'linear-gradient(135deg, #0a2540, #0477be)',
+    image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&q=80',
     content: `
-      <p>Next.js 15 is a landmark release that redefines what's possible in modern web development. With radical improvements to the App Router, Partial Prerendering (PPR), and native support for React Server Components, it has become the gold standard for building production-grade, scalable web applications.</p>
+      <p>Mobile technology has transformed how businesses connect with customers. Whether you're a startup in Nakuru or a global enterprise, one question often arises: should you build a Progressive Web App (PWA) or a native mobile app for the Play Store/App Store?</p>
+      <p>It's one of the most common decisions business owners face when planning a digital product, and it's rarely as simple as picking the "better" technology. The right answer depends on your budget, your timeline, your target audience, and the features your business actually needs to deliver value.</p>
+      <p>This guide breaks down the differences, pros and cons, real-world costs, and helps you decide which option fits your system needs — whether you're launching an MVP, scaling an existing business, or replacing a legacy system entirely.</p>
 
-      <h2>Why Next.js 15 Is a Game Changer</h2>
-      <p>The web development landscape has always been in flux, but Next.js 15 represents a genuine step-change. Instead of choosing between a static site and a dynamic app, you can now have both — simultaneously, on the same page. This is made possible by <strong>Partial Prerendering</strong>, one of the most exciting features in the release.</p>
-
-      <blockquote>"With Partial Prerendering, the static shell of your page is served instantly from the edge, while dynamic content streams in concurrently — without any layout shift." — Vercel Engineering Team</blockquote>
-
-      <h2>Key Features You Need to Know</h2>
-
-      <h3>1. Partial Prerendering (PPR)</h3>
-      <p>PPR allows you to define which parts of a page are static and which are dynamic — in the same route. The static shell is prerendered at build time and cached at the edge. Dynamic sections are streamed in using React Suspense boundaries. The result is near-instant page loads even for highly dynamic content.</p>
-      <pre><code>// app/dashboard/page.tsx
-import { Suspense } from 'react'
-import StaticHeader from '@/components/StaticHeader'
-import DynamicFeed from '@/components/DynamicFeed'
-
-export default function Dashboard() {
-  return (
-    &lt;&gt;
-      &lt;StaticHeader /&gt;
-      &lt;Suspense fallback={&lt;Skeleton /&gt;}&gt;
-        &lt;DynamicFeed /&gt;
-      &lt;/Suspense&gt;
-    &lt;/&gt;
-  )
-}</code></pre>
-
-      <h3>2. Turbopack is Now Stable</h3>
-      <p>After months in beta, <strong>Turbopack</strong> — the Rust-based successor to webpack — is now stable in Next.js 15. In real-world projects, it delivers up to <strong>5× faster local server startup</strong> and <strong>3× faster HMR</strong> (Hot Module Replacement). For large codebases, this is transformative.</p>
-
-      <div class="callout">
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828665.png" alt="Tip">
-        <span class="callout-text"><strong>Pro Tip:</strong> Enable Turbopack by running <code>next dev --turbo</code>. Once you switch, going back feels painful — it's that much faster.</span>
-      </div>
-
-      <h3>3. Enhanced Caching Defaults</h3>
-      <p>Next.js 15 ships with smarter caching out of the box. <code>fetch()</code> requests are no longer cached by default — a change that resolves years of developer confusion around stale data. You now opt in to caching explicitly, giving you full control:</p>
-      <pre><code>// Cached: revalidate every 60 seconds
-const data = await fetch('/api/products', { next: { revalidate: 60 } })
-
-// Not cached: always fresh
-const live = await fetch('/api/prices', { cache: 'no-store' })</code></pre>
-
-      <h3>4. React 19 Support</h3>
-      <p>Next.js 15 fully supports React 19, including the new <code>use()</code> hook, <strong>React Actions</strong> for seamless server mutations, and improved hydration error messages that actually tell you what went wrong.</p>
-
-      <h2>Structuring a Scalable Next.js 15 Project</h2>
-      <p>Scalability is as much about architecture as it is about technology. Here's the folder structure we use at Serina Systems for large-scale Next.js apps:</p>
+      <h2>What is a Progressive Web App (PWA)?</h2>
+      <p>A <strong>Progressive Web App (PWA)</strong> is a web application that behaves like a mobile app. It runs in the browser but can be installed on a user's home screen, works offline, and supports push notifications. Unlike native apps, PWAs don't require app store distribution — they're accessible instantly via a link.</p>
+      <p>PWAs are built using standard web technologies (HTML, CSS, and JavaScript), but they're enhanced with modern browser capabilities such as service workers — which enable offline functionality and background sync — and a web app manifest, which allows the "Add to Home Screen" experience. This means a single PWA codebase can serve desktop users, Android users, and iOS users simultaneously.</p>
+      <p>For a business, the appeal is straightforward: you get an app-like experience without the cost, delays, or friction of app store submission.</p>
+      <h3>Key characteristics of a PWA</h3>
       <ul>
-        <li><code>app/</code> — All routes using the App Router</li>
-        <li><code>components/ui/</code> — Reusable presentational components</li>
-        <li><code>components/features/</code> — Domain-specific feature components</li>
-        <li><code>lib/</code> — Utilities, API clients, and helpers</li>
-        <li><code>server/</code> — Server Actions and data fetching logic</li>
-        <li><code>types/</code> — Shared TypeScript types and interfaces</li>
+        <li>Installable directly from a browser — no Play Store or App Store required</li>
+        <li>Works offline or on unreliable connections through caching</li>
+        <li>Supports push notifications on most platforms</li>
+        <li>Automatically updates whenever the user reloads the app — no manual updates</li>
+        <li>Indexed by search engines, meaning your app pages can rank on Google</li>
+        <li>Cross-platform by default — one codebase for web, Android, and (with some limitations) iOS</li>
       </ul>
 
-      <h2>Performance Best Practices</h2>
-      <p>Even with all of Next.js 15's built-in optimisations, poor patterns can still hurt performance. Follow these rules:</p>
-      <ol>
-        <li><strong>Use Server Components by default.</strong> Only reach for <code>'use client'</code> when you need interactivity or browser APIs.</li>
-        <li><strong>Avoid waterfall fetches.</strong> Fetch data in parallel using <code>Promise.all()</code> wherever possible.</li>
-        <li><strong>Optimise images.</strong> Always use Next.js's built-in <code>&lt;Image&gt;</code> component — it handles lazy loading, WebP conversion, and responsive sizing automatically.</li>
-        <li><strong>Analyse your bundle.</strong> Use <code>@next/bundle-analyzer</code> to identify and eliminate heavy dependencies.</li>
-      </ol>
+      <h2>What is a Native Mobile App?</h2>
+      <p>A <strong>native mobile app</strong> is built specifically for Android (via Google Play) or iOS (via Apple App Store). It integrates deeply with device features such as GPS, camera, biometrics, and delivers optimized performance. Distribution happens through app stores, which adds credibility but also requires compliance with store policies.</p>
+      <p>Native apps are typically developed using platform-specific languages and frameworks — Kotlin or Java for Android, Swift for iOS — or cross-platform frameworks like Flutter or React Native that compile down to native performance while sharing more code between platforms. Because native apps are compiled directly for the device's operating system, they can access hardware and system-level APIs that browsers simply don't expose.</p>
+      <h3>Key characteristics of a native app</h3>
+      <ul>
+        <li>Full access to device hardware: camera, GPS, biometrics (fingerprint/Face ID), Bluetooth, sensors</li>
+        <li>Distributed and discovered through the Google Play Store and Apple App Store</li>
+        <li>Generally faster and smoother for graphics-heavy or performance-critical tasks</li>
+        <li>Can send rich push notifications and background tasks with fewer OS restrictions</li>
+        <li>Requires app store review before updates go live</li>
+        <li>Builds stronger brand trust simply by having a presence in the app stores</li>
+      </ul>
 
-      <h2>Deploying to the Edge</h2>
-      <p>Next.js 15 works beautifully with edge runtimes. Deploying to Vercel Edge Functions or Cloudflare Workers puts your app physically closer to your users, reducing latency dramatically — especially important for global audiences like those in East Africa reaching services hosted elsewhere.</p>
+      <h2>Pros and Cons</h2>
+      <div style="overflow-x:auto; margin: 8px 0 28px;">
+        <table style="width:100%; min-width:520px; border-collapse:collapse; font-size:0.95rem;">
+          <thead>
+            <tr style="background:rgba(4,119,190,0.07);">
+              <th style="text-align:left; padding:12px 14px; border-bottom:2px solid var(--border); font-family:'Sora',sans-serif; color:var(--primary);">Feature</th>
+              <th style="text-align:left; padding:12px 14px; border-bottom:2px solid var(--border); font-family:'Sora',sans-serif; color:var(--primary);">PWA</th>
+              <th style="text-align:left; padding:12px 14px; border-bottom:2px solid var(--border); font-family:'Sora',sans-serif; color:var(--primary);">Native App</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:12px 14px; border-bottom:1px solid var(--border); font-weight:700; color:var(--primary);">Accessibility</td>
+              <td style="padding:12px 14px; border-bottom:1px solid var(--border);">Works on any browser, no store approval</td>
+              <td style="padding:12px 14px; border-bottom:1px solid var(--border);">Must be downloaded from Play/App Store</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px; border-bottom:1px solid var(--border); font-weight:700; color:var(--primary);">Cost</td>
+              <td style="padding:12px 14px; border-bottom:1px solid var(--border);">Lower cost, single codebase</td>
+              <td style="padding:12px 14px; border-bottom:1px solid var(--border);">Higher cost, separate builds for Android &amp; iOS</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px; border-bottom:1px solid var(--border); font-weight:700; color:var(--primary);">Performance</td>
+              <td style="padding:12px 14px; border-bottom:1px solid var(--border);">Good, but limited hardware access</td>
+              <td style="padding:12px 14px; border-bottom:1px solid var(--border);">Optimized, full device integration</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px; border-bottom:1px solid var(--border); font-weight:700; color:var(--primary);">Updates</td>
+              <td style="padding:12px 14px; border-bottom:1px solid var(--border);">Instant updates, no approval needed</td>
+              <td style="padding:12px 14px; border-bottom:1px solid var(--border);">Updates require store submission</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px; border-bottom:1px solid var(--border); font-weight:700; color:var(--primary);">Discoverability</td>
+              <td style="padding:12px 14px; border-bottom:1px solid var(--border);">Indexed by Google, shareable via links</td>
+              <td style="padding:12px 14px; border-bottom:1px solid var(--border);">Discoverable in app stores, stronger brand trust</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 14px; font-weight:700; color:var(--primary);">User Experience</td>
+              <td style="padding:12px 14px;">Near-native feel, sometimes limited</td>
+              <td style="padding:12px 14px;">Rich, polished, platform-specific UX</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>A closer look at cost</h3>
+      <p>Cost is usually the deciding factor for small and medium-sized businesses. A PWA typically means building <strong>one</strong> application that runs everywhere — a single team, a single codebase, and a single deployment pipeline. A native app strategy, on the other hand, often means building and maintaining <strong>two separate applications</strong> (Android and iOS), each with its own release cycle, testing requirements, and developer expertise. Even with cross-platform frameworks, native development, app store fees, and ongoing compliance still add to the total cost of ownership.</p>
+
+      <h3>A closer look at performance and hardware access</h3>
+      <p>Native apps win decisively when your business depends on deep hardware integration — think ride-hailing apps that need continuous GPS tracking, fintech apps that require biometric authentication, or AR-powered retail apps that use the camera in real time. PWAs have made major strides in closing this gap (offline support, notifications, and camera access are now widely supported), but there are still limitations, particularly on iOS, where Apple restricts some PWA capabilities more than Android does.</p>
+
+      <h3>A closer look at discoverability</h3>
+      <p>This is where PWAs have a real edge that many businesses overlook: because a PWA is essentially a website, it can be indexed by Google and found through normal search traffic — no app store search required. A native app, by contrast, depends entirely on app store optimization (ASO) and store discovery, which is a competitive and often costly space to win visibility in.</p>
+
+      <blockquote>"The smartest path for many businesses is to start with a PWA, then scale into native apps once demand justifies the investment." — Fidel Ouma, Serina Systems</blockquote>
+
+      <h2>Which Should You Choose?</h2>
+      <h3>Choose PWA if:</h3>
+      <ul>
+        <li>You want affordability and fast deployment.</li>
+        <li>Your users mainly need browser access or have low-storage devices.</li>
+        <li>SEO visibility is a priority.</li>
+      </ul>
+      <h3>Choose Native App if:</h3>
+      <ul>
+        <li>You need advanced hardware integration (GPS, biometrics, AR).</li>
+        <li>You want strong brand presence in app stores.</li>
+        <li>You're building performance-critical or feature-rich experiences.</li>
+      </ul>
+
+      <div class="callout">
+        <span class="callout-text"><strong>A hybrid approach is often the smartest move:</strong> many successful businesses don't have to pick one path forever. A common and cost-effective strategy is to launch with a PWA to validate demand and gather feedback with minimal upfront investment, then invest in a native app once the business has the traction and budget to justify the deeper development cost.</span>
+      </div>
 
       <hr class="article-divider">
-      <p>Next.js 15 is the most complete and production-ready version of the framework to date. Whether you're building a SaaS dashboard, an e-commerce platform, or a content-heavy portal, it has the primitives you need to build fast, reliable, and scalable. At Serina Systems, it's our go-to framework for client projects in 2026.</p>
+      <p>PWAs are ideal for startups, MVPs, and businesses seeking cost-effective reach. Native apps shine when advanced features, performance, and brand credibility are essential. There's no universally "correct" choice — only the choice that's correct for your business stage, budget, and customer needs.</p>
+      <p>At Serina Systems, we help businesses in Kenya and beyond design scalable digital solutions — from PWAs to full native apps. Ready to build your next system? Visit us today at <a href="https://www.serinasystems.co.ke" target="_blank" rel="noopener">www.serinasystems.co.ke</a>.</p>
     `
   },
   2: {
