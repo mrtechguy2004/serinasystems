@@ -162,12 +162,14 @@
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   .mobile-nav {
-    display: none; position: fixed; top: 68px; left: 0; right: 0;
-    background: #fff; border-bottom: 1px solid var(--border);
-    padding: 20px 5%; flex-direction: column; gap: 16px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1); z-index: 99;
+    display: flex; position: fixed; top: 68px; right: 0; bottom: 0;
+    width: 65%; background: #fff; border-left: 1px solid var(--border);
+    padding: 24px 20px; flex-direction: column; gap: 16px;
+    box-shadow: -8px 0 30px rgba(0,0,0,0.15); z-index: 99;
+    transform: translateX(100%); transition: transform 0.3s ease;
+    overflow-y: auto;
   }
-  .mobile-nav.open { display: flex; }
+  .mobile-nav.open { transform: translateX(0); }
   .mobile-nav a { font-size: 1rem; font-weight: 500; color: var(--primary); padding: 8px 0; border-bottom: 1px solid var(--border); }
   .mobile-nav a:last-child { border-bottom: none; }
 
@@ -827,15 +829,15 @@
   </button>
 </nav>
 <div class="mobile-nav" id="mobile-nav">
-  <a href="index.html">Home</a>
-  <a href="serina-about.html">About Us</a>
-  <a href="serina-systems-services.html">Services</a>
-  <a href="serina-portfolio.html">Portfolio</a>
-  <a href="serina-process.html">Our Process</a>
-  <a href="serina-blog.html">Blogs</a>
-  <a href="serina-pricing.html">Pricing</a>
-  <a href="serina-contact.html">Contact Us</a>
-  <a href="serina-contact.html" style="background:var(--accent);color:#fff;padding:12px;text-align:center;border-radius:8px;font-weight:700;">Schedule Meeting</a>
+  <a href="index.html"><img src="https://api.iconify.design/mdi:home-outline.svg?color=%230a2540" alt="" style="width:18px;height:18px;vertical-align:middle;margin-right:10px;">Home</a>
+  <a href="serina-about.html"><img src="https://api.iconify.design/mdi:account-group-outline.svg?color=%230a2540" alt="" style="width:18px;height:18px;vertical-align:middle;margin-right:10px;">About Us</a>
+  <a href="serina-systems-services.html"><img src="https://api.iconify.design/mdi:cog-outline.svg?color=%230a2540" alt="" style="width:18px;height:18px;vertical-align:middle;margin-right:10px;">Services</a>
+  <a href="serina-portfolio.html"><img src="https://api.iconify.design/mdi:briefcase-outline.svg?color=%230a2540" alt="" style="width:18px;height:18px;vertical-align:middle;margin-right:10px;">Portfolio</a>
+  <a href="serina-process.html"><img src="https://api.iconify.design/mdi:sitemap-outline.svg?color=%230a2540" alt="" style="width:18px;height:18px;vertical-align:middle;margin-right:10px;">Our Process</a>
+  <a href="serina-blog.html"><img src="https://api.iconify.design/mdi:newspaper-variant-outline.svg?color=%230a2540" alt="" style="width:18px;height:18px;vertical-align:middle;margin-right:10px;">Blogs</a>
+  <a href="serina-pricing.html"><img src="https://api.iconify.design/mdi:tag-outline.svg?color=%230a2540" alt="" style="width:18px;height:18px;vertical-align:middle;margin-right:10px;">Pricing</a>
+  <a href="serina-contact.html"><img src="https://api.iconify.design/mdi:email-outline.svg?color=%230a2540" alt="" style="width:18px;height:18px;vertical-align:middle;margin-right:10px;">Contact Us</a>
+  <a href="serina-contact.html" style="background:var(--accent);color:#fff;padding:12px;text-align:center;border-radius:8px;font-weight:700;"><img src="https://api.iconify.design/mdi:calendar-check-outline.svg?color=%23ffffff" alt="" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;">Schedule Meeting</a>
 </div>
 
 <!-- PAGE HERO -->
