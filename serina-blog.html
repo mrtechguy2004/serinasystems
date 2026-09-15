@@ -1036,23 +1036,23 @@
       </article>
 
       <!-- Blog Card 2 -->
-      <article class="blog-card reveal-scale delay-2 hover-glow" data-id="2" data-title="Integrating AI into Your Mobile Apps: A Practical Guide" data-excerpt="Learn how to leverage AI technologies to create smarter, more intuitive mobile applications that understand and adapt to user behavior." data-tag="AI &amp; ML" data-author="Aisha Kimani" onclick="openArticle(2)">
-        <div class="blog-image" style="background: linear-gradient(135deg, #635bff, #7c3aed);">
-          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=700&q=80" alt="AI Machine Learning" loading="lazy">
-          <span class="blog-tag">AI &amp; ML</span>
+      <article class="blog-card reveal-scale delay-2 hover-glow" data-id="2" data-title="Why React and Other Frameworks Are Poor in SEO" data-excerpt="React, Next.js, Astro and WordPress all handle search engines differently. Here's why frameworks get blamed for weak SEO — and how to set them up right." data-tag="SEO" data-author="Peter Githinji" onclick="openArticle(2)">
+        <div class="blog-image" style="background: linear-gradient(135deg, #0891b2, #0e7490);">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&q=80" alt="SEO and Web Development Frameworks" loading="lazy">
+          <span class="blog-tag">SEO</span>
         </div>
         <div class="blog-body">
           <div class="blog-meta">
-            <span><iconify-icon icon="mdi:calendar" style="vertical-align:middle;font-size:0.95rem;margin-right:4px;opacity:0.7;color:#64748b;"></iconify-icon> Apr 12, 2026</span>
-            <span><iconify-icon icon="mdi:clock-outline" style="vertical-align:middle;font-size:0.95rem;margin-right:4px;opacity:0.7;color:#64748b;"></iconify-icon> 8 min read</span>
+            <span><iconify-icon icon="mdi:calendar" style="vertical-align:middle;font-size:0.95rem;margin-right:4px;opacity:0.7;color:#64748b;"></iconify-icon> Sep 10, 2026</span>
+            <span><iconify-icon icon="mdi:clock-outline" style="vertical-align:middle;font-size:0.95rem;margin-right:4px;opacity:0.7;color:#64748b;"></iconify-icon> 10 min read</span>
           </div>
-          <h3 class="blog-title">Integrating AI into Your Mobile Apps: A Practical Guide</h3>
-          <p class="blog-excerpt">Learn how to leverage AI technologies to create smarter, more intuitive mobile applications that understand and adapt to user behavior.</p>
+          <h3 class="blog-title">Why React and Other Frameworks Are Poor in SEO</h3>
+          <p class="blog-excerpt">React, Next.js, Astro and WordPress all handle search engines differently. Here's why frameworks get blamed for weak SEO — and how to set them up right.</p>
           <div class="blog-author">
-            <div class="author-avatar" style="background: linear-gradient(135deg, #635bff, #7c3aed);">PG</div>
+            <div class="author-avatar" style="background: linear-gradient(135deg, #0891b2, #0e7490);">PG</div>
             <div class="author-info">
               <h4>Peter Githinji</h4>
-              <p>AI Specialist</p>
+              <p>Marketing Head</p>
             </div>
           </div>
           <span class="read-more-link">Read Article <img src="https://cdn-icons-png.flaticon.com/512/724/724954.png" style="width:13px;height:13px;object-fit:contain;"></span>
@@ -1543,75 +1543,195 @@ const articles = {
     `
   },
   2: {
-    tag: 'AI & ML',
-    title: 'Integrating AI into Your Mobile Apps: A Practical Guide',
-    date: 'April 12, 2026',
-    readTime: '8 min read',
+    tag: 'SEO',
+    title: 'Why React and Other Frameworks Are Poor in SEO',
+    date: 'September 10, 2026',
+    readTime: '10 min read',
     author: 'Peter Githinji',
-    role: 'AI Specialist',
+    role: 'Marketing Head',
     avatar: 'PG',
-    avatarBg: 'linear-gradient(135deg, #635bff, #7c3aed)',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80',
+    avatarBg: 'linear-gradient(135deg, #0891b2, #0e7490)',
+    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80',
     content: `
-      <p>Artificial Intelligence is no longer a futuristic concept reserved for research labs and tech giants. In 2026, AI is a practical, accessible toolkit that mobile developers can tap into to build apps that feel genuinely intelligent — apps that adapt, predict, and personalise in real time.</p>
+      <p>Did you know that nearly 40% of modern websites struggle with search visibility? This is often because of how they're built. Developers love the speed of tools like React — but these platforms can make it hard for search engine crawlers to see what's actually on the page.</p>
+      <p>Choosing the right tech stack is a balancing act. Whether you use Next.js, Astro, or WordPress, your choices affect your search engine optimisation success. None of these tools are broken — but they need careful setup to index content correctly.</p>
+      <p>Mastering JavaScript SEO is key for modern teams. Knowing how each platform handles rendering helps you make sure your site earns the organic traffic it deserves.</p>
 
-      <h2>Why AI in Mobile Apps Matters Now</h2>
-      <p>Mobile users have come to expect experiences that feel tailored to them. A fitness app that learns your workout patterns. A banking app that flags unusual transactions before you even notice. A shopping app that surfaces exactly what you're looking for before you've finished typing. These aren't luxuries — they're the baseline expectation.</p>
-
-      <blockquote>"The apps that will win the next five years aren't just well-designed — they're intelligent. They use every interaction to get better." — Aisha Kimani, Serina Systems</blockquote>
-
-      <h2>Core AI Capabilities for Mobile Apps</h2>
-
-      <h3>1. On-Device Machine Learning with TensorFlow Lite & Core ML</h3>
-      <p>Running ML models directly on the device — rather than sending data to a server — offers three critical advantages: <strong>speed</strong> (no network round-trip), <strong>privacy</strong> (data never leaves the device), and <strong>offline capability</strong>. TensorFlow Lite (Android/Flutter) and Core ML (iOS) make this practical.</p>
-      <pre><code>// Flutter: loading a TFLite model
-import 'package:tflite_flutter/tflite_flutter.dart';
-
-final interpreter = await Interpreter.fromAsset('model.tflite');
-final input = [/* your input tensor */];
-final output = List.filled(10, 0.0).reshape([1, 10]);
-interpreter.run(input, output);</code></pre>
-
-      <h3>2. Natural Language Processing (NLP)</h3>
-      <p>NLP powers search, chatbots, sentiment analysis, and auto-complete. For mobile, the practical options are:</p>
+      <h3>Key Takeaways</h3>
       <ul>
-        <li><strong>OpenAI API</strong> — GPT-4o for conversational interfaces and content generation</li>
-        <li><strong>Google ML Kit</strong> — Smart Reply, language detection, and entity extraction, all on-device</li>
-        <li><strong>Hugging Face Inference API</strong> — Access to thousands of specialised models via REST</li>
+        <li>Modern site architecture greatly affects how easily search engines discover your content</li>
+        <li>React and similar libraries aren't inherently bad for visibility — but they need specific technical tweaks</li>
+        <li>Server-side rendering helps crawlers understand complex pages faster and more reliably</li>
+        <li>Most performance issues trace back to data loading and bundle size, not the framework itself</li>
+        <li>Planning for both speed and search visibility from day one saves costly rework later</li>
       </ul>
 
-      <h3>3. Computer Vision</h3>
-      <p>Camera-based AI unlocks powerful use cases: document scanning, face authentication, object detection, and augmented reality overlays. Google ML Kit's Vision APIs are the easiest entry point for Flutter and Android developers.</p>
+      <h2>Why Modern Web Frameworks Can Create SEO Problems</h2>
+      <p>Many developers reach for tools that help them build apps fast. But the same tools that speed up development can make SEO harder, because they're optimised for developer experience — not for search engines. That's why SEO problems are so common in modern web projects.</p>
+
+      <h3>Fast development vs. a discoverable website</h3>
+      <p>A fast development experience means using tools that let a team ship quickly. Discoverability means search engines can see your content the moment they crawl it. Modern JavaScript frameworks don't always make both possible at once — and when developers optimise purely for shipping speed, discoverability is usually what gets sacrificed.</p>
+
+      <h3>Why "poor for SEO" is an opinion about implementation, not an absolute rule</h3>
+      <p>Some say React is bad for search engines, but that's a misunderstanding. React is a library for building interfaces — it isn't designed to block search engines, and with the right setup it can perform well in search.</p>
+      <blockquote>"Being 'poor for SEO' is an opinion about implementation, not an absolute rule. Client-side rendering can be a real problem — but with the right setup, you can build sites that are both fast and search-friendly." — Peter Githinji, Serina Systems</blockquote>
+
+      <h3>How JavaScript dependency, complexity, and defaults affect organic visibility</h3>
+      <p>Modern web development leans heavily on large JavaScript bundles, and that weight slows the site down for search bots as well as users. Complexity compounds the problem. A few key factors to watch:</p>
+      <ul>
+        <li><strong>Bundle size:</strong> large JavaScript files slow down both users and crawlers</li>
+        <li><strong>Default settings:</strong> many frameworks are configured for interactivity first, HTML second</li>
+        <li><strong>Rendering logic:</strong> complex client-side scripts can hide content from search engines entirely</li>
+      </ul>
+      <p>Understanding these defaults helps you make better architectural choices — finding the balance between interactivity and accessibility keeps a site visible in a competitive market.</p>
+
+      <h2>The Rendering Problem</h2>
+      <p>The debate over web frameworks and SEO really centres on one thing: rendering. Modern tools speed things up for users but can slow things down for search engines, and understanding this trade-off is crucial to keeping a site visible online.</p>
+
+      <h3>Client-side rendering and the empty HTML response</h3>
+      <p>Many sites rely on client-side rendering: the server sends a bare-bones HTML file, then the browser runs JavaScript to build the actual page. This approach is risky for search engines — if a crawler receives an empty shell of HTML, it can miss your content entirely. Even Google can stumble here. Without a fallback like server-side rendering, real content can go unseen.</p>
+
+      <h3>How search engines process JavaScript after crawling a page</h3>
+      <p>Search engines don't always execute JavaScript immediately. They typically crawl the raw HTML first to discover links, then come back later to render the page with JavaScript. That delay can hurt any site that needs scripts just to display text — search engines may index an incomplete page in the meantime, and that's exactly where SEO problems begin.</p>
+
+      <h3>Why delayed rendering can weaken indexing, links, and content discovery</h3>
+      <p>Delayed rendering can quietly erode a site's visibility, since search engines may favour pages that render faster and more completely. A few consequences worth knowing:</p>
+      <ul>
+        <li>Content may not appear in search results for days after publishing</li>
+        <li>Internal links hidden behind JavaScript may never get followed</li>
+        <li>Metadata and titles injected late by scripts can be ignored entirely</li>
+        <li>Structured data can fail to validate during the initial crawl</li>
+      </ul>
+
+      <h4>Crawling, rendering, indexing, and ranking</h4>
+      <p>These four steps are often confused, but each plays a distinct role in how a page reaches search results:</p>
+      <ol>
+        <li><strong>Crawling:</strong> a bot discovers your URL</li>
+        <li><strong>Rendering:</strong> the search engine executes code to visualise the page</li>
+        <li><strong>Indexing:</strong> your content is stored in the search database</li>
+        <li><strong>Ranking:</strong> your page is placed relative to competing results</li>
+      </ol>
+
+      <h3>Why users and search engines may see different versions of a page</h3>
+      <p>Users and search engines can end up seeing genuinely different versions of the same site, purely because of JavaScript. A fast browser renders the page instantly for a human visitor, but a search engine can see nothing at all if rendering fails on its end. That gap is a real concern for site owners — consistency between what users and crawlers see is what keeps a site's intended content visible to everyone.</p>
+
+      <h2>Why React Often Creates More SEO Work Than Expected</h2>
+      <p>Choosing React can make SEO harder to get right. It's an excellent tool for building interfaces, but it introduces specific problems that need addressing early — without a good plan, a React site may end up far less visible than intended.</p>
+
+      <h3>Single-page applications and missing server-rendered content</h3>
+      <p>Single-page applications load very little HTML upfront, then add content after JavaScript runs. If a crawler doesn't wait for that JavaScript, or hits an error along the way, it can see an essentially empty page.</p>
+
+      <h3>Routing, page titles, canonical URLs, and metadata mistakes</h3>
+      <p>Site structure needs extra care in a client-rendered environment. With client-side routing, updating page titles and meta tags on every route change becomes the developer's responsibility. Missing this step causes indexing errors and confuses search engines about which page is which.</p>
+
+      <h3>JavaScript-heavy interactions that hide important text and links</h3>
+      <p>Interactive elements are great for users but can hide content from bots. If links or text only appear after a click or a scroll event, crawlers may never see them. Getting React SEO right means making sure the key content is present in the first HTML response, not gated behind an interaction.</p>
+
+      <h3>Bundle size, hydration delays, and Core Web Vitals trade-offs</h3>
+      <p>Page speed directly affects search rankings. Large JavaScript bundles slow sites down and hurt Core Web Vitals scores, and slow "hydration" — the process of making a server-rendered page interactive — makes pages feel sluggish for everyone, not just search bots.</p>
+
+      <h2>How Django, Next.js, Astro, WordPress, and Node.js Compare</h2>
+      <p>No single tool is perfect for every project. Each one handles rendering differently, and the right choice depends on balancing speed with long-term visibility.</p>
+
+      <h3>Django's server-rendered foundation</h3>
+      <p>Django is a strong Python framework built around server-side rendering. It generates HTML on the server and sends a complete page to the browser, which means search engines get everything they need right away — a strong option for content-heavy sites that need to be indexed reliably.</p>
+
+      <h3>Next.js: a strong option that still needs careful configuration</h3>
+      <p>Next.js is popular for blending server-side rendering with static generation, but it isn't a magic fix for SEO on its own. Routing and metadata still need to be configured correctly to avoid the same problems that plague a bare React app.</p>
+
+      <h3>Astro's content-focused architecture</h3>
+      <p>Astro ships very little JavaScript to the browser by default and renders content as static HTML. That makes it highly efficient for search engines and helps pages load quickly — increasingly important for search rankings.</p>
+
+      <h3>WordPress: easier publishing, with its own performance risks</h3>
+      <p>WordPress is easy to use for publishing content and has a server-rendered foundation by default. But performance can suffer once a site accumulates too many plugins, and that slowdown can drag search rankings down with it.</p>
+
+      <h3>Why Node.js is a runtime, not an automatic SEO strategy</h3>
+      <p>Node.js is a JavaScript runtime, not an SEO framework. It powers plenty of web apps, but it doesn't decide how your content is rendered or presented — that outcome depends entirely on the architecture built on top of it.</p>
+
+      <h2>The Technical SEO Issues Frameworks Commonly Introduce</h2>
+      <p>Modern frameworks can quietly introduce technical problems that hurt rankings, often because they're built to be fast for developers rather than transparent to search engines.</p>
+
+      <h3>Duplicate URLs from routing, parameters, and trailing slashes</h3>
+      <p>Frameworks can unintentionally generate multiple versions of the same page, splitting a page's ranking signals across duplicates. Small inconsistencies — a missing or extra trailing slash — are enough to cause this.</p>
+
+      <h3>Canonical tags, robots directives, sitemaps, and structured data</h3>
+      <p>Canonical tags are essential for avoiding duplicate-content issues. XML sitemaps need to reflect exactly the pages you want indexed, and structured data plus robots directives help search engines understand a site correctly even in dynamic, JavaScript-driven environments.</p>
+
+      <h3>Internal links that depend on JavaScript event handlers</h3>
+      <p>Search engines prefer simple HTML anchor links for navigation. If a site relies on JavaScript click handlers instead of real links, crawlers can miss entire sections of the site.</p>
+
+      <h3>Pagination, faceted navigation, redirects, and soft 404s</h3>
+      <p>Pagination and faceted navigation can generate huge numbers of near-duplicate URLs, wasting crawl budget. Poorly configured redirects compound the problem by producing soft 404 errors that confuse both search engines and users.</p>
+
+      <h3>Mobile performance and unnecessary JavaScript</h3>
+      <p>Fast performance on mobile is essential for both user experience and rankings. Shipping too much JavaScript slows devices down — keeping bundle size lean is one of the simplest ways to protect load times across the board.</p>
 
       <div class="callout">
         <img src="https://cdn-icons-png.flaticon.com/512/1828/1828665.png" alt="Tip">
-        <span class="callout-text"><strong>Real-World Example:</strong> Serina Systems built a crop disease detection app for Kenyan farmers. Using a custom TFLite model trained on local datasets, the app identifies 12 common maize diseases from a single photo — with 91% accuracy — entirely offline.</span>
+        <span class="callout-text"><strong>Quick Check:</strong> Use Google Search Console's URL Inspection tool to see exactly what Googlebot renders on any given page. If the rendered HTML is missing content you can see in the browser, that's a strong sign your rendering strategy needs attention.</span>
       </div>
 
-      <h3>4. Recommendation Engines</h3>
-      <p>Personalisation engines drive engagement. On mobile, lightweight collaborative filtering or content-based models can be run on-device or via a lightweight backend. Firebase ML and AWS Personalise are solid managed options if you want to avoid building from scratch.</p>
+      <h2>Practical Ways to Make a JavaScript Framework Search-Friendly</h2>
+      <p>Making a modern framework both fast and discoverable comes down to a handful of deliberate choices about how content is delivered.</p>
 
-      <h2>Architecture Patterns for AI-Powered Mobile Apps</h2>
-      <p>How you integrate AI matters as much as which AI you use. Here are the three patterns we recommend:</p>
-      <ol>
-        <li><strong>Edge AI:</strong> Model runs on-device. Best for latency-sensitive, privacy-critical tasks.</li>
-        <li><strong>Cloud AI:</strong> Model runs server-side; app calls an API. Best for large, complex models that can't fit on device.</li>
-        <li><strong>Hybrid:</strong> Fast on-device model for real-time inference; cloud model for periodic, deeper analysis. The sweet spot for most apps.</li>
-      </ol>
+      <h3>Prefer server-side rendering or static generation for valuable pages</h3>
+      <p>Moving away from pure client-side rendering pays off quickly. Server-side rendering sends a complete page to the browser that's easy for search engines to read, while static generation builds HTML files at build time that are ready for crawlers the instant they arrive. Frameworks like Next.js let you choose the best rendering method on a page-by-page basis — reserve static or server-rendered output for the pages that matter most for search.</p>
 
-      <h2>Ethical Considerations</h2>
-      <p>AI in mobile apps comes with responsibilities. Be transparent with users about what data you collect and how the model uses it. Audit your training data for bias — especially for apps targeting diverse African markets where Western datasets may not generalise well. Build in easy opt-out mechanisms for personalisation features.</p>
+      <h3>Deliver meaningful HTML before running client-side scripts</h3>
+      <p>Search engines don't like waiting for JavaScript to finish loading. Aim to send a complete, readable page on the very first response — that meaningful HTML keeps your message visible even if scripts fail or load slowly.</p>
 
-      <h2>Getting Started: A Practical Roadmap</h2>
-      <ul>
-        <li>Start with a <strong>well-defined problem</strong> — don't add AI for the sake of it</li>
-        <li>Use <strong>pre-trained models</strong> before building custom ones</li>
-        <li>Measure impact with A/B testing — AI features should move metrics</li>
-        <li>Monitor model drift in production and retrain periodically</li>
-      </ul>
+      <h3>Set unique titles, descriptions, headings, and canonicals for every route</h3>
+      <p>Dynamic routing often leads to missing or duplicated metadata. Setting a unique title, meta description, and canonical tag for every route helps search engines understand each page individually and avoids duplicate-content penalties.</p>
+
+      <h3>Build crawlable links and maintain accurate sitemaps</h3>
+      <p>Use standard HTML anchor tags for navigation rather than JavaScript-only handlers, and keep an accurate, up-to-date XML sitemap so search engines can find new content quickly.</p>
+
+      <h3>Test rendered pages with Google Search Console and real performance tools</h3>
+      <p>Never guess how a search engine sees your site. Use Google Search Console to check exactly how pages are rendered and to catch indexing errors early, and pair that with real performance tools to monitor how framework choices affect both user experience and crawlability.</p>
+
+      <h2>When React Is Worth the SEO Trade-Off</h2>
+      <p>Choosing a tech stack always involves trade-offs between performance and visibility. Some projects genuinely need one more than the other.</p>
+
+      <h3>Interactive applications where user experience matters more than search traffic</h3>
+      <p>React is a great fit for dashboards, private tools, and logged-in experiences where being easy to use matters far more than being found by Google. The extra engineering effort needed for a smooth interface is worth it in these cases.</p>
+
+      <h3>Content-heavy sites should consider Astro, WordPress, or server rendering</h3>
+      <p>For sites built to attract organic traffic — blogs, news sites, e-commerce — options like Astro, WordPress, or Django's server rendering tend to perform better out of the box, because search engines simply prefer sites that load fast and render completely.</p>
+
+      <h3>How teams should evaluate framework selection before development begins</h3>
+      <p>Framework choice should follow project goals, not the other way round. Decide early whether a product genuinely needs to be found by search bots, or whether it's built primarily for logged-in users — that single decision saves a lot of rework later.</p>
+
+      <h3>Why architecture, content quality, and maintenance matter more than brand names</h3>
+      <p>Long-term success online is rarely about which framework a team chose. Solid architecture, genuinely useful content, and consistent maintenance beat a trendy stack every time. Build for the people using the site, and search rankings tend to follow.</p>
 
       <hr class="article-divider">
-      <p>Integrating AI into your mobile app doesn't have to be overwhelming. Start with one well-chosen feature, measure its impact, and iterate. The tools are mature, the documentation is excellent, and the competitive advantage for those who move now is real. If you'd like help scoping an AI feature for your app, the Serina Systems team is happy to advise.</p>
+      <p>Choosing the right technology stack matters, but success ultimately comes down to how a team handles rendering and content delivery. Fast, search-friendly sites can be built with almost any tool — the key is making sure links are crawlable and metadata is clean from day one.</p>
+      <p>React SEO is about more than picking a library. It's about making sure meaningful HTML reaches search engines first, so your content reaches the people searching for it. Whether your team is building with Astro, Next.js, WordPress, or plain React, that principle stays the same. If you'd like our team to review your site's SEO setup, get in touch with Serina Systems today.</p>
+
+      <h2>FAQ</h2>
+      <h3>Why is React often considered a challenge for search engine optimisation?</h3>
+      <p>React is often seen as difficult for SEO because it relies on client-side rendering by default: the server sends a bare HTML file, and the browser fills in the content with JavaScript. Googlebot has gotten better at handling JavaScript, but there's still a delay between crawling and indexing that can leave a site less visible than competitors.</p>
+
+      <h3>How does Next.js improve the SEO capabilities of a React application?</h3>
+      <p>Next.js addresses many of React's default SEO weaknesses by offering server-side rendering and static site generation, so a site's content and metadata get indexed quickly and accurately.</p>
+
+      <h3>Is WordPress still a better choice for SEO than modern JavaScript frameworks?</h3>
+      <p>WordPress remains strong for SEO because it was built for content publishing, with a server-rendered foundation and a large ecosystem of SEO plugins. That said, well-configured frameworks like Astro or Next.js can outperform it on raw speed.</p>
+
+      <h3>What makes Astro a unique choice for SEO-focused developers?</h3>
+      <p>Astro ships no JavaScript to the browser by default, generating static HTML and only adding interactive components where they're actually needed. That keeps sites very fast, which search engines reward.</p>
+
+      <h3>Does using Node.js automatically guarantee my website will be search-friendly?</h3>
+      <p>No. Node.js is a runtime for executing JavaScript, not an SEO framework. How search-friendly a site is depends entirely on the architecture built on top of it.</p>
+
+      <h3>How does Django handle search engine crawling compared to JavaScript-heavy sites?</h3>
+      <p>Django renders pages on the server by default, so search engines receive a complete page immediately — a strong advantage for sites that need to be indexed quickly.</p>
+
+      <h3>What are the most common technical SEO mistakes in framework-based development?</h3>
+      <p>Common issues include broken internal links, missing image alt text, and forgetting to update page titles and meta descriptions on dynamic routes. Each of these quietly erodes search rankings over time.</p>
+
+      <h3>Can I still rank well if my site uses a heavy JavaScript bundle?</h3>
+      <p>It's possible, but harder. Large bundles slow a site down and hurt Core Web Vitals. Code splitting, or choosing a lighter framework like Astro for content-heavy pages, makes ranking well considerably easier.</p>
     `
   },
   3: {
