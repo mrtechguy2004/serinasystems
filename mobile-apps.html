@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<title>Mobile Apps | Serina Systems</title>
+<meta name="description" content="Custom Android and cross-platform mobile app development in Nakuru, Kenya. Business, booking, e-commerce and management apps from Serina Systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+:root{
+  --primary:#1a6dff;
+  --primary-dark:#0f52cc;
+  --primary-soft:rgba(26,109,255,.12);
+  --dark:#1b2530;
+  --dark-2:#141c25;
+  --text:#6b7280;
+  --heading:#1d242b;
+  --light:#f5f7fa;
+  --white:#fff;
+  --radius:4px;
+  --font-head:'Rajdhani',sans-serif;
+  --font-body:'Roboto',sans-serif;
+  --shadow:0 10px 40px rgba(20,40,80,.08);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;font-family:var(--font-body);font-size:16px;line-height:1.8;color:var(--text);background:#fff;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none;transition:.3s}
+ul{list-style:none;margin:0;padding:0}
+h1,h2,h3,h4{font-family:var(--font-head);color:var(--heading);margin:0;text-transform:uppercase;line-height:1.2;font-weight:700}
+p{margin:0 0 16px}
+button{font-family:inherit;cursor:pointer}
+.container{width:100%;max-width:1464px;margin:0 auto;padding:0 20px}
+@media (min-width:1200px){.container{padding:0 40px}}
+
+.ph{background-color:#2c3a4a;background-size:cover;background-position:center;position:relative}
+.ph-about{background-image:url('https://images.pexels.com/photos/6592700/pexels-photo-6592700.jpeg?auto=compress&cs=tinysrgb&w=1000'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+.ph-6{background-image:url('https://images.pexels.com/photos/8133993/pexels-photo-8133993.jpeg?auto=compress&cs=tinysrgb&w=1400'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+.ph-svc-web{background-image:url('https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?auto=compress&cs=tinysrgb&w=900'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+.ph-svc-mobile{background-image:url('https://images.pexels.com/photos/14158915/pexels-photo-14158915.jpeg?auto=compress&cs=tinysrgb&w=900'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+.ph-svc-system{background-image:url('https://images.pexels.com/photos/5483071/pexels-photo-5483071.jpeg?auto=compress&cs=tinysrgb&w=900'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+.ph-svc-seo{background-image:url('https://images.pexels.com/photos/7947999/pexels-photo-7947999.jpeg?auto=compress&cs=tinysrgb&w=900'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+.ph-svc-social{background-image:url('https://images.pexels.com/photos/7634159/pexels-photo-7634159.jpeg?auto=compress&cs=tinysrgb&w=900'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+.ph-svc-brand{background-image:url('https://images.pexels.com/photos/6231/marketing-color-colors-wheel.jpg?auto=compress&cs=tinysrgb&w=900'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+.ph-blog1{background-image:url('https://images.pexels.com/photos/574087/pexels-photo-574087.jpeg?auto=compress&cs=tinysrgb&w=800'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+.ph-blog2{background-image:url('https://images.pexels.com/photos/5466271/pexels-photo-5466271.jpeg?auto=compress&cs=tinysrgb&w=800'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+.ph-blog3{background-image:url('https://images.pexels.com/photos/6424583/pexels-photo-6424583.jpeg?auto=compress&cs=tinysrgb&w=800'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+.ph-av0{background-image:url('https://images.pexels.com/photos/36766672/pexels-photo-36766672.jpeg?auto=compress&cs=tinysrgb&w=400'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+.ph-av1{background-image:url('https://images.pexels.com/photos/13801799/pexels-photo-13801799.jpeg?auto=compress&cs=tinysrgb&w=400'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+.ph-av2{background-image:url('https://images.pexels.com/photos/8875503/pexels-photo-8875503.jpeg?auto=compress&cs=tinysrgb&w=400'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+.ph-av3{background-image:url('https://images.pexels.com/photos/936137/pexels-photo-936137.jpeg?auto=compress&cs=tinysrgb&w=400'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+
+.btn{display:inline-flex;align-items:center;gap:12px;padding:0 25px;height:50px;border-radius:var(--radius);font-family:var(--font-head);font-weight:700;font-size:16px;letter-spacing:.8px;text-transform:uppercase;border:0;transition:.3s;white-space:nowrap}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--dark);color:#fff}
+.btn-white{background:#fff;color:var(--heading);height:52px;font-size:15px}
+.btn-white:hover{background:var(--primary);color:#fff}
+.btn i{font-size:16px}
+
+.eyebrow{display:flex;align-items:center;gap:15px;font-family:var(--font-head);font-weight:600;font-size:17px;letter-spacing:.5px;text-transform:uppercase;color:var(--primary);margin-bottom:12px}
+.eyebrow::after{content:"";width:60px;height:1px;background:var(--primary)}
+.eyebrow.center{justify-content:center}
+.title{font-size:46px;letter-spacing:.2px}
+.title.center{text-align:center}
+.title.light{color:#fff}
+.muted{color:var(--text)}
+@media (max-width:991px){.title{font-size:36px}}
+@media (max-width:575px){.title{font-size:29px}.eyebrow{font-size:15px}}
+
+.topbar{background:var(--dark);color:#fff;font-size:14px}
+.topbar-inner{max-width:1920px;margin:0 auto;padding:0 38px;display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:46px}
+.topbar-hiring{margin:0;white-space:nowrap}
+.topbar-hiring span{color:var(--primary)}
+.topbar-info{display:flex;align-items:center;margin-left:auto}
+.topbar-info li{display:flex;align-items:center;gap:12px;padding:0 22px;height:46px;border-left:1px solid rgba(255,255,255,.1)}
+.topbar-info li i{color:var(--primary);font-size:15px}
+.topbar-info a:hover{color:var(--primary)}
+.social{display:flex;gap:10px}
+.social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;font-size:17px}
+.topbar-social{padding-left:22px;border-left:1px solid rgba(255,255,255,.1)}
+.topbar-social a{color:#fff;width:32px}
+.topbar-social a:hover{color:var(--primary)}
+@media (max-width:1399px){.topbar-hiring{display:none}.topbar-info{margin-left:0}}
+@media (max-width:991px){.topbar{display:none}}
+
+.header{position:sticky;top:0;z-index:999;background:#fff;box-shadow:0 8px 30px rgba(20,40,80,.07)}
+.header-inner{max-width:1920px;margin:0 auto;padding:0 38px;height:96px;display:flex;align-items:center;gap:40px;transition:height .3s}
+.header.scrolled .header-inner{height:82px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:48px;height:48px;border-radius:50%;background:var(--dark);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;position:relative;box-shadow:inset 0 0 0 5px var(--dark),inset 0 0 0 7px var(--primary)}
+.logo-mark::after{content:"";position:absolute;top:1px;right:1px;width:13px;height:13px;border-radius:50%;background:var(--primary);border:2px solid #fff}
+.logo-text{font-family:var(--font-head);font-weight:700;font-size:34px;line-height:.9;color:var(--dark);text-transform:none;letter-spacing:-.5px;display:flex;flex-direction:column}
+.logo-text small{font-size:12.5px;letter-spacing:6.5px;text-transform:uppercase;color:var(--primary);font-weight:700;margin-top:4px}
+.nav{display:flex;align-items:center;flex:1}
+.nav>ul{display:flex;align-items:center;gap:6px;margin-left:30px}
+.nav>ul>li{position:relative}
+.nav>ul>li>a{display:block;padding:30px 12px;font-family:var(--font-head);font-weight:700;font-size:16.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--heading)}
+.nav>ul>li>a:hover,.nav>ul>li>a.active{color:var(--primary)}
+.has-sub>a::after{content:"\f107";font-family:"Font Awesome 6 Free";font-weight:900;margin-left:6px;font-size:12px}
+.sub{position:absolute;top:100%;left:0;min-width:220px;background:#fff;box-shadow:var(--shadow);border-top:3px solid var(--primary);opacity:0;visibility:hidden;transform:translateY(15px);transition:.3s;padding:10px 0}
+.has-sub:hover .sub{opacity:1;visibility:visible;transform:none}
+.sub a{display:block;padding:9px 25px;font-family:var(--font-head);font-size:17px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--heading)}
+.sub a:hover{color:var(--primary);padding-left:32px}
+.nav-quote,.nav-close,.nav-logo{display:none}
+.header-right{display:flex;align-items:center;gap:22px;margin-left:auto}
+.header-call{display:flex;align-items:center;gap:12px;padding-right:22px;border-right:1px solid #e6eaef}
+.header-call>i{font-size:30px;color:var(--primary)}
+.header-call a{display:block;font-family:var(--font-head);font-weight:700;font-size:20px;letter-spacing:.5px;color:var(--heading);line-height:1.2}
+.header-call a:hover{color:var(--primary)}
+.header-call span{font-size:14px;color:var(--text);display:block;line-height:1.4}
+.search-btn{background:none;border:0;font-size:20px;color:var(--heading);padding:8px}
+.search-btn:hover{color:var(--primary)}
+.header-quote{height:52px;padding:0 22px;font-size:15.5px}
+.burger{display:none;width:46px;height:46px;padding:0;background:none;border:0;flex-direction:column;align-items:center;justify-content:center}
+.burger img{display:block;width:32px;height:32px;object-fit:contain}
+.search-box{position:absolute;left:0;right:0;top:100%;background:#fff;padding:22px 38px;box-shadow:var(--shadow);display:none}
+.search-box.open{display:block}
+.search-box form{max-width:700px;margin:auto;display:flex;border:2px solid var(--primary);border-radius:var(--radius);overflow:hidden}
+.search-box input{flex:1;border:0;padding:14px 20px;font-size:16px;outline:0;font-family:var(--font-body)}
+.search-box button{background:var(--primary);color:#fff;border:0;padding:0 24px;font-size:18px}
+
+@media (max-width:1699px){.header-call span{display:none}.header-call a{font-size:19px}.nav>ul{margin-left:10px}.header-inner{gap:25px}}
+@media (max-width:1499px){.header-call{display:none}}
+@media (max-width:1199px){
+  .header-inner{height:76px;padding:0 20px}
+  .header.scrolled .header-inner{height:68px}
+  .logo-text{font-size:29px}.logo-mark{width:42px;height:42px;font-size:17px}
+  .burger{display:flex}
+  .header-quote{display:none}
+  .nav{position:fixed;top:0;left:0;bottom:0;width:340px;max-width:86vw;background:#fff;flex-direction:column;align-items:stretch;padding:22px 25px 30px;overflow-y:auto;transform:translateX(-105%);transition:transform .35s;z-index:1001;box-shadow:10px 0 40px rgba(0,0,0,.15)}
+  .nav.open{transform:none}
+  .nav-logo{display:block;padding:0 56px 18px 5px;margin-bottom:8px;border-bottom:1px solid #edf0f4}
+  .nav-logo img{display:block;height:54px;width:auto;max-width:100%}
+  .nav-close{display:flex;position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;border:0;align-items:center;justify-content:center;font-size:18px}
+  .nav>ul{flex-direction:column;align-items:stretch;gap:0;margin:0}
+  .nav>ul>li>a{padding:14px 5px;border-bottom:1px solid #edf0f4}
+  .sub{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 0 15px;display:none}
+  .has-sub.open .sub{display:block}
+  .has-sub>a{display:flex;justify-content:space-between;align-items:center}
+  .nav-quote{display:inline-flex;margin-top:25px;justify-content:center}
+}
+@media (max-width:575px){
+  .header-inner{height:66px}
+  .logo-text{font-size:25px}.logo-text small{font-size:10px;letter-spacing:5px}
+  .logo-mark{width:38px;height:38px;font-size:15px}
+  .search-btn{font-size:19px}
+  .header-right{gap:10px}
+}
+.overlay{position:fixed;inset:0;background:rgba(10,18,28,.6);opacity:0;visibility:hidden;transition:.3s;z-index:998}
+.overlay.show{opacity:1;visibility:visible}
+
+.ph-wwp{background-image:url('https://images.pexels.com/photos/7710150/pexels-photo-7710150.jpeg?auto=compress&cs=tinysrgb&w=1000'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+
+.about{background:var(--light);padding-top:40px;position:relative}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;padding-top:30px;padding-bottom:70px}
+.about-media{position:relative;padding:0 0 60px}
+.dots-pattern{position:absolute;top:-25px;left:-50px;width:140px;height:130px;background-image:radial-gradient(#c3cad3 3px,transparent 3px);background-size:20px 20px;z-index:0}
+.about-photo{position:relative;z-index:1;height:735px;border-radius:12px;overflow:hidden}
+.stat-card{position:absolute;left:-130px;bottom:60px;z-index:2;background:#fff;border-radius:6px;padding:18px 22px 18px 18px;display:flex;align-items:center;gap:20px;box-shadow:var(--shadow);min-width:325px}
+.stat-avatar{width:120px;height:120px;border-radius:6px;flex:0 0 120px}
+.stat-card strong{display:block;font-family:var(--font-head);font-size:64px;line-height:1;color:var(--primary);font-weight:700}
+.stat-card span{font-size:18px;color:var(--heading);font-weight:500}
+.about-text .title{margin-bottom:28px}
+.about-text .lead{font-size:17.5px;margin-bottom:28px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:12px 30px;margin-bottom:30px}
+.checks li{display:flex;align-items:center;gap:12px;color:var(--heading);font-size:17px;font-weight:400}
+.checks i{color:var(--primary);font-size:22px}
+.about-join{background:#fff;padding:36px 0;margin-left:50%}
+.about-join-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-left:0;max-width:none;margin:0}
+.about-join p{margin:0;font-size:17px}
+.join-phone{font-family:var(--font-head);font-weight:700;font-size:30px;color:var(--primary);display:flex;align-items:center;gap:14px;letter-spacing:.5px}
+.join-phone i{font-size:26px}
+.join-phone:hover{color:var(--dark)}
+@media (max-width:1399px){.stat-card{left:-40px}.about-grid{gap:60px}.about-photo{height:640px}}
+@media (max-width:1199px){.about-grid{gap:40px}.about-photo{height:560px}.stat-card{left:-10px;min-width:280px}.stat-avatar{width:90px;height:90px;flex-basis:90px}.stat-card strong{font-size:50px}}
+@media (max-width:991px){
+  .about-grid{grid-template-columns:1fr;padding-bottom:40px}
+  .about-photo{height:480px}
+  .stat-card{left:20px;bottom:30px}
+  .dots-pattern{left:-10px}
+  .about-join{margin-left:0}
+  .about-join-inner{padding:0 20px;max-width:1464px;margin:0 auto}
+  .checks{gap:10px 20px}
+}
+@media (max-width:575px){
+  .about-photo{height:380px}
+  .stat-card{position:relative;left:0;bottom:0;margin:-40px 15px 0;min-width:0;padding:14px}
+  .stat-avatar{width:76px;height:76px;flex-basis:76px}
+  .stat-card strong{font-size:42px}
+  .about-media{padding-bottom:0}
+  .checks{grid-template-columns:1fr}
+  .about-join-inner{flex-direction:column;text-align:center}
+  .join-phone{font-size:26px}
+}
+
+
+.partners{display:flex;justify-content:space-between;align-items:center;gap:30px;margin-top:80px;padding:0 40px;flex-wrap:wrap;opacity:.9}
+.partner{display:flex;align-items:center;gap:10px;color:#b5bcc6;filter:grayscale(1);transition:.3s;font-family:var(--font-head);font-size:30px;font-weight:700;text-transform:none;line-height:1}
+.partner:hover{color:var(--primary)}
+.partner i{font-size:56px}
+.partner span{display:flex;flex-direction:column}
+.partner b{font-weight:700}
+.partner small{font-size:13px;letter-spacing:5px;text-transform:uppercase;font-weight:600}
+
+.blog{padding:20px 0 120px;background:#fff}
+.blog-head{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:65px}
+.blog-head .btn{height:68px;padding:0 50px}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:38px}
+.post{position:relative;padding-right:38px;padding-bottom:0}
+.post-img{height:300px;border-radius:8px 8px 0 8px;position:relative;margin-right:-38px;z-index:1;overflow:hidden}
+.post-img::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.1))}
+.post-date{position:absolute;bottom:0;right:38px;background:var(--primary);color:#fff;font-family:var(--font-head);font-weight:600;font-size:17px;letter-spacing:.5px;text-transform:uppercase;padding:9px 28px;z-index:3;display:flex;align-items:center;gap:8px;border-radius:2px 2px 0 0}
+.post-body{background:#fff;box-shadow:0 12px 40px rgba(20,40,80,.09);padding:38px 38px 40px;margin-top:-1px;position:relative;z-index:0}
+.post-meta{display:flex;flex-wrap:wrap;gap:12px 28px;font-size:15px;text-transform:uppercase;margin-bottom:20px;color:var(--text)}
+.post-meta span{display:flex;align-items:center;gap:10px}
+.post-meta i{color:var(--primary);font-size:18px}
+.post-body h3{font-size:25px;line-height:1.4;margin-bottom:18px;letter-spacing:.3px}
+.post-body h3 a:hover{color:var(--primary)}
+.post-body p{margin:0;font-size:16.5px}
+@media (max-width:1199px){.blog-grid{gap:24px}.post{padding-right:20px}.post-img{margin-right:-20px;height:240px}.post-date{right:20px}.post-body{padding:28px 22px}.post-body h3{font-size:21px}}
+@media (max-width:991px){.blog-grid{grid-template-columns:1fr 1fr}.blog-grid .post:last-child{display:none}.blog-head .btn{height:58px;padding:0 32px}}
+@media (max-width:575px){.blog-grid{grid-template-columns:1fr}.blog-grid .post:last-child{display:block}.blog{padding-bottom:70px}.blog-head{margin-bottom:40px;align-items:flex-end}.blog-head .btn{padding:0 22px;height:50px}.post-img{height:210px}}
+
+.footer{position:relative;background:linear-gradient(rgba(23,31,41,.94),rgba(23,31,41,.97)),url('https://images.pexels.com/photos/270373/pexels-photo-270373.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover,#1a232d;color:#dbe1e8;padding:0 0 0;margin-top:120px;overflow:visible}
+.footer::before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px}
+.footer-blob{position:absolute;left:0;bottom:0;width:260px;height:300px;background:var(--primary);clip-path:path('M0 0 C 40 40, 70 100, 130 150 C 190 190, 230 230, 260 300 L 0 300 Z');z-index:0}
+.footer .container{position:relative;z-index:2}
+.contact-bar{background:var(--primary);border-radius:6px;margin-top:-62px;display:flex;align-items:center;color:#fff;min-height:126px;box-shadow:0 15px 40px rgba(15,60,160,.25)}
+.cb-item{display:flex;align-items:center;gap:16px;padding:0 38px;height:126px;font-family:var(--font-head);font-weight:600;font-size:23px;letter-spacing:.3px;border-right:1px solid rgba(255,255,255,.18);white-space:nowrap}
+.cb-item i{font-size:30px;opacity:.95}
+a.cb-item:hover{background:rgba(0,0,0,.08)}
+.cb-social{margin-left:auto;padding-right:32px}
+.cb-social a{background:#fff;color:var(--heading);width:56px;height:56px;font-size:20px}
+.cb-social a:hover{background:var(--dark);color:#fff}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:50px;padding:95px 0 70px}
+.footer p{color:#d5dbe3}
+.ftitle{color:#fff;font-size:26px;padding-bottom:20px;margin-bottom:30px;position:relative;letter-spacing:.3px}
+.ftitle::after{content:"";position:absolute;left:0;bottom:0;width:50px;height:2px;background:var(--primary);filter:brightness(1.3)}
+.fcol p{font-size:17.5px;margin-bottom:34px}
+.support-box{background:#fff;border-radius:6px;padding:22px 20px 22px 38px;display:flex;align-items:center;justify-content:space-between;gap:10px;transition:.3s}
+.support-box strong{display:block;font-family:var(--font-head);font-size:25px;color:var(--heading);line-height:1.2;font-weight:700}
+.support-box div span{color:var(--heading);font-size:18px;font-weight:500}
+.support-ico{width:76px;height:76px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;flex:0 0 76px}
+.support-box:hover{transform:translateY(-4px)}
+.flinks li{margin-bottom:17px}
+.flinks a{display:flex;align-items:center;gap:14px;font-size:17.5px;color:#d5dbe3}
+.flinks a i{font-size:12px;color:#fff}
+.flinks a:hover{color:var(--primary);filter:brightness(1.4);padding-left:6px}
+.fnews{display:flex;gap:14px;align-items:center;margin-bottom:28px}
+.fnews-img{flex:0 0 94px;height:94px;border-radius:2px}
+.fnews b{display:block;font-weight:400;font-size:17.5px;color:#fff;line-height:1.7;margin-bottom:2px}
+.fnews em{font-style:normal;font-family:var(--font-head);font-weight:700;font-size:16px;letter-spacing:.5px;text-transform:uppercase;color:var(--primary);filter:brightness(1.5)}
+.fnews:hover b{color:var(--primary);filter:brightness(1.5)}
+.news-form{display:flex;background:#fff;border-radius:3px;padding:5px;max-width:310px}
+.news-form input{flex:1;min-width:0;border:0;outline:0;padding:0 16px;font-size:17px;height:65px;font-family:var(--font-body);color:var(--heading)}
+.news-form button{width:68px;height:65px;border:0;background:var(--primary);color:#fff;font-size:20px;transition:.3s}
+.news-form button:hover{background:var(--dark)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:35px 0 38px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.footer-bottom p{margin:0;font-size:17.5px;color:#fff}
+.footer-bottom ul{display:flex;gap:30px;padding-right:12px}
+.footer-bottom a{font-size:17px;color:#fff}
+.footer-bottom a:hover{color:var(--primary);filter:brightness(1.5)}
+@media (max-width:1399px){.cb-item{padding:0 24px;font-size:20px}.footer-grid{gap:35px}}
+@media (max-width:1199px){
+  .contact-bar{flex-wrap:wrap;padding:10px 0}
+  .cb-item{height:76px;border-right:0}
+  .cb-social{margin-left:0;width:100%;padding:12px 24px 18px}
+  .footer-grid{grid-template-columns:1fr 1fr;padding-top:70px}
+}
+@media (max-width:767px){
+  .footer{margin-top:90px}
+  .contact-bar{flex-direction:column;align-items:flex-start;margin-top:-50px}
+  .cb-item{font-size:19px;padding:0 22px;height:64px;white-space:normal;word-break:break-word}
+  .footer-grid{grid-template-columns:1fr;padding:55px 0 40px}
+  .footer-blob{width:150px;height:170px}
+  .footer-bottom{flex-direction:column;text-align:center;padding-bottom:110px}
+  .footer-bottom ul{padding:0}
+  .support-box{padding:18px 16px 18px 22px}
+  .support-ico{width:60px;height:60px;flex-basis:60px;font-size:24px}
+}
+
+.wa-float{position:fixed;right:24px;bottom:100px;z-index:998;height:60px;min-width:60px;padding:0 0;border-radius:30px;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:34px;box-shadow:0 8px 24px rgba(37,211,102,.45);overflow:hidden;transition:.35s}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:inherit;border:2px solid #25d366;animation:waPulse 2s infinite;pointer-events:none}
+.wa-label{font-family:var(--font-head);font-weight:700;font-size:17px;letter-spacing:.5px;text-transform:uppercase;max-width:0;opacity:0;white-space:nowrap;overflow:hidden;transition:.35s}
+.wa-float:hover{padding:0 22px 0 18px;gap:10px;background:#1ebe5b}
+.wa-float:hover .wa-label{max-width:140px;opacity:1}
+@keyframes waPulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.45);opacity:0}}
+.to-top{position:fixed;right:28px;bottom:28px;z-index:997;width:56px;height:56px;border-radius:50%;background:var(--primary);color:#fff;border:3px solid #fff;box-shadow:0 0 0 2px var(--primary),0 6px 20px rgba(0,0,0,.2);font-size:22px;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:translateY(20px);transition:.35s}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top:hover{background:var(--dark);box-shadow:0 0 0 2px var(--dark)}
+@media (max-width:575px){.wa-float{right:16px;bottom:88px;height:54px;min-width:54px;font-size:30px}.to-top{right:20px;bottom:20px;width:50px;height:50px}}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+
+.page-banner{position:relative;min-height:560px;display:flex;align-items:center;color:#fff;background:var(--dark-2)}
+.page-banner-bg{position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(20,28,37,.92) 0%,rgba(20,28,37,.66) 45%,rgba(20,28,37,.12) 100%),
+  url('https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1920') 70% center/cover no-repeat,
+  linear-gradient(135deg,#243a57,#141c25)}
+.page-banner .container{position:relative;z-index:2}
+.page-banner h1{color:#fff;font-size:70px;letter-spacing:.5px;margin-bottom:10px}
+.crumbs{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:700;font-size:16px;letter-spacing:1.6px;text-transform:uppercase;color:#fff}
+.crumbs a:hover{color:var(--primary)}
+.crumbs span{color:var(--primary)}
+
+.team{background:var(--light);padding:0 0 110px}
+.team-grid{max-width:1700px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:38px}
+.tm-photo{position:relative;aspect-ratio:343/400}
+.tm-img{position:absolute;inset:0;border-radius:6px;background-position:center top}
+.tm-share{position:absolute;right:13px;bottom:-31px;z-index:3;width:62px;height:62px;border-radius:50%;background:var(--primary);color:#fff;border:0;font-size:20px;display:flex;align-items:center;justify-content:center;transition:.3s}
+.tm-share:hover{background:var(--dark)}
+.tm-social{position:absolute;right:13px;bottom:50px;z-index:2;display:flex;flex-direction:column;gap:7px;opacity:0;visibility:hidden;transform:translateY(14px);transition:.35s}
+.tm-social a{width:62px;height:62px;border-radius:50%;background:#fff;color:var(--dark);display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 6px 20px rgba(20,40,80,.14)}
+.tm-social a:hover{background:var(--primary);color:#fff}
+.tm-card:hover .tm-social,.tm-card.open .tm-social,.tm-card:focus-within .tm-social{opacity:1;visibility:visible;transform:none}
+.tm-info{padding-top:34px}
+.tm-role{display:block;font-size:14.5px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--primary);line-height:1.5}
+.tm-name{font-size:28px;margin-top:2px}
+
+
+.sub a.current{color:var(--primary)}
+.page-banner-bg{background:
+  linear-gradient(90deg,rgba(20,28,37,.92) 0%,rgba(20,28,37,.66) 45%,rgba(20,28,37,.14) 100%),
+  url('https://images.pexels.com/photos/14158915/pexels-photo-14158915.jpeg?auto=compress&cs=tinysrgb&w=1920') 70% center/cover no-repeat,
+  linear-gradient(135deg,#243a57,#141c25)}
+.ph-hero{background-image:url('https://images.pexels.com/photos/5483071/pexels-photo-5483071.jpeg?auto=compress&cs=tinysrgb&w=1400'),linear-gradient(135deg,#3b5573,#1d2a3a)}
+.btn:focus-visible,.acc-q:focus-visible,.svc-menu a:focus-visible{outline:3px solid var(--primary);outline-offset:3px}
+
+.svc-page{padding:110px 0 0;background:#fff}
+.svc-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:40px;align-items:start}
+.svc-side{display:grid;gap:40px}
+
+.svc-menu{background:var(--dark);border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}
+.svc-menu a{display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:80px;padding:0 36px;font-family:var(--font-head);font-weight:700;font-size:19.5px;letter-spacing:.7px;text-transform:uppercase;color:#fff;border-bottom:1px solid rgba(255,255,255,.08);transition:background .3s,padding .3s}
+.svc-menu li:last-child a{border-bottom:0}
+.svc-menu a::after{content:"";flex:0 0 22px;width:22px;height:22px;border:2px solid #fff;border-radius:50%;transition:.3s}
+.svc-menu a:hover{background:rgba(255,255,255,.06);padding-left:42px}
+.svc-menu a.current{background:var(--primary)}
+.svc-menu a.current::after{background:#fff;box-shadow:inset 0 0 0 4px var(--primary);border-color:#fff}
+
+.dl-card{background:#fff;border:1px solid #e6eaef;border-radius:8px;padding:38px 36px 20px}
+.dl-card h3,.ct-card h3{font-size:30px}
+.dl-card h3{position:relative;padding-bottom:20px;margin-bottom:28px;border-bottom:1px solid #e6eaef}
+.dl-card h3::after{content:"";position:absolute;left:0;bottom:-1px;width:50px;height:2px;background:var(--primary)}
+.dl-item{display:flex;align-items:center;gap:20px;margin-bottom:26px}
+.dl-ico{flex:0 0 50px;font-size:46px;color:var(--primary);line-height:1;transition:.3s}
+.dl-item strong{display:block;font-family:var(--font-head);font-size:21px;line-height:1.25;color:var(--heading);text-transform:uppercase;letter-spacing:.3px;transition:.3s}
+.dl-item small{display:block;font-size:13px;letter-spacing:2.2px;text-transform:uppercase;margin-top:2px}
+.dl-item:hover strong{color:var(--primary)}
+.dl-item:hover .dl-ico{transform:translateY(-3px)}
+
+.ct-card{position:relative;overflow:hidden;background:var(--dark);border-radius:8px;padding:50px 30px 46px;text-align:center;color:#fff;box-shadow:var(--shadow)}
+.ct-card::before{content:"";position:absolute;left:0;bottom:0;width:74%;height:50%;background:var(--primary);border-top-right-radius:100% 100%}
+.ct-card::after{content:"";position:absolute;right:0;top:0;width:64%;height:36%;background:repeating-linear-gradient(135deg,rgba(255,255,255,.07) 0 2px,transparent 2px 9px);border-bottom-left-radius:100% 100%}
+.ct-card>*{position:relative;z-index:2}
+.ct-av{width:188px;height:188px;margin:0 auto 28px;border-radius:50%;border:5px solid rgba(255,255,255,.08)}
+.ct-card h3{color:#fff;font-size:28px;margin-bottom:22px}
+.ct-card p{margin:0 0 4px;color:#fff;font-size:18px;line-height:1.7}
+.ct-card p a:hover{color:#9cc2ff}
+.ct-card .social{justify-content:center;margin-top:26px;gap:12px}
+.ct-card .social a{background:#fff;color:var(--heading);width:56px;height:56px;font-size:20px}
+.ct-card .social a:hover{background:var(--dark);color:#fff}
+
+.svc-hero{height:480px;border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}
+.blk{margin-top:64px}
+.blk-title{font-size:40px;letter-spacing:.2px;margin-bottom:20px}
+.blk p{font-size:17px}
+.chk2{display:grid;grid-template-columns:1fr 1fr;gap:16px 40px;margin-top:28px}
+.chk2 li{display:flex;align-items:center;gap:14px;font-size:17.5px;color:var(--heading)}
+.chk2 i{color:var(--primary);font-size:24px}
+
+.mini-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;background:var(--primary);border-radius:8px;padding:38px 34px;margin-top:44px;box-shadow:0 15px 40px rgba(15,60,160,.22)}
+.ms{text-align:center;color:#fff;border-right:1px solid rgba(255,255,255,.2)}
+.ms:last-child{border-right:0}
+.ms strong{display:block;font-family:var(--font-head);font-size:50px;line-height:1;font-weight:700}
+.ms sup{font-size:.5em;top:-.8em;margin-left:2px}
+.ms>span{display:block;font-size:16px;margin-top:6px;line-height:1.3}
+
+.what-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:34px}
+.what{position:relative;background:#fff;border:1px solid #e6eaef;border-radius:8px;padding:32px 30px 28px;transition:transform .3s,box-shadow .3s,border-color .3s;overflow:hidden}
+.what::before{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--primary);transition:width .4s}
+.what:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(20,40,80,.12);border-color:transparent}
+.what:hover::before{width:100%}
+.what-ico{width:70px;height:70px;border-radius:6px;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:30px;margin-bottom:20px;transition:.3s}
+.what:hover .what-ico{background:var(--primary);color:#fff}
+.what h3{font-size:24px;margin-bottom:10px}
+.what p{margin:0;font-size:16px;line-height:1.7}
+
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:30px}
+.pair .ph{height:300px;border-radius:8px}
+.ben-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px 34px;margin-top:38px}
+.ben{display:flex;gap:18px;align-items:flex-start}
+.ben>i{flex:0 0 56px;width:56px;height:56px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:21px}
+.ben h4{font-size:22px;margin-bottom:4px}
+.ben p{margin:0;font-size:16px;line-height:1.65}
+
+.tech-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:32px}
+.tech{background:var(--light);border-radius:8px;padding:26px 10px 20px;text-align:center;transition:.3s}
+.tech i{display:block;font-size:42px;color:var(--heading);margin-bottom:12px;transition:.3s}
+.tech span{font-family:var(--font-head);font-weight:700;font-size:17px;letter-spacing:.6px;text-transform:uppercase;color:var(--heading)}
+.tech:hover{background:var(--primary);transform:translateY(-4px)}
+.tech:hover i,.tech:hover span{color:#fff}
+
+.incl{background:var(--light);border-radius:8px;padding:44px 44px 40px;margin-top:64px;position:relative;overflow:hidden}
+.incl::after{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:var(--primary-soft)}
+.incl>*{position:relative;z-index:1}
+.incl .blk-title{font-size:34px}
+.incl-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 36px;margin-top:26px}
+.incl-grid li{display:flex;align-items:center;gap:16px;font-size:17px;color:var(--heading)}
+.incl-grid i{flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:#fff;color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 4px 14px rgba(20,40,80,.1)}
+
+.acc{display:grid;gap:18px;margin-top:28px}
+.acc-item{background:#fff;border-radius:6px;box-shadow:0 8px 30px rgba(20,40,80,.07)}
+.acc-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;background:none;border:0;text-align:left;padding:20px 24px 20px 36px;font-family:var(--font-head);font-weight:700;font-size:21px;letter-spacing:.4px;text-transform:uppercase;color:var(--heading);line-height:1.35}
+.acc-q em{font-style:normal;color:var(--primary);margin-right:8px}
+.acc-q i{flex:0 0 50px;width:50px;height:50px;border-radius:5px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;transition:background .3s}
+.acc-q:hover i{background:var(--primary-dark)}
+.acc-item.open .acc-q i::before{content:"\f068"}
+.acc-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.acc-a>div{padding:6px 36px 30px}
+.acc-a p{margin:0 0 14px;font-size:16.5px}
+.acc-a ul{display:grid;gap:8px}
+.acc-a li{display:flex;gap:12px;align-items:flex-start;color:var(--heading);font-size:16.5px}
+.acc-a li i{color:var(--primary);margin-top:5px}
+.link-more{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-family:var(--font-head);font-weight:700;font-size:18px;letter-spacing:.8px;text-transform:uppercase;color:var(--primary)}
+.link-more:hover{color:var(--dark);gap:16px}
+
+.wd-team{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:36px}
+.wd-team .tm-info{padding-top:42px;text-align:center}
+.wd-team .tm-name{font-size:26px}
+.wd-team .tm-share,.wd-team .tm-social a{width:54px;height:54px;font-size:18px}
+.wd-team .tm-share{bottom:-27px}.wd-team .tm-social{bottom:44px}
+
+.cta-card{position:relative;overflow:hidden;background:var(--dark-2);border-radius:10px;padding:64px 56px;margin-top:70px;display:flex;align-items:center;justify-content:space-between;gap:30px;color:#fff}
+.cta-card::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 3px,transparent 3px);background-size:24px 24px;-webkit-mask-image:radial-gradient(ellipse at 85% 40%,#000 10%,transparent 70%);mask-image:radial-gradient(ellipse at 85% 40%,#000 10%,transparent 70%)}
+.cta-card::after{content:"";position:absolute;left:-80px;bottom:-100px;width:240px;height:240px;border-radius:50%;background:var(--primary)}
+.cta-card>*{position:relative;z-index:2}
+.cta-card .t{padding-left:90px}
+.cta-card h2{color:#fff;font-size:36px;margin-bottom:10px}
+.cta-card p{margin:0;color:rgba(255,255,255,.78);font-size:17px}
+.cta-card .btn{height:64px;padding:0 40px;flex:0 0 auto}
+.footer{margin-top:120px}
+
+@media (min-width:992px){
+  .svc-grid{align-items:stretch}
+  .svc-main{align-self:start}
+  .svc-side{align-content:start}
+  .ct-card{position:sticky;top:120px}
+}
+
+@media (max-width:1399px){
+  .page-banner{min-height:480px}.page-banner h1{font-size:60px}
+  .svc-grid{gap:32px}.svc-menu a{padding:0 28px;font-size:18px}
+  .dl-card{padding:32px 28px 14px}.svc-hero{height:420px}
+  .tech-grid{grid-template-columns:repeat(4,1fr)}
+  .acc-q{font-size:19px;padding-left:28px}.acc-a>div{padding:6px 28px 28px}
+}
+@media (max-width:1199px){
+  .svc-page{padding-top:90px}
+  .svc-grid{grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:28px}
+  .svc-side{gap:28px}
+  .svc-menu a{min-height:70px;padding:0 22px;font-size:17px}
+  .dl-card{padding:28px 22px 12px}.dl-card h3,.ct-card h3{font-size:25px}
+  .dl-item strong{font-size:18px}.dl-ico{font-size:38px;flex-basis:40px}
+  .ct-av{width:150px;height:150px}.ct-card{padding:40px 20px 38px}.ct-card p{font-size:16px}
+  .ct-card .social a{width:46px;height:46px;font-size:17px}
+  .svc-hero{height:340px}.blk-title{font-size:34px}
+  .mini-stats{grid-template-columns:repeat(2,1fr);gap:30px 20px}.ms:nth-child(2){border-right:0}
+  .what-grid{gap:20px}.tech-grid{grid-template-columns:repeat(3,1fr)}
+  .wd-team{gap:20px}
+  .cta-card{padding:52px 36px}.cta-card .t{padding-left:60px}.cta-card h2{font-size:30px}
+}
+@media (max-width:991px){
+  .page-banner{min-height:380px}.page-banner h1{font-size:50px}
+  .svc-page{padding-top:70px}
+  .svc-grid{grid-template-columns:1fr;gap:60px}
+  .svc-main{order:-1}
+  .svc-side{grid-template-columns:1fr 1fr;gap:30px}
+  .svc-menu{grid-column:1/-1}
+  .svc-menu ul{display:grid;grid-template-columns:1fr 1fr}
+  .svc-menu li:nth-last-child(2) a{border-bottom:0}
+  .svc-hero{height:400px}
+  .what-grid{grid-template-columns:1fr 1fr}
+  .tech-grid{grid-template-columns:repeat(4,1fr)}
+  .cta-card{margin-top:56px}
+}
+@media (max-width:767px){
+  .svc-side{grid-template-columns:1fr}
+  .svc-menu ul{grid-template-columns:1fr}
+  .svc-menu li:nth-last-child(2) a{border-bottom:1px solid rgba(255,255,255,.08)}
+  .svc-hero{height:320px}
+  .chk2,.incl-grid,.ben-grid,.pair,.what-grid{grid-template-columns:1fr}
+  .pair{gap:22px}.pair .ph{height:250px}
+  .tech-grid{grid-template-columns:repeat(3,1fr);gap:14px}
+  .wd-team{grid-template-columns:1fr 1fr;gap:50px 20px}
+  .incl{padding:34px 24px}
+  .cta-card{flex-direction:column;align-items:flex-start;padding:46px 28px}.cta-card .t{padding-left:0}
+}
+@media (max-width:575px){
+  .page-banner{min-height:300px}.page-banner h1{font-size:34px;line-height:1.15}.crumbs{font-size:13px;flex-wrap:wrap;gap:6px}
+  .page-banner-bg{background-position:60% center}
+  .svc-page{padding-top:56px}.svc-grid{gap:50px}
+  .svc-hero{height:240px}
+  .blk{margin-top:48px}.blk-title{font-size:28px}.blk p{font-size:16.5px}
+  .mini-stats{padding:30px 16px;gap:26px 10px}.ms strong{font-size:40px}.ms>span{font-size:14.5px}
+  .what{padding:26px 22px 24px}
+  .tech-grid{grid-template-columns:repeat(2,1fr)}
+  .acc-q{font-size:17px;padding:16px 14px 16px 18px;gap:12px}
+  .acc-q i{flex-basis:42px;width:42px;height:42px;font-size:15px}
+  .acc-a>div{padding:4px 18px 24px}
+  .wd-team{grid-template-columns:1fr;gap:56px}
+  .incl .blk-title{font-size:27px}
+  .cta-card h2{font-size:27px}.cta-card .btn{height:58px;padding:0 30px}
+  .ct-av{width:132px;height:132px}
+}
+
+.logo{display:flex;align-items:center;flex:0 0 auto}
+.logo img{display:block;height:72px;width:auto;max-width:none;transition:height .3s}
+.header.scrolled .logo img{height:62px}
+@media (max-width:1199px){.logo img{height:58px}.header.scrolled .logo img{height:52px}}
+@media (max-width:575px){.logo img{height:50px}.header.scrolled .logo img{height:46px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <p class="topbar-hiring"><span>Now Hiring:</span> Are you a driven and motivated Web Developer or Digital Marketer?</p>
+    <ul class="topbar-info">
+      <li><i class="fa-regular fa-envelope"></i> <a href="mailto:serinasystems@gmail.com">serinasystems@gmail.com</a></li>
+      <li><i class="fa-solid fa-phone-volume"></i> Make a call : <a href="tel:+254745883650">0745 883 650</a></li>
+      <li><i class="fa-solid fa-location-dot"></i> Nakuru, Kenya</li>
+    </ul>
+    <ul class="social topbar-social">
+      <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
+      <li><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></li>
+      <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+      <li><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+    </ul>
+  </div>
+</div>
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Serina Systems - Home">
+      <img src="logo.png" alt="Serina Systems - where clarity meets innovation" width="637" height="209">
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <button class="nav-close" id="navClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+      <a href="index.html" class="nav-logo" aria-label="Serina Systems - Home">
+        <img src="logo.png" alt="Serina Systems" width="637" height="209">
+      </a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub"><a href="about.html">Pages</a>
+          <ul class="sub">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="process.html">Our Process</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </li>
+        <li class="has-sub"><a href="index.html#services" class="active">Services</a>
+          <ul class="sub">
+            <li><a href="web-development.html">Web Development</a></li>
+            <li><a href="mobile-apps.html" class="current">Mobile Apps</a></li>
+            <li><a href="custom-software.html">Custom Software</a></li>
+            <li><a href="management-information-systems.html">Management Information Systems</a></li>
+            <li><a href="digital-marketing.html">Digital Marketing</a></li>
+            <li><a href="seo-services.html">SEO Services</a></li>
+            <li><a href="social-media.html">Social Media</a></li>
+            <li><a href="branding-design.html">Branding &amp; Design</a></li>
+          </ul>
+        </li>
+        <li><a href="project-details.html">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <a href="contact.html#get-in-touch" class="btn btn-primary nav-quote">Get a Quote <i class="fa-solid fa-arrow-right-long"></i></a>
+    </nav>
+
+    <div class="header-right">
+      <div class="header-call">
+        <i class="fa-solid fa-headset"></i>
+        <div>
+          <a href="tel:+254745883650">0745 883 650</a>
+          <span>Mon - Fri: 08:00 am to 6:00 pm</span>
+        </div>
+      </div>
+      <button class="search-btn" id="searchBtn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="contact.html#get-in-touch" class="btn btn-primary header-quote">Get a Quote <i class="fa-solid fa-arrow-right-long"></i></a>
+      <button class="burger" id="burger" aria-label="Open menu"><img src="list.png" alt="" width="32" height="32"></button>
+    </div>
+  </div>
+  <div class="search-box" id="searchBox">
+    <form onsubmit="return false">
+      <input type="search" placeholder="Search Serina Systems..." aria-label="Search">
+      <button type="submit" aria-label="Submit search"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+  </div>
+</header>
+<div class="overlay" id="overlay"></div>
+
+
+<section class="page-banner" aria-label="Mobile Apps">
+  <div class="page-banner-bg"></div>
+  <div class="container">
+    <h1>Mobile Apps</h1>
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Serina</a><span>-</span><a href="index.html#services">Services</a><span>-</span><strong>Mobile Apps</strong>
+    </nav>
+  </div>
+</section>
+
+<section class="svc-page">
+  <div class="container svc-grid">
+
+    <aside class="svc-side" aria-label="Services sidebar">
+      <nav class="svc-menu" aria-label="All services">
+        <ul>
+          <li><a href="web-development.html">Web Development</a></li>
+          <li><a href="mobile-apps.html" class="current" aria-current="page">Mobile Apps</a></li>
+          <li><a href="custom-software.html">Custom Software</a></li>
+          <li><a href="management-information-systems.html">Management Information Systems</a></li>
+          <li><a href="digital-marketing.html">Digital Marketing</a></li>
+          <li><a href="seo-services.html">SEO Services</a></li>
+          <li><a href="social-media.html">Social Media</a></li>
+          <li><a href="branding-design.html">Branding &amp; Design</a></li>
+        </ul>
+      </nav>
+
+      <div class="dl-card">
+        <h3>Download</h3>
+        <a href="downloads/serina-systems-brochure.pdf" class="dl-item" download>
+          <span class="dl-ico"><i class="fa-solid fa-file-pdf"></i></span>
+          <span><strong>Our Brochure</strong><small>Download</small></span>
+        </a>
+        <a href="downloads/mobile-app-brief.docx" class="dl-item" download>
+          <span class="dl-ico"><i class="fa-solid fa-file-word"></i></span>
+          <span><strong>Mobile App Brief</strong><small>Download</small></span>
+        </a>
+      </div>
+
+      <div class="ct-card">
+        <div class="ct-av ph ph-av1" role="img" aria-label="Serina Systems mobile app consultant"></div>
+        <h3>Mobile Apps</h3>
+        <p><strong>Call:</strong> <a href="tel:+254745883650">0745 883 650</a></p>
+        <p><strong>Mail:</strong> <a href="mailto:serinasystems@gmail.com">serinasystems@gmail.com</a></p>
+        <ul class="social">
+          <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
+          <li><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></li>
+          <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+          <li><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <div class="svc-main">
+
+      <div class="svc-hero ph ph-hero" role="img" aria-label="Mobile app screens being designed and tested"></div>
+
+      <div class="blk reveal">
+        <h2 class="blk-title">Mobile App Overview</h2>
+        <p>Your customers live on their phones, so your business should too. Serina Systems designs and builds mobile apps that are simple to use, quick to load and genuinely useful, helping you serve customers better, take bookings and orders, and run your operations from anywhere.</p>
+        <p>We start with your goals and your users, design a clean interface you can try before we build, and then develop a secure, reliable app with a back end that keeps everything in sync. We build native Android apps with Kotlin as well as cross-platform apps that can reach both Android and iPhone, depending on what suits your budget and audience.</p>
+        <ul class="chk2">
+          <li><i class="fa-solid fa-circle-check"></i> Intuitive, user-friendly design</li>
+          <li><i class="fa-solid fa-circle-check"></i> Android and iPhone options</li>
+          <li><i class="fa-solid fa-circle-check"></i> Offline-friendly where needed</li>
+          <li><i class="fa-solid fa-circle-check"></i> Secure login and data protection</li>
+          <li><i class="fa-solid fa-circle-check"></i> Push notifications</li>
+          <li><i class="fa-solid fa-circle-check"></i> Store publishing and support</li>
+        </ul>
+      </div>
+
+      <div class="mini-stats reveal" aria-label="Our numbers">
+        <div class="ms"><strong><span class="count" data-to="150">0</span><sup>+</sup></strong><span>Projects Complete</span></div>
+        <div class="ms"><strong><span class="count" data-to="85">0</span><sup>+</sup></strong><span>Happy Clients</span></div>
+        <div class="ms"><strong><span class="count" data-to="100">0</span><sup>%</sup></strong><span>Mobile-First Thinking</span></div>
+        <div class="ms"><strong><span class="count" data-to="8">0</span><sup>+</sup></strong><span>Years Experience</span></div>
+      </div>
+
+      <div class="blk reveal">
+        <p class="eyebrow">What We Build</p>
+        <h2 class="blk-title">Apps that solve real business problems</h2>
+        <p>Whatever your industry, we turn your idea into an app people love to use. Here are the kinds of mobile apps we build most often.</p>
+        <div class="what-grid">
+        <article class="what"><span class="what-ico"><i class="fa-solid fa-briefcase"></i></span><h3>Business Apps</h3><p>Branded apps that put your services, catalogue and contact options in your customers’ pockets.</p></article>
+        <article class="what"><span class="what-ico"><i class="fa-solid fa-cart-shopping"></i></span><h3>E-Commerce Apps</h3><p>Shopping apps with product browsing, carts, secure checkout and order tracking for your online store.</p></article>
+        <article class="what"><span class="what-ico"><i class="fa-solid fa-calendar-check"></i></span><h3>Booking Apps</h3><p>Appointment, reservation and scheduling apps with reminders for salons, clinics, hotels and service businesses.</p></article>
+        <article class="what"><span class="what-ico"><i class="fa-solid fa-graduation-cap"></i></span><h3>Education Apps</h3><p>Learning and student apps with accounts, content, progress tracking and easy communication.</p></article>
+        <article class="what"><span class="what-ico"><i class="fa-solid fa-boxes-stacked"></i></span><h3>Management Apps</h3><p>Inventory, staff, student and records management apps that replace paperwork and spreadsheets.</p></article>
+        <article class="what"><span class="what-ico"><i class="fa-solid fa-truck-fast"></i></span><h3>Delivery &amp; Order Apps</h3><p>Ordering, dispatch and delivery tracking apps that keep customers and riders connected.</p></article>
+        <article class="what"><span class="what-ico"><i class="fa-solid fa-link"></i></span><h3>Website Companion Apps</h3><p>Apps that connect to your existing website or system so data stays in sync everywhere.</p></article>
+        <article class="what"><span class="what-ico"><i class="fa-solid fa-screwdriver-wrench"></i></span><h3>Updates &amp; Maintenance</h3><p>New features, OS compatibility updates, bug fixes and performance tuning after launch.</p></article>
+        </div>
+      </div>
+
+      <div class="blk reveal">
+        <h2 class="blk-title">Benefits With Our Service</h2>
+        <p>A well-built app keeps your business one tap away from your customers. It builds loyalty, makes everyday tasks faster and opens up new ways to earn, all while giving you a smoother, more professional experience than a website alone.</p>
+        <div class="pair">
+          <div class="ph ph-svc-mobile" role="img" aria-label="Person using a mobile app on a smartphone"></div>
+          <div class="ph ph-svc-system" role="img" aria-label="Team reviewing app designs together"></div>
+        </div>
+        <div class="ben-grid">
+          <div class="ben"><i class="fa-solid fa-mobile-screen"></i><div><h4>Always In Their Pocket</h4><p>Your brand sits on your customers' home screen, one tap away every day.</p></div></div>
+          <div class="ben"><i class="fa-solid fa-bell"></i><div><h4>Stronger Engagement</h4><p>Push notifications bring customers back with offers, reminders and updates.</p></div></div>
+          <div class="ben"><i class="fa-solid fa-gauge-high"></i><div><h4>Fast, Smooth Experience</h4><p>Apps load quickly and feel natural on a phone, keeping users happy.</p></div></div>
+          <div class="ben"><i class="fa-solid fa-plug-circle-check"></i><div><h4>Connected To Your Systems</h4><p>Your app talks to your website, database and tools so nothing is duplicated.</p></div></div>
+        </div>
+      </div>
+
+      <div class="blk reveal">
+        <h2 class="blk-title">Technologies We Use</h2>
+        <p>We pick the right tools for each project so your app is fast, secure and easy to maintain.</p>
+        <div class="tech-grid">
+        <div class="tech"><i class="fa-brands fa-android"></i><span>Android</span></div>
+        <div class="tech"><i class="fa-solid fa-code"></i><span>Kotlin</span></div>
+        <div class="tech"><i class="fa-solid fa-layer-group"></i><span>Flutter</span></div>
+        <div class="tech"><i class="fa-brands fa-react"></i><span>React Native</span></div>
+        <div class="tech"><i class="fa-solid fa-fire"></i><span>Firebase</span></div>
+        <div class="tech"><i class="fa-solid fa-plug"></i><span>REST APIs</span></div>
+        <div class="tech"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+        <div class="tech"><i class="fa-solid fa-database"></i><span>PostgreSQL</span></div>
+        <div class="tech"><i class="fa-solid fa-pen-ruler"></i><span>Figma</span></div>
+        <div class="tech"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
+        </div>
+      </div>
+
+      <div class="incl reveal">
+        <h2 class="blk-title">Included In Every App</h2>
+        <p>No hidden extras. These essentials come standard with every app project we deliver.</p>
+        <ul class="incl-grid">
+          <li><i class="fa-solid fa-pen-ruler"></i> Intuitive, user-friendly interface design</li>
+          <li><i class="fa-solid fa-user-lock"></i> User accounts and secure login</li>
+          <li><i class="fa-solid fa-bell"></i> Push notifications</li>
+          <li><i class="fa-solid fa-shield-halved"></i> Secure API and data storage</li>
+          <li><i class="fa-solid fa-mobile-screen-button"></i> Testing on real phones and screen sizes</li>
+          <li><i class="fa-solid fa-store"></i> Google Play publishing support</li>
+          <li><i class="fa-solid fa-bug"></i> Analytics and crash reporting</li>
+          <li><i class="fa-solid fa-chalkboard-user"></i> Training and handover guide</li>
+        </ul>
+      </div>
+
+      <div class="blk reveal">
+        <h2 class="blk-title">Working Process</h2>
+        <p>A clear six-step roadmap takes your app from first idea to the app store.</p>
+        <div class="acc" data-acc>
+        <div class="acc-item open">
+          <button class="acc-q" aria-expanded="true"><span><em>01.</em> Discovery &amp; App Strategy</span><i class="fa-solid fa-plus"></i></button>
+          <div class="acc-a"><div><p>We learn who your users are and what the app must achieve, then define the features that matter most for a first release.</p><ul><li><i class="fa-solid fa-check"></i> Free consultation and app brief</li><li><i class="fa-solid fa-check"></i> Competitor and user research</li><li><i class="fa-solid fa-check"></i> Feature list, platform choice and fixed quote</li></ul></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false"><span><em>02.</em> UX &amp; UI Design</span><i class="fa-solid fa-plus"></i></button>
+          <div class="acc-a"><div><p>We map the user journey and design clean, thumb-friendly screens, then share a clickable prototype you can try on your phone.</p><ul><li><i class="fa-solid fa-check"></i> Wireframes and user flows</li><li><i class="fa-solid fa-check"></i> Branded screen designs</li><li><i class="fa-solid fa-check"></i> Clickable prototype and feedback rounds</li></ul></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false"><span><em>03.</em> App Development</span><i class="fa-solid fa-plus"></i></button>
+          <div class="acc-a"><div><p>We build your app in short stages, connecting it to a secure back end, database and any services it needs.</p><ul><li><i class="fa-solid fa-check"></i> Native or cross-platform build</li><li><i class="fa-solid fa-check"></i> API, database and admin tools</li><li><i class="fa-solid fa-check"></i> Test builds shared as the app takes shape</li></ul></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false"><span><em>04.</em> Testing &amp; Quality Checks</span><i class="fa-solid fa-plus"></i></button>
+          <div class="acc-a"><div><p>We test on real devices and different screen sizes, fix bugs and tune performance and battery use before release.</p><ul><li><i class="fa-solid fa-check"></i> Real-device testing</li><li><i class="fa-solid fa-check"></i> Performance, security and usability checks</li><li><i class="fa-solid fa-check"></i> Your review and sign-off</li></ul></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false"><span><em>05.</em> Store Launch</span><i class="fa-solid fa-plus"></i></button>
+          <div class="acc-a"><div><p>We prepare your store listing and screenshots and guide the app through submission to Google Play, and the App Store where needed.</p><ul><li><i class="fa-solid fa-check"></i> Store listing and assets</li><li><i class="fa-solid fa-check"></i> Submission and review support</li><li><i class="fa-solid fa-check"></i> Launch-day monitoring</li></ul></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false"><span><em>06.</em> Support &amp; Updates</span><i class="fa-solid fa-plus"></i></button>
+          <div class="acc-a"><div><p>After launch we monitor crashes and feedback, keep the app compatible with new phone updates and add features as you grow.</p><ul><li><i class="fa-solid fa-check"></i> Bug fixes and compatibility updates</li><li><i class="fa-solid fa-check"></i> Feature updates and improvements</li><li><i class="fa-solid fa-check"></i> Growth and marketing support</li></ul></div></div>
+        </div>
+        </div>
+        <a href="process.html" class="link-more">See our full process <i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+
+      <div class="blk reveal">
+        <h2 class="blk-title">Frequently Asked Questions</h2>
+        <div class="acc" data-acc>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false"><span>How much does a mobile app cost?</span><i class="fa-solid fa-plus"></i></button>
+          <div class="acc-a"><div><p>The cost depends on the features, the number of screens, whether you need Android only or both Android and iPhone, and what back end is required. After a free consultation we send a clear, fixed quote so you know the full cost before we start.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false"><span>How long does it take to build an app?</span><i class="fa-solid fa-plus"></i></button>
+          <div class="acc-a"><div><p>A simple app can take around four to eight weeks, while larger apps with accounts, payments or custom back ends take longer. We give you a clear schedule in your proposal.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false"><span>Should I build for Android, iPhone or both?</span><i class="fa-solid fa-plus"></i></button>
+          <div class="acc-a"><div><p>It depends on your customers. Android is very popular in Kenya, so many businesses start there and add iPhone later, while cross-platform builds can reach both from one project. We will recommend the best option for your budget and audience.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false"><span>Do I need a website or back end as well?</span><i class="fa-solid fa-plus"></i></button>
+          <div class="acc-a"><div><p>Many apps need a secure back end to store accounts, orders or content. We build and host this for you, and can connect the app to your existing website or system.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false"><span>Will you publish the app on the stores?</span><i class="fa-solid fa-plus"></i></button>
+          <div class="acc-a"><div><p>Yes. We prepare your store listing and guide the submission process. Store developer accounts have their own fees, which are paid directly by you, and we help you set them up.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false"><span>Can the app work offline?</span><i class="fa-solid fa-plus"></i></button>
+          <div class="acc-a"><div><p>Yes, where it makes sense. We can store key information on the phone so users can keep working with a weak connection and sync once they are back online.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false"><span>What happens after the app is launched?</span><i class="fa-solid fa-plus"></i></button>
+          <div class="acc-a"><div><p>We stay with you. We monitor crashes and feedback, keep the app compatible with new phone updates and add new features whenever you are ready.</p></div></div>
+        </div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h2 class="blk-title reveal">Team Member</h2>
+        <div class="wd-team">
+        <article class="tm-card">
+          <div class="tm-photo">
+            <div class="tm-img ph ph-av0" role="img" aria-label="Team member photo"></div>
+            <ul class="tm-social">
+              <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
+              <li><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></li>
+              <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+            </ul>
+            <button class="tm-share" aria-label="Show social links"><i class="fa-solid fa-share-nodes"></i></button>
+          </div>
+          <div class="tm-info"><span class="tm-role">Lead Mobile Developer</span><h3 class="tm-name">Full Name</h3></div>
+        </article>
+        <article class="tm-card">
+          <div class="tm-photo">
+            <div class="tm-img ph ph-av3" role="img" aria-label="Team member photo"></div>
+            <ul class="tm-social">
+              <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
+              <li><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></li>
+              <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+            </ul>
+            <button class="tm-share" aria-label="Show social links"><i class="fa-solid fa-share-nodes"></i></button>
+          </div>
+          <div class="tm-info"><span class="tm-role">UI / UX Designer</span><h3 class="tm-name">Full Name</h3></div>
+        </article>
+        <article class="tm-card">
+          <div class="tm-photo">
+            <div class="tm-img ph ph-av2" role="img" aria-label="Team member photo"></div>
+            <ul class="tm-social">
+              <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
+              <li><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></li>
+              <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+            </ul>
+            <button class="tm-share" aria-label="Show social links"><i class="fa-solid fa-share-nodes"></i></button>
+          </div>
+          <div class="tm-info"><span class="tm-role">Project Manager</span><h3 class="tm-name">Full Name</h3></div>
+        </article>
+        </div>
+      </div>
+
+      <div class="cta-card reveal">
+        <div class="t">
+          <h2>Ready to build your app?</h2>
+          <p>Tell us your idea and get a free consultation and quote.</p>
+        </div>
+        <a href="contact.html#get-in-touch" class="btn btn-primary">Get a Quote <i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="contact">
+  <span class="footer-blob" aria-hidden="true"></span>
+  <div class="container">
+    <div class="contact-bar">
+      <a href="mailto:serinasystems@gmail.com" class="cb-item"><i class="fa-regular fa-envelope"></i> serinasystems@gmail.com</a>
+      <a href="tel:+254745883650" class="cb-item"><i class="fa-solid fa-phone-volume"></i> 0745 883 650</a>
+      <div class="cb-item"><i class="fa-solid fa-location-dot"></i> Nakuru, Kenya</div>
+      <ul class="social cb-social">
+        <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
+        <li><a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></li>
+        <li><a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+        <li><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
+      </ul>
+    </div>
+
+    <div class="footer-grid">
+      <div class="fcol">
+        <h4 class="ftitle">About Us</h4>
+        <p>We provide caring and knowledgeable developers and marketers for growing businesses.</p>
+        <a href="tel:+254745883650" class="support-box">
+          <div><strong>Talk To Our Support</strong><span>0745 883 650</span></div>
+          <span class="support-ico"><i class="fa-solid fa-phone-volume"></i></span>
+        </a>
+      </div>
+
+      <div class="fcol">
+        <h4 class="ftitle">Information</h4>
+        <ul class="flinks">
+          <li><a href="web-development.html"><i class="fa-solid fa-angle-right"></i> Web Development</a></li>
+          <li><a href="digital-marketing.html"><i class="fa-solid fa-angle-right"></i> Digital Marketing</a></li>
+          <li><a href="custom-software.html"><i class="fa-solid fa-angle-right"></i> Custom Software</a></li>
+          <li><a href="management-information-systems.html"><i class="fa-solid fa-angle-right"></i> Management Information Systems</a></li>
+          <li><a href="seo-services.html"><i class="fa-solid fa-angle-right"></i> SEO Services</a></li>
+          <li><a href="project-details.html"><i class="fa-solid fa-angle-right"></i> Our Projects</a></li>
+        </ul>
+      </div>
+
+      <div class="fcol">
+        <h4 class="ftitle">Latest News</h4>
+        <a href="blog-why-every-business-needs-a-website.html" class="fnews">
+          <span class="fnews-img ph ph-blog1"></span>
+          <span><b>Why every Nakuru business needs a website in 2026</b><em>Oct 6, 2026</em></span>
+        </a>
+        <a href="blog.html" class="fnews">
+          <span class="fnews-img ph ph-blog2"></span>
+          <span><b>10 simple SEO wins to rank higher on Google</b><em>Sep 22, 2026</em></span>
+        </a>
+      </div>
+
+      <div class="fcol">
+        <h4 class="ftitle">Newsletter</h4>
+        <p>Sign up today for hints, tips and the latest tech and marketing news.</p>
+        <form class="news-form" onsubmit="return false">
+          <input type="email" placeholder="Your email address" aria-label="Email address" required>
+          <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright &copy; <span id="year">2026</span> Serina Systems, All Rights Reserved.</p>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+<a href="https://wa.me/254745883650?text=Hello%20Serina%20Systems%2C%20I%20would%20like%20to%20make%20an%20inquiry." class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span class="wa-label">Chat with us</span>
+</a>
+<button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-angle-up"></i></button>
+
+<script>
+(function () {
+  'use strict';
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+  var header = $('#header'), nav = $('#nav'), overlay = $('#overlay');
+  var burger = $('#burger'), navClose = $('#navClose');
+  var toTop = $('#toTop');
+
+  function openNav() { nav.classList.add('open'); overlay.classList.add('show'); document.body.style.overflow = 'hidden'; }
+  function closeNav() { nav.classList.remove('open'); overlay.classList.remove('show'); document.body.style.overflow = ''; }
+  burger.addEventListener('click', openNav);
+  navClose.addEventListener('click', closeNav);
+  overlay.addEventListener('click', closeNav);
+  $$('.nav a').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var li = a.parentElement;
+      if (window.innerWidth <= 1199 && li.classList.contains('has-sub') && a === li.firstElementChild) {
+        e.preventDefault();
+        li.classList.toggle('open');
+        return;
+      }
+      closeNav();
+    });
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 1199) closeNav(); });
+  var activeSub = $('.nav .has-sub > a.active'); if (activeSub) activeSub.parentElement.classList.add('open');
+
+  var sBtn = $('#searchBtn'), sBox = $('#searchBox');
+  sBtn.addEventListener('click', function () {
+    sBox.classList.toggle('open');
+    if (sBox.classList.contains('open')) $('input', sBox).focus();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { sBox.classList.remove('open'); closeNav(); } });
+
+  function onScroll() {
+    var y = window.pageYOffset;
+    header.classList.toggle('scrolled', y > 120);
+    toTop.classList.toggle('show', y > 500);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  function setAcc(item, open) {
+    var panel = $('.acc-a', item);
+    item.classList.toggle('open', open);
+    $('.acc-q', item).setAttribute('aria-expanded', open ? 'true' : 'false');
+    panel.style.maxHeight = open ? panel.scrollHeight + 'px' : '0px';
+  }
+  $$('[data-acc]').forEach(function (group) {
+    var items = $$('.acc-item', group);
+    items.forEach(function (item) {
+      setAcc(item, item.classList.contains('open'));
+      $('.acc-q', item).addEventListener('click', function () {
+        var willOpen = !item.classList.contains('open');
+        items.forEach(function (o) { setAcc(o, false); });
+        if (willOpen) setAcc(item, true);
+      });
+    });
+  });
+  window.addEventListener('resize', function () {
+    $$('.acc-item.open').forEach(function (i) { var p = $('.acc-a', i); p.style.maxHeight = p.scrollHeight + 'px'; });
+  });
+
+  $$('.tm-share').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var card = btn.closest('.tm-card');
+      var wasOpen = card.classList.contains('open');
+      $$('.tm-card.open').forEach(function (c) { c.classList.remove('open'); });
+      if (!wasOpen) card.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.tm-card')) $$('.tm-card.open').forEach(function (c) { c.classList.remove('open'); });
+  });
+
+  function runCount(el) {
+    var to = parseInt(el.getAttribute('data-to'), 10), dur = 1800, start = null;
+    function tick(t) {
+      if (!start) start = t;
+      var p = Math.min((t - start) / dur, 1);
+      el.textContent = Math.floor(to * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(tick); else el.textContent = to;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  var revealEls = $$('.svc-side > *, .what, .tech, .ben, .tm-card, .fcol');
+  revealEls.forEach(function (el) { el.classList.add('reveal'); });
+  var allReveal = $$('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var t = en.target;
+        t.classList.add('in');
+        $$('.count', t).forEach(runCount);
+        io.unobserve(t);
+      });
+    }, { threshold: .12 });
+    allReveal.forEach(function (el, i) { el.style.transitionDelay = (i % 3) * 70 + 'ms'; io.observe(el); });
+  } else {
+    allReveal.forEach(function (el) { el.classList.add('in'); });
+    $$('.count').forEach(runCount);
+  }
+
+  var y = $('#year'); if (y) y.textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

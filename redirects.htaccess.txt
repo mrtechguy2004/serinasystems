@@ -1,0 +1,9 @@
+# 301 redirects from the old Serina Systems URLs to the new pages
+# Keeps Google rankings and Search Console history when the old URLs are crawled
+Redirect 301 /serina-about.html https://www.serinasystems.co.ke/about.html
+Redirect 301 /serina-contact.html https://www.serinasystems.co.ke/contact.html
+Redirect 301 /serina-systems-services.html https://www.serinasystems.co.ke/
+Redirect 301 /serina-blog.html https://www.serinasystems.co.ke/blog.html
+Redirect 301 /serina-process.html https://www.serinasystems.co.ke/process.html
+Redirect 301 /serina-portfolio.html https://www.serinasystems.co.ke/project-details.html
+Redirect 301 /serina-pricing.html https://www.serinasystems.co.ke/contact.html

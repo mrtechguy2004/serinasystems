@@ -1,0 +1,11 @@
+{
+  "redirects": [
+    { "source": "/serina-about.html", "destination": "/about.html", "permanent": true },
+    { "source": "/serina-contact.html", "destination": "/contact.html", "permanent": true },
+    { "source": "/serina-systems-services.html", "destination": "/", "permanent": true },
+    { "source": "/serina-blog.html", "destination": "/blog.html", "permanent": true },
+    { "source": "/serina-process.html", "destination": "/process.html", "permanent": true },
+    { "source": "/serina-portfolio.html", "destination": "/project-details.html", "permanent": true },
+    { "source": "/serina-pricing.html", "destination": "/contact.html", "permanent": true }
+  ]
+}
