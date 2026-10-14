@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://serinasystems.vercel.app/sitemap.xml
+Sitemap: https://www.serinasystems.co.ke/sitemap.xml
