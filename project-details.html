@@ -648,6 +648,14 @@ a.cb-item:hover{background:rgba(0,0,0,.08)}
 
 .pj-more-head{margin-bottom:50px}
 .pj-more .post-date{right:38px}
+.pj-hero-img{position:relative;overflow:hidden;border-radius:10px;box-shadow:var(--shadow);background:var(--dark)}
+.pj-hero-img img{display:block;width:100%;height:auto}
+.pj-soon{position:absolute;top:24px;left:24px;z-index:2;display:inline-flex;align-items:center;gap:10px;padding:9px 22px;border-radius:30px;background:var(--primary);color:#fff;font-family:var(--font-head);font-weight:700;font-size:17px;letter-spacing:1px;text-transform:uppercase;line-height:1.4;box-shadow:0 8px 24px rgba(15,60,160,.35)}
+.pj-more .post-img{display:block}
+.pj-more .post-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pj-more .post:hover .post-img img{transform:scale(1.05)}
+@media (max-width:767px){.pj-soon{top:16px;left:16px;font-size:15px;padding:7px 18px}}
+@media (max-width:575px){.pj-hero-img{border-radius:8px}.pj-soon{top:12px;left:12px;font-size:13px;padding:6px 14px;gap:8px}}
 
 @media (max-width:1399px){
   .pj-hero{min-height:580px;padding:52px 40px 0}
@@ -806,52 +814,9 @@ a.cb-item:hover{background:rgba(0,0,0,.08)}
 <section class="pj-page">
   <div class="container">
 
-    <div class="pj-hero reveal" role="img" aria-label="Mock-up of the Njia student portal on a computer and the M-Pesa payment prompt on a phone">
-      <div class="pj-stage" aria-hidden="true">
-        <div class="browser">
-          <div class="br-bar"><i></i><i></i><i></i><span class="br-url"><i class="fa-solid fa-lock"></i> Njia student portal</span></div>
-          <div class="br-body">
-            <div class="br-side">
-              <div class="br-logo"><i class="fa-solid fa-route"></i> Njia</div>
-              <ul>
-                <li class="on"><i class="fa-solid fa-gauge-high"></i> Dashboard</li>
-                <li><i class="fa-solid fa-graduation-cap"></i> My Matches</li>
-                <li><i class="fa-solid fa-hand-holding-dollar"></i> Funding</li>
-                <li><i class="fa-solid fa-folder-open"></i> Documents</li>
-                <li><i class="fa-solid fa-credit-card"></i> Payments</li>
-                <li><i class="fa-solid fa-comments"></i> Messages</li>
-                <li><i class="fa-solid fa-user"></i> Profile</li>
-              </ul>
-            </div>
-            <div class="br-main">
-              <div class="br-top">
-                <div><h4>Student Dashboard</h4><small>Your path from KCSE results to a university place</small></div>
-                <span class="br-av"><i class="fa-solid fa-user-graduate"></i></span>
-              </div>
-              <div class="br-cards">
-                <div class="br-card"><span>Programme matches</span><strong>5</strong></div>
-                <div class="br-card"><span>Pre-registration</span><strong class="ok">Paid</strong></div>
-                <div class="br-card"><span>New messages</span><strong>2</strong></div>
-              </div>
-              <div class="br-list">
-                <div class="br-list-h">Best matches for you</div>
-                <div class="br-row"><span>Computer Science</span><span class="br-meter"><b style="width:92%"></b></span><em>92%</em></div>
-                <div class="br-row"><span>Business Management</span><span class="br-meter"><b style="width:84%"></b></span><em>84%</em></div>
-                <div class="br-row"><span>Education (Arts)</span><span class="br-meter"><b style="width:77%"></b></span><em>77%</em></div>
-                <div class="br-row"><span>Nursing</span><span class="br-meter"><b style="width:68%"></b></span><em>68%</em></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mob">
-          <div class="mob-screen">
-            <div class="mp-head"><i class="fa-solid fa-mobile-screen"></i> M-PESA</div>
-            <p>Enter your M-Pesa PIN to complete your Njia pre-registration.</p>
-            <div class="mp-pin"><b>&bull;</b><b>&bull;</b><b>&bull;</b><b>&bull;</b></div>
-            <div class="mp-btns"><span>Cancel</span><span class="ok">Send</span></div>
-          </div>
-        </div>
-      </div>
+    <div class="pj-hero-img reveal">
+      <span class="pj-soon"><i class="fa-solid fa-hourglass-half"></i> Coming Soon</span>
+      <img src="njiastudent.png" alt="Njia student portal, a university placement and funding platform for KCSE students">
     </div>
 
     <div class="blk reveal">
@@ -861,6 +826,7 @@ a.cb-item:hover{background:rgba(0,0,0,.08)}
         <span><strong>Client:</strong> Njia</span>
         <span><strong>Category:</strong> Development</span>
         <span><strong>Location:</strong> Kenya</span>
+        <span><strong>Status:</strong> Coming Soon</span>
       </p>
       <ul class="pj-tags" aria-label="Technologies used">
         <li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>M-Pesa STK Push</li><li>Student Portal</li><li>Staff System</li>
@@ -1010,12 +976,12 @@ a.cb-item:hover{background:rgba(0,0,0,.08)}
     </div>
 
     <nav class="pj-nav reveal" aria-label="More projects">
-      <a href="#" aria-label="Previous project: Grayz and Nomis Contractors">
+      <a href="https://combathungersouthsudan.org/" target="_blank" rel="noopener" aria-label="Previous project: Combat Hunger in South Sudan">
         <span class="arr"><i class="fa-solid fa-arrow-left-long"></i></span>
-        <span><small>Previous Portfolio</small><strong>Grayz &amp; Nomis Contractors</strong></span>
+        <span><small>Previous Portfolio</small><strong>Combat Hunger in South Sudan</strong></span>
       </a>
-      <a href="#" aria-label="Next project: M and Manus Construction">
-        <span><small>Next Portfolio</small><strong>M &amp; Manus Construction</strong></span>
+      <a href="https://vinshamar.co.ke/" target="_blank" rel="noopener" aria-label="Next project: Vinshamar">
+        <span><small>Next Portfolio</small><strong>Vinshamar</strong></span>
         <span class="arr"><i class="fa-solid fa-arrow-right-long"></i></span>
       </a>
     </nav>
@@ -1027,30 +993,30 @@ a.cb-item:hover{background:rgba(0,0,0,.08)}
       </div>
       <div class="blog-grid">
         <article class="post">
-          <div class="post-img ph ph-blog1" role="img" aria-label="Grayz and Nomis Contractors website"></div>
-          <span class="post-date"><i class="fa-solid fa-globe"></i> Website</span>
+          <a class="post-img ph" href="https://combathungersouthsudan.org/" target="_blank" rel="noopener" aria-label="Visit Combat Hunger in South Sudan"><img src="combat.png" alt="Combat Hunger in South Sudan website" loading="lazy"></a>
+          <span class="post-date"><i class="fa-solid fa-globe"></i> Redesign</span>
           <div class="post-body">
-            <div class="post-meta"><span><i class="fa-solid fa-location-dot"></i> Nairobi</span><span><i class="fa-regular fa-folder-open"></i> Contractors</span></div>
-            <h3><a href="#">Grayz &amp; Nomis Contractors</a></h3>
-            <p>A multi-page website that presents the company's contracting services and projects.</p>
+            <div class="post-meta"><span><i class="fa-solid fa-location-dot"></i> South Sudan</span><span><i class="fa-solid fa-link"></i> combathungersouthsudan.org</span></div>
+            <h3><a href="https://combathungersouthsudan.org/" target="_blank" rel="noopener">Combat Hunger in South Sudan</a></h3>
+            <p>A website redesign that gives the organisation a cleaner, more modern home online.</p>
           </div>
         </article>
         <article class="post">
-          <div class="post-img ph ph-blog2" role="img" aria-label="M and Manus Construction website"></div>
-          <span class="post-date"><i class="fa-solid fa-globe"></i> Website</span>
+          <a class="post-img ph" href="https://vinshamar.co.ke/" target="_blank" rel="noopener" aria-label="Visit Vinshamar"><img src="vinshamar.png" alt="Vinshamar website" loading="lazy"></a>
+          <span class="post-date"><i class="fa-solid fa-globe"></i> Development</span>
           <div class="post-body">
-            <div class="post-meta"><span><i class="fa-solid fa-location-dot"></i> Nanyuki</span><span><i class="fa-regular fa-folder-open"></i> Construction</span></div>
-            <h3><a href="#">M &amp; Manus Construction</a></h3>
-            <p>A multi-page website for a construction company, built to showcase its work and services.</p>
+            <div class="post-meta"><span><i class="fa-solid fa-location-dot"></i> Kenya</span><span><i class="fa-solid fa-link"></i> vinshamar.co.ke</span></div>
+            <h3><a href="https://vinshamar.co.ke/" target="_blank" rel="noopener">Vinshamar</a></h3>
+            <p>A website developed for Vinshamar to present the business clearly to its visitors.</p>
           </div>
         </article>
         <article class="post">
-          <div class="post-img ph ph-blog3" role="img" aria-label="Kevin Owiro Roofing website"></div>
+          <a class="post-img ph" href="https://natureworldkenya.co.ke/" target="_blank" rel="noopener" aria-label="Visit Nature World"><img src="nature.png" alt="Nature World website" loading="lazy"></a>
           <span class="post-date"><i class="fa-solid fa-globe"></i> Website</span>
           <div class="post-body">
-            <div class="post-meta"><span><i class="fa-solid fa-location-dot"></i> Kenya</span><span><i class="fa-regular fa-folder-open"></i> Roofing</span></div>
-            <h3><a href="#">Kevin Owiro Roofing</a></h3>
-            <p>A multi-page website for a roofing contractor, with a consistent design across every page.</p>
+            <div class="post-meta"><span><i class="fa-solid fa-location-dot"></i> Kenya</span><span><i class="fa-solid fa-link"></i> natureworldkenya.co.ke</span></div>
+            <h3><a href="https://natureworldkenya.co.ke/" target="_blank" rel="noopener">Nature World</a></h3>
+            <p>A website for Nature World Kenya, built to showcase what it offers to visitors.</p>
           </div>
         </article>
       </div>
