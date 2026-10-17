@@ -350,17 +350,15 @@ a.cb-item:hover{background:rgba(0,0,0,.08)}
 .sec-head .title{margin-bottom:18px}
 .sec-head p{margin:0;font-size:17.5px}
 .timeline{position:relative;max-width:1240px;margin:80px auto 0;display:grid;gap:96px}
-.timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;transform:translateX(-50%);
-  background:repeating-linear-gradient(180deg,var(--primary) 0 8px,transparent 8px 16px);opacity:.4}
 .tl-item{position:relative;display:grid;grid-template-columns:1fr 1fr;column-gap:110px;align-items:center}
-.tl-media{grid-row:1;position:relative;height:520px}
+.tl-media{grid-row:1;position:relative;height:640px}
 .tl-photo{position:absolute;margin:0;overflow:hidden;background:linear-gradient(135deg,var(--dark),var(--primary-dark))}
 .tl-photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
 .tl-item:hover .tl-photo img{transform:scale(1.06)}
 .tl-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,30,60,0) 55%,rgba(15,30,60,.45));pointer-events:none}
 .tl-photo::before{content:"";position:absolute;left:0;top:0;width:70px;height:56px;border-right:2px solid #fff;border-bottom:2px solid #fff;border-bottom-right-radius:56px;z-index:2}
-.tl-photo-a{left:0;top:0;width:68%;height:80%;border-radius:4px;box-shadow:0 22px 50px rgba(20,40,80,.16)}
-.tl-photo-b{right:0;bottom:0;width:54%;height:52%;border-radius:4px;border:8px solid var(--light);box-shadow:0 22px 50px rgba(20,40,80,.2);z-index:3}
+.tl-photo-a{left:0;top:0;width:74%;height:82%;border-radius:4px;box-shadow:0 22px 50px rgba(20,40,80,.16)}
+.tl-photo-b{right:0;bottom:0;width:60%;height:56%;border-radius:4px;box-shadow:0 26px 60px rgba(20,40,80,.28);z-index:3}
 .tl-dots{position:absolute;top:34px;right:5%;width:150px;height:110px;z-index:1;background-image:radial-gradient(var(--primary) 3.5px,transparent 4px);background-size:25px 22px}
 .tl-label{position:absolute;left:18px;bottom:0;z-index:4;margin:0;background:var(--primary);color:#fff;padding:20px 26px 22px;max-width:calc(100% - 36px);transform:translateY(0)}
 .tl-label .tl-step{color:#fff;font-size:30px;font-weight:700;letter-spacing:1px;line-height:1.1;margin-bottom:8px}
@@ -424,7 +422,7 @@ a.cb-item:hover{background:rgba(0,0,0,.08)}
 
 @media (max-width:1399px){
   .page-banner{min-height:480px}.page-banner h1{font-size:60px}
-  .tl-item{column-gap:90px}.tl-media{height:480px}
+  .tl-item{column-gap:90px}.tl-media{height:580px}
   .faq-grid{grid-template-columns:380px 1fr;gap:60px}
   .tg-card{padding-top:230px}.tg-box{padding:30px 28px 32px}
 }
@@ -432,7 +430,7 @@ a.cb-item:hover{background:rgba(0,0,0,.08)}
   .wwp{padding:90px 0 80px}.wwp .about-photo{height:560px}
   .ach-grid{grid-template-columns:repeat(2,1fr);gap:50px 30px}
   .steps,.together,.faq{padding:90px 0}
-  .tl-item{column-gap:70px}.tl-media{height:440px}
+  .tl-item{column-gap:70px}.tl-media{height:520px}
   .tl-card h3{font-size:30px}
 }
 @media (max-width:991px){
@@ -441,9 +439,8 @@ a.cb-item:hover{background:rgba(0,0,0,.08)}
   .ach{padding:80px 0}
   .steps,.together,.faq{padding:70px 0}
   .timeline{margin-top:55px;gap:56px}
-  .timeline::before{left:32px;transform:none}
   .tl-item{grid-template-columns:1fr;column-gap:0;row-gap:28px}
-  .tl-media{height:440px}
+  .tl-media{height:540px}
   .tl-item:nth-child(odd) .tl-media,.tl-item:nth-child(even) .tl-media{grid-column:1;grid-row:1;margin-left:86px}
   .tl-item:nth-child(odd) .tl-card,.tl-item:nth-child(even) .tl-card{grid-column:1;grid-row:2;margin-left:86px}
   .tl-item:nth-child(even) .tl-photo-a{left:0;right:auto}
@@ -467,10 +464,9 @@ a.cb-item:hover{background:rgba(0,0,0,.08)}
   .wwp-actions{gap:20px}.wwp-actions .btn{height:60px;padding:0 36px}.phone-link{font-size:25px}
   .ach-grid{grid-template-columns:1fr;gap:34px}.ach-item strong{font-size:52px}
   .steps,.together,.faq{padding:60px 0}
-  .timeline::before{left:24px}
-  .tl-item:nth-child(odd) .tl-media,.tl-item:nth-child(even) .tl-media{margin-left:62px;height:320px}
+  .tl-item:nth-child(odd) .tl-media,.tl-item:nth-child(even) .tl-media{margin-left:62px;height:400px}
   .tl-item:nth-child(odd) .tl-card,.tl-item:nth-child(even) .tl-card{margin-left:62px;padding:0}
-  .tl-photo-a{width:72%;height:80%}.tl-photo-b{width:44%;height:40%;border-width:5px}
+  .tl-photo-a{width:76%;height:82%}.tl-photo-b{width:50%;height:44%}
   .tl-photo::before{width:48px;height:38px;border-bottom-right-radius:38px}
   .tl-dots{width:100px;height:74px;top:20px;background-size:20px 18px}
   .tl-label{left:10px!important;right:auto!important;padding:12px 16px 14px;max-width:calc(100% - 20px)}
@@ -489,6 +485,77 @@ a.cb-item:hover{background:rgba(0,0,0,.08)}
 .header.scrolled .logo img{height:62px}
 @media (max-width:1199px){.logo img{height:58px}.header.scrolled .logo img{height:52px}}
 @media (max-width:575px){.logo img{height:50px}.header.scrolled .logo img{height:46px}}
+
+.tl-cta{position:relative;overflow:hidden;background:var(--primary);color:#fff;padding:58px 64px;display:flex;align-items:center;justify-content:space-between;gap:44px;border-radius:6px;box-shadow:0 22px 50px rgba(15,60,160,.25)}
+.tl-cta::before{content:"";position:absolute;left:0;top:0;width:90px;height:70px;border-right:2px solid #fff;border-bottom:2px solid #fff;border-bottom-right-radius:70px}
+.tl-cta::after{content:"";position:absolute;right:30px;top:24px;width:150px;height:110px;opacity:.22;background-image:radial-gradient(#fff 3.5px,transparent 4px);background-size:25px 22px}
+.tl-cta-text{position:relative;z-index:1;max-width:640px}
+.cta-kicker{display:block;font-family:var(--font-head);font-weight:600;font-size:16px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.tl-cta h3{color:#fff;font-size:40px;margin:8px 0 12px}
+.tl-cta p{margin:0;color:rgba(255,255,255,.9);font-size:17px}
+.cta-actions{position:relative;z-index:1;display:flex;gap:16px;flex-wrap:wrap}
+.btn-outline-w{background:transparent;color:#fff;border:2px solid #fff;height:52px;font-size:15px}
+.btn-outline-w:hover{background:#fff;color:var(--primary)}
+.tl-cta .btn-white:hover{background:var(--dark);color:#fff}
+.promise{background:var(--light);padding:120px 0}
+.pr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:64px}
+.pr-card{position:relative;overflow:hidden;border-radius:4px;min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:62px;background:linear-gradient(135deg,var(--dark),var(--primary-dark));box-shadow:0 22px 50px rgba(20,40,80,.14);isolation:isolate}
+.pr-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s ease}
+.pr-card:hover>img{transform:scale(1.07)}
+.pr-card::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,30,60,.05) 30%,rgba(15,30,60,.7))}
+.pr-card::after{content:"";position:absolute;right:0;bottom:0;width:80px;height:62px;border-left:2px solid #fff;border-top:2px solid #fff;border-top-left-radius:62px}
+.pr-arc{position:absolute;left:0;top:0;width:80px;height:62px;border-right:2px solid #fff;border-bottom:2px solid #fff;border-bottom-right-radius:62px}
+.pr-ico{position:absolute;right:20px;top:20px;width:62px;height:62px;border-radius:4px;background:#fff;color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:var(--shadow)}
+.pr-box{position:relative;background:var(--primary);color:#fff;margin:0 38px 0 14px;padding:26px 24px 28px}
+.pr-card:nth-child(even) .pr-box{margin:0 14px 0 38px}
+.pr-box h3{color:#fff;font-size:24px;margin-bottom:10px}
+.pr-box p{margin:0;font-size:15.5px;line-height:1.65;color:rgba(255,255,255,.9)}
+.prep{background:#fff;padding:120px 0}
+.prep-grid{display:grid;grid-template-columns:5fr 7fr;gap:90px;align-items:center}
+.prep-media{position:relative;height:640px}
+.prep-photo{position:absolute;inset:0 12% 0 0;margin:0;overflow:hidden;border-radius:4px;z-index:1;background:linear-gradient(135deg,var(--dark),var(--primary-dark));box-shadow:0 22px 50px rgba(20,40,80,.16)}
+.prep-photo img{width:100%;height:100%;object-fit:cover}
+.prep-photo::before{content:"";position:absolute;left:0;top:0;width:70px;height:56px;border-right:2px solid #fff;border-bottom:2px solid #fff;border-bottom-right-radius:56px;z-index:2}
+.prep-media .tl-dots{top:40px;right:0;z-index:0}
+.prep-label{position:absolute;left:18px;bottom:34px;z-index:2;background:var(--primary);color:#fff;padding:24px 30px;max-width:78%}
+.prep-label strong{display:block;font-family:var(--font-head);font-size:26px;line-height:1.15;text-transform:uppercase;letter-spacing:.6px}
+.prep-label span{display:block;margin-top:6px;font-size:16px}
+.prep-text .title{margin-bottom:18px}
+.prep-text>p{font-size:17.5px;margin-bottom:34px}
+.prep-list{display:grid;grid-template-columns:1fr 1fr;gap:20px 24px;margin-bottom:40px}
+.prep-item{display:flex;gap:18px;padding:22px 24px;border:1px solid #e3e8ef;border-radius:4px;background:#fff;transition:border-color .3s,box-shadow .3s}
+.prep-item:hover{border-color:var(--primary);box-shadow:var(--shadow)}
+.prep-item i{flex:0 0 50px;width:50px;height:50px;background:var(--primary-soft);color:var(--primary);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.prep-item h3{font-size:19px;margin-bottom:4px}
+.prep-item p{margin:0;font-size:15px;line-height:1.55}
+.closing{position:relative;overflow:hidden;color:#fff;text-align:center;padding:130px 0 190px;background:linear-gradient(180deg,rgba(15,30,60,.88),rgba(10,24,52,.95)),url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat;background-color:var(--dark)}
+.closing::before{content:"";position:absolute;left:0;top:0;width:110px;height:84px;border-right:2px solid rgba(255,255,255,.5);border-bottom:2px solid rgba(255,255,255,.5);border-bottom-right-radius:84px}
+.closing .container{position:relative;z-index:1}
+.closing .eyebrow{justify-content:center;color:#8fb8ff}
+.closing .eyebrow::after{background:#8fb8ff}
+.closing h2{color:#fff;font-size:56px;max-width:880px;margin:0 auto 20px}
+.closing .lead{max-width:640px;margin:0 auto 38px;color:rgba(255,255,255,.85);font-size:18px}
+.cl-actions{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+.cl-actions .btn{height:64px;padding:0 44px}
+.cl-actions .btn-outline-w{height:64px;font-size:16px}
+.cl-chips{display:flex;justify-content:center;gap:14px 34px;flex-wrap:wrap;margin-top:34px;font-family:var(--font-head);font-weight:600;font-size:16px;letter-spacing:.8px;text-transform:uppercase}
+.cl-chips i,.cl-contact i{color:#8fb8ff;margin-right:8px}
+.cl-contact{display:flex;justify-content:center;gap:14px 44px;flex-wrap:wrap;margin-top:46px;padding-top:32px;border-top:1px solid rgba(255,255,255,.18);font-size:17px}
+.cl-contact a{color:#fff}
+.cl-contact a:hover{color:#8fb8ff}
+@media (max-width:991px){
+  .tl-cta{flex-direction:column;align-items:flex-start;padding:48px 36px;gap:30px}.tl-cta h3{font-size:32px}
+  .promise,.prep{padding:90px 0}.pr-grid{grid-template-columns:1fr 1fr;margin-top:50px}
+  .prep-grid{grid-template-columns:1fr;gap:60px}.prep-media{height:480px}
+  .closing{padding:100px 0 170px}.closing h2{font-size:44px}
+}
+@media (max-width:575px){
+  .tl-cta{padding:40px 24px}.tl-cta h3{font-size:27px}.cta-actions,.cta-actions .btn{width:100%;justify-content:center}
+  .pr-grid{grid-template-columns:1fr}.pr-card{min-height:480px}.pr-box,.pr-card:nth-child(even) .pr-box{margin:0 22px 0 12px}.pr-card:nth-child(even) .pr-box{margin:0 12px 0 22px}
+  .prep-list{grid-template-columns:1fr}.prep-media{height:380px}.prep-label{left:10px;bottom:20px;padding:16px 18px;max-width:86%}.prep-label strong{font-size:21px}
+  .closing{padding:80px 0 150px}.closing h2{font-size:34px}.cl-actions .btn,.cl-actions .btn-outline-w{width:100%;justify-content:center;height:58px;padding:0 24px}
+  .cl-contact{flex-direction:column;align-items:center}
+}
 </style>
 </head>
 <body>
@@ -672,6 +739,18 @@ a.cb-item:hover{background:rgba(0,0,0,.08)}
         </div>
       </article>
 
+      <aside class="tl-cta reveal">
+        <div class="tl-cta-text">
+          <span class="cta-kicker">Step 1 is free</span>
+          <h3>Ready to start? Book your free consultation</h3>
+          <p>Tell us about your business and we will come back with clear next steps and a fixed quote. No pressure and no obligation.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="contact.html#get-in-touch" class="btn btn-white">Get a Free Quote <i class="fa-solid fa-arrow-right-long"></i></a>
+          <a href="https://wa.me/254745883650?text=Hello%20Serina%20Systems%2C%20I%20would%20like%20to%20start%20a%20project." class="btn btn-outline-w" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+        </div>
+      </aside>
+
       <article class="tl-item">
         <span class="tl-dot"><i class="fa-solid fa-pen-ruler"></i></span>
         <div class="tl-media">
@@ -827,6 +906,68 @@ a.cb-item:hover{background:rgba(0,0,0,.08)}
   </div>
 </section>
 
+<section class="promise" id="promises">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Our Promises</p>
+      <h2 class="title">What you can count on</h2>
+      <p>Four clear commitments that apply to every project, big or small.</p>
+    </div>
+    <div class="pr-grid">
+      <article class="pr-card reveal">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80" alt="Calculator and documents for a fixed quote" width="900" height="1100" loading="lazy">
+        <span class="pr-arc" aria-hidden="true"></span>
+        <span class="pr-ico"><i class="fa-solid fa-file-invoice-dollar"></i></span>
+        <div class="pr-box"><h3>Fixed quote, no surprises</h3><p>You get a clear written quote and schedule before we start, so you always know what you are paying for.</p></div>
+      </article>
+      <article class="pr-card reveal">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Team reviewing a design together" width="900" height="1100" loading="lazy">
+        <span class="pr-arc" aria-hidden="true"></span>
+        <span class="pr-ico"><i class="fa-solid fa-clipboard-check"></i></span>
+        <div class="pr-box"><h3>You approve before launch</h3><p>Nothing goes live until you have seen the design, given feedback and signed off the finished work.</p></div>
+      </article>
+      <article class="pr-card reveal">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80" alt="Dedicated contact ready to help" width="900" height="1100" loading="lazy">
+        <span class="pr-arc" aria-hidden="true"></span>
+        <span class="pr-ico"><i class="fa-solid fa-headset"></i></span>
+        <div class="pr-box"><h3>One contact, 24-hour replies</h3><p>You deal with one dedicated person who answers your messages within a working day.</p></div>
+      </article>
+      <article class="pr-card reveal">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Team providing ongoing support" width="900" height="1100" loading="lazy">
+        <span class="pr-arc" aria-hidden="true"></span>
+        <span class="pr-ico"><i class="fa-solid fa-life-ring"></i></span>
+        <div class="pr-box"><h3>Support after launch</h3><p>We stay close after go-live with maintenance, updates and friendly help whenever you need it.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="prep" id="prepare">
+  <div class="container prep-grid">
+    <div class="prep-media reveal">
+      <span class="tl-dots" aria-hidden="true"></span>
+      <figure class="prep-photo">
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1000&q=80" alt="Laptop and notes ready for a new project" width="1000" height="1200" loading="lazy">
+      </figure>
+      <div class="prep-label"><strong>Not sure what you have?</strong><span>No problem. We will help you gather it.</span></div>
+    </div>
+    <div class="prep-text reveal">
+      <p class="eyebrow">Before We Start</p>
+      <h2 class="title">What to prepare for your project</h2>
+      <p>You do not need everything on day one. Having these ready helps us move faster and keeps your project on schedule.</p>
+      <div class="prep-list">
+        <div class="prep-item"><i class="fa-solid fa-image"></i><div><h3>Logo and brand colours</h3><p>Your logo files and any brand colours or fonts you already use.</p></div></div>
+        <div class="prep-item"><i class="fa-solid fa-camera"></i><div><h3>Photos and videos</h3><p>Pictures of your team, products, premises or past work.</p></div></div>
+        <div class="prep-item"><i class="fa-solid fa-file-lines"></i><div><h3>Page content</h3><p>The text for your about, services and any other pages. We can help you write it.</p></div></div>
+        <div class="prep-item"><i class="fa-solid fa-globe"></i><div><h3>Domain and hosting details</h3><p>Your domain name and hosting login, if you already have them.</p></div></div>
+        <div class="prep-item"><i class="fa-solid fa-lightbulb"></i><div><h3>Websites you like</h3><p>A few examples of sites or styles you like, so we match your taste.</p></div></div>
+        <div class="prep-item"><i class="fa-solid fa-address-card"></i><div><h3>Contact and social links</h3><p>Phone numbers, email, address, map location and social media pages.</p></div></div>
+      </div>
+      <a href="contact.html#get-in-touch" class="btn btn-primary">Start Your Project <i class="fa-solid fa-arrow-right-long"></i></a>
+    </div>
+  </div>
+</section>
+
 <section class="faq" id="faq">
   <div class="container faq-grid">
     <div class="faq-left reveal">
@@ -859,6 +1000,23 @@ a.cb-item:hover{background:rgba(0,0,0,.08)}
         <button class="faq-q" aria-expanded="false">What happens after my site goes live? <i class="fa-solid fa-plus"></i></button>
         <div class="faq-a"><p>We do not disappear on launch day. We show you how everything works and remain available for updates, fixes, maintenance and marketing support whenever you need us.</p></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing" id="start">
+  <div class="container reveal">
+    <p class="eyebrow">Let&rsquo;s Build Together</p>
+    <h2>Ready to see your business grow online?</h2>
+    <p class="lead">Tell us what you need and we will show you the clearest, simplest way to get there.</p>
+    <div class="cl-actions">
+      <a href="contact.html#get-in-touch" class="btn btn-primary">Get Your Free Quote <i class="fa-solid fa-arrow-right-long"></i></a>
+      <a href="https://wa.me/254745883650?text=Hello%20Serina%20Systems%2C%20I%20would%20like%20to%20start%20a%20project." class="btn btn-outline-w" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+    </div>
+    <div class="cl-chips"><span><i class="fa-solid fa-circle-check"></i>Free consultation</span><span><i class="fa-solid fa-circle-check"></i>Fixed quote</span><span><i class="fa-solid fa-circle-check"></i>No obligation</span></div>
+    <div class="cl-contact">
+      <a href="tel:+254745883650"><i class="fa-solid fa-phone-volume"></i>0745 883 650</a>
+      <a href="mailto:serinasystems@gmail.com"><i class="fa-regular fa-envelope"></i>serinasystems@gmail.com</a>
     </div>
   </div>
 </section>
